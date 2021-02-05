@@ -1,33 +1,33 @@
 # describe the possible attributes 
 # in each category of number, color, shapes ,and shading. 
-class Cards
+class Card
   @@numbers=[1,2,3]
   @@colors=['R','G','P']
   @@shapes=['*','0','~']
   @@shadingTypes=["  ","<>","//"]
   #create a accessor to access the variable. 
-  attr_reader :number, :color,:shapes, :shading
+  attr_reader :number, :color,:shape, :shading
 
   # initialize the value of number, color, shading, and shapes.
 # In this case, each variable only contain one element. 
 #For exmaple, @number is one of (1,2,3)
 #@color is one of (R,G,P) 
 #and same for shading and shapes.
-def initialize(number, color,shading, shapes)
+def initialize(number, color,shading, shape)
   @number=number
   @color=color
-  @shapes=shapes
+  @shape=shape
   @shading=shading
 end
 
 #getter to get numbers array
 def self.getNumbers
-  @@number
+  @@numbers
 end
 
 #getter to get color array
 def self.getColor
-  @@color
+  @@colors
 end
 
 #getter to get shapes array
@@ -36,13 +36,13 @@ def self.getShapes
 end
 
 #getter to get shading array
-def getShadingTypes
-  @@shading
+def self.getShadingTypes
+  @@shadingTypes
 end
 
-#Utilize .sample(i) to randomly return a value from each array to create string of the card. 
+#return attributes formatted for printing purposes
 def return_card
-  "#{number} #{color} #{shading}, #{shape}"
+  "#{@number}#{@color}#{@shading.clone.insert(1, @shape)}"
 end
 #since somebody says there inbuild instrument can be used in some later version of Ruby, I'm not pretty sure if there will be any problem in grading. 
 end
