@@ -7,7 +7,7 @@ class Cards
   shading=[' ','<','/'
           ]
   #create a accessor to access the variable. 
-  attr_accessor :number, :color,:shapes, :shading
+  attr_reader :number, :color,:shapes, :shading
 
   # initialize the value of number, color, shading, and shapes.
 # In this case, each variable only contain one element. 
@@ -20,10 +20,30 @@ def initialize(number, color,shading, shapes)
   @shapes=shapes
   @shading=shading
 end
+
+#getter to get number
+def number
+  @number
+end
+
+#getter to get color
+def color
+  @color
+end
+
+#getter to get shapes
+def shapes
+  @shapes
+end
+
+#getter to get shading
+def shading
+  @shading
+end
 end
 
 #Utilize .sample(i) to randomly return a value from each array to create string of the card. 
 def return_card
-  "#{number.sample(1)} #{color.sample(1)} #{shading.sample(1)}, #{shapes.sample(1)}"
+  "#{number} #{color} #{shading}, #{shape}"
 end
 #since somebody says there inbuild instrument can be used in some later version of Ruby, I'm not pretty sure if there will be any problem in grading. 
