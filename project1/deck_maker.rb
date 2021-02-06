@@ -1,17 +1,21 @@
 #Author: Andrew Connors
 class DeckMaker
 
-  $numbers = [1,2,3]
-  $color = %w[R G P]
-  $shapes = %w[*, 0, ~]
-  $shading = [' ', '<', '/']
-
-
-  $deck = Array.new(81)
-  int cardsLeft
+  #This line should import cards class
+  require_relative 'Cards'
   attr_accessor :deck, :cardsLeft
+  # $numbers = [1,2,3]
+  # $color = %w[R G P]
+  # $shapes = %w[*, 0, ~]
+  # $shading = [' ', '<', '/']
+
+
+
+
+
   #Initialize the deck to have 81 unique cards.
   def initialize
+    @deck = Array.new(81)
     w = 0
     x = 0
     y = 0
@@ -25,10 +29,13 @@ class DeckMaker
         while y < 3
           z = 0
           while z < 3
-            #This line should import cards class
-            require_relative 'Cards'
+
             card = Cards.new
-            card.initialize $numbers[w], $color[x], $shapes[y], $shading[z]
+            numbers = card.getNumbers
+            colors = card.getColor
+            shapes = card.getShapes
+            shadingTypes = getShadingTypes
+            card.initialize numbers[w], colors[x], shapes[y], shadingTypes[z]
             z+=1
             @deck[count] = card
             count+=1
@@ -39,7 +46,7 @@ class DeckMaker
       end
       w+=1
     end
-    cardsLeft = 81
+    @cardsLeft = 81
   end
 
   #Return the number of cards remaining in the deck
@@ -48,10 +55,10 @@ class DeckMaker
   end
 
   #Check to see if a given card is in the deck
-  def checkCard(number, color, shapes, shading)
+  def checkCard(numbers, color, shapes, shading)
     x = 0
     while x < 81
-      if deck[x].color == color && deck[x].numbers == number && deck[x].shapes == shapes && deck[x].shading == shading
+      if deck[x].color == color && deck[x].number == numbers && deck[x].shape == shapes && deck[x].shading == shading
         return true
       end
       x+=1
@@ -65,6 +72,7 @@ class DeckMaker
 
   #Return first element in array
   def returnOne
+    @cardsLeft -=1
     return @deck.shift
   end
 
