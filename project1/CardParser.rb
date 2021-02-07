@@ -52,10 +52,10 @@ class CardParsing
     #Otherwise false by default
 
     #Check for Shade
-    if(card1.shade == card2.shade && card1.shade == card3.shade)
+    if(card1.shading == card2.shading && card1.shading == card3.shading)
       outputValueShade=true
-    elsif(card1.shade != card2.shade && card1.shade != card3.shade &&
-      card2.shade != card3.shade)
+    elsif(card1.shading != card2.shading && card1.shading != card3.shading &&
+      card2.shading != card3.shading)
       outputValueShade=true
     end
     #Otherwise false by default
@@ -71,7 +71,8 @@ class CardParsing
   def deckCheck(card, deck)
     cardFound = false
     # Goes though entire deck and makes cardFound true if @card is found
-    deck.each { |cardTest| if card == cardTest
+    deck.each { |cardTest| if (card.shape == cardTest.shape && card.color == cardTest.color &&
+      card.shading == cardTest.shading && card.number == cardTest.number)
                              cardFound=true
                            end}
     return cardFound
