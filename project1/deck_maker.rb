@@ -2,12 +2,12 @@
 class DeckMaker
 
   #This line should import cards class
-  require_relative 'Card'
+  require_relative 'card.rb'
   attr_reader :deck
-   $numbers = [1,2,3]
-   $color = %w[R G P]
-   $shapes = %w[*, 0, ~]
-   $shading = [' ', '<', '/']
+   $numbers = Card.getNumbers
+   $color = Card.getColors
+   $shapes = Card.getShapes
+   $shading = Card.getShadingTypes
 
 
 
@@ -32,7 +32,7 @@ class DeckMaker
 
 
 
-            nextCard = card.new numbers[w], colors[x], shapes[y], shading[z]
+            nextCard = Card.new $numbers[w], $colors[x], $shading[y], $shapes[z]
             z+=1
             @deck[count] = nextCard
             count+=1
