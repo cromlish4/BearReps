@@ -2,10 +2,11 @@
 
 
 # To Do: 
-#  Create new deck (#2)
-#  Create array to track board
-#  Fill board with cards
-#  Create function to check if cards on teh board can form a set (setPArser)
+#  Create new deck (#2)         -- Done
+#  Create array to track board   -- Done
+#  Fill board with cards      -- Working on
+#
+#  Create function to check if cards on the board can form a set (setPArser)
 #  Remove specific cards from the board
 #  Add 3 cards to the board (#2)
 #  Track player score
@@ -24,10 +25,12 @@ class BoardMaker
 
 
 require_relative DeckMaker
+require_relative CardParsing
 
 
 
 attr_accessor :board :sets, :playerScore, 
+
 
   def initialize
 
@@ -57,7 +60,7 @@ def display
 
   i = 1
 
-  until x = 12
+  until x = board.length
 
     if i < 3 
 
@@ -169,10 +172,100 @@ def hasSet
   # }
   # 
   
+
+# Since for loops go over EACH index of an array, I'll split the columns into 
+  # separate arrays.
+ 
+  input = Array.new 3
+
+  
+  size = board.length
+
+
+  column_ size = board.length / 3
+
+
+  column_x = Array.new column_size
+  column_y = Array.new column_size
+  column_z = Array.new column_size
+
+
   result = false
-  x = 0
-  y = 1
-  z = 2
+
+  i = 0
+  j = 0
+
+  until i = size
+
+    column_x[j] = board[i]
+
+    i += 1
+
+    column_y[j] = board[i]
+
+    i += 1
+
+    column_z[j] = board[i]
+
+    i += 1
+    j += 1
+
+  end
+
+  i = 0
+  j = 0
+  k = 0
+
+
+  while result = false
+
+    until x = column_size
+
+      until y = column_size
+
+        until z = column_size
+
+          input[0] = column_x[x]
+          input[1] = column_y[y]
+          input[2] = column_z[z]
+
+          result =  CardParsing::setParser(input)
+
+          z+=1
+    
+         end
+
+
+        y+=1
+
+       end
+
+
+      x+=1
+
+   end
+
+  end
+
+  if result = false
+
+    puts "There are no remainig sets on the board."
+
+
+  else
+
+    puts "There is at least one more set on the board! Try again!"
+
+
+  end
+
+  end
 
 
 
+
+
+
+
+
+  result = false
