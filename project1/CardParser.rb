@@ -1,4 +1,5 @@
 #Class Containing 2 methods to check cards.
+# Author: Michael Cromlish
 # Method 1 checks if 3 cards are part of a set.
 # Method 2 checks if a card is in a deck.
 class CardParsing
@@ -15,6 +16,9 @@ class CardParsing
     outputValueNumber = false
     #Output value of Shade
     outputValueShade = false
+
+    #Importing card Class
+    require_relative 'card'
 
     card1 = cards.at(0)
     card2 = cards.at(1)
