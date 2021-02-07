@@ -1,4 +1,4 @@
-#Class Containing 2 methods to check cards.
+# Class Containing 2 methods to check cards.
 # Author: Michael Cromlish
 # Method 1 checks if 3 cards are part of a set.
 # Method 2 checks if a card is in a deck.
@@ -6,7 +6,7 @@ class CardParsing
   #Method 1
   # setParser takes in 3 cards and checks if it is a set or not
   # returns false if cards are not in a set, true if in set.
-  # cards is an Array of 3 cards
+  # cards is an Array of exactly 3 cards
   def setParser(cards)
     #Output value of Shape
     outputValueShape = false
@@ -16,7 +16,8 @@ class CardParsing
     outputValueNumber = false
     #Output value of Shade
     outputValueShade = false
-
+    #Overall output
+    overallOutput = false
     #Importing card Class
     require_relative 'card'
 
@@ -60,14 +61,17 @@ class CardParsing
     end
     #Otherwise false by default
 
-    #Compares the results of check and if all pass then the cards are a set
+    #Compares the results of each check and if all pass then the cards are a set, else not a set
     if(outputValueShape && outputValueColor && outputValueNumber && outputValueShade)
-      return true
+      overallOutput = true
     end
-    return false
+    return overallOutput
   end
+
   #Method 2
   # boardCheck takes in a card input and the board to check if the card exists on the board.
+  # card - single card object
+  # board - any size array of card objects
   def boardCheck(card, board)
     cardFound = false
     # Goes though entire deck and makes cardFound true if @card is found
