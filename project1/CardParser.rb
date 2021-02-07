@@ -7,7 +7,7 @@ class CardParsing
   # setParser takes in 3 cards and checks if it is a set or not
   # returns false if cards are not in a set, true if in set.
   # cards is an Array of exactly 3 cards
-  def setParser(cards)
+  def self.setParser(cards)
     #Output value of Shape
     outputValueShape = false
     #Output value of Color
@@ -72,7 +72,7 @@ class CardParsing
   # boardCheck takes in a card input and the board to check if the card exists on the board.
   # card - single card object
   # board - any size array of card objects
-  def boardCheck(card, board)
+  def self.boardCheck(card, board)
     cardFound = false
     # Goes though entire deck and makes cardFound true if @card is found
     board.each { |cardTest| if (card.shape == cardTest.shape && card.color == cardTest.color &&
