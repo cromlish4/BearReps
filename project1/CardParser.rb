@@ -67,11 +67,11 @@ class CardParsing
     return false
   end
   #Method 2
-  # deckCheck takes in a card input and a deck to check if it is in the deck
-  def deckCheck(card, deck)
+  # boardCheck takes in a card input and the board to check if the card exists on the board.
+  def boardCheck(card, board)
     cardFound = false
     # Goes though entire deck and makes cardFound true if @card is found
-    deck.each { |cardTest| if (card.shape == cardTest.shape && card.color == cardTest.color &&
+    board.each { |cardTest| if (card.shape == cardTest.shape && card.color == cardTest.color &&
       card.shading == cardTest.shading && card.number == cardTest.number)
                              cardFound=true
                            end}
