@@ -82,7 +82,7 @@ def display
 end
 
 
-def sets
+def hasSet
 
   # The general idea:
   #
