@@ -25,6 +25,8 @@ class BoardMaker
 
 require_relative DeckMaker
 
+require_relative CardParsing
+
 attr_accessor :board :sets, :playerScore, 
 
   def initialize
@@ -166,6 +168,11 @@ def sets
   #     }
   # }
   # 
-  #
-  #
-  #
+  
+  result = false
+  x = 0
+  y = 1
+  z = 2
+
+
+
