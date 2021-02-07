@@ -2,12 +2,12 @@
 class DeckMaker
 
   #This line should import cards class
-  require_relative 'Cards'
-  attr_accessor :deck, :cardsLeft
-  # $numbers = [1,2,3]
-  # $color = %w[R G P]
-  # $shapes = %w[*, 0, ~]
-  # $shading = [' ', '<', '/']
+  require_relative 'Card'
+  attr_reader :deck
+   $numbers = [1,2,3]
+   $color = %w[R G P]
+   $shapes = %w[*, 0, ~]
+   $shading = [' ', '<', '/']
 
 
 
@@ -30,14 +30,11 @@ class DeckMaker
           z = 0
           while z < 3
 
-            card = Cards.new
-            numbers = card.getNumbers
-            colors = card.getColor
-            shapes = card.getShapes
-            shadingTypes = getShadingTypes
-            card.initialize numbers[w], colors[x], shapes[y], shadingTypes[z]
+
+
+            nextCard = card.new numbers[w], colors[x], shapes[y], shading[z]
             z+=1
-            @deck[count] = card
+            @deck[count] = nextCard
             count+=1
           end
           y+=1
@@ -46,12 +43,12 @@ class DeckMaker
       end
       w+=1
     end
-    @cardsLeft = 81
+
   end
 
   #Return the number of cards remaining in the deck
   def cardsLeft
-    return @cardsLeft
+    return @deck.length
   end
 
   #Check to see if a given card is in the deck
@@ -78,7 +75,7 @@ class DeckMaker
 
   #Return first element in array
   def returnOne
-    @cardsLeft -=1
+
     return @deck.shift
   end
 
