@@ -25,7 +25,7 @@ class BoardMaker
 
 require_relative DeckMaker
 
-require_relative CardParsing
+
 
 attr_accessor :board :sets, :playerScore, 
 
