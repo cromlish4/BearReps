@@ -1,70 +1,50 @@
 # Author: Ryan O'Donovan
 
 
-# To Do: 
-#  Create new deck (#2)         -- Done
-#  Create array to track board   -- Done
-#  Fill board with cards      -- Working on
-#
-#  Create function to check if cards on the board can form a set (setPArser)
-#  Remove specific cards from the board
-#  Add 3 cards to the board (#2)
-#  Track player score
-#  Create a function to display the board, score and cards remaining.
-#  The board should have 3 columns max and be separated by an even
-#  amount of space if possible, else just use a comma.
-#
-#  EX:
-#
-#  Score : 2            Deck: 3
-#  1R<0>   1R/0/   2G<0>
-#  2R0     2G~     1P<>
-#
-
 class BoardMaker
 
 
 require_relative DeckMaker
 require_relative CardParsing
 
-
-
-attr_accessor :board :sets, :playerScore, 
-
+attr_accessor :score, :board, :deck
 
   def initialize
 
-    @board = Array.new 12
+  @board = Array.new 12
     
-    deck = DeckMaker.new
+  @deck = DeckMaker.new
 
-    deck.shuffle
+  @score = 0
+
+
+    @deck.shuffle
 
     x = 0
 
     until x = 12
 
-      board[x] = deck.returnOne
+    @board[x] = deck.returnOne
 
       x += 1
 
     end
+  
+  end
 
-
-end
-
-
-def display
+  def display
 
   x = 0
 
   i = 1
 
-  until x = board.length
+  until x = @board.length
 
     if i < 3 
 
-      printf "%-15s", board[x]
+      message = "%-15s" %[@board[x]]
+
+      puts message
 
       x += 1
 
@@ -72,7 +52,7 @@ def display
 
     else
 
-      printf "%-15s\n" , board[x]
+      message = "%-15s\n" %[@board[x]]
 
       x += 1
 
@@ -81,7 +61,11 @@ def display
     end
 
   end
-      
+
+  message = "Score: %d  | Cards Left: %d\n", %[@score]
+
+  puts message
+
 end
 
 
@@ -179,10 +163,10 @@ def hasSet
   input = Array.new 3
 
   
-  size = board.length
+  size = @board.length
 
 
-  column_ size = board.length / 3
+  column_ size = @board.length / 3
 
 
   column_x = Array.new column_size
@@ -197,15 +181,15 @@ def hasSet
 
   until i = size
 
-    column_x[j] = board[i]
+    column_x[j] = @board[i]
 
     i += 1
 
-    column_y[j] = board[i]
+    column_y[j] = @board[i]
 
     i += 1
 
-    column_z[j] = board[i]
+    column_z[j] = @board[i]
 
     i += 1
     j += 1
@@ -247,25 +231,37 @@ def hasSet
 
   end
 
-  if result = false
-
-    puts "There are no remainig sets on the board."
-
-
-  else
-
-    puts "There is at least one more set on the board! Try again!"
-
-
-  end
+  return result
 
   end
 
 
+def replenish
+
+ i = 0
+
+ until i = 3
+
+  newcard = @deck.returnOne
+
+  @board.push newcard
+
+  i += 1
+
+ end
+
+end
 
 
 
+def remove(cards)
+
+  i = 0
+
+ @board - cards
 
 
 
-  result = false
+end
+
+
