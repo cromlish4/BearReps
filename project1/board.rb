@@ -4,8 +4,8 @@
 class BoardMaker
 
 
-require_relative DeckMaker
-require_relative CardParsing
+  require_relative 'deck_maker.rb'
+require_relative 'card.rb'
 
 attr_accessor :score, :board, :deck
 
@@ -22,7 +22,7 @@ attr_accessor :score, :board, :deck
 
     x = 0
 
-    until x = 12
+    until x == 12
 
     @board[x] = deck.returnOne
 
@@ -38,13 +38,11 @@ attr_accessor :score, :board, :deck
 
   i = 1
 
-  until x = @board.length
+  until x == @board.length
 
     if i < 3 
 
-      message = "%-15s" %[@board[x]]
-
-      puts message
+      print "%-15s" %[@board[x].return_card]
 
       x += 1
 
@@ -52,7 +50,7 @@ attr_accessor :score, :board, :deck
 
     else
 
-      message = "%-15s\n" %[@board[x]]
+      print "%-15s\n" %[@board[x]]
 
       x += 1
 
@@ -62,9 +60,7 @@ attr_accessor :score, :board, :deck
 
   end
 
-  message = "Score: %d  | Cards Left: %d\n", %[@score]
-
-  puts message
+  print "Score: %d   | Cards Left: %d\n" %[@score, @deck.cardsLeft]
 
 end
 
@@ -179,7 +175,7 @@ def hasSet
   i = 0
   j = 0
 
-  until i = size
+  until i == size
 
     column_x[j] = @board[i]
 
@@ -196,18 +192,18 @@ def hasSet
 
   end
 
-  i = 0
-  j = 0
-  k = 0
+  x = 0
+  y = 0
+  z = 0
 
 
-  while result = false
+  while result == false
 
-    until x = column_size
+    until x == column_size
 
-      until y = column_size
+      until y == column_size
 
-        until z = column_size
+        until z == column_size
 
           input[0] = column_x[x]
           input[1] = column_y[y]
@@ -215,6 +211,12 @@ def hasSet
 
           result =  CardParsing::setParser(input)
 
+          if result
+
+            return result
+
+          end
+         
           z+=1
     
          end
