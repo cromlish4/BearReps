@@ -107,6 +107,4 @@ class main
       end
   end
 
-  print "Thanks for playing. Your final points: " + @@points
-
-  # TODO: Ask if player wants to play again
+  puts "Thanks for playing. Your final points: " + @@points + "\nWould you like to play again?"
