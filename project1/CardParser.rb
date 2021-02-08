@@ -81,4 +81,13 @@ class CardParsing
                            end}
     return cardFound
   end
+  
+  # Take an input representing 1 card as a string (1R<0>) then look through
+  # the board for cards with the same feature and return the card object on the board
+  # Make sure to call boardCheck first
+  def self.convertStringToCardOnBoard(input, board)
+    board.each {   |boardCard| if (boardCard.return_card == input.return_card)
+                                return boardCard
+                              end }
+  end
 end
