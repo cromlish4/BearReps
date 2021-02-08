@@ -103,7 +103,7 @@ class main
         board.remove(cards) # TODO: Need remove method from the board class
         board.replenish # TODO: Need replenish method from the board class
       else
-        puts "Not a SET. No point rewarded." # TODO: Instead of -1 point for not finding an existing SET, I think we can reward nothing so we can avoid the case where 0 - 1 < 0.
+        puts "Not a SET. No point rewarded."
       end
   end
 
