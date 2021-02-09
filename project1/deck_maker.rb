@@ -56,7 +56,7 @@ class DeckMaker
     x = 0
     y = 0
     while x < 81
-      if deck[x].color == color && deck[x].number == numbers && deck[x].shape == shapes && deck[x].shading == shading
+      if @deck[x].color == color && @deck[x].number == numbers && @deck[x].shape == shapes && @deck[x].shading == shading
         y +=1
         return true
       end
