@@ -4,6 +4,12 @@
 
 class Main
 
+  # This is from https://stackoverflow.com/a/2090509/14979054
+  # and is used to handle when a user presses ctrl+c in the terminal
+  trap("SIGINT") { throw :ctrl_c }
+  catch :ctrl_c do
+    begin
+
   require_relative 'card.rb'
   require_relative 'board.rb'
   require_relative 'CardParser.rb'
@@ -169,5 +175,11 @@ class Main
     break
   end
 
+  end
+    rescue Exception
+      #This is from https://stackoverflow.com/a/2090509/14979054
+      puts "Not printed"
+      exit
+    end
   end
   end
