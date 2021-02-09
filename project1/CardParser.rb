@@ -72,6 +72,7 @@ class CardParsing
   # boardCheck takes in a card input and the board to check if the card exists on the board.
   # card - single card object
   # board - any size array of card objects
+  # returns True if the card is on the board.
   def self.boardCheck(card, board)
     cardFound = false
     # Goes though entire deck and makes cardFound true if @card is found
