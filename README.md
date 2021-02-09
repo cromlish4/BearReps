@@ -32,7 +32,10 @@ Installation
 ------------
 
 After fetching our project, you can launch the game by typing "ruby main.rb" on your command line on any PC or VM that has
-ruby installed.
+ruby installed. 
+
+It is also possible to go into our "cheater-branch" and pull the project from there. The final product should
+be the same with one addition. Typing in 'c' will make the game spit out any sets it finds on the board.
 
 Tests
 -----
