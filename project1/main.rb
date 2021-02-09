@@ -121,7 +121,7 @@ class Main
       if @board.hasSet # The board has a SET
         puts "There is a SET and you missed it."
       else  # The board doesn't have a SET
-        board.replenish # Add 3 cards to the board
+        @board.replenish # Add 3 cards to the board
       end
     elsif input == "exit"
       break
