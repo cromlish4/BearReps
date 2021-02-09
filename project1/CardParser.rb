@@ -90,4 +90,19 @@ class CardParsing
                                 return boardCard
                               end }
   end
+
+    #Method 2
+  # boardCheck takes in a card input and the board to check if the card exists on the board.
+  # card - single card object
+  # board - any size array of card objects
+  def self.c(card, board)
+    cardFound = false
+    jank = Array.new(3)
+    # Goes though entire deck and makes cardFound true if @card is found
+    board.each { |cardTest| if (card.shape == cardTest.shape && card.color == cardTest.color &&
+      card.shading == cardTest.shading && card.number == cardTest.number)
+                             cardFound=true
+                           end}
+    return jank
+  end
 end

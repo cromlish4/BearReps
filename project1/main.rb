@@ -39,7 +39,7 @@ class Main
 
   # Check if the input is valid
   def self.checkInput(input)
-    if input == "NONE"
+    if input == "NONE" || input == "c" || input == "exit"
       return true
     else
         validCombination?(input)
@@ -61,6 +61,7 @@ class Main
     i = 0
     cards.each do |card|
       cards[i] = CardParsing.convertStringToCardOnBoard(card, @board.board)
+      i += 1
     end
 
     return cards
@@ -82,7 +83,7 @@ class Main
   Shading: ' ', '<', '/' represent open, solid, striped
   Shape: '*', '0', '~' represent diamond, oval, squiggle respectively
   Example input: \"1R 0 2G<* 3P/~\" means a card with 1 red open oval, a card with 2 green solid diamond, and a card with 3 purple striped squiggle.
-  Notice: Please follow the order of number of shapes, color, shading, and shape to specify a card!\n"""  # Input format
+  Notice: Please follow the order of number of shapes, color, shading, and shape to specify a card!\nType <exit> to exit\n\n"""  # Input format
 
   while @board.deck.cardsLeft != 0
     @board.display
@@ -104,6 +105,18 @@ class Main
       else  # The board doesn't have a SET
         board.replenish # Add 3 cards to the board
       end
+    elsif input == "c"
+      print("\n<<==>>\n")
+      set = @board.c
+
+      if !(set[0].nil?)
+        set.each do |card|
+          puts card.return_card
+        end
+      end
+      print("<<==>>\n")
+    elsif input == "exit"
+      break
     else
       # Convert the input string to an array of cards and valuate the SET
       cards = convert input
