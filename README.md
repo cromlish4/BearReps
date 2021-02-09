@@ -23,7 +23,7 @@ and the presentation of the board are accessible to the player from the beginnin
 
 Screenshots
 -----------
-
+![image](https://user-images.githubusercontent.com/77806397/107402331-d50c6300-6ad1-11eb-9b2a-c8847d7e8d50.png)
 
 
 
