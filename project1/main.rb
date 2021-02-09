@@ -115,7 +115,7 @@ class Main
   Color: #{Card.getColors} stand for red, green, purple respectively, Cap's ONLY!
   Shading: #{Card.getShadingTypes} represent open, solid, striped
   Shape: #{Card.getShapes} represent diamond, oval, squiggle respectively
-  Example input: \"1R 0 2G<* 3P/~\" means a card with 1 red open oval, a card with 2 green solid diamond, and a card with 3 purple striped squiggle.
+  Example input: \"1R-0 2G<* 3P/~\" means a card with 1 red open oval, a card with 2 green solid diamond, and a card with 3 purple striped squiggle.
   Notice: Please follow the order of number of shapes, color, shading, and shape to specify a card!\nType <exit> to exit\n\n"""  # Input format
 
   playAgain = 'Y'

@@ -5,7 +5,7 @@ class Card
   @@numbers=[1,2,3]
   @@colors=['R','G','P']
   @@shapes=['*','0','~']
-  @@shadingTypes=[" ","<","/"]
+  @@shadingTypes=["-","<","/"]
   #create a accessor to access the variable. 
   attr_reader :number, :color,:shape, :shading
 
