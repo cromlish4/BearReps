@@ -26,7 +26,23 @@ class Main
       c2 = input.slice 5, 4 # Get the string that describes 2nd card
       c3 = input.slice 10, 4  # Get the string that describes 3rd card
       if validCard?(c1) && validCard?(c2) && validCard?(c3)
-        return true
+                cardsTemp1 = Card.new((c1.slice 0, 1).to_i, (c1.slice 1, 1), (c1.slice 2, 1), (c1.slice 3, 1))
+        cardsTemp2 = Card.new((c2.slice 0, 1).to_i, (c2.slice 1, 1), (c2.slice 2, 1), (c2.slice 3, 1))
+        cardsTemp3 = Card.new((c3.slice 0, 1).to_i, (c3.slice 1, 1), (c3.slice 2, 1), (c3.slice 3, 1))
+        board = @board.board
+        #puts @board.methods
+        card1Board = CardParsing.boardCheck(cardsTemp1, board)
+
+        card2Board = CardParsing.boardCheck(cardsTemp2, board)
+
+        card3Board = CardParsing.boardCheck(cardsTemp3, board)
+
+        if (card1Board && card2Board && card3Board)
+          return true
+        else
+          puts "One or more non-valid cards entered."
+          return false
+        end
       else
         puts "Invalid input: Illegal format or characters found."
         return false
@@ -103,7 +119,7 @@ class Main
       if @board.hasSet # The board has a SET
         puts "There is a SET and you missed it."
       else  # The board doesn't have a SET
-        board.replenish # Add 3 cards to the board
+        @board.replenish # Add 3 cards to the board
       end
     elsif input == "c"
       print("\n<<==>>\n")
