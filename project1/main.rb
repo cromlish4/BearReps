@@ -37,7 +37,7 @@ class Main
 
       # Check if the 3 input cards could be valid
       if validCard?(c1) && validCard?(c2) && validCard?(c3)
-        # Check to make sure these cards exist on the board
+
         cardsTemp1 = Card.new((c1.slice 0, 1).to_i, (c1.slice 1, 1), (c1.slice 2, 1), (c1.slice 3, 1))
         cardsTemp2 = Card.new((c2.slice 0, 1).to_i, (c2.slice 1, 1), (c2.slice 2, 1), (c2.slice 3, 1))
         cardsTemp3 = Card.new((c3.slice 0, 1).to_i, (c3.slice 1, 1), (c3.slice 2, 1), (c3.slice 3, 1))
@@ -139,6 +139,15 @@ class Main
         puts "There is a SET and you missed it."
       else  # The board doesn't have a SET
         @board.replenish # Add 3 cards to the board
+      end
+    elsif input == "c"
+      print("\n<<==>>\n")
+      set = @board.c
+
+      if !(set[0].nil?)
+        set.each do |card|
+          puts card.return_card
+        end
       end
     elsif input == "exit"
       # Exit game
