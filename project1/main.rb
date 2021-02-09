@@ -103,6 +103,9 @@ class Main
   Example input: \"1R 0 2G<* 3P/~\" means a card with 1 red open oval, a card with 2 green solid diamond, and a card with 3 purple striped squiggle.
   Notice: Please follow the order of number of shapes, color, shading, and shape to specify a card!\nType <exit> to exit\n\n"""  # Input format
 
+  playAgain = 'Y'
+  while playAgain == 'Y' || playAgain == 'y'
+
   while @board.deck.cardsLeft != 0
     @board.display
     
@@ -138,5 +141,23 @@ class Main
         @board.score -= 1
       end
     end
+  end
+  #Segment to check if player wants to play again
+  puts("Game over!\n")
+  puts("Play again? (Y or N)\n")
+  playAgain = gets.delete!("\n")
+  while playAgain != "y" && playAgain != "Y" && playAgain != "N" && playAgain != "n"
+    puts("Error in input\n")
+    puts("Play again? (Y or N)\n")
+    playAgain = gets.delete!("\n")
+
+  end
+  if playAgain == "Y" || playAgain == "y"
+    @board = BoardMaker.new
+  end
+  if playAgain == "N" || playAgain == "n"
+    break
+  end
+
   end
   end
