@@ -8,7 +8,8 @@ class BoardMaker
   require_relative 'card.rb'
   require_relative 'CardParser.rb'
 
-attr_accessor :score, :board, :deck
+attr_accessor :score 
+attr_reader :board, :deck
 
   def initialize
 
