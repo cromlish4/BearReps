@@ -1,4 +1,4 @@
-# Class Containing 2 methods to check cards.
+# Class Containing 2 methods to check cards and one to convert
 # Author: Michael Cromlish
 # Method 1 checks if 3 cards are part of a set.
 # Method 2 checks if a card is in a deck.
@@ -19,7 +19,7 @@ class CardParsing
     #Overall output
     overallOutput = false
     #Importing card Class
-    require_relative 'card'
+    require_relative 'card.rb'
 
     card1 = cards.at(0)
     card2 = cards.at(1)
@@ -83,6 +83,7 @@ class CardParsing
     return cardFound
   end
   
+  # Author : Samiul Islam
   # Take an input representing 1 card as a string (1R<0>) then look through
   # the board for cards with the same feature and return the card object on the board
   # Make sure to call boardCheck first

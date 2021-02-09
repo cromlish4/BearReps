@@ -1,5 +1,5 @@
 # Author: Ryan O'Donovan
-
+# Represent the physical play space
 
 class BoardMaker
 
@@ -13,6 +13,7 @@ attr_reader :board, :deck
 
   def initialize
 
+    # Set up the board
   @board = Array.new 12
     
   @deck = DeckMaker.new
@@ -20,17 +21,18 @@ attr_reader :board, :deck
   @score = 0
 
 
-    @deck.shuffle
+  @deck.shuffle
 
-    x = 0
+  x = 0
 
-    until x == 12
+    # Place 12 cards onto the board
+  until x == 12
 
     @board[x] = deck.returnOne
 
       x += 1
 
-    end
+  end
   
   end
 
@@ -42,6 +44,7 @@ attr_reader :board, :deck
 
   until x == @board.length
 
+    # 3 cards per row
     if i < 3 
 
       print "%-15s" %[@board[x].return_card]
@@ -51,7 +54,7 @@ attr_reader :board, :deck
       i += 1
 
     else
-
+      # Make new line after 3rd card has been placed and start again
       print "%-15s\n" %[@board[x].return_card]
 
       x += 1
@@ -84,12 +87,16 @@ def hasSet
         if result
           return true
         end
+        # Move the 3rd cards pointer down
         latestIndex += 1
       end
 
+      # Move the 2nd cards pointer down, reset 3rd cards pointer to point ahead of 2nd cards
       nextIndex += 1
       latestIndex = (nextIndex+1)
     end
+
+    #Move 1st cards pointer down, reset other pointers
     headIndex += 1
     nextIndex = (headIndex+1)
     latestIndex = (nextIndex+1)
@@ -98,6 +105,7 @@ def hasSet
   return false
 end
 
+  # Add 3 more cards to the board from the deck
 def replenish
 
  i = 0
@@ -115,7 +123,7 @@ def replenish
 end
 
 
-
+# Remove a subset of cards from the board
 def remove(cards)
 
   i = 0

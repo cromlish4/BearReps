@@ -1,4 +1,5 @@
-# describe the possible attributes 
+# Author : Zhuo Chen and Samiul Islam
+# describe the possible attributes
 # in each category of number, color, shapes ,and shading. 
 class Card
   @@numbers=[1,2,3]
@@ -44,5 +45,4 @@ end
 def return_card
   "#{@number}#{@color}#{@shading.clone.insert(1, @shape)}"
 end
-#since somebody says there inbuild instrument can be used in some later version of Ruby, I'm not pretty sure if there will be any problem in grading. 
 end

@@ -1,4 +1,5 @@
 #Author: Andrew Connors
+# Represent a standard 81 card deck of set
 class DeckMaker
 
   #This line should import cards class
@@ -51,24 +52,7 @@ class DeckMaker
     return @deck.length
   end
 
-  #Check to see if a given card is in the deck
-  def checkCard(numbers, color, shapes, shading)
-    x = 0
-    y = 0
-    while x < 81
-      if @deck[x].color == color && @deck[x].number == numbers && @deck[x].shape == shapes && @deck[x].shading == shading
-        y +=1
-        return true
-      end
-      x+=1
-    end
-    # If y == 0, card was not found
-    if y == 0
-      return false
-    end
-
-  end
-    #Shuffle deck
+  #Shuffle deck
   def shuffle
       @deck.shuffle!
   end
