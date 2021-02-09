@@ -97,42 +97,6 @@ def hasSet
   return false
 end
 
-  # Author : Samiul Islam
-  # Check every possible combination of cards on the board to see if they make a set
-  def c
-
-    set = Array.new(3)
-    # [headIndex][nextIndex][latestIndex][][] --> [headIndex][nextIndex][][latestIndex][]--> [headIndex][nextIndex][][][latestIndex]
-    # [headIndex][][nextIndex][latestIndex][] ... --> [][headIndex][nextIndex][latestIndex][]
-    headIndex = 0
-    nextIndex = 1
-    latestIndex = 2
-  
-    # Move each head around the whole board to check all combinations
-    until headIndex == board.length
-      until nextIndex == board.length
-        until latestIndex == board.length
-          result =  CardParsing::setParser([board[headIndex], board[nextIndex], board[latestIndex]])
-          if result
-            set[0] = board[headIndex]
-            set[1] = board[nextIndex]
-            set[2] = board[latestIndex]
-            return set
-          end
-          latestIndex += 1
-        end
-  
-        nextIndex += 1
-        latestIndex = (nextIndex+1)
-      end
-      headIndex += 1
-      nextIndex = (headIndex+1)
-      latestIndex = (nextIndex+1)
-    end
-  
-    return set
-  end
-
 def replenish
 
  i = 0

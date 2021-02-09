@@ -39,7 +39,7 @@ class Main
 
   # Check if the input is valid
   def self.checkInput(input)
-    if input == "NONE" || input == "c" || input == "exit"
+    if input == "NONE" || input == "exit"
       return true
     else
         validCombination?(input)
@@ -105,16 +105,6 @@ class Main
       else  # The board doesn't have a SET
         board.replenish # Add 3 cards to the board
       end
-    elsif input == "c"
-      print("\n<<==>>\n")
-      set = @board.c
-
-      if !(set[0].nil?)
-        set.each do |card|
-          puts card.return_card
-        end
-      end
-      print("<<==>>\n")
     elsif input == "exit"
       break
     else
