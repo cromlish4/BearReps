@@ -11,7 +11,7 @@ class Main
   @board = BoardMaker.new
 
   # Check a string represents a single card
-  def validCard?(card_string)
+  def self.validCard?(card_string)
     if (["1", "2", "3"].include? card_string.slice 0, 1) && (["R", "G", "P"].include? card_string.slice 1, 1) && ([" ", "<", "/"].include? card_string.slice 2,1) && (["*", "0", "~"].include? card_string.slice 3,1)
       return true
     else
@@ -20,7 +20,7 @@ class Main
   end
 
   # Check if the input string is a valid representation for 3 cards
-  def validCombination?(input)
+  def self.validCombination?(input)
     if input.length == 14
       c1 = input.slice 0, 4 # Get the string that describes 1st card
       c2 = input.slice 5, 4 # Get the string that describes 2nd card
@@ -38,7 +38,7 @@ class Main
   end
 
   # Check if the input is valid
-  def checkInput(input)
+  def self.checkInput(input)
     if input == "NONE"
       return true
     else
@@ -47,7 +47,7 @@ class Main
   end
 
   # Convert the input string to an array of card objects
-  def convert(input)
+  def self.convert(input)
     c1 = input.slice 0, 4 # Get the string that describes 1st card
     c2 = input.slice 5, 4 # Get the string that describes 2nd card
     c3 = input.slice 10, 4  # Get the string that describes 3rd card

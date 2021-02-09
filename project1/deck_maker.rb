@@ -5,7 +5,7 @@ class DeckMaker
   require_relative 'card.rb'
   attr_reader :deck
    $numbers = Card.getNumbers
-   $color = Card.getColors
+   $colors = Card.getColors
    $shapes = Card.getShapes
    $shading = Card.getShadingTypes
 

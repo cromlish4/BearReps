@@ -26,7 +26,7 @@ def self.getNumbers
 end
 
 #getter to get color array
-def self.getColor
+def self.getColors
   @@colors
 end
 
