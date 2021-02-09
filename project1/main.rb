@@ -12,7 +12,10 @@ class Main
 
   # Check a string represents a single card
   def self.validCard?(card_string)
-    if (["1", "2", "3"].include? card_string.slice 0, 1) && (["R", "G", "P"].include? card_string.slice 1, 1) && ([" ", "<", "/"].include? card_string.slice 2,1) && (["*", "0", "~"].include? card_string.slice 3,1)
+    if (([Card.getNumbers[0].to_s, Card.getNumbers[1].to_s, Card.getNumbers[2].to_s].include? card_string.slice 0, 1) &&
+      ([Card.getColors[0], Card.getColors[1], Card.getColors[2]].include? card_string.slice 1, 1) &&
+      ([Card.getShadingTypes[0], Card.getShadingTypes[1], Card.getShadingTypes[2]].include? card_string.slice 2,1) &&
+      ([Card.getShapes[0], Card.getShapes[1], Card.getShapes[2]].include? card_string.slice 3,1))
       return true
     else
       return false
@@ -115,7 +118,6 @@ class Main
       puts "Please enter a SET or NONE if no SET exists:"
       input = gets.delete!("\n")
     end
-
     # Evaluate the input
     if input == "NONE"  # The player claims to find no SET
       if @board.hasSet # The board has a SET
