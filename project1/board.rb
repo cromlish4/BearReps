@@ -1,16 +1,19 @@
 # Author: Ryan O'Donovan
-
+# Represent the physical play space
 
 class BoardMaker
 
 
   require_relative 'deck_maker.rb'
-require_relative 'card.rb'
+  require_relative 'card.rb'
+  require_relative 'CardParser.rb'
 
-attr_accessor :score, :board, :deck
+attr_accessor :score 
+attr_reader :board, :deck
 
   def initialize
 
+    # Set up the board
   @board = Array.new 12
     
   @deck = DeckMaker.new
@@ -18,17 +21,18 @@ attr_accessor :score, :board, :deck
   @score = 0
 
 
-    @deck.shuffle
+  @deck.shuffle
 
-    x = 0
+  x = 0
 
-    until x == 12
+    # Place 12 cards onto the board
+  until x == 12
 
     @board[x] = deck.returnOne
 
       x += 1
 
-    end
+  end
   
   end
 
@@ -40,6 +44,7 @@ attr_accessor :score, :board, :deck
 
   until x == @board.length
 
+    # 3 cards per row
     if i < 3 
 
       print "%-15s" %[@board[x].return_card]
@@ -49,8 +54,8 @@ attr_accessor :score, :board, :deck
       i += 1
 
     else
-
-      print "%-15s\n" %[@board[x]]
+      # Make new line after 3rd card has been placed and start again
+      print "%-15s\n" %[@board[x].return_card]
 
       x += 1
 
@@ -64,189 +69,52 @@ attr_accessor :score, :board, :deck
 
 end
 
-
+  # Author : Samiul Islam
+  # Check every possible combination of cards on the board to see if they make a set
 def hasSet
 
-  # The general idea:
-  #
-  # Say a board looks like this:
-  #
-  # card1   card2   card3
-  # card4   card5   card6
-  # . . .   . . .   . . .
-  #
-  # Then the board array would look like:
-  #
-  # [card1, card2, card3, card4, card5, card6 ... ]
-  #
-  #
-  # To see if there is any set on the board, we must
-  # check every possible combination of cards.
-  #
-  # The best way to do this is to check the first entry of each row
-  # with every second and third entry of each row.
-  #
-  # let x be for indexing down the first entires.
-  # let y be for indexing down the second entries.
-  # let z be for indexing down the third entries.
-  #
-  # let x = 0
-  # let y = 1
-  # let z = 2
-  #
-  # so board[x] is the first entry in the first row
-  # board[y] is the second entry in the first row
-  # board[z] is the third entry in the first row
-  #
-  # to move down a row we have to look back at our picture example:
-  #
-  # card1 . . .
-  #   |
-  #   V                    <==> board[x] -> board[x+3]
-  # card4 . . .
-  #
-  # Going down one row will always be an addition of 3, again because:
-  #
-  # board[card1, card2, card3, card4, card5, card6 . . .]
-  #
-  # So, all x values will be:
-  #
-  #   0, 3, 6, 9
-  #
-  #   all y values will be:
-  #
-  #   1, 4, 7, 10
-  #
-  #   and all z values will be:
-  #
-  #   2, 5, 8, 11
-  #
-  #
-  # We can set a triple for loop up such that:
-  #
-  # for(x = 0; x < 9; x+=3){
-  #
-  #     for(y = 1; y < 10; y += 3){
-  #
-  #         for(z = 2; z < 11; z += 3){
-  #
-  #
-  #             * say some array named input *
-  #
-  #             input[0] = x
-  #             input[1] = y
-  #             input[2] = z
-  #
-  #             * Call setParser with input *
-  #
-  #
-  #             *Now, if setParser returns true at any point
-  #
-  #               we can break the loop, since we only need
-  #
-  #               to know if there is any set on board. *
-  #
-  #
-  #         }
-  #     }
-  # }
-  # 
-  
+  # [headIndex][nextIndex][latestIndex][][] --> [headIndex][nextIndex][][latestIndex][]--> [headIndex][nextIndex][][][latestIndex]
+  # [headIndex][][nextIndex][latestIndex][] ... --> [][headIndex][nextIndex][latestIndex][]
+  headIndex = 0
+  nextIndex = 1
+  latestIndex = 2
 
-# Since for loops go over EACH index of an array, I'll split the columns into 
-  # separate arrays.
- 
-  input = Array.new 3
+  # Move each head around the whole board to check all combinations
+  until headIndex == board.length
+    until nextIndex == board.length
+      until latestIndex == board.length
+        result =  CardParsing::setParser([board[headIndex], board[nextIndex], board[latestIndex]])
+        if result
+          return true
+        end
+        # Move the 3rd cards pointer down
+        latestIndex += 1
+      end
 
-  
-  size = @board.length
+      # Move the 2nd cards pointer down, reset 3rd cards pointer to point ahead of 2nd cards
+      nextIndex += 1
+      latestIndex = (nextIndex+1)
+    end
 
-
-  column_ size = @board.length / 3
-
-
-  column_x = Array.new column_size
-  column_y = Array.new column_size
-  column_z = Array.new column_size
-
-
-  result = false
-
-  i = 0
-  j = 0
-
-  until i == size
-
-    column_x[j] = @board[i]
-
-    i += 1
-
-    column_y[j] = @board[i]
-
-    i += 1
-
-    column_z[j] = @board[i]
-
-    i += 1
-    j += 1
-
+    #Move 1st cards pointer down, reset other pointers
+    headIndex += 1
+    nextIndex = (headIndex+1)
+    latestIndex = (nextIndex+1)
   end
 
-  x = 0
-  y = 0
-  z = 0
+  return false
+end
 
-
-  while result == false
-
-    until x == column_size
-
-      until y == column_size
-
-        until z == column_size
-
-          input[0] = column_x[x]
-          input[1] = column_y[y]
-          input[2] = column_z[z]
-
-          result =  CardParsing::setParser(input)
-
-          if result
-
-            return result
-
-          end
-         
-          z+=1
-    
-         end
-
-
-        y+=1
-
-       end
-
-
-      x+=1
-
-   end
-
-  end
-
-  return result
-
-  end
-
-
+  # Add 3 more cards to the board from the deck
 def replenish
 
  i = 0
 
- until i = 3
+ until i == 3
 
-  newcard = @deck.returnOne
+  newCard = @deck.returnOne
 
-  @board.push newcard
+  @board.push newCard
 
   i += 1
 
@@ -255,15 +123,11 @@ def replenish
 end
 
 
-
+# Remove a subset of cards from the board
 def remove(cards)
 
   i = 0
 
- @board - cards
-
-
-
+  @board = @board - cards
 end
-
-
+end
