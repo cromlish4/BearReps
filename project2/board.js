@@ -1,30 +1,30 @@
 /* Author: Ryan O'Donovan
  * Represents the physical play space */
 
-	var boardMaker = { };
+	import './CardParser.js';
 
-	boardMaker.protoype = deckMaker;
+	import * as Deck from './deck-maker.js';
 
-	boardMaker.constructor = New;
+	class BoardMaker {
 
 
 	/* New is boardMaker's constructor, convention to capitalize	*/
 
 
-	function New {
+	function New() {
 
 		this.board = new Array(12);
-		this.deck = this.newDeck();
+		deck = new Deck();
 
 		this.score = 0;
 
-		this.deck.shuffle();
+		deck.shuffle();
 
 		var x = 0;
 
 		while (x < 12){
 			
-			this.board[x] = this.deck.returnOne(); 
+			this.board[x] = deck.returnOne(); 
 
 			x += 1;
 		}
@@ -34,9 +34,45 @@
 
 	
 
-	function dispayBoard {
-		// This will be implemented once HTML is established //
-	
+	function dispayBoard() {
+		
+
+		var i = 0;
+
+		var length = this.board.length;
+
+		var tr;
+
+
+		while(i < length){
+
+			tr += "<tr>";
+
+			tr += "<td>" + this.board[i]+ "</td>";
+
+			i += 1;
+
+			tr += "<td>" + this.board[i]+ "</td>";
+
+                        i += 1;
+
+			tr += "<td>" + this.board[i]+ "</td>";
+
+                        i += 1;
+
+			tr += "</tr>";
+
+		}
+
+		tr += "</tr>";
+
+
+		var table = document.getElementById("playing-field");
+
+		table.innerHTML = tr;
+		
+
+
 
 	}
 
@@ -46,7 +82,7 @@
 	
 
 
-	var setOnBoard = function {
+	function hasSet() {
 
 		var headIndex = 0;
 		var nextIndex = 1;
@@ -58,7 +94,7 @@
 			while (nextIndex < this.length) {
 				while (latestIndex < this.length) {
 
-					var result = cardParser.setParser(this.board[headIndex], 
+					var result = setParser(this.board[headIndex], 
 						this.board[nextIndex], this.board[latestIndex]) 
 
 					if (result) return true;
@@ -84,13 +120,13 @@
 
 	}
 
-	function replenishCards {
+	function replenishCards() {
 
 		var i = 0;
 
 		while(i < 3) {
 
-			var newCard = this.deck.returnOne;
+			var newCard = deck.returnOne;
 
 			this.board.push(newCard);
 
@@ -117,6 +153,4 @@
 
 	}
 
-	boardMaker.hasSet = setOnBoard;
-	boardMaker.replenish = replenishCards;
-	boardMaker.remove = removeEntry;
+}
