@@ -35,8 +35,8 @@ header>h1 {
 }
 
 #cards-left {
-    transform: translateY(150%);
-    margin-left: 2.5%;
+    transform: translateY(100%);
+    margin-left: 2%;
 }
 
 /* via https://stackoverflow.com/a/66251864/14979054 */
