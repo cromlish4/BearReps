@@ -29,27 +29,29 @@
         </div>
 
         <!--Playing Field-->
-        <table class="playing-field">
-            <tr class="row" id="row-one">
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-            </tr>
-            <tr class="row" id="row-two">
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-            </tr>
-            <tr class="row" id="row-three">
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-                <td class="cell"><img src="assets/blank.png" alt=""></td>
-            </tr>
-            <tr class="row" id="row-four">
-                <td><img src="assets/blank.png" alt=""></td>
-                <td><img src="assets/blank.png" alt=""></td>
-                <td><img src="assets/blank.png" alt=""></td>
-            </tr>
+        <table id="playing-field">
+            <tbody class="rows">
+                <tr id="row-one">
+                    <td id="cell0"><img src="assets/blank.png" alt=""></td>
+                    <td id="cell1"><img src="assets/blank.png" alt=""></td>
+                    <td id="cell2"><img src="assets/blank.png" alt=""></td>
+                </tr>
+                <tr id="row-two">
+                    <td id="cell3"><img src="assets/blank.png" alt=""></td>
+                    <td id="cell4"><img src="assets/blank.png" alt=""></td>
+                    <td id="cell5"><img src="assets/blank.png" alt=""></td>
+                </tr>
+                <tr id="row-three">
+                    <td id="cell6"><img src="assets/blank.png" alt=""></td>
+                    <td id="cell7"><img src="assets/blank.png" alt=""></td>
+                    <td id="cell8"><img src="assets/blank.png" alt=""></td>
+                </tr>
+                <tr id="row-four">
+                    <td id="cell9"><img src="assets/blank.png" alt=""></td>
+                    <td id="cell10"><img src="assets/blank.png" alt=""></td>
+                    <td id="cell11"><img src="assets/blank.png" alt=""></td>
+                </tr>
+            </tbody>
         </table>
 
         <!--Rules-->
@@ -61,5 +63,7 @@
 		is NOT a SET). In the game, the deck is shuffled and 12 cards are laid face up on the table. When a player finds a SET among these 12 cards, the SET will be removed and the player gets 		1 point. Then 3 new cards from the deck will be added
 		to replenish the cards on the table. If there is no SET on the table, 3 cards from the deck will be added one time until there is a SET. 
         </p>
+
+        <script src="main.js" charset="utf-8"></script>
     </body>
 </html>
