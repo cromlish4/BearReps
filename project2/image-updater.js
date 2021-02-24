@@ -15,16 +15,10 @@ function getImagePath(card) {
     var color = cardStringForm.charAt(1);
     var shading = cardStringForm.charAt(2);
     var shape = cardStringForm.charAt(3);
-    //TODO, discuss wt, possibly move all cards into one folder to remove this step
-    var additionalPath = "Green/";
-    if (color == "R")
-        additionalPath = "Red/";
-    else if (color == "P")
-        additionalPath = "Purple/";
 
     //TODO, discuss wt, you can't really name files with a "/", changing Card to have "%" instead of "/" would remove this step
     if (shading == "/")
         shading = "%";
 
-    return "assets/Set Cards/" + additionalPath + number + color + shape + shading;
+    return "assets/Set Cards/" + number + color + shape + shading;
 }
