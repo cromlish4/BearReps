@@ -1,6 +1,8 @@
 /* Author: Ryan O'Donovan
  * Represents the physical play space */
 
+	import './image-updater.js';
+
 	import './CardParser.js';
 
 	import * as Deck from './deck-maker.js';
@@ -37,42 +39,9 @@
 	function dispayBoard() {
 		
 
-		var i = 0;
+		// updateAllImages gives an img src to each card on the board. //
 
-		var length = this.board.length;
-
-		var tr;
-
-
-		while(i < length){
-
-			tr += "<tr>";
-
-			tr += "<td>" + this.board[i]+ "</td>";
-
-			i += 1;
-
-			tr += "<td>" + this.board[i]+ "</td>";
-
-                        i += 1;
-
-			tr += "<td>" + this.board[i]+ "</td>";
-
-                        i += 1;
-
-			tr += "</tr>";
-
-		}
-
-		tr += "</tr>";
-
-
-		var table = document.getElementById("playing-field");
-
-		table.innerHTML = tr;
-		
-
-
+		updateAllImages(this.board);
 
 	}
 
@@ -95,7 +64,7 @@
 				while (latestIndex < this.length) {
 
 					var result = setParser(this.board[headIndex], 
-						this.board[nextIndex], this.board[latestIndex]) 
+						this.board[nextIndex], this.board[latestIndex]); 
 
 					if (result) return true;
 
