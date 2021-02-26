@@ -3,9 +3,9 @@
 /* Eric Young */
 
 
-import *as Board from './board.js';
 import './CardParser.js';
 import * as Deck from './deck-maker.js';
+import * as Board from './board.js';
 
 class Main{
 	var userScore = 0;
