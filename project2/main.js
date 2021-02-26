@@ -2,13 +2,15 @@
 /* main class */
 /* Eric Young */
 
+
+import *as Board from './board.js';
 import './CardParser.js';
 import * as Deck from './deck-maker.js';
 
 class Main{
 	var userScore = 0;
 	var userSet = new Array(3);
-	var cardBoard = new CardBoard();	/* TODO: The constructor for card board is named New() in the board class. To avoid ambiguity, would it be better that the name be changed to CardBoard()? */
+	var cardBoard = new Board();	/* TODO: The constructor for card board is named New() in the board class. To avoid ambiguity, would it be better that the name be changed to CardBoard()? */
 	var deck = new Deck();	/* TODO: The constructor for deck is named Initialize() in the deck class. To avoid ambiguity, would it be better that the name be changed to Deck()? */
 
 	/* There will be a score-board class in the HTML with a user-score element. */
