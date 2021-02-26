@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Game Of Set
+        </title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Game Of Set by Bear Reps</h1>
+        </header>
+
+        <!--Score area-->
+        <div class="score-board">
+            <div id="score-label">Score :</div>
+            <div id="score-number">0</div>
+        </div>
+
+        <!--Displays cards left in deck-->
+        <div id="deck">
+            <div class="deck-element" id="cards-left">
+                0
+            </div>
+            <div class="deck-element" id="back-image">
+                <img src="assets/blank.png" alt="">
+            </div>
+        </div>
+
+        <div id = "cards-left">
+          Cards left: 69
+        </div>
+
+        <!--Playing Field-->
+        <table class="playing-field">
+            <tr class="row" id="row-one">
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+            </tr>
+            <tr class="row" id="row-two">
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+            </tr>
+            <tr class="row" id="row-three">
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+                <td class="cell"><img src="assets/temp.png" alt=""></td>
+            </tr>
+            <tr class="row" id="row-four">
+                <td><img src="assets/temp.png" alt=""></td>
+                <td><img src="assets/temp.png" alt=""></td>
+                <td><img src="assets/temp.png" alt=""></td>
+            </tr>
+
+        </table>
+
+        <!--Rules-->
+        <p id="rules-field"> Game Rules<br> <br>
+          The deck consists of 81 unique cards that vary in 4 features across 3 possibilities for each kind of feature: <br>
+number of shapes (1, 2, 3) <br>
+color (red, green, or purple) <br>
+shading (solid, striped, open) <br>
+shape (diamond, squiggle, oval)<br> <br>
+Each possible combination of features (e.g. a card with 3 striped green diamonds) appears as a card precisely once
+in the deck. A SET must be either all the same or all different in each individual feature. In other words, if 2 cards
+are the same and 1 card is different in any feature, then it is NOT a SET (e.g. if 2 are red and 1 is purple then it
+is NOT a SET). <br> <br> In the game, the deck is shuffled and 12 cards are laid face up on the table. When a player finds a SET
+among these 12 cards, the SET will be removed and the player gets 1 point. Then 3 new cards from the deck will be added
+to replenish the cards on the table. If there is no SET on the table, 3 cards from the deck will be added one time until
+there is a SET.
+        </p>
+
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
