@@ -1,8 +1,7 @@
-
-class Test {
+export default class imageUpdate {
     constructor() { }
 
-    updateAllImages(cards) {
+    static updateAllImages(cards) {
         var i;
         for (i = 0; i < cards.length; i++) {
             //Select element and update image
@@ -10,7 +9,7 @@ class Test {
         }
     }
 
-    getImagePath(card) {
+    static getImagePath(card) {
         return "assets/Set Cards/" + card.return_card() + ".jpg";
     }
 }
