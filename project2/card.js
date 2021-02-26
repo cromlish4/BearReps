@@ -1,44 +1,74 @@
-// describe the possible attributes in each category of number, color, shapes ,and shading. 
-class Card(){
-    var numbers=[1,2,3];
-    var colors=['R','G','P'];
-    var shapes=['*','0','~'];
-    var shadingTypes=["-","<","/"];
 
-  /* initialize the value of number, color, shading, and shapes.
-In this case, each variable only contain one element. 
-For exmaple, @number is one of (1,2,3)
-@color is one of (R,G,P) 
-and same for shading and shapes.*/
-    
-private Card(var colors, var shapes, var shadingTypes, var numbers) {
-        this.colors = colors;
-        this.shapes = shapes;
-        this.shadingTypes = shadingTypes;
-        this.numbers = numbers;
+export default class Card {
+    constructor(color, shape, shading, quantity) {
+        this._color = color;
+        this._shape = shape;
+        this._shading = shading;
+        this._quantity = quantity;
     }
 
-//getter to get numbers array
-    function getNumber(){
-	return this.numbers;
+    /**
+     * @returns this instances number
+     */
+    get number() {
+        return this._quantity;
     }
 
-//getter to get color array
- function  getcolors(){
-     return this.colors;
- }
-    
+    /**
+     * @returns this instances color
+     */
+    get color() {
+        return this._color;
+    }
 
-//getter to get shapes array
- function getshapes(){
-     return this.shapes;
- }
-//getter to get shading array
- function getshadingTypes(){
-     return this.shadingTypes;
- }
-//return attributes formatted for printing purposes
-function return_card(){
-    printf(this.number+ this.color+this.shadingTypes+this.shapes);
-}
+    /**
+     * @returns this instances shape 
+     */
+    get shape() {
+        return this._shape;
+    }
+
+    /**
+     * @returns this instances shading 
+     */
+    get shading() {
+        return this._shading;
+    }
+
+    /**
+     * @returns an array of number attributes
+     */
+    static getNumbers() {
+        return [1, 2, 3];
+    }
+
+    /**
+     * @returns an array of color attributes
+     */
+    static getColors() {
+        return ["R", "G", "P"];
+    }
+
+    /**
+     * @returns an array of shape attributes
+     */
+    static getShapes() {
+        return ["*", "0", "~"];
+    }
+
+    /**
+     * @returns an array of shading attributes
+     */
+    static getShadingTypes() {
+        return ["-", "<", "%"];
+    }
+
+    /**
+     * Used to get the card name in a single string. 
+     * Useful for getting the image path.
+     * @returns Card attributes in a single string
+     */
+    return_card() {
+        return (this._quantity + this._color + this._shading + this._shape);
+    }
 }
