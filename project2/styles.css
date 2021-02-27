@@ -21,7 +21,6 @@ body {
 
 header>h1 {
     text-align: center;
-
 }
 
 .score-board {
@@ -40,11 +39,8 @@ header>h1 {
 #deck {
     position: relative;
     margin-left: 10%;
-
     font-size: 100px;
 }
-
-
 
 #cards-left {
     transform: translateY(100%);
@@ -54,11 +50,6 @@ header>h1 {
 /* via https://stackoverflow.com/a/66251864/14979054 */
 table {
     position: absolute;
-<<<<<<< HEAD
-    margin-top: 30px;
-    top: 40%;
-=======
->>>>>>> 87a17c8fd4941fd09d0d681ee4e19d4ea8eaf78d
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: -6%;
@@ -67,11 +58,9 @@ table {
 }
 
 #rules-field {
-    text-align: left;
-    font-size: 18px;
-
+    text-align: right;
     padding: 10px;
-    margin-top: -30%;
+    margin-top: -25%;
     margin-left: 65%;
     margin-right: 10%;
 }
