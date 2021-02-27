@@ -1,7 +1,7 @@
 //Author: Andrew Connors
 //Note: May have to edit this
 import * as Card from './Card.js';
-class DeckMaker {
+export class DeckMaker {
 
   var numbers = Card.getNumbers();
   var colors = Card.getColors();

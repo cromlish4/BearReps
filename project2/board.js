@@ -7,7 +7,7 @@
 
 	import * as Deck from './deck-maker.js';
 
-	class BoardMaker {
+	export class BoardMaker {
 
 
 	/* New is boardMaker's constructor, convention to capitalize	*/

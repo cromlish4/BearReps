@@ -3,11 +3,16 @@
 /* Eric Young */
 
 
-import './CardParser.js';
-import * as Deck from './deck-maker.js';
-import * as Board from './board.js';
+
+	import * as Parser from './CardParser.js';
+        import * as Deck from './deck-maker.js';
+        import * as Board from './board.js';
+
 
 class Main{
+
+
+
 	var userScore = 0;
 	var userSet = new Array(3);
 	var cardBoard = new Board();	/* TODO: The constructor for card board is named New() in the board class. To avoid ambiguity, would it be better that the name be changed to CardBoard()? */
