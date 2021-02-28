@@ -2,16 +2,16 @@
 /* main class */
 /* Eric Young */
 
-import * as Parser from './CardParser.js';
-import * as Deck from './deck-maker.js';
-import * as Board from './board.js';
-
+import Parser from './CardParser.js';
+import Deck from './deck-maker.js';
+import Board from './board.js';
+import Card from "./card.js";
 
 var userScore = 0;
 var userSet = new Array(0);
 var parsedSet = new Array(0);
-var cardBoard = new BoardMaker();
-var deck = new DeckMaker();
+var cardBoard = new Board();
+var deck = new Deck();
 
 /* There will be a score-board class in the HTML with a user-score element. */
 const userScoreDOM = document.getElementById("user-score");
@@ -20,7 +20,7 @@ const scoreBoardDOM = document.querySelector(".score-board");
 /* There will be card board represented by a table in the HTML. */
 var table = document.querySelectorAll("td");
 /* TODO: We may also add a picture for the "NONE" button. The user may click this button if failing to find a SET. */
-const none = document.getElementByID("none");
+//const none = document.getElementByID("none");
 
 /* User input no longer needs to be checked beause we are not using string input. */
 
