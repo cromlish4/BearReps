@@ -1,53 +1,53 @@
-const http = require('http')
+const http = require('http');
 
-const fs = require('fs')
+const fs = require('fs');
+
+const path = require('path');
 
 const port = 8000;
 
-const server = http.createServer(function(req, res) {
 
-	switch(req.url) {
+http.createServer(function(req, res) {
+var filePath = req.url;
+if (filePath == '/'){
+  filePath = '/index.html';
+}
+filePath = __dirname+filePath;
+var extname = path.extname(filePath);
+var contentType = 'text/html';
 
-		case "styles.css" :
+switch (extname) {
+    case '.js':
+        contentType = 'text/javascript';
+        break;
+    case '.css':
+        contentType = 'text/css';
+        break;
+}
 
-			res.writeHead(200, { 'Content-Type': 'text/css' })
 
-			fs.readFile('styles.css', function(err, data) {
+fs.exists(filePath, function(exists) {
 
-				if(err) {
-					res.writeHead(404)
-					res.write('Error: File not found')
-				}else {
-					res.write(data)
-				}
-				res.end()
-			})
+    if (exists) {
+        fs.readFile(filePath, function(error, content) {
+            if (error) {
+                res.writeHead(500);
+                res.end();
+            }
+            else {
+                res.writeHead(200, { 'Content-Type': contentType });
+                res.end(content, 'utf-8');
+            }
+        });
+    }
+} );
 
-		break;
-
-		default:
-			res.writeHead(200, {'Content-Type': 'text/html' })
-
-			fs.readFile('index.html', function(err, data) {
-
-				if(err) {
-					res.writeHead(404)
-					res.write('Error: file not found')
-				}else{
-					res.write(data)
-				}
-				res.end()
-			})
-	}
-
-})
-
-server.listen(port, function(err) {
+} ).listen(port, function(err) {
 	if (err) {
 		console.log('Something went wrong', err)
 	} else {
 		console.log('Server is listening on port ' + port)
 	}
-})
+});
 
 
