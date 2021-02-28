@@ -13,6 +13,24 @@ var parsedSet = new Array(0);
 var cardBoard = new Board();
 var deck = new Deck();
 
+
+const table = document.getElementById("playing-field");
+
+        const cells = table.getElementsByTagName("td");
+
+
+ for(var i = 0; i < cells.length; i++) {
+
+                cells[i].addEventListener('click', function() {
+
+
+                        console.log("Hey This is cool");
+
+                });
+
+        }
+
+
 /* There will be a score-board class in the HTML with a user-score element. */
 const userScoreDOM = document.getElementById("user-score");
 const scoreBoardDOM = document.querySelector(".score-board");
@@ -25,6 +43,8 @@ var table = document.querySelectorAll("td");
 /* User input no longer needs to be checked beause we are not using string input. */
 
 /* Store the 3 cards clicked by the user. */
+
+
 function userClick() {
 	var hasFound = true;
 
@@ -32,9 +52,11 @@ function userClick() {
 	const userScoreDOM = document.getElementById("user-score");
 	const scoreBoardDOM = document.querySelector(".score-board");
 
-	const cardsLeft = document.getElementById("cards-left");
+	
+	
 
-	/* There will be a card-board class in the HTML with 12 elements for the cards displayed on the card board. Each element is represented by a cell in the HTML table. */
+
+	/* There will be a card-board class in the HTML with 12 elements for the cards displayed on the card board. Each element is represented by a cell in the HTML table. 
 	const card0 = document.getElementById("cell0");
 	const card1 = document.getElementById("cell1");
 	const card2 = document.getElementById("cell2");
@@ -50,7 +72,7 @@ function userClick() {
 	const cards = {card0, card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11};
 	const none = document.getElementByID("none");	/* TODO: We may also add a picture for the "NONE" button. The user may click this button if failing to find a SET. */
 	/* TODO: We may also need blank pictures for card12, card13, card14 or even more cards to handle the situation where there is no SET among all the 12 cards on the board. */
-	const cardBoardDOM = document.querySelector(".card-board");
+	const cardBoardDOM = document.querySelector(".card-board"); 
 
 
 	function addToSet(oneCard){
