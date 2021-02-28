@@ -2,18 +2,31 @@
 /* main class */
 /* Eric Young */
 
+import Parser from './CardParser.js';
+import Deck from './deck-maker.js';
+import Board from './board.js';
+import Card from "./card.js";
 
+var userScore = 0;
+var userSet = new Array(0);
+var parsedSet = new Array(0);
+var cardBoard = new Board();
+var deck = new Deck();
 
-	import * as Parser from './CardParser.js';
-        import * as Deck from './deck-maker.js';
-        import * as Board from './board.js';
+/* There will be a score-board class in the HTML with a user-score element. */
+const userScoreDOM = document.getElementById("user-score");
+const scoreBoardDOM = document.querySelector(".score-board");
 
+/* There will be card board represented by a table in the HTML. */
+var table = document.querySelectorAll("td");
+/* TODO: We may also add a picture for the "NONE" button. The user may click this button if failing to find a SET. */
+//const none = document.getElementByID("none");
 
+/* User input no longer needs to be checked beause we are not using string input. */
 
-	let userScore = 0;
-	let userSet = new Array(3);
-	let cardBoard = new Board();
-	let deck = new Deck();
+/* Store the 3 cards clicked by the user. */
+function userClick() {
+	var hasFound = true;
 
 	/* There will be a score-board class in the HTML with a user-score element. */
 	const userScoreDOM = document.getElementById("user-score");
@@ -108,31 +121,40 @@
 				for(j = 0; j < 12; j++){
 					cards[j].onclick = function() {userSet[i] = cardBoard.board[j]};
 				}
-			}
+			});
 		}
 	}
+}
 
-	/* Increment or decrement userScore depending on the 3 cards clicked by the user. */
-	function handleInput(userSet){
-		if(userSet !== null) {
-			if(setParser(userSet)) {
-				userScore += 1;
-				userScoreDOM.innerHTML = userScore;
-				CardBoard.removeEntry(userSet);	/* Remove the cards that form a SET. */
-			} else {
-				alert("Your selection is NOT a SET!");
-				userScore -= 1;
-			}
+/* Increment or decrement userScore depending on the 3 cards clicked by the user. */
+function handleInput(userSet) {
+	if (userSet !== null) {	/* If the user found a SET, the value of userSet will not be null. */
+		/* Convert the card strings to card objects. */
+		card1 = [userSet[0].slice(0, 1), userSet[0].slice(1, 2), userSet[0].slice(2, 3), userSet[0].slice(3, 4)];
+		card2 = [userSet[1].slice(0, 1), userSet[1].slice(1, 2), userSet[1].slice(2, 3), userSet[1].slice(3, 4)];
+		card3 = [userSet[2].slice(0, 1), userSet[2].slice(1, 2), userSet[2].slice(2, 3), userSet[2].slice(3, 4)];
+		parsedSet = [card1, card2, card3];
+
+		if (setParser(parsedSet)) {
+			userScore += 1;
+			userScoreDOM.innerHTML = userScore;
+			CardBoard.removeEntry(parsedSet);	/* Remove the SET found by the user. */
+			alert("You got 1 point!");
 		} else {
-			if(CardBoard.hasSet()) {
-				alert("You missed a SET!");
-				userScore -= 1;
-			} else {
-				alert("Replenish cards.")
-				CardBoard.replenishCards();	/* TODO: See comments above for extra card pictures. */
-			}
+			alert("Your selection is NOT a SET!");
+			userScore -= 1;
+		}
+
+	} else {	/* If the user claimed to find NO SET, the function userClick assigned null to userSet. */
+		if (CardBoard.hasSet()) {
+			alert("You missed a SET!");
+			userScore -= 1;
+		} else {
+			alert("Replenish cards.")
+			CardBoard.replenishCards();
 		}
 	}
+}
 
 	function main(){
 		/* TODO: Need a loop for restarting the game. */
