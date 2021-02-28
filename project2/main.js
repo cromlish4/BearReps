@@ -18,7 +18,9 @@
 	/* There will be a score-board class in the HTML with a user-score element. */
 	const userScoreDOM = document.getElementById("user-score");
 	const scoreBoardDOM = document.querySelector(".score-board");
-	
+
+	const cardsLeft = document.getElementById("cards-left");
+
 	/* There will be a card-board class in the HTML with 12 elements for the cards displayed on the card board. Each element is represented by a cell in the HTML table. */
 	const card0 = document.getElementById("cell0");
 	const card1 = document.getElementById("cell1");
@@ -37,6 +39,15 @@
 	/* TODO: We may also need blank pictures for card12, card13, card14 or even more cards to handle the situation where there is no SET among all the 12 cards on the board. */
 	const cardBoardDOM = document.querySelector(".card-board");
 
+
+	function addToSet(oneCard){
+		for(x = 0; x < 3; x++){
+			if(userSet[x] == null){
+				userSet[x] = oneCard;
+				break;
+			}
+		}
+	}
 	/* User input no longer needs to be checked beause we are not using string input. */
 
 	/* Store the 3 cards clicked by the user.
@@ -50,6 +61,44 @@
 			hasFound = false;
 			userSet = null;
 		});
+
+		/*Add event listeners to all the cells*/
+		card0.addEventListener("click", function() {
+			addToSet(card0);
+		})
+		card1.addEventListener("click", function() {
+			addToSet(card1);
+		})
+		card2.addEventListener("click", function() {
+			addToSet(card2);
+		})
+		card3.addEventListener("click", function() {
+			addToSet(card3);
+		})
+		card4.addEventListener("click", function() {
+			addToSet(card4);
+		})
+		card5.addEventListener("click", function() {
+			addToSet(card5);
+		})
+		card6.addEventListener("click", function() {
+			addToSet(card6);
+		})
+		card7.addEventListener("click", function() {
+			addToSet(card7);
+		})
+		card8.addEventListener("click", function() {
+			addToSet(card8);
+		})
+		card9.addEventListener("click", function() {
+			addToSet(card9);
+		})
+		card10.addEventListener("click", function() {
+			addToSet(card10);
+		})
+		card11.addEventListener("click", function() {
+			addToSet(card11);
+		})
 
 		/* If the user doesn't claim to find NO SET, continue. */
 		if(hasFound) {
@@ -88,6 +137,7 @@
 	function main(){
 		/* TODO: Need a loop for restarting the game. */
 		while(deck.cardsLeft()) {
+			cardsLeft.innerHTML = deck.cardsLeft();
 			if(userScore >= 0) {
 				CardBoard.displayBoard();
 				userClick();
@@ -98,4 +148,3 @@
 			}
 		}
 	}
-
