@@ -6,7 +6,13 @@ export default class DeckMaker {
   //Initialize the deck array with 81 unique cards.
   constructor() {
     this._deck = new Array(81);
-    w = x = y = z = count = 0;
+
+	  var w = 0;
+	  var x = 0;
+	  var y = 0;
+	  var z = 0;
+
+	  var count = 0;
 
     while (w < 3) {
       x = 0;
@@ -37,7 +43,7 @@ export default class DeckMaker {
   shuffleDeck() {
     var x = 0;
     var num;
-    var replace = Array.new(81);
+    var replace = new Array(81);
     while (x < 81) {
       //Generate a random index 0-80
       num = Math.floor(Math.random() * 81);

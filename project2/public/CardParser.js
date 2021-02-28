@@ -4,7 +4,7 @@ Method 1 checks if 3 cards are part of a set.
 Method 2 checks if a card is in a deck.*/
 
 //Import Card Class
-import * as Card from './Card.js';
+import * as Card from './card.js';
 export default class CardParsing {
     /* Method 1
     setParser takes in 3 cards and checks if it is a set or not
