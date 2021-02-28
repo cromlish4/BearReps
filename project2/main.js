@@ -7,16 +7,17 @@ import './deck-maker.js';
 
 class Main{
 	var userScore = 0;
-	var userSet = new Array(3);
-	var cardBoard = new CardBoard();	/* TODO: The constructor for card board is named constructor() in the board class. To avoid ambiguity, would it be better that the name be changed to CardBoard()? */
-	var deck = new Deck();	/* TODO: The constructor for deck is named constructor() in the deck class. To avoid ambiguity, would it be better that the name be changed to Deck()? */
+	var userSet = new Array(0);
+	var parsedSet = new Array(0);
+	var cardBoard = new BoardMaker();
+	var deck = new DeckMaker();
 
 	/* There will be a score-board class in the HTML with a user-score element. */
 	const userScoreDOM = document.getElementById("user-score");
 	const scoreBoardDOM = document.querySelector(".score-board");
 	
 	/* There will be card board represented by a table in the HTML. */
-	const table = document.querySelectorAll("td");
+	var table = document.querySelectorAll("td");
 	/* TODO: We may also add a picture for the "NONE" button. The user may click this button if failing to find a SET. */
 	const none = document.getElementByID("none");
 
@@ -34,14 +35,21 @@ class Main{
 
 		/* If the user doesn't claim to find NO SET, assign the clicked cards to userSet. */
 		if(hasFound) {
-			var i;
-			for(i = 0; i < 3; i++){
-				var j;
-				for(j = 0; j < table.length; j++){
-					table[j].addEventListener("click", function(event) {
-						userSet[i] = Array.from(document.querySelectorAll("td")).findIndex(function(e) { return e === event.target})
-					});
-				}
+			for(var i = 0; i < table.length; i++){
+				table[i].addEventListener("click", function(event) {
+					/* j is the index of the clicked card in the table array. */
+					var j = Array.from(document.querySelectorAll("td")).findIndex(function(e) { return e === event.target});
+					
+					/* Get the string of the clicked card and store it in the userSet array. */
+					if(userSet.length < 3) {
+						userSet.push(table[j].innerTEXT);
+					} else {
+						/* TODO: This is to solve the problem that the length of the userSet array grows larger than 3 because addEvenetListener works all the time. */
+						/* TODO: However, error occurs if the user accidentally clicks on a card. Need solution for this. */
+						userSet.length = 0;
+						userSet.push(table[j].innerTEXT);
+					}
+				});
 			}
 		}
 	}
@@ -49,15 +57,22 @@ class Main{
 	/* Increment or decrement userScore depending on the 3 cards clicked by the user. */
 	function handleInput(userSet){
 		if(userSet !== null) {	/* If the user found a SET, the value of userSet will not be null. */
-			if(setParser(userSet)) {
+			/* Convert the card strings to card objects. */
+			card1 = [userSet[0].slice(0, 1), userSet[0].slice(1, 2), userSet[0].slice(2, 3), userSet[0].slice(3, 4)];
+			card2 = [userSet[1].slice(0, 1), userSet[1].slice(1, 2), userSet[1].slice(2, 3), userSet[1].slice(3, 4)];
+			card3 = [userSet[2].slice(0, 1), userSet[2].slice(1, 2), userSet[2].slice(2, 3), userSet[2].slice(3, 4)];
+			parsedSet = [card1, card2, card3];
+
+			if(setParser(parsedSet)) {
 				userScore += 1;
 				userScoreDOM.innerHTML = userScore;
-				CardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
+				CardBoard.removeEntry(parsedSet);	/* Remove the SET found by the user. */
 				alert("You got 1 point!");
 			} else {
 				alert("Your selection is NOT a SET!");
 				userScore -= 1;
 			}
+
 		} else {	/* If the user claimed to find NO SET, the function userClick assigned null to userSet. */
 			if(CardBoard.hasSet()) {
 				alert("You missed a SET!");
