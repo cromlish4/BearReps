@@ -7,15 +7,34 @@ export default class imageUpdate {
 		 //Select element and update image//
 		var cell = document.getElementById("cell" + i).children[0];
 
-		cell.src = this.getImagePath(cards[i]);
+		cell.src  = this.getImagePath(cards[i]);
 
 
-		console.log(this.getImagePath(cards[i]));
+		console.log(cell.src);
 
         }
     }
 
     static getImagePath(card) {
-        return "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + card.shading + ".jpg";
+
+	    var answer = "";
+
+	if (card.shading === "<") {
+
+		answer =  "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + "%3C.jpg";
+
+
+	}else{
+
+		answer =  "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + card.shading + ".jpg";
+   
+
+	}
+
+
+	return answer;
+
+
     }
+
 }
