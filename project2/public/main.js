@@ -15,7 +15,7 @@ var deck = new DeckMaker();
 
 
 const table = document.getElementById("playing-field");
-const cells = table.getElementsByTagName("td");
+const cells = document.getElementsByTagName("td");
 
 /* There will be a score-board class in the HTML with a user-score element. */
 const userScoreDOM = document.getElementById("user-score");
@@ -160,34 +160,31 @@ function addToSet(oneCard) {
 	 * with the user's card.
 	 **/
 
+	console.log("hey");
+
 	var run = true;
 
-	while(run){
+	while(run === true){
 
 		var index = userSet.indexOf(oneCard);
 
 
 		 if (index >= 0){
 
-                                userSet[index] = null; 
-                                run = false;
+                                userSet.splice(index, 1, null);
+			 	console.log("replaced");
+                                break;
 
                         }
 
-
-		if (userSet.indexOf(null) < 0 ){
-
-			alert("You already have 3 selcted cards. Please remove one");
-
-			run = false;
-
-		}
-
 		
-		for (x = 0; x < 3; x++) {
+		for (var x = 0; x < 3; x++) {
                         if (userSet[x] == null) {
-                                userSet[x] = oneCard;
+                                userSet.splice(x, 1, oneCard);
+				console.log("inserted");
                                 run = false;
+				break;
+				break;
                         }
 
                 }
@@ -213,15 +210,20 @@ function main() {
 	// 	}
 	// }
 
+
+
 	cardBoard.displayBoard();
 
+	userSet.push(null);
+	userSet.push(null);
+	userSet.push(null);
 
 	for (var i = 0; i < cells.length; i++) {
-		cells[i].addEventListener('click', function () {
-			let id = this.getAttribute("id");
-			console.log(cardBoard._board);
-			cardBoard.displayBoard();
+		cells[i].addEventListener('click', function() {
+			addToSet(cardBoard._board[i]);
+
 		});
+	
 	}
 }
 
