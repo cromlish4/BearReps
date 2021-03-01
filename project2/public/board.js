@@ -91,4 +91,10 @@ export default class BoardMaker {
 		this._board.splice(card3, 1);
 	}
 
+
+	cardsLeft(){
+
+		return this._deck.cardsLeft();
+
+	}
 }
