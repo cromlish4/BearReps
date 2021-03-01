@@ -7,12 +7,12 @@ export default class DeckMaker {
   constructor() {
     this._deck = new Array(81);
 
-	  var w = 0;
-	  var x = 0;
-	  var y = 0;
-	  var z = 0;
+    var w = 0;
+    var x = 0;
+    var y = 0;
+    var z = 0;
 
-	  var count = 0;
+    var count = 0;
 
     while (w < 3) {
       x = 0;
@@ -21,7 +21,7 @@ export default class DeckMaker {
         while (y < 3) {
           z = 0;
           while (z < 3) {
-            var nextCard = new Card(Card.getNumbers[w], Card.getColors[x], Card.getShadingTypes[y], Card.getShapes[z]);
+            var nextCard = new Card(Card.getNumbers()[w], Card.getColors()[x], Card.getShadingTypes()[y], Card.getShapes()[z]);
             z += 1;
             this._deck[count] = nextCard;
             count += 1;

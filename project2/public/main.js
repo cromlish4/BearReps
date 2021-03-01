@@ -175,6 +175,8 @@ function main() {
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].addEventListener('click', function () {
 			let id = this.getAttribute("id");
+			console.log(cardBoard._board);
+			cardBoard.displayBoard();
 		});
 	}
 }

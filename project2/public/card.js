@@ -1,6 +1,6 @@
 
 export default class Card {
-    constructor(color, shape, shading, quantity) {
+    constructor(quantity, color, shading, shape) {
         this._color = color;
         this._shape = shape;
         this._shading = shading;

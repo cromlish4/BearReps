@@ -3,7 +3,7 @@
 
 import imageUpdate from "./image-updater.js";
 import CardParsing from "./CardParser.js";
-import Deck from './deck-maker.js';
+import DeckMaker from "./deck-maker.js";
 
 export default class BoardMaker {
 
@@ -11,12 +11,10 @@ export default class BoardMaker {
 	constructor() {
 
 		this._board = new Array(12);
-		this._deck = new Deck();
-
+		this._deck = new DeckMaker;
 		this._score = 0;
 
 		this._deck.shuffleDeck();
-
 		var x = 0;
 
 		while (x < 12) {
