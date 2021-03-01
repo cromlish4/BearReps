@@ -47,7 +47,20 @@ http.createServer(function(req, res){
 
 		fileStream.pipe(res);
 
-	}else {
+	}
+
+	else if(req.url.match("\.jpg$")){
+
+		var jpgPath = path.join(__dirname, 'public', req.url);
+
+		var fileStream = fs.createReadStream(jpgPath);
+
+		res.writeHead(200, {"Content-Type": "image/jpeg"} );
+
+		fileStream.pipe(res);
+	}
+
+	else {
 
 		res.writeHead(404, {"Content-Type": "text/html"} );
 
