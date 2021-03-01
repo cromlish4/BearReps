@@ -1,53 +1,58 @@
-const http = require('http');
+var http = require('http');
 
-const fs = require('fs');
+var fs = require('fs');
 
-const path = require('path');
-
-const port = 8000;
+var path = require('path');
 
 
-http.createServer(function(req, res) {
-var filePath = req.url;
-if (filePath == '/'){
-  filePath = '/index.html';
-}
-filePath = __dirname+filePath;
-var extname = path.extname(filePath);
-var contentType = 'text/html';
+http.createServer(function(req, res){
 
-switch (extname) {
-    case '.js':
-        contentType = 'text/javascript';
-        break;
-    case '.css':
-        contentType = 'text/css';
-        break;
-}
+	if(req.url === "/"){
 
+		fs.readFile("./public/index.html", "UTF-8", function(err, html){
 
-fs.exists(filePath, function(exists) {
+			res.writeHead(200, {"Content-Type": "text/html"} );
 
-    if (exists) {
-        fs.readFile(filePath, function(error, content) {
-            if (error) {
-                res.writeHead(500);
-                res.end();
-            }
-            else {
-                res.writeHead(200, { 'Content-Type': contentType });
-                res.end(content, 'utf-8');
-            }
-        });
-    }
-} );
+			res.end(html);
 
-} ).listen(port, function(err) {
-	if (err) {
-		console.log('Something went wrong', err)
-	} else {
-		console.log('Server is listening on port ' + port)
+		});
+
+	}else if (req.url.match("\.css$")){
+
+		var cssPath = path.join(__dirname, 'public', req.url);
+
+		var fileStream = fs.createReadStream(cssPath, "UTF-8");
+
+		res.writeHead(200, {"Content-Type": "text/css"} );
+
+		fileStream.pipe(res);
+
+	}else if(req.url.match("\.png$")){
+
+		var imagePath = path.join(__dirname, 'public', req.url);
+
+		var fileStream = fs.createReadStream(imagePath);
+
+		res.writeHead(200, {"Content-Type": "image/png"} );
+
+		fileStream.pipe(res);
+
+	}else if(req.url.match("\.js$")){
+
+		var jsPath = path.join(__dirname, 'public', req.url);
+
+		var fileStream = fs.createReadStream(jsPath);
+
+		res.writeHead(200, {"Content-Type": "text/javascript"} );
+
+		fileStream.pipe(res);
+
+	}else {
+
+		res.writeHead(404, {"Content-Type": "text/html"} );
+
+		res.end("No Page Found");
+
 	}
-});
 
-
+}).listen(8080);

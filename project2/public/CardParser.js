@@ -4,13 +4,13 @@ Method 1 checks if 3 cards are part of a set.
 Method 2 checks if a card is in a deck.*/
 
 //Import Card Class
-import * as Card from './Card.js';
+import * as Card from './card.js';
 export default class CardParsing {
     /* Method 1
     setParser takes in 3 cards and checks if it is a set or not
     returns false if cards are not in a set, true if in set.
     cards is an Array of exactly 3 cards */
-    setParser(cards){
+    static setParser(cards){
         // Output value of shape
         var outputValueShape = false;
         // Output value of color
@@ -72,7 +72,7 @@ export default class CardParsing {
     card - single card object
     board - any size array of card objects
     returns True if the card is on the board. */
-    boardCheck(card, board) {
+    static boardCheck(card, board) {
         var cardFound = false;
         // Goes though entire deck and makes cardFound true if card is found
         for(let cardTest of board){
@@ -87,7 +87,7 @@ export default class CardParsing {
     Take an input representing 1 card as a string (1R<0>) then look through
     the board for cards with the same feature and return the card object on the board
     Make sure to call boardCheck first */
-    convertStringToCardOnBoard(input, board) {
+    static convertStringToCardOnBoard(input, board) {
         for(let boardCard of board){
             if (boardCard.return_card() == input.return_card()){
                 return boardCard;
