@@ -57,6 +57,10 @@ table {
     margin-right: auto;
 }
 
+.rows:hover {
+    cursor: pointer;
+}
+
 #rules-field {
     text-align: right;
     padding: 10px;
