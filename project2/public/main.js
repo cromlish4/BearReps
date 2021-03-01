@@ -15,28 +15,14 @@ var deck = new DeckMaker();
 
 
 const table = document.getElementById("playing-field");
-
 const cells = table.getElementsByTagName("td");
-
-
-for (var i = 0; i < cells.length; i++) {
-
-	cells[i].addEventListener('click', function () {
-
-
-		console.log("Hey This is cool");
-
-	});
-
-}
-
 
 /* There will be a score-board class in the HTML with a user-score element. */
 const userScoreDOM = document.getElementById("user-score");
 const scoreBoardDOM = document.querySelector(".score-board");
 
 /* There will be card board represented by a table in the HTML. */
-var table = document.querySelectorAll("td");
+//var table = document.querySelectorAll("td");
 /* TODO: We may also add a picture for the "NONE" button. The user may click this button if failing to find a SET. */
 //const none = document.getElementByID("none");
 
@@ -173,16 +159,24 @@ function handleInput(userSet) {
 }
 
 function main() {
-	/* TODO: Need a loop for restarting the game. */
-	while (deck.cardsLeft()) {
-		cardsLeft.innerHTML = deck.cardsLeft();
-		if (userScore >= 0) {
-			CardBoard.displayBoard();
-			userClick();
-			handleInput(userSet);
-		} else {
-			alert("Game Over.");
-			break;
-		}
+	// /* TODO: Need a loop for restarting the game. */
+	// while (deck.cardsLeft()) {
+	// 	cardsLeft.innerHTML = deck.cardsLeft();
+	// 	if (userScore >= 0) {
+	// 		CardBoard.displayBoard();
+	// 		userClick();
+	// 		handleInput(userSet);
+	// 	} else {
+	// 		alert("Game Over.");
+	// 		break;
+	// 	}
+	// }
+
+	for (var i = 0; i < cells.length; i++) {
+		cells[i].addEventListener('click', function () {
+			let id = this.getAttribute("id");
+		});
 	}
 }
+
+main();
