@@ -12,7 +12,9 @@ var userSet = new Array(0);
 var parsedSet = new Array(0);
 var cardBoard = new Board();
 var deck = new Deck();
+// Author: Ryan O'Donovan //
 
+var user_selection = new Array(3);
 
 const table = document.getElementById("playing-field");
 
@@ -24,19 +26,33 @@ const table = document.getElementById("playing-field");
                 cells[i].addEventListener('click', function() {
 
 
-                        console.log("Hey This is cool");
+		console.log("You clicked on me"); }
 
-                });
+		);
 
-        }
+                }
 
+        
+/*
+while(deck.cardsLeft()) {
+                        cardsLeft.innerHTML = deck.cardsLeft();
+                        if(userScore >= 0) {
+                                CardBoard.displayBoard();
+                                handleInput(userSet);
+                        } else {
+                                alert("Game Over.");
+                                break;
+                        }
+                }
+
+*/
 
 /* There will be a score-board class in the HTML with a user-score element. */
 const userScoreDOM = document.getElementById("user-score");
 const scoreBoardDOM = document.querySelector(".score-board");
 
 /* There will be card board represented by a table in the HTML. */
-var table = document.querySelectorAll("td");
+var table__ = document.querySelectorAll("td");
 /* TODO: We may also add a picture for the "NONE" button. The user may click this button if failing to find a SET. */
 //const none = document.getElementByID("none");
 
@@ -45,32 +61,53 @@ var table = document.querySelectorAll("td");
 /* Store the 3 cards clicked by the user. */
 
 
-function userClick() {
-	var hasFound = true;
+function userClick(user_selection, index) {
+		
+	var indexOf = 0;
 
-	/* There will be a score-board class in the HTML with a user-score element. */
-	const userScoreDOM = document.getElementById("user-score");
-	const scoreBoardDOM = document.querySelector(".score-board");
+	var check = false;
 
-	
-	
+	indexOf = user_selection.indexOf(cardBoard._board[index]);
+
+	if(indexOf === -1) {
+
+		user_selection.push(cardBoard._board[index]);
+	}else{
+
+		user_selection.splice(indexOf, 1);
+
+	}
+
+	if (user_selection.length === 3) {
+
+		check = setParser(user_selection);
+
+		if (check === true) {
+
+			userScore += 1;
+
+			cardBoard._board.removeEntry(user_selection);
+
+			console.log("Good");
+
+		}else {
+
+			userScore -= 1;
+
+			console.log("Bad");
+		}
 
 
-	/* There will be a card-board class in the HTML with 12 elements for the cards displayed on the card board. Each element is represented by a cell in the HTML table. 
-	const card0 = document.getElementById("cell0");
-	const card1 = document.getElementById("cell1");
-	const card2 = document.getElementById("cell2");
-	const card3 = document.getElementById("cell3");
-	const card4 = document.getElementById("cell4");
-	const card5 = document.getElementById("cell5");
-	const card6 = document.getElementById("cell6");
-	const card7 = document.getElementById("cell7");
-	const card8 = document.getElementById("cell8");
-	const card9 = document.getElementById("cell9");
-	const card10 = document.getElementById("cell10");
-	const card11 = document.getElementById("cell11");
-	const cards = {card0, card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11};
-	const none = document.getElementByID("none");	/* TODO: We may also add a picture for the "NONE" button. The user may click this button if failing to find a SET. */
+
+	}
+
+
+
+}
+
+
+	/* There will be a card-board class in the HTML with 12 elements for the cards displayed on the card board. Each element is represented by a cell in the HTML table. */
+	const none = document.getElementById("none");	/* TODO: We may also add a picture for the "NONE" button. The user may click this button if failing to find a SET. */
 	/* TODO: We may also need blank pictures for card12, card13, card14 or even more cards to handle the situation where there is no SET among all the 12 cards on the board. */
 	const cardBoardDOM = document.querySelector(".card-board"); 
 
@@ -88,7 +125,7 @@ function userClick() {
 	/* Store the 3 cards clicked by the user.
 	 * TODO: Not sure if the second click assigns to userSet[0] or userSet[1].
 	 * */
-	function userClick(){
+	function userClik(){
 		var hasFound = true;
 
 		/* Check if the user claims to find NO SET. */
@@ -96,44 +133,6 @@ function userClick() {
 			hasFound = false;
 			userSet = null;
 		});
-
-		/*Add event listeners to all the cells*/
-		card0.addEventListener("click", function() {
-			addToSet(card0);
-		})
-		card1.addEventListener("click", function() {
-			addToSet(card1);
-		})
-		card2.addEventListener("click", function() {
-			addToSet(card2);
-		})
-		card3.addEventListener("click", function() {
-			addToSet(card3);
-		})
-		card4.addEventListener("click", function() {
-			addToSet(card4);
-		})
-		card5.addEventListener("click", function() {
-			addToSet(card5);
-		})
-		card6.addEventListener("click", function() {
-			addToSet(card6);
-		})
-		card7.addEventListener("click", function() {
-			addToSet(card7);
-		})
-		card8.addEventListener("click", function() {
-			addToSet(card8);
-		})
-		card9.addEventListener("click", function() {
-			addToSet(card9);
-		})
-		card10.addEventListener("click", function() {
-			addToSet(card10);
-		})
-		card11.addEventListener("click", function() {
-			addToSet(card11);
-		})
 
 		/* If the user doesn't claim to find NO SET, continue. */
 		if(hasFound) {
@@ -146,7 +145,7 @@ function userClick() {
 			}
 		}
 	}
-}
+
 
 /* Increment or decrement userScore depending on the 3 cards clicked by the user. */
 function handleInput(userSet) {
@@ -180,15 +179,4 @@ function handleInput(userSet) {
 
 	function main(){
 		/* TODO: Need a loop for restarting the game. */
-		while(deck.cardsLeft()) {
-			cardsLeft.innerHTML = deck.cardsLeft();
-			if(userScore >= 0) {
-				CardBoard.displayBoard();
-				userClick();
-				handleInput(userSet);
-			} else {
-				alert("Game Over.");
-				break;
-			}
-		}
 	}
