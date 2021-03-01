@@ -36,6 +36,13 @@ header>h1 {
     margin-left: 4%;
 }
 
+#deck-label{
+  position: fixed;
+  margin-left: 9.5%;
+  font-size: 30px;
+  margin-top: 5%;
+}
+
 #deck {
     position: relative;
     margin-left: 10%;
