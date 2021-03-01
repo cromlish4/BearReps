@@ -61,14 +61,6 @@ function userClick() {
 	const cardBoardDOM = document.querySelector(".card-board");
 
 
-	function addToSet(oneCard) {
-		for (x = 0; x < 3; x++) {
-			if (userSet[x] == null) {
-				userSet[x] = oneCard;
-				break;
-			}
-		}
-	}
 	/* User input no longer needs to be checked beause we are not using string input. */
 
 	/* Store the 3 cards clicked by the user.
@@ -158,6 +150,55 @@ function handleInput(userSet) {
 	}
 }
 
+function addToSet(oneCard) {
+               
+	
+	/* First check to see if user is unselecting card.
+	 * 
+	 * Then, if that's not the case, fill a null elment
+	 *
+	 * with the user's card.
+	 **/
+
+	var run = true;
+
+	while(run){
+
+		var index = userSet.indexOf(oneCard);
+
+
+		 if (index >= 0){
+
+                                userSet[index] = null; 
+                                run = false;
+
+                        }
+
+
+		if (userSet.indexOf(null) < 0 ){
+
+			alert("You already have 3 selcted cards. Please remove one");
+
+			run = false;
+
+		}
+
+		
+		for (x = 0; x < 3; x++) {
+                        if (userSet[x] == null) {
+                                userSet[x] = oneCard;
+                                run = false;
+                        }
+
+                }
+
+
+        
+	}
+
+}
+
+
 function main() {
 	// /* TODO: Need a loop for restarting the game. */
 	// while (deck.cardsLeft()) {
@@ -171,6 +212,9 @@ function main() {
 	// 		break;
 	// 	}
 	// }
+
+	cardBoard.displayBoard();
+
 
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].addEventListener('click', function () {
