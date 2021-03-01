@@ -35,8 +35,8 @@ export default class DeckMaker {
   }
 
   //Return the number of cards left in the deck.
-  cardsLeft() {
-    return this._deck.length();
+   cardsLeft() {
+    return this._deck.length;
   }
 
   //TODO: Insert shuffle function here
