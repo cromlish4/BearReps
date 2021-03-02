@@ -21,6 +21,10 @@ The Classes were the Cards, the Deck maker, the Set parser, and Board maker.
 This version has a GUI that allows the user to visually select cards to make a set. The new GUI
 also has the score and the rules displayed at all times, allowing a user to refer back during game play. 
 
+A Node.js server is set up to allow for local play.
+
+
+
 TODO: I will add the rest of the features once implemented, so that I can see them in action.
 
 Screenshots
@@ -33,9 +37,10 @@ Screenshots
 Installation
 ------------
 
-After cloning our project and navigating to the project2 folder, with a computer with Node.js installed the command "node server.js" in the terminal. 
-If it was successful it will output "Server is listening on port 8000". Then by going to 
-"http://localhost:8000" you can load the game.
+Steps to install and run JavaScript Set:
+1) Clone the BearReps repo and navigate to the "project2" directory.
+2) Open a terminal in that folder and enter "Node server.js" this hosts the game locally, If this outputs "Server is listening on port 8000" then it was successful.
+3) Load a web browser and enter "http://localhost:8000" to the url box to play the game.
 
 Tests
 -----
