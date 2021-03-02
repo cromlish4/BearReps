@@ -11,7 +11,7 @@ var userSet = new Array(0);
 var cardBoard = new BoardMaker();
 
 
-//const table = document.getElementById("playing-field");
+const table = document.getElementById("playing-field");
 const cells = document.getElementsByTagName("td");
 const noneButton = document.getElementById("NONE");
 const submitButton = document.getElementById("SUBMIT");
@@ -120,10 +120,28 @@ function main() {
 
 		var end = document.getElementById("end-message");
 
-		var endTable = document.getElementById("playing-field");
+		table.remove();
 
-		endTable.innerHTML = "";
+		var rules = document.getElementById("rules-field");
 
+		rules.remove();
+
+		
+		submitButton.remove();
+		noneButton.remove();
+
+		user_PlayAgain.remove();
+		user_Quit.remove();
+
+
+		var endDeckTable = document.getElementById("deck-label");
+
+		endDeckTable.remove();
+
+
+		var endDeck = document.getElementById("deck");
+
+		endDeck.remove();
 
 		end.innerHTML = "Thanks For Playing!";
 
