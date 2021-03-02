@@ -94,5 +94,16 @@ export default class CardParsing {
             }
         }
     }
+
+    static getCellIdIndexNumber(cell) {
+        let first = cell[4];
+        let second = cell[5];
+
+        if (second != null) {
+            return first + "" + second;
+        }
+
+        return first;
+    }
 }
 

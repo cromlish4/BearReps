@@ -38,11 +38,12 @@ when New cards are toggleable.
 
 Screenshots
 -----------
-![image](project2/public/assets/SampleGame.png) 
+![StartScreen](project2/public/assets/SampleGame.png) 
 Start Screen
 
-![image](project2/public/assets/EndGame.png) 
+![EndScreen](project2/public/assets/EndGame.png) 
 End Screen
+
 Installation
 ------------
 
