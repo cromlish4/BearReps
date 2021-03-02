@@ -58,18 +58,18 @@ function submitPressed() {
 			//cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			//alert("Correct! Plus 1 point!");
 			//Add new cards where old ones were.
-			let i =0;
+			let i = 0;
 			cardPos.sort(numSort);
-			while(i<3) {
+			while (i < 3) {
 				let newCard = cardBoard._deck.returnOne();
 
-				cardBoard._board.splice(cardPos[i],0,newCard);
+				cardBoard._board[cardPos[i]] = newCard;
 				i++;
 			}
 			cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			alert("Correct! Plus 1 point!");
-			cardBoard.displayBoard();
 			resetSelected();
+			cardBoard.displayBoard();
 		} else {
 			alert("Your selection is NOT a SET!\n-1 point!");
 			cardBoard._score -= 1;
@@ -79,67 +79,57 @@ function submitPressed() {
 	} else {
 		alert("Please Select 3 cards!");
 	}
-	/*if(cardBoard._board.length>12){
-		alert("Submit caused length of Board Array to be over 12.");
-	}*/
 }
 //Numerical Comparator
-function numSort(a,b){
+function numSort(a, b) {
 	return a - b;
 }
 
 function resetSelected() {
-	for (let i = 0; i < cardBoard._board.length; i++) {
-		let chosen = document.getElementById("cell" + i.toString(16));
-		chosen.setAttribute("class", "not_selected");
+	let chosen = document.getElementsByClassName("selected");
+	while (chosen.length > 0) {
+		chosen[0].setAttribute("class", "not_selected");
 	}
 }
 //Finds a set in the board
 async function highlightSelected() {
-	if(cardBoard.hasSet()) {
-		/*if(cardBoard._board.length>12){
-			alert("Length of Board Array is over 12 Before SetLoc.");
-		}*/
+	if (cardBoard.hasSet()) {
 		let cardLocs = cardBoard.setLocation();
-		/*if(cardBoard._board.length>12){
-			alert("Length of Board Array is over 12 After SetLoc.");
-		}*/
 		//Highlights the cardSet
-		for(let i=0;i<3;i++) {
+		for (let i = 0; i < 3; i++) {
 			cells[cardLocs[i]].setAttribute("class", "selected");
 
 			//Taken from https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
 			await new Promise(r => setTimeout(r, 1000));
 			cells[cardLocs[i]].setAttribute("class", "not_selected");
 		}
-	}else{
+	} else {
 		//Alert for No set
 		alert("No Set Found.");
 	}
 }
 
 function nonePressed() {
-	console.log("none");
 	/* If the user claimed to find NO SET, the function userClick assigned null to userSet. */
 	if (cardBoard.hasSet()) {
 		alert("You missed a SET!");
-
-		userSet = new Array(0);
-		//Forcing Replenish Cards.
-		//cardBoard.replenishCards();
-		//refreshToggle();
 	} else {
 		alert("Replenishing cards.");
 
 		userSet = new Array(0);
+		resetSelected();
 
 		cardBoard.replenishCards();
-		refreshToggle();
 
+		if (cells.length < cardBoard._board.length) {
+			cardBoard.add3RowsToTable();
+		}
+
+		refreshToggle();
 	}
 }
 /*Reloads all buttons to toggleable.*/
-function refreshToggle(){
+function refreshToggle() {
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].addEventListener('click', function () {
 			let accepted = addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
@@ -171,7 +161,7 @@ function main() {
 		submitPressed();
 		cardBoard.displayBoard();
 	});
-	if(debug_mode) {
+	if (debug_mode) {
 		highlightButton.addEventListener('click', function () {
 			highlightSelected();
 			cardBoard.displayBoard();
@@ -180,15 +170,15 @@ function main() {
 
 	//Ryan O'Donovan//
 
-	
-	user_PlayAgain.addEventListener('click', function() {
+
+	user_PlayAgain.addEventListener('click', function () {
 
 		cardBoard = new BoardMaker();
 
 		userSet = new Array(0);
 
 		for (var i = 0; i < cells.length; i++) {
-                
+
 			cells[i].setAttribute("class", "not_selected");
 
 		}
@@ -199,9 +189,9 @@ function main() {
 
 
 	});
-		
 
-	user_Quit.addEventListener('click', function() {
+
+	user_Quit.addEventListener('click', function () {
 
 		var end = document.getElementById("end-message");
 
@@ -211,10 +201,10 @@ function main() {
 
 		rules.remove();
 
-		
+
 		submitButton.remove();
 		noneButton.remove();
-		if (debug_mode){
+		if (debug_mode) {
 			highlightButton.remove();
 		}
 		user_PlayAgain.remove();
