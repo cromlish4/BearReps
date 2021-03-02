@@ -36,15 +36,13 @@ Sometimes Sets aren't unselected.
 Highlight Set button doesn't work when there are more than 12 cards on the field, possibly a problem with hasSet. Still Broken 
 when New cards are toggleable.
 
-Sometimes Extra Cards are added to the board array but not displayed.
-
 Screenshots
 -----------
 ![image](project2/public/assets/SampleGame.png) 
+Start Screen
 
-
-
-
+![image](project2/public/assets/EndGame.png) 
+End Screen
 Installation
 ------------
 
@@ -58,8 +56,7 @@ Tests
 -----
 
 The GUI version of this game requires less testing since the user can't input their own information.
-TODO: Check what test are in this new version.
-NEW ONES
+
 1) Max 3 Cards Selected:
 
 	Only 3 cards can be selected at a time though the GUI.
@@ -68,13 +65,16 @@ NEW ONES
 	
 	The Quit button can be pressed anytime during gameplay to stop playing.
 	
+3) No Selection during give SET
+	
+	While being given a set, the player cannot pick a card to prevent errors.
+	
 	
 
 
 Acknowledgment
 ---------------
-Thanks to Ryan O'Donovan for being project lead for this project. He helped to coordinate the project by creating the meetings and the plans for who would work on which aspect of the project. 
-He also created the Node.js server for running the game locally, converted the Board Class from ruby to javascript, and Helped with HTML formatting. 
+Thanks to Ryan O'Donovan for being project lead for this project. He helped to coordinate the project by creating the meetings and the plans for who would work on which aspect of the project. He also created the Node.js server for running the game locally, converted the Board Class from ruby to javascript, and worked on bug fixing. 
 Also for helping out in many parts of the project that people needed help with.
 
 Andrew Conners converted the deckmaker class and helped to work on the HTML and refining the CSS.
@@ -84,9 +84,9 @@ Zhuo Chen converted the card class that is the framework of the game since the c
 
 Eric Young worked on the main class which handles pulling everything together and is the core of the project. 
 
-Michael Cromlish converted the card parsing class that handles checking the cards and seeing if they are a set or not and did some light CSS formatting.
+Michael Cromlish converted the card parsing class that handles checking the cards and seeing if they are a set or not and did some light CSS formatting and worked on bug fixing.
 
-Samiul Islam helped out in many parts of the project with a focus on the HTML and the helping out on the main and card classes. 
+Samiul Islam helped out in many parts of the project with a focus on the HTML and the helping out on the main and card classes. Also for writing many of the event listeners and working on bug fixing. 
 
 Credit
 ------
@@ -97,6 +97,4 @@ makeareadme.com and "A Beginners Guide to writing a Kickass READMe" by Akash Nim
 Ryan O'Donovan, for creating the original readme which this one is based on.
 
 The original image sheet that the individual card images were cropped from. https://geekandsundry.com/the-card-game-that-puzzled-mathematicians-for-decades/
-
-
 

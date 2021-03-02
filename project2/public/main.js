@@ -81,6 +81,20 @@ function submitPressed() {
 			}
 			cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			alert("Correct! Plus 1 point!");
+
+			if (cardBoard._board.length <= 12 && cardBoard._deck.cardsLeft === 0) {
+
+				endGame();
+			}
+
+			if (cardBoard._board.length === 12 && cardBoard._deck.cardsLeft === 0 && cardBoard.hasSet !== true) {
+
+				endGame();
+
+			}
+
+
+
 			resetSelected();
 			cardBoard.displayBoard();
 		} else {
@@ -103,11 +117,13 @@ function resetSelected() {
 		chosen[0].setAttribute("class", "not_selected");
 	}
 }
-//Finds a set in the board
+//Highlights a set on the board
 async function highlightSelected() {
 	if (cardBoard.hasSet()) {
 		let cardLocs = cardBoard.setLocation();
 		//Highlights the cardSet
+		//"Pausing" the Event Listener so that no card can be selected.
+		//stop
 		for (let i = 0; i < 3; i++) {
 			cells[cardLocs[i]].setAttribute("class", "selected");
 			let chosen = document.getElementById("cell" + cardLocs[i]);
@@ -117,6 +133,8 @@ async function highlightSelected() {
 			await new Promise(r => setTimeout(r, 1000));
 			chosen.setAttribute("class", "not_selected");
 		}
+		//"Resuming" the Event Listener
+		//start
 	} else {
 		//Alert for No set
 		alert("No Set Found.");
