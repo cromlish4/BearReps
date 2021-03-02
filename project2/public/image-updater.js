@@ -18,15 +18,16 @@ export default class imageUpdate {
     static getImagePath(card) {
 
 	    var answer = "";
+	    var ext = ".png";
 
 	if (card.shading === "<") {
 
-		answer =  "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + "%3C.jpg";
+		answer =  "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + "%3C" + ext;
 
 
 	}else{
 
-		answer =  "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + card.shading + ".jpg";
+		answer =  "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + card.shading + ext;
    
 
 	}
