@@ -23,11 +23,16 @@ also has the score and the rules displayed at all times, allowing a user to refe
 
 A Node.js server is set up to allow for local play.
 The GUI will react to a card being selected and change the opacity and is able to unselected.
+Debug Mode where Sets can be highlighted.
 
 Current Errors
 --------------
 
 New Cards aren't toggleable. After Set or Card Extention? 
+
+Duped Cards. Maybe the order is wrong? Still happening?
+
+Play again doesn't remove new cards. 
 
 
 TODO: I will add the rest of the features once implemented, so that I can see them in action.

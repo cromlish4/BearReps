@@ -32,6 +32,37 @@ export default class BoardMaker {
 		document.getElementById("score-number").innerHTML = this._score;
 
 	}
+	// Variation of has set that returns the index of the set or -1,-1,-1.
+	setLocation() {
+		var headIndex = 0;
+		var nextIndex = 1;
+		var latestIndex = 2;
+		/* Move each head around the board to check all combinations */
+
+		while (headIndex < this._board.length) {
+			while (nextIndex < this._board.length) {
+				while (latestIndex < this._board.length) {
+
+					let selectedCards = [this._board[headIndex],
+						this._board[nextIndex], this._board[latestIndex]];
+					var result = CardParsing.setParser(selectedCards);
+
+					if (result) return [headIndex,nextIndex,latestIndex];
+
+					latestIndex += 1;
+				}
+
+				nextIndex += 1;
+				latestIndex = (nextIndex + 1);
+			}
+
+			headIndex += 1;
+			nextIndex = (headIndex + 1);
+			latestIndex = (nextIndex + 1);
+		}
+		//Only if not a set.
+		return [-1,-1,-1];
+	}
 
 	hasSet() {
 		var headIndex = 0;

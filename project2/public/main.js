@@ -15,6 +15,7 @@ const table = document.getElementById("playing-field");
 const cells = document.getElementsByTagName("td");
 const noneButton = document.getElementById("NONE");
 const submitButton = document.getElementById("SUBMIT");
+const highlightButton = document.getElementById("HIGHLIGHT");
 
 const user_PlayAgain = document.getElementById("play-again");
 const user_Quit = document.getElementById("quit");
@@ -23,7 +24,7 @@ const user_Quit = document.getElementById("quit");
 function addToSet(oneCard) {
 	/* First check to see if user is unselecting card.
 	 * 
-	 * Then, if that's not the case, fill a null elment
+	 * Then, if that's not the case, fill a null element
 	 *
 	 * with the user's card.
 	 **/
@@ -79,6 +80,23 @@ function resetSelected() {
 		chosen.setAttribute("class", "not_selected");
 	}
 }
+//Finds a set in the board
+async function highlightSelected() {
+	if(cardBoard.hasSet()) {
+		let cardLocs = cardBoard.setLocation();
+		//Highlights the cardSet
+		for(var i=0;i<3;i++) {
+			cells[cardLocs[i]].setAttribute("class", "selected");
+
+			//Taken from https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
+			await new Promise(r => setTimeout(r, 1000));
+			cells[cardLocs[i]].setAttribute("class", "not_selected");
+		}
+	}else{
+		//Alert for No set
+		alert("No Set Found.");
+	}
+}
 
 function nonePressed() {
 	console.log("none");
@@ -124,6 +142,10 @@ function main() {
 		cardBoard.displayBoard();
 	});
 
+	highlightButton.addEventListener('click', function () {
+		highlightSelected();
+		cardBoard.displayBoard();
+	});
 
 	//Ryan O'Donovan//
 
