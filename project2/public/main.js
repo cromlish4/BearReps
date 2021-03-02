@@ -81,6 +81,20 @@ function submitPressed() {
 			}
 			cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			alert("Correct! Plus 1 point!");
+
+			if (cardBoard._board.length <= 12 && cardBoard._deck.cardsLeft === 0) {
+
+                                endGame();
+                        }
+
+                        if (cardBoard._board.length === 12 && cardBoard._deck.cardsLeft === 0 && cardBoard.hasSet !== true) {
+
+                                endGame();
+
+                        }
+
+
+
 			resetSelected();
 			cardBoard.displayBoard();
 		} else {
