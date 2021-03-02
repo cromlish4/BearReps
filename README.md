@@ -24,7 +24,12 @@ also has the score and the rules displayed at all times, allowing a user to refe
 A Node.js server is set up to allow for local play.
 The GUI will react to a card being selected and change the opacity and is able to unselected.
 
+Current Errors
+--------------
 
+Card Dupe when Getting a set. Not Dupe doesn't display correctly. L
+
+Play again makes game unplayable.
 
 TODO: I will add the rest of the features once implemented, so that I can see them in action.
 
