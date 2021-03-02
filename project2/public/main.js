@@ -16,6 +16,10 @@ const cells = document.getElementsByTagName("td");
 const noneButton = document.getElementById("NONE");
 const submitButton = document.getElementById("SUBMIT");
 
+const user_PlayAgain = document.getElementById("play-again");
+const user_Quit = document.getElementById("quit");
+
+
 function addToSet(oneCard) {
 	/* First check to see if user is unselecting card.
 	 * 
@@ -102,6 +106,30 @@ function main() {
 		submitPressed();
 		cardBoard.displayBoard();
 	});
+
+	
+	user_PlayAgain.addEventListener('click', function() {
+
+		cardBoard = new BoardMaker();
+
+		main();
+
+	});
+
+	user_Quit.addEventListener('click', function() {
+
+		var end = document.getElementById("end-message");
+
+		var endTable = document.getElementById("playing-field");
+
+		endTable.innerHTML = "";
+
+
+		end.innerHTML = "Thanks For Playing!";
+
+	});
+
+
 }
 
 main();
