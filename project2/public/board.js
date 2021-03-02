@@ -99,10 +99,14 @@ export default class BoardMaker {
 		var card2 = this._board.indexOf(cards[1]);
 		var card3 = this._board.indexOf(cards[2]);
 
+		let cardIndexes = [this._board.indexOf(cards[0]), this._board.indexOf(cards[1]), this._board.indexOf(cards[2])];
+
 		this._board.splice(card1, 1);
 		this._board.splice(card2, 1);
 		this._board.splice(card3, 1);
 
+		//Added return of that cards can be added in place of the removed cards
+		return cardIndexes;
 	}
 
 

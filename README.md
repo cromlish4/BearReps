@@ -27,9 +27,7 @@ The GUI will react to a card being selected and change the opacity and is able t
 Current Errors
 --------------
 
-Card Dupe when Getting a set. Not Dupe doesn't display correctly. L
-
-New Cards aren't toggleable
+New Cards aren't toggleable. After Set or Card Extention? 
 
 
 TODO: I will add the rest of the features once implemented, so that I can see them in action.

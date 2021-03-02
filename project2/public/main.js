@@ -50,10 +50,19 @@ function submitPressed() {
 	if (userSet.length == 3) {
 		if (CardParsing.setParser(userSet)) {
 			cardBoard._score += 1;
-			cardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
+			let cardPos = Array[3];
+			cardPos = cardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
 			userSet = new Array(0);
 			cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			alert("Correct! Plus 1 point!");
+			//Add new cards where old ones were.
+			let i =0;
+			while(i<3) {
+				let newCard = cardBoard._deck.returnOne();
+				cardBoard._board[cardPos[i]] = newCard;
+				i++;
+			}
+			cardBoard.displayBoard();
 			resetSelected();
 		} else {
 			alert("Your selection is NOT a SET!\n-1 point!");
