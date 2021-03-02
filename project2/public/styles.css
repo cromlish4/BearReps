@@ -58,7 +58,7 @@ header>h1 {
 	position: static;
 	margin-left: 10%;
 
-	margin-top: 10%;
+	margin-top: 15%;
 }
 
 .noSET:hover {
@@ -94,7 +94,9 @@ table {
     margin-top: -6%;
     margin-left: auto;
     margin-right: auto;
-}
+
+ }
+
 
 .rows:hover {
     cursor: pointer;
