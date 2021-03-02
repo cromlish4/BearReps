@@ -54,6 +54,38 @@ header>h1 {
     margin-left: 0%;
 }
 
+#no-set {
+	position: static;
+	margin-left: 10%;
+
+	margin-top: 15%;
+}
+
+.noSET:hover {
+	cursor:pointer;
+
+}
+
+#play-again {
+
+	position:relative;
+	margin-left: 10%;
+
+}
+
+.game-opt {
+	float:left;
+	margin-right: 5px;
+
+}
+
+.game-opt:hover {
+
+	cursor:pointer;
+
+}
+
+
 /* via https://stackoverflow.com/a/66251864/14979054 */
 table {
     position: absolute;
@@ -62,7 +94,9 @@ table {
     margin-top: -6%;
     margin-left: auto;
     margin-right: auto;
-}
+
+ }
+
 
 .rows:hover {
     cursor: pointer;
