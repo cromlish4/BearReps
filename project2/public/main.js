@@ -1,6 +1,6 @@
 
 /* main class */
-/* Eric Young */
+/* Samiul Islam */
 
 import CardParsing from './CardParser.js';
 import DeckMaker from './deck-maker.js';
@@ -10,7 +10,7 @@ import Card from "./card.js";
 var userSet = new Array(0);
 var cardBoard = new BoardMaker();
 
-
+const cardsInDeck = document.getElementById("cards-left");
 const table = document.getElementById("playing-field");
 const cells = document.getElementsByTagName("td");
 const noneButton = document.getElementById("NONE");
@@ -52,6 +52,7 @@ function submitPressed() {
 			cardBoard._score += 1;
 			cardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
 			userSet = new Array(0);
+			cardsInDeck.innerHTML = cardBoard._cardsLeft();
 			alert("Correct! Plus 1 point!");
 			resetSelected();
 		} else {
@@ -75,8 +76,14 @@ function nonePressed() {
 	/* If the user claimed to find NO SET, the function userClick assigned null to userSet. */
 	if (cardBoard.hasSet()) {
 		alert("You missed a SET!");
+
+		userSet = new Array(0);
+
 	} else {
-		alert("Replenishing cards.")
+		alert("Replenishing cards.");
+
+		userSet = new Array(0);
+
 		cardBoard.replenishCards();
 	}
 }
@@ -96,6 +103,7 @@ function main() {
 			}
 		});
 	}
+	
 
 	noneButton.addEventListener('click', function () {
 		nonePressed();
@@ -107,14 +115,29 @@ function main() {
 		cardBoard.displayBoard();
 	});
 
+
+	//Ryan O'Donovan//
+
 	
 	user_PlayAgain.addEventListener('click', function() {
 
 		cardBoard = new BoardMaker();
 
-		main();
+		userSet = new Array(0);
+
+		for (var i = 0; i < cells.length; i++) {
+                
+			cells[i].setAttribute("class", "not_selected");
+
+		}
+
+		cardBoard.displayBoard();
+
+		cardBoard._score = 0;
+
 
 	});
+		
 
 	user_Quit.addEventListener('click', function() {
 
