@@ -52,7 +52,7 @@ function submitPressed() {
 			cardBoard._score += 1;
 			cardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
 			userSet = new Array(0);
-			cardsInDeck.innerHTML = cardBoard._cardsLeft();
+			cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			alert("Correct! Plus 1 point!");
 			resetSelected();
 		} else {
