@@ -106,6 +106,7 @@ makeareadme.com and "A Beginners Guide to writing a Kickass READMe" by Akash Nim
 
 Ryan O'Donovan, for creating the original readme which this one is based on.
 
-The original image sheet that the individual card images were cropped from. [Image](Link)
+The original image sheet that the individual card images were cropped from. https://geekandsundry.com/the-card-game-that-puzzled-mathematicians-for-decades/
+
 
 
