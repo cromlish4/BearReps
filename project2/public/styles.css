@@ -83,3 +83,19 @@ table {
     margin-left: 65%;
     margin-right: 10%;
 }
+
+.button {
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-left: 3%;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: white;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: white;
+}

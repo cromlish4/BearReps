@@ -37,15 +37,15 @@ export default class BoardMaker {
 		var headIndex = 0;
 		var nextIndex = 1;
 		var latestIndex = 2;
-
 		/* Move each head around the board to check all combinations */
 
-		while (headIndex < this.length) {
-			while (nextIndex < this.length) {
-				while (latestIndex < this.length) {
+		while (headIndex < this._board.length) {
+			while (nextIndex < this._board.length) {
+				while (latestIndex < this._board.length) {
 
-					var result = CardParsing.setParser(this.board[headIndex],
-						this.board[nextIndex], this.board[latestIndex]);
+					let selectedCards = [this._board[headIndex],
+					this._board[nextIndex], this._board[latestIndex]];
+					var result = CardParsing.setParser(selectedCards);
 
 					if (result) return true;
 
@@ -69,15 +69,26 @@ export default class BoardMaker {
 
 		while (i < 3) {
 
-			var newCard = this._deck.returnOne;
+			var newCard = this._deck.returnOne();
 
 			this._board.push(newCard);
 
 			i += 1;
 		}
 
+		this.addNewCardsToTable();
 	}
 
+	addNewCardsToTable() {
+		let table = document.getElementById("playing-field");
+		let row = table.insertRow(0);
+
+		for (let i = 0; i < 3; i++) {
+			let cell = row.insertCell(i);
+			cell.setAttribute("id", "cell" + (this._board.length - 3 + i).toString(16));
+			cell.innerHTML = '<img src="assets/blank.png" alt="">';
+		}
+	}
 
 	removeEntry(cards) {
 
@@ -91,6 +102,7 @@ export default class BoardMaker {
 		this._board.splice(card1, 1);
 		this._board.splice(card2, 1);
 		this._board.splice(card3, 1);
+
 	}
 
 
