@@ -28,6 +28,8 @@ export default class BoardMaker {
 	displayBoard() {
 		// updateAllImages gives an img src to each card on the board. //
 		imageUpdate.updateAllImages(this._board);
+		document.getElementById("cards-left").innerHTML = this._deck.cardsLeft();
+		document.getElementById("score-number").innerHTML = this._score;
 
 	}
 
@@ -92,7 +94,7 @@ export default class BoardMaker {
 	}
 
 
-	cardsLeft(){
+	cardsLeft() {
 
 		return this._deck.cardsLeft();
 
