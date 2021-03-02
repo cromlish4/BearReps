@@ -51,20 +51,25 @@ function submitPressed() {
 	if (userSet.length == 3) {
 		if (CardParsing.setParser(userSet)) {
 			cardBoard._score += 1;
+			if(cardBoard.length>12){
+				alert("Length of Board Array is over 12.");
+			}
 			let cardPos = Array[3];
 			cardPos = cardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
 			userSet = new Array(0);
-			cardsInDeck.innerHTML = cardBoard.cardsLeft();
-			alert("Correct! Plus 1 point!");
+			//cardsInDeck.innerHTML = cardBoard.cardsLeft();
+			//alert("Correct! Plus 1 point!");
 			//Add new cards where old ones were.
 			let i =0;
 			cardPos.sort(numSort);
 			while(i<3) {
 				let newCard = cardBoard._deck.returnOne();
-				//cardBoard._board[cardPos[i]] = newCard;
+
 				cardBoard._board.splice(cardPos[i],0,newCard);
 				i++;
 			}
+			cardsInDeck.innerHTML = cardBoard.cardsLeft();
+			alert("Correct! Plus 1 point!");
 			cardBoard.displayBoard();
 			resetSelected();
 		} else {
@@ -77,7 +82,7 @@ function submitPressed() {
 		alert("Please Select 3 cards!");
 	}
 }
-
+//Numerical Comparator
 function numSort(a,b){
 	return a - b;
 }
@@ -93,7 +98,7 @@ async function highlightSelected() {
 	if(cardBoard.hasSet()) {
 		let cardLocs = cardBoard.setLocation();
 		//Highlights the cardSet
-		for(var i=0;i<3;i++) {
+		for(let i=0;i<3;i++) {
 			cells[cardLocs[i]].setAttribute("class", "selected");
 
 			//Taken from https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
@@ -145,19 +150,8 @@ function main() {
 	//Making this value will enable Debug Mode for quick sets.
 	//Also line 36 in index.html must be uncommented.
 	let debug_mode = true;
-	for (var i = 0; i < cells.length; i++) {
-		cells[i].addEventListener('click', function () {
-			let accepted = addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
-
-			//Change cards opacity to show it has been selected
-			if (accepted) {
-				this.setAttribute("class", "selected");
-			} else {
-				this.setAttribute("class", "not_selected");
-			}
-		});
-	}
-	
+	//Moved this code to a separate function to be used independently
+	refreshToggle();
 
 	noneButton.addEventListener('click', function () {
 		nonePressed();

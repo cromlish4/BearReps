@@ -37,7 +37,7 @@ header>h1 {
 }
 
 #deck-label{
-  position: fixed;
+  position: absolute;
   margin-left: 9.5%;
   font-size: 30px;
   margin-top: 5%;

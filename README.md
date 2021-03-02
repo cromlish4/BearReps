@@ -36,7 +36,7 @@ Sometimes Sets aren't unselected.
 Highlight Set button doesn't work when there are more than 12 cards on the field, possibly a problem with hasSet. Still Broken 
 when New cards are toggleable.
 
-Maybe fix CSS for buttons when Highlight Set button is enabled,Probably not a big deal.
+Sometimes Extra Cards are added to the board array but not displayed.
 
 Screenshots
 -----------

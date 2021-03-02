@@ -130,7 +130,7 @@ export default class BoardMaker {
 		var card2 = this._board.indexOf(cards[1]);
 		var card3 = this._board.indexOf(cards[2]);
 
-		let cardIndexes = [this._board.indexOf(cards[0]), this._board.indexOf(cards[1]), this._board.indexOf(cards[2])];
+		let cardIndexes = [card1,card2,card3];
 
 		this._board.splice(card1, 1);
 		this._board.splice(card2, 1);
