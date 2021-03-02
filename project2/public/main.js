@@ -151,8 +151,6 @@ function handleInput(userSet) {
 }
 
 function addToSet(oneCard) {
-               
-	
 	/* First check to see if user is unselecting card.
 	 * 
 	 * Then, if that's not the case, fill a null elment
@@ -160,38 +158,23 @@ function addToSet(oneCard) {
 	 * with the user's card.
 	 **/
 
-	console.log("hey");
+	//Location of user card
+	var index = userSet.indexOf(oneCard);
 
-	var run = true;
+	//If in userSet, then remove it
+	if (index >= 0) {
+		userSet.splice(index, 1, null);
 
-	while(run === true){
-
-		var index = userSet.indexOf(oneCard);
-
-
-		 if (index >= 0){
-
-                                userSet.splice(index, 1, null);
-			 	console.log("replaced");
-                                break;
-
-                        }
-
-		
-		for (var x = 0; x < 3; x++) {
-                        if (userSet[x] == null) {
-                                userSet.splice(x, 1, oneCard);
-				console.log("inserted");
-                                run = false;
-				break;
-				break;
-                        }
-
-                }
-
-
-        
 	}
+	else {
+		for (var x = 0; x < 3; x++) {
+			if (userSet[x] == null) {
+				userSet.splice(x, 1, oneCard);
+				break;
+			}
+		}
+	}
+
 
 }
 
@@ -219,11 +202,11 @@ function main() {
 	userSet.push(null);
 
 	for (var i = 0; i < cells.length; i++) {
-		cells[i].addEventListener('click', function() {
-			addToSet(cardBoard._board[i]);
+		cells[i].addEventListener('click', function () {
+			addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
 
 		});
-	
+
 	}
 }
 
