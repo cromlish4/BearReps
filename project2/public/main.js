@@ -56,12 +56,12 @@ function submitPressed() {
 			cardPos = cardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
 			userSet = new Array(0);
 
-			if (cardBoard._board.length <= 12 && cardBoard._deck.cardsLeft === 0 ){
+			if (cardBoard._board.length <= 12 && cardBoard._deck.cardsLeft === 0) {
 
 				endGame();
 			}
 
-			if (cardBoard._board.length === 12 && cardBoard._deck.cardsLeft === 0 && cardBoard.hasSet !== true){
+			if (cardBoard._board.length === 12 && cardBoard._deck.cardsLeft === 0 && cardBoard.hasSet !== true) {
 
 				endGame();
 
@@ -72,7 +72,7 @@ function submitPressed() {
 			//Add new cards where old ones were.
 			let i = 0;
 			cardPos.sort(numSort);
-			
+
 			while (i < 3) {
 				let newCard = cardBoard._deck.returnOne();
 
@@ -122,37 +122,37 @@ async function highlightSelected() {
 }
 
 function endGame() {
-	
-
-	 let debug_mode = true;
-	 var end = document.getElementById("end-message");
-
-                table.remove();
-
-                var rules = document.getElementById("rules-field");
-
-                rules.remove();
 
 
-                submitButton.remove();
-                noneButton.remove();
-                if (debug_mode) {
-                        highlightButton.remove();
-                }
-                user_PlayAgain.remove();
-                user_Quit.remove();
+	let debug_mode = true;
+	var end = document.getElementById("end-message");
+
+	table.remove();
+
+	var rules = document.getElementById("rules-field");
+
+	rules.remove();
 
 
-                var endDeckTable = document.getElementById("deck-label");
+	submitButton.remove();
+	noneButton.remove();
+	if (debug_mode) {
+		highlightButton.remove();
+	}
+	user_PlayAgain.remove();
+	user_Quit.remove();
 
-                endDeckTable.remove();
+
+	var endDeckTable = document.getElementById("deck-label");
+
+	endDeckTable.remove();
 
 
-                var endDeck = document.getElementById("deck");
+	var endDeck = document.getElementById("deck");
 
-                endDeck.remove();
+	endDeck.remove();
 
-                end.innerHTML = "Thanks For Playing!";
+	end.innerHTML = "Thanks For Playing!";
 }
 
 function nonePressed() {
@@ -177,16 +177,19 @@ function nonePressed() {
 /*Reloads all buttons to toggleable.*/
 function refreshToggle() {
 	for (var i = 0; i < cells.length; i++) {
-		cells[i].addEventListener('click', function () {
-			let accepted = addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
+		cells[i].removeEventListener('click', onCardClick);
+		cells[i].addEventListener('click', onCardClick);
+	}
+}
 
-			//Change cards opacity to show it has been selected
-			if (accepted) {
-				this.setAttribute("class", "selected");
-			} else {
-				this.setAttribute("class", "not_selected");
-			}
-		});
+function onCardClick() {
+	let accepted = addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
+
+	//Change cards opacity to show it has been selected
+	if (accepted) {
+		this.setAttribute("class", "selected");
+	} else {
+		this.setAttribute("class", "not_selected");
 	}
 }
 
