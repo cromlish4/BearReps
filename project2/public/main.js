@@ -82,7 +82,7 @@ function submitPressed() {
 			cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			alert("Correct! Plus 1 point!");
 
-			if (cardBoard._board.length <= 12 && cardBoard._deck.cardsLeft === 0) {
+			if (cardBoard._deck.cardsLeft === 0) {
 
                                 endGame();
                         }
