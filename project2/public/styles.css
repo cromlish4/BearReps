@@ -58,7 +58,7 @@ header>h1 {
 	position: static;
 	margin-left: 10%;
 
-	margin-top: 10%;
+	margin-top: 15%;
 }
 
 .noSET:hover {
@@ -94,7 +94,9 @@ table {
     margin-top: -6%;
     margin-left: auto;
     margin-right: auto;
-}
+
+ }
+
 
 .rows:hover {
     cursor: pointer;
@@ -114,4 +116,20 @@ table {
     margin-top: -25%;
     margin-left: 65%;
     margin-right: 10%;
+}
+
+.button {
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-left: 3%;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: white;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: white;
 }
