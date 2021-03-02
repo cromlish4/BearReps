@@ -61,6 +61,12 @@ header>h1 {
 	margin-top: 15%;
 }
 
+#HIGHLIGHT {
+
+	position: relative;
+	margin-top: 3%;
+}
+
 .user-opt:hover {
 	cursor:pointer;
 
