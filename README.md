@@ -34,12 +34,14 @@ Duped Cards. Maybe the order is wrong? Still happening?
 
 Play again doesn't remove new cards. 
 
+2 Sets in a row dont work. No points and not unhighlighted. Same thing used to happen to first set.
+
 
 TODO: I will add the rest of the features once implemented, so that I can see them in action.
 
 Screenshots
 -----------
-![image](https://user-images.githubusercontent.com/77806397/107402331-d50c6300-6ad1-11eb-9b2a-c8847d7e8d50.png) TODO: Replace once game is done 
+![image](project2/public/assets/SampleGame.png) 
 
 
 

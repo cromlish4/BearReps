@@ -117,7 +117,9 @@ function nonePressed() {
 
 function main() {
 	cardBoard.displayBoard();
-
+	//Making this value will enable Debug Mode for quick sets.
+	//Also line 36 in index.html must be uncommented.
+	let debug_mode = true;
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].addEventListener('click', function () {
 			let accepted = addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
@@ -141,11 +143,12 @@ function main() {
 		submitPressed();
 		cardBoard.displayBoard();
 	});
-
-	highlightButton.addEventListener('click', function () {
-		highlightSelected();
-		cardBoard.displayBoard();
-	});
+	if(debug_mode) {
+		highlightButton.addEventListener('click', function () {
+			highlightSelected();
+			cardBoard.displayBoard();
+		});
+	}
 
 	//Ryan O'Donovan//
 
