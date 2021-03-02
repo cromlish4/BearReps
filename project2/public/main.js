@@ -51,9 +51,7 @@ function submitPressed() {
 	if (userSet.length == 3) {
 		if (CardParsing.setParser(userSet)) {
 			cardBoard._score += 1;
-			if(cardBoard.length>12){
-				alert("Length of Board Array is over 12.");
-			}
+
 			let cardPos = Array[3];
 			cardPos = cardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
 			userSet = new Array(0);
@@ -81,6 +79,9 @@ function submitPressed() {
 	} else {
 		alert("Please Select 3 cards!");
 	}
+	/*if(cardBoard._board.length>12){
+		alert("Submit caused length of Board Array to be over 12.");
+	}*/
 }
 //Numerical Comparator
 function numSort(a,b){
@@ -96,7 +97,13 @@ function resetSelected() {
 //Finds a set in the board
 async function highlightSelected() {
 	if(cardBoard.hasSet()) {
+		/*if(cardBoard._board.length>12){
+			alert("Length of Board Array is over 12 Before SetLoc.");
+		}*/
 		let cardLocs = cardBoard.setLocation();
+		/*if(cardBoard._board.length>12){
+			alert("Length of Board Array is over 12 After SetLoc.");
+		}*/
 		//Highlights the cardSet
 		for(let i=0;i<3;i++) {
 			cells[cardLocs[i]].setAttribute("class", "selected");
@@ -118,7 +125,9 @@ function nonePressed() {
 		alert("You missed a SET!");
 
 		userSet = new Array(0);
-
+		//Forcing Replenish Cards.
+		//cardBoard.replenishCards();
+		//refreshToggle();
 	} else {
 		alert("Replenishing cards.");
 
