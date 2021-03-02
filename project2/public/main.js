@@ -110,10 +110,12 @@ async function highlightSelected() {
 		//Highlights the cardSet
 		for (let i = 0; i < 3; i++) {
 			cells[cardLocs[i]].setAttribute("class", "selected");
+			let chosen = document.getElementById("cell" + cardLocs[i]);
+			chosen.setAttribute("class", "selected");
 
 			//Taken from https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
 			await new Promise(r => setTimeout(r, 1000));
-			cells[cardLocs[i]].setAttribute("class", "not_selected");
+			chosen.setAttribute("class", "not_selected");
 		}
 	} else {
 		//Alert for No set
@@ -157,7 +159,7 @@ function endGame() {
 
 function nonePressed() {
 	/* If the user claimed to find NO SET, the function userClick assigned null to userSet. */
-	if (cardBoard.hasSet()) {
+	if (!cardBoard.hasSet()) {
 		alert("You missed a SET!");
 	} else {
 		alert("Replenishing cards.");
@@ -183,7 +185,8 @@ function refreshToggle() {
 }
 
 function onCardClick() {
-	let accepted = addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
+	console.log(CardParsing.getCellIdIndexNumber(this.getAttribute("id")));
+	let accepted = addToSet(cardBoard._board[CardParsing.getCellIdIndexNumber(this.getAttribute("id"))]);
 
 	//Change cards opacity to show it has been selected
 	if (accepted) {
