@@ -15,16 +15,20 @@ export default class imageUpdate {
         var answer = "";
         var ext = ".png";
 
-        if (card.shading === "<") {
+        if (card != null) {
+            if (card.shading === "<") {
 
-            answer = "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + "%3C" + ext;
+                answer = "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + "%3C" + ext;
 
 
+            } else {
+
+                answer = "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + card.shading + ext;
+
+
+            }
         } else {
-
-            answer = "http://localhost:8000/assets/Set_Cards/" + card.number + card.color + card.shape + card.shading + ext;
-
-
+            answer = "http://localhost:8000/assets/blank.png";
         }
 
 
