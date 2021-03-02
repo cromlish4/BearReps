@@ -25,17 +25,6 @@ A Node.js server is set up to allow for local play.
 The GUI will react to a card being selected and unselects when clicked again.
 A Debug Mode where Sets can be highlighted.
 
-
-Current Errors
---------------
-
-Play again doesn't remove new cards. 
-
-Sometimes Sets aren't unselected.
-
-Highlight Set button doesn't work when there are more than 12 cards on the field, possibly a problem with hasSet. Still Broken 
-when New cards are toggleable.
-
 Screenshots
 -----------
 ![StartScreen](project2/public/assets/SampleGame.png) 
