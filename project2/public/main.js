@@ -103,18 +103,21 @@ function resetSelected() {
 		chosen[0].setAttribute("class", "not_selected");
 	}
 }
-//Finds a set in the board
+//Highlights a set on the board
 async function highlightSelected() {
 	if (cardBoard.hasSet()) {
 		let cardLocs = cardBoard.setLocation();
 		//Highlights the cardSet
+		//"Pausing" the Event Listener so that no card can be selected.
+		//stop
 		for (let i = 0; i < 3; i++) {
 			cells[cardLocs[i]].setAttribute("class", "selected");
-
 			//Taken from https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
 			await new Promise(r => setTimeout(r, 1000));
 			cells[cardLocs[i]].setAttribute("class", "not_selected");
 		}
+		//"Resuming" the Event Listener
+		//start
 	} else {
 		//Alert for No set
 		alert("No Set Found.");

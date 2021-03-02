@@ -39,7 +39,7 @@ export default class DeckMaker {
     return this._deck.length;
   }
 
-  //TODO: Insert shuffle function here
+  //Shuffles the deck
   shuffleDeck() {
     var x = 0;
     var num;
@@ -59,7 +59,7 @@ export default class DeckMaker {
     //Make the actual deck equal to the new, shuffled deck.
     this._deck = replace;
   }
-
+  //Returns the top card.
   returnOne() {
     return this._deck.shift();
   }
