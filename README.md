@@ -22,13 +22,12 @@ This version has a GUI that allows the user to visually select cards to make a s
 also has the score and the rules displayed at all times, allowing a user to refer back during game play. 
 
 A Node.js server is set up to allow for local play.
-The GUI will react to a card being selected and change the opacity and is able to unselected.
-Debug Mode where Sets can be highlighted.
+The GUI will react to a card being selected and unselects when clicked again.
+A Debug Mode where Sets can be highlighted.
+
 
 Current Errors
 --------------
-
-New Cards aren't toggleable. After Set or Card Extention? 
 
 Duped Cards. Maybe the order is wrong? Still happening?
 
@@ -36,8 +35,10 @@ Play again doesn't remove new cards.
 
 2 Sets in a row dont work. No points and not unhighlighted. Same thing used to happen to first set.
 
+Highlight Set button doesn't work when there are more than 12 cards on the field, possibly a problem with hasSet. Still Broken 
+when New cards are toggleable.
 
-TODO: I will add the rest of the features once implemented, so that I can see them in action.
+Maybe fix CSS for buttons when Highlight Set button is enabled,Probably not a big deal.
 
 Screenshots
 -----------
@@ -54,6 +55,7 @@ Steps to install and run JavaScript Set:
 2) Open a terminal in that folder and enter "node server.js" this hosts the game locally, If this outputs "Server is listening on port 8000" then it was successful.
 3) Load a web browser and enter "http://localhost:8000" to the url box to play the game.
 4) Once done pressing Control+C on the terminal running the game will shut down the Node.js server.
+
 Tests
 -----
 
@@ -63,33 +65,13 @@ NEW ONES
 1) Max 3 Cards Selected:
 
 	Only 3 cards can be selected at a time though the GUI.
-
-OLD
-1) Incorrect input:
-  
-    Say a user enters a random string, our project will warn the player about an incorrect entry, and allow for a redo.
-    
-2) False Set:
-
-    Say a player determined some cards were a set. If he/she was wrong, our game tells the player the set was wrong, and docks a point.
-    
-3) Correct Set:
-
-    Say a player finally finds a valid set. When the user inputs a true set, our game congratulates the player and awards 1 point. Then
-    the board is replenished as desired. 
-    
-4) No sets left: false
-
-    Say a player believes there are no more sets on the board. If the player missed a set, our game informs the player and gives him/her 
-    another chance WITHOUT docking a point.
-    
-5) No sets left: true
-
-    Say a player believes there are no more sets on the board. If so, the game adds 3 cards to the board, and play continues.
-    
-6) Exit
-
-    Say at any point, a player wants to end the game. If he/she enters "exit" the program exits every time.
+	
+2) Quit Button
+	
+	The Quit button can be pressed anytime during gameplay to stop playing.
+	
+3) 
+	
 
 
 Acknowledgment

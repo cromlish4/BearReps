@@ -73,6 +73,14 @@ header>h1 {
 
 }
 
+#highlight {
+
+	position:relative;
+	display:block;
+	margin-left: 10%;
+
+}
+
 .game-opt {
 	float:left;
 	margin-right: 5px;

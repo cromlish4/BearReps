@@ -112,6 +112,23 @@ function nonePressed() {
 		userSet = new Array(0);
 
 		cardBoard.replenishCards();
+		refreshToggle();
+
+	}
+}
+
+function refreshToggle(){
+	for (var i = 0; i < cells.length; i++) {
+		cells[i].addEventListener('click', function () {
+			let accepted = addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
+
+			//Change cards opacity to show it has been selected
+			if (accepted) {
+				this.setAttribute("class", "selected");
+			} else {
+				this.setAttribute("class", "not_selected");
+			}
+		});
 	}
 }
 
@@ -186,7 +203,9 @@ function main() {
 		
 		submitButton.remove();
 		noneButton.remove();
-
+		if (debug_mode){
+			highlightButton.remove();
+		}
 		user_PlayAgain.remove();
 		user_Quit.remove();
 
