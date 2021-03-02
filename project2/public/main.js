@@ -55,11 +55,18 @@ function submitPressed() {
 			let cardPos = Array[3];
 			cardPos = cardBoard.removeEntry(userSet);	/* Remove the SET found by the user. */
 			userSet = new Array(0);
+
+			if (cardBoard._board.length <= 12 && cardBoard._deck.cardsLeft === 0 ){
+
+				endGame();
+			}
+
 			//cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			//alert("Correct! Plus 1 point!");
 			//Add new cards where old ones were.
 			let i = 0;
 			cardPos.sort(numSort);
+			
 			while (i < 3) {
 				let newCard = cardBoard._deck.returnOne();
 
@@ -106,6 +113,40 @@ async function highlightSelected() {
 		//Alert for No set
 		alert("No Set Found.");
 	}
+}
+
+function endGame() {
+	
+
+	 let debug_mode = true;
+	 var end = document.getElementById("end-message");
+
+                table.remove();
+
+                var rules = document.getElementById("rules-field");
+
+                rules.remove();
+
+
+                submitButton.remove();
+                noneButton.remove();
+                if (debug_mode) {
+                        highlightButton.remove();
+                }
+                user_PlayAgain.remove();
+                user_Quit.remove();
+
+
+                var endDeckTable = document.getElementById("deck-label");
+
+                endDeckTable.remove();
+
+
+                var endDeck = document.getElementById("deck");
+
+                endDeck.remove();
+
+                end.innerHTML = "Thanks For Playing!";
 }
 
 function nonePressed() {
@@ -192,34 +233,7 @@ function main() {
 
 	user_Quit.addEventListener('click', function () {
 
-		var end = document.getElementById("end-message");
-
-		table.remove();
-
-		var rules = document.getElementById("rules-field");
-
-		rules.remove();
-
-
-		submitButton.remove();
-		noneButton.remove();
-		if (debug_mode) {
-			highlightButton.remove();
-		}
-		user_PlayAgain.remove();
-		user_Quit.remove();
-
-
-		var endDeckTable = document.getElementById("deck-label");
-
-		endDeckTable.remove();
-
-
-		var endDeck = document.getElementById("deck");
-
-		endDeck.remove();
-
-		end.innerHTML = "Thanks For Playing!";
+		endGame();
 
 	});
 
