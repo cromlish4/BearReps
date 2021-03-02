@@ -41,7 +41,7 @@ Screenshots
 ![StartScreen](project2/public/assets/SampleGame.png) 
 Start Screen
 
-![EndScreen](project2/public/assets/EndGame.png) 
+![EndScreen](project2/public/assets/EndScreen.png) 
 End Screen
 
 Installation

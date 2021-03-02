@@ -123,7 +123,7 @@ async function highlightSelected() {
 		let cardLocs = cardBoard.setLocation();
 		//Highlights the cardSet
 		//"Pausing" the Event Listener so that no card can be selected.
-		//stop
+		stopEventListener();
 		for (let i = 0; i < 3; i++) {
 			cells[cardLocs[i]].setAttribute("class", "selected");
 			//Taken from https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
@@ -131,7 +131,7 @@ async function highlightSelected() {
 			cells[cardLocs[i]].setAttribute("class", "not_selected");
 		}
 		//"Resuming" the Event Listener
-		//start
+		startEventListener();
 	} else {
 		//Alert for No set
 		alert("No Set Found.");
@@ -194,8 +194,22 @@ function nonePressed() {
 /*Reloads all buttons to toggleable.*/
 function refreshToggle() {
 	for (var i = 0; i < cells.length; i++) {
-		cells[i].removeEventListener('click', onCardClick);
+		//cells[i].removeEventListener('click', onCardClick);
+		//cells[i].addEventListener('click', onCardClick);
+		stopEventListener();
+		startEventListener();
+	}
+}
+/*Starts the event listener*/
+function startEventListener(){
+	for (var i = 0; i < cells.length; i++) {
 		cells[i].addEventListener('click', onCardClick);
+	}
+}
+/*Stops the event listener*/
+function stopEventListener(){
+	for (var i = 0; i < cells.length; i++) {
+		cells[i].removeEventListener('click', onCardClick);
 	}
 }
 
