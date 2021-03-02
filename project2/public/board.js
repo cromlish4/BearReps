@@ -114,7 +114,7 @@ export default class BoardMaker {
 
 		for (let i = 0; i < 3; i++) {
 			let cell = row.insertCell(i);
-			cell.setAttribute("id", "cell" + (this._board.length - 3 + i).toString(16));
+			cell.setAttribute("id", "cell" + (this._board.length - 3 + i));
 			cell.innerHTML = '<img src="assets/blank.png" alt="">';
 		}
 

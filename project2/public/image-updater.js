@@ -5,7 +5,7 @@ export default class imageUpdate {
         var i;
         for (i = 0; i < cards.length; i++) {
             //Select element and update image//
-            var cell = document.getElementById("cell" + i.toString(16)).children[0];
+            var cell = document.getElementById("cell" + i).children[0];
             cell.src = this.getImagePath(cards[i]);
         }
     }
