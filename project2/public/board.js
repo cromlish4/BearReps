@@ -44,10 +44,10 @@ export default class BoardMaker {
 				while (latestIndex < this._board.length) {
 
 					let selectedCards = [this._board[headIndex],
-						this._board[nextIndex], this._board[latestIndex]];
+					this._board[nextIndex], this._board[latestIndex]];
 					var result = CardParsing.setParser(selectedCards);
 
-					if (result) return [headIndex,nextIndex,latestIndex];
+					if (result) return [headIndex, nextIndex, latestIndex];
 
 					latestIndex += 1;
 				}
@@ -61,7 +61,7 @@ export default class BoardMaker {
 			latestIndex = (nextIndex + 1);
 		}
 		//Only if not a set.
-		return [-1,-1,-1];
+		return [-1, -1, -1];
 	}
 
 	hasSet() {
@@ -106,11 +106,9 @@ export default class BoardMaker {
 
 			i += 1;
 		}
-
-		this.addNewCardsToTable();
 	}
 
-	addNewCardsToTable() {
+	add3RowsToTable() {
 		let table = document.getElementById("playing-field");
 		let row = table.insertRow(0);
 
@@ -131,11 +129,11 @@ export default class BoardMaker {
 		var card2 = this._board.indexOf(cards[1]);
 		var card3 = this._board.indexOf(cards[2]);
 
-		let cardIndexes = [card1,card2,card3];
+		let cardIndexes = [card1, card2, card3];
 
-		this._board.splice(card1, 1);
-		this._board.splice(card2, 1);
-		this._board.splice(card3, 1);
+		this._board[card1] == null;
+		this._board[card2] == null;
+		this._board[card3] == null;
 
 		//Added return of that cards can be added in place of the removed cards
 		return cardIndexes;
