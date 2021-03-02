@@ -29,11 +29,9 @@ A Debug Mode where Sets can be highlighted.
 Current Errors
 --------------
 
-Duped Cards. Maybe the order is wrong? Still happening?
-
 Play again doesn't remove new cards. 
 
-2 Sets in a row dont work. No points and not unhighlighted. Same thing used to happen to first set.
+Sometimes Sets aren't unselected.
 
 Highlight Set button doesn't work when there are more than 12 cards on the field, possibly a problem with hasSet. Still Broken 
 when New cards are toggleable.
@@ -59,7 +57,7 @@ Steps to install and run JavaScript Set:
 Tests
 -----
 
-We determined 6 important tests for our code, which all were handled as desired:
+The GUI version of this game requires less testing since the user can't input their own information.
 TODO: Check what test are in this new version.
 NEW ONES
 1) Max 3 Cards Selected:
@@ -70,7 +68,6 @@ NEW ONES
 	
 	The Quit button can be pressed anytime during gameplay to stop playing.
 	
-3) 
 	
 
 

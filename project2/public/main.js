@@ -58,9 +58,11 @@ function submitPressed() {
 			alert("Correct! Plus 1 point!");
 			//Add new cards where old ones were.
 			let i =0;
+			cardPos.sort(numSort);
 			while(i<3) {
 				let newCard = cardBoard._deck.returnOne();
-				cardBoard._board[cardPos[i]] = newCard;
+				//cardBoard._board[cardPos[i]] = newCard;
+				cardBoard._board.splice(cardPos[i],0,newCard);
 				i++;
 			}
 			cardBoard.displayBoard();
@@ -72,6 +74,10 @@ function submitPressed() {
 	} else {
 		alert("Please Select 3 cards!");
 	}
+}
+
+function numSort(a,b){
+	return a - b;
 }
 
 function resetSelected() {
@@ -116,7 +122,7 @@ function nonePressed() {
 
 	}
 }
-
+/*Reloads all buttons to toggleable.*/
 function refreshToggle(){
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].addEventListener('click', function () {
