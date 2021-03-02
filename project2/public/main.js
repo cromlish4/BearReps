@@ -61,6 +61,12 @@ function submitPressed() {
 				endGame();
 			}
 
+			if (cardBoard._board.length === 12 && cardBoard._deck.cardsLeft === 0 && cardBoard.hasSet !== true){
+
+				endGame();
+
+			}
+
 			//cardsInDeck.innerHTML = cardBoard.cardsLeft();
 			//alert("Correct! Plus 1 point!");
 			//Add new cards where old ones were.
