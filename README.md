@@ -31,6 +31,8 @@ Card Dupe when Getting a set. Not Dupe doesn't display correctly. L
 
 Play again makes game unplayable.
 
+New Cards aren't toggleable
+
 TODO: I will add the rest of the features once implemented, so that I can see them in action.
 
 Screenshots
