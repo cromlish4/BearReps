@@ -167,6 +167,7 @@ function addToSet(oneCard) {
 
 	}
 	else {
+		//add to selected sets if empty slot available
 		for (var x = 0; x < 3; x++) {
 			if (userSet[x] == null) {
 				userSet.splice(x, 1, oneCard);
@@ -175,26 +176,11 @@ function addToSet(oneCard) {
 		}
 	}
 
-
+	return (userSet.indexOf(oneCard) > -1);
 }
 
 
 function main() {
-	// /* TODO: Need a loop for restarting the game. */
-	// while (deck.cardsLeft()) {
-	// 	cardsLeft.innerHTML = deck.cardsLeft();
-	// 	if (userScore >= 0) {
-	// 		CardBoard.displayBoard();
-	// 		userClick();
-	// 		handleInput(userSet);
-	// 	} else {
-	// 		alert("Game Over.");
-	// 		break;
-	// 	}
-	// }
-
-
-
 	cardBoard.displayBoard();
 
 	userSet.push(null);
@@ -203,10 +189,15 @@ function main() {
 
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].addEventListener('click', function () {
-			addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
+			let accepted = addToSet(cardBoard._board[parseInt(this.getAttribute("id")[4], 16)]);
 
+			//Change cards opacity to show it has been selected
+			if (accepted) {
+				this.setAttribute("class", "selected");
+			} else {
+				this.setAttribute("class", "not_selected");
+			}
 		});
-
 	}
 }
 
