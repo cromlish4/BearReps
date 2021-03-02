@@ -22,6 +22,7 @@ This version has a GUI that allows the user to visually select cards to make a s
 also has the score and the rules displayed at all times, allowing a user to refer back during game play. 
 
 A Node.js server is set up to allow for local play.
+The GUI will react to a card being selected and change the opacity and is able to unselected.
 
 
 
@@ -39,14 +40,20 @@ Installation
 
 Steps to install and run JavaScript Set:
 1) Clone the BearReps repo and navigate to the "project2" directory.
-2) Open a terminal in that folder and enter "Node server.js" this hosts the game locally, If this outputs "Server is listening on port 8000" then it was successful.
+2) Open a terminal in that folder and enter "node server.js" this hosts the game locally, If this outputs "Server is listening on port 8000" then it was successful.
 3) Load a web browser and enter "http://localhost:8000" to the url box to play the game.
-
+4) Once done pressing Control+C on the terminal running the game will shut down the Node.js server.
 Tests
 -----
 
 We determined 6 important tests for our code, which all were handled as desired:
 TODO: Check what test are in this new version.
+NEW ONES
+1) Max 3 Cards Selected:
+
+	Only 3 cards can be selected at a time though the GUI.
+
+OLD
 1) Incorrect input:
   
     Say a user enters a random string, our project will warn the player about an incorrect entry, and allow for a redo.
