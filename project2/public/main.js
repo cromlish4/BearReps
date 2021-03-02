@@ -74,7 +74,6 @@ function submitPressed() {
 			alert("Your selection is NOT a SET!\n-1 point!");
 			cardBoard._score -= 1;
 			cardBoard.displayBoard();
-			resetSelected();
 		}
 	} else {
 		alert("Please Select 3 cards!");
