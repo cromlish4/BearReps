@@ -54,14 +54,14 @@ header>h1 {
     margin-left: 0%;
 }
 
-#no-set {
-	position: static;
+#NONE {
+	position: relative;
 	margin-left: 10%;
 
 	margin-top: 15%;
 }
 
-.noSET:hover {
+.user-opt:hover {
 	cursor:pointer;
 
 }
@@ -118,18 +118,10 @@ table {
     margin-right: 10%;
 }
 
-.button {
-    border-radius: 5px;
-    margin-top: 5%;
-    margin-left: 3%;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    background-color: white;
-}
+#end-message {
 
-.button:hover {
-    cursor: pointer;
-    background-color: white;
+	position: static;
+	text-align: center;
+	font-size: 50px;
+
 }
