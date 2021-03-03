@@ -88,3 +88,5 @@ Ryan O'Donovan, for creating the original readme which this one is based on.
 
 The original image sheet that the individual card images were cropped from. https://geekandsundry.com/the-card-game-that-puzzled-mathematicians-for-decades/
 
+The node.js server: https://www.pabbly.com/tutorials/node-js-http-module-serving-static-files-html-css-images/
+
