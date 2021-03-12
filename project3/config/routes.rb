@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   # Other Routes
   # get 'name' => 'viewName#name'
+  get 'login' => 'pages#login'
+  get 'new_profile' => 'pages#new_profile'
 end

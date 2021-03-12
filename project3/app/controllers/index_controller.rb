@@ -1,5 +1,5 @@
 class IndexController < ApplicationController
   def index
-    puts "Hello World"
+    #puts "Hello World"
   end
 end
