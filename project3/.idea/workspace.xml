@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f03430a-3d5f-4d14-8979-34d42ff1468a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/index/index.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/index/index.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index/index.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615748648780</updated>
       <workItem from="1615748652821" duration="2546000" />
-      <workItem from="1615751242754" duration="355000" />
+      <workItem from="1615751242754" duration="9415000" />
     </task>
     <servers />
   </component>

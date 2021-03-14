@@ -5,15 +5,7 @@
     <title>Home</title>
     <meta charset="utf-8"/>
     <link type="text/css" rel="stylesheet" href="home.css"/>
-    
-	<% if current_user %>
 
-		<%= link_to 'Sign up', new_user_registration_path %>
-		<%= link_to 'Sign in', new_user_session_path %>
-	<% else %>
-		<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-	<% end %>
-    
   </head>
 
   <body>

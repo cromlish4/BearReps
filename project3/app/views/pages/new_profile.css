@@ -47,6 +47,11 @@ header>h1{
   padding-bottom: 20px;
 }
 
+#passwordC{
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
 .submission{
   background-color: white;
   text-align: center;
