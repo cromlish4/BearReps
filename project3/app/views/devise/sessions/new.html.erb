@@ -13,10 +13,10 @@
 </header>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+  <!--Login Page-->
   <!Referenced "https://www.w3schools.com/howto/howto_css_login_form.asp" for general login format>
   <div id = "inputs">
-
+    <!--Input Fields-->
     <div id="email" class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

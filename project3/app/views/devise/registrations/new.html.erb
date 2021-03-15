@@ -2,6 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title>
+    <!--Registering a new profile page-->
     New Profile
   </title>
   <link rel="stylesheet" type="text/css" href="/new_profile.css"/>
@@ -14,7 +15,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div id = "input">
-
+    <!--Input Fields-->
     <div id="first-name" class="field">
       <%= f.label :"First Name" %><br />
       <%= f.text_field :fname,placeholder:"Brutus",autofocus: true %>
