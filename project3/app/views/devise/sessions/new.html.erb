@@ -14,21 +14,12 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div id = "toolbar" class = "toolbar">
-    <a href = "/new_profile">New profile</a>
-  </div>
-
   <!Referenced "https://www.w3schools.com/howto/howto_css_login_form.asp" for general login format>
   <div id = "inputs">
 
     <div id="email" class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div id="user" class="field">
-      <%= f.label :username %><br />
-      <%= f.text_field :username, autofocus: true %>
     </div>
 
     <div id = "pass" class="field">

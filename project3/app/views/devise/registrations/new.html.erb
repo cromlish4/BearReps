@@ -15,19 +15,21 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div id = "input">
 
-    <div id="email" class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+
 
     <div id="first-name" class="field">
       <%= f.label :fname %><br />
-      <%= f.text_field :fname,placeholder:"Brutus"%>
+      <%= f.text_field :fname,placeholder:"Brutus",autofocus: true %>
     </div>
 
     <div id="last-name" class="field">
       <%= f.label :lname %><br />
       <%= f.text_field :lname,placeholder:"Buckeye" %>
+    </div>
+
+    <div id="email" class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, placeholder:"buckeye.1@osu.edu",autocomplete: "email" %>
     </div>
 
     <div id="name-dot" class="field">
@@ -38,11 +40,6 @@
     <div id="year" class="field">
       <%= f.label :year %><br />
       <%= f.text_field :year,placeholder:"Freshman, Sophomore, etc. " %>
-    </div>
-
-    <div id="username" class="field">
-      <%= f.label :username %><br />
-      <%= f.text_field :username %>
     </div>
 
     <div id="password" class="field">
