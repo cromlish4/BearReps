@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Other Routes
   # get 'name' => 'viewName#name'
   get 'login' => 'pages#login'
+  get 'login.css' => 'pages#login.css'
   get 'new_profile' => 'pages#new_profile'
   get 'new_profile.css' => 'pages#new_profile.css'
   get 'display_course' => 'pages#display_course'

@@ -38,6 +38,13 @@ header>h1{
 
 }
 
+#checkbox{
+  text-align: center;
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+}
+
 #enter{
   position: absolute;
   left: 48%;
