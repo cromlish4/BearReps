@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2021_03_14_220212) do
     t.string "lname"
     t.string "nameDotNumber"
     t.string "year"
-    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
