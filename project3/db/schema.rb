@@ -10,28 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_000835) do
+ActiveRecord::Schema.define(version: 2021_03_17_222854) do
 
   create_table "courses", force: :cascade do |t|
-    t.string "title" null: false
-    t.string "term" null: false
-    t.string "units" null: false
-    t.string "campus" null: false
-    t.string "subject" null: false
-    t.string "catalog_number" null: false
+    t.string "title"
+    t.string "term"
+    t.string "units"
+    t.string "campus"
+    t.string "subject"
+    t.string "catalog_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "people", force: :cascade do |t|
-    t.string "fname" null: false
-    t.string "lname" null: false
-    t.string "dot" null: false
-    t.string "year" null: false
-    t.string "username" null: false
-    t.string "password" null: false
+    t.string "fname"
+    t.string "lname"
+    t.string "dot"
+    t.string "year"
+    t.string "username"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.text "classes"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_students_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
+    t.string "fname"
+    t.string "lname"
+    t.string "nameDotNumber"
+    t.string "year"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "students", "users"
 end
