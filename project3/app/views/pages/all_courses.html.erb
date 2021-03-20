@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>
+      All Courses
+    </title>
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="all_courses.css"/>
+  </head>
+  <body>
+    <h1 id = header>Course List</h1>
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Title</th>
+          <th>Term></th>
+          <th>Units</th>
+          <th>Campus</th>
+          <th>Subject</th>
+          <th>Catalog Number</th>
+        </tr>
+
+      </thead>
+      <tbody>
+      <%= Course.all.each do |t| %>
+        <tr>
+            <td><%= t.title %></td>
+            <td><%= t.term %></td>
+            <td><%= t.units %></td>
+            <td><%= t.campus %></td>
+            <td><%= t.subject %></td>
+            <td><%= t.catalog_number %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </body>
+</html>
