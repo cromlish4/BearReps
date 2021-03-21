@@ -1,0 +1,37 @@
+<%= form_for @course do |f| %>
+
+  <div class="form-control">
+    <%= f.label :title %>
+    <%= f.text_field  :title %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :term %>
+    <%= f.text_field  :term %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :units %>
+    <%= f.text_field  :units %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :campus %>
+    <%= f.text_field  :campus %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :subject %>
+    <%= f.text_field  :subject %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :catalog_number %>
+    <%= f.text_field  :catalog_number %>
+  </div>
+
+  <div class="form-control">
+    <%= f.submit 'Enter Class'%>
+  </div>
+  
+<% end %>
