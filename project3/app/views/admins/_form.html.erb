@@ -1,0 +1,16 @@
+<!-- Partial shared by both edit and new-->
+<%= form_for @admin do |t| %>
+
+  <div class = "name">
+    <%= t.label :name %>
+    <%= t.text_field :name %>
+  </div>
+
+  <div class = "email">
+    <%= t.label :email>
+    <%= t.text_field :email %>
+  </div>
+
+  <%= t.submit "Submit" %>
+
+  <%end%>
