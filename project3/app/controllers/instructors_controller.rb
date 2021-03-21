@@ -1,15 +1,18 @@
 
 Class IntructorsController < ApplicationController
+# use before_action to reduce code duplication
 before_action :set_instructor, only [:show, :edit, :update, :destroy]
 
 # wired to app/views/instructors/index.html.erb by default (naming convention)
 def index
-  @instructors = Instructor.all
+  @instructors = Instructor.all # be carefult about singular and plural
 end
 
 # wired to app/views/instructors/show.html.erb by default (naming convention)
 def show
-  # TODO: maybe something would be added here
+  if @instructor.nil?
+    redirect_to action: :index
+  end
 end
 
 # wired to app/views/instructors/new.html.erb by default (naming convention)
@@ -47,7 +50,7 @@ end
 # wired to app/views/instructors/destroy.html.erb by default (naming convention)
 def destroy
   @instructor.destroy
-  # TODO: add a page which would be displayed after a record is deleted
+  redirect_to action: :index, notice: "Successfully deleted!"  # use redirect instead of render to avoid double submission (double deletion)
 end
 
 

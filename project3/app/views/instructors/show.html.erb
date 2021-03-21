@@ -1,3 +1,19 @@
 
 <!-- GET and show one instructor -->
+<h1>Instructor Profile</h1>
 
+<table>
+  <tr>
+    <th>Name</th> <td><%= @instructor.name %></td>
+  </tr>
+  <tr>
+    <th>Email</th> <td><%= @instructor.email %></td>
+  </tr>
+</table>
+
+<br/>
+<!-- navigation bar, two options: editing the instructor, the previous page -->
+<nav>
+  <%= link_to "Edit", edit_instructor_path(@instructor) %>
+  <%= lin_to "Back", :back %>
+</nav>
