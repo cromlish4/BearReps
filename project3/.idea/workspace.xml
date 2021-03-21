@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f03430a-3d5f-4d14-8979-34d42ff1468a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/index/index.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index/index.erb" afterDir="false" />
-    </list>
+    <list default="true" id="0f03430a-3d5f-4d14-8979-34d42ff1468a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1plDBeQiUWY3DWkDRkBUp6KqctS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -174,6 +173,7 @@
       <updated>1615748648780</updated>
       <workItem from="1615748652821" duration="2546000" />
       <workItem from="1615751242754" duration="10614000" />
+      <workItem from="1616267030186" duration="166000" />
     </task>
     <servers />
   </component>

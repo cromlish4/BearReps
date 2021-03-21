@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :students
+  resources :courses
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # Default Route
@@ -13,5 +14,6 @@ Rails.application.routes.draw do
   get 'new_profile.css' => 'pages#new_profile.css'
   get 'display_course' => 'pages#display_course'
   get 'display_profile' => 'pages#display_profile'
+
   # get 'courses' => 'pages#courses'
 end
