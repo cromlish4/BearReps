@@ -1,14 +1,15 @@
 <!-- Partial shared by both edit and new-->
+<!-- Since @admin is not a new instance, the text fields should be populated with the correct info-->
 <%= form_for @admin do |t| %>
 
   <div class = "name">
-    <%= t.label :name %>
-    <%= t.text_field :name %>
+    <%= t.label 'Name' %> <br>
+    <%= t.text_field :name %> <br>
   </div>
 
   <div class = "email">
-    <%= t.label :email>
-    <%= t.text_field :email %>
+    <%= t.label 'Email'%> <br>
+    <%= t.text_field :email %> <br>
   </div>
 
   <%= t.submit "Submit" %>

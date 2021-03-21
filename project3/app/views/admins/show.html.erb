@@ -1,0 +1,29 @@
+<!--GET the admin and display their html page-->
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <h1 id="header">Admin Profile</h1>
+
+
+  <div class="information">
+        <div id="name"><p>Name: <%= @admin.fname%> <%= @admin.lname%></p></div>
+        <div id="OSU-ID"><p>Email: <%= @admin.nameDotNumber%></p></div>
+  </div>
+
+  <br/>
+  <nav>
+    <%= link_to "Edit", edit_admin_path(@admin) %>
+    <%= link_to "Back" :back %>
+  </nav>
+
+</body>
+  <footer>
+    <div id = "links">
+      <a href = all_courses.html.erb>Courses</a>
+      <a href = all_students.html.erb>Students</a>
+    </div>
+  </footer>
+</html>

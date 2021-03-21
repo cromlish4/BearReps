@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   get 'new_profile.css' => 'pages#new_profile.css'
   get 'display_course' => 'pages#display_course'
   get 'display_profile' => 'pages#display_profile'
-
+  get 'admins/:name', to: 'admins#edit', as: :edit_admin
   # get 'courses' => 'pages#courses'
 end

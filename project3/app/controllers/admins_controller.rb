@@ -6,7 +6,9 @@ def index
 end
 
 def show
-
+  if @admin.nil?
+    redirect_to action: :index
+  end
 end
 
 #GET /admins/new
@@ -27,7 +29,7 @@ def create
 end
 
 def edit
-  
+  @admin = Admin.find(params[:name])
 end
 
 #PUT the form with the new admin info
@@ -42,6 +44,8 @@ end
 
 def destroy
   @admin.destroy
+  #Redirect to show all the admins after deletion
+  redirect_to action: :index, notice: "Deleted selected admin entry"
 end
 
 private
