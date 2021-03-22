@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'admins/:nameDotNumber', to: 'admins#edit', as: :edit_admin
   get 'form' => 'courses#form'
   get 'new_course' => 'courses#form'
+  get 'display_admin' => 'pages#display_admin'
   # get 'courses' => 'pages#courses'
 
 end
