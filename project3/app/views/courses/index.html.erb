@@ -1,0 +1,9 @@
+<% content_for :page_title,  "Search result" %>
+
+<div class="section">
+  <div class="container">
+    <% @courses.each do |course| %>
+      <p class="title"><%= link_to course.title, course %><%= "\t: #{course.subject} #{course.catalog_number}" %></p>
+    <% end %>
+  </div>
+</div>

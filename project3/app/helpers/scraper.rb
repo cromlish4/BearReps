@@ -3,7 +3,7 @@ require 'uri'
 require 'json'
 
 class Scraper
-  @@terms = { 'summer' => 1214, 'spring' => 1212 }
+  @@terms = { 'summer' => 1214, 'spring' => 1212, 'autumn' => 1218 }
   @@campuses = { 'columbus'=> 'col', 'marion'=> 'mrn', 'newark'=> 'nwk', 'lima'=> 'lma', 'wooster'=> 'wst', "mansfield"=> 'mns' }
   @@course_keys = %w[subject catalogNumber shortDescription title term maxUnits component campus]
   @@section_keys = %w[section classNumber courseId component instructionMode meetings enrollmentStatus startDate endDate]

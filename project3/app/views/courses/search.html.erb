@@ -1,0 +1,24 @@
+<%= form_for @course do |f| %>
+
+  <h1>Search database for course</h1>
+
+  <div class="form-control">
+    <%= f.label :catalog_number %>
+    <%= f.text_field :catalog_number, placeholder: "example : 2321, 3901, 8999" %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :term %>
+    <%= f.text_field :term, placeholder: "[spring,summer,autumn] [year]" %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :campus %>
+    <%= f.text_field :campus, placeholder: "col, mrn, nwk, lma, wst, mns" %>
+  </div>
+
+  <div class="form-control">
+    <%= f.submit 'Search' %>
+  </div>
+
+<% end %>
