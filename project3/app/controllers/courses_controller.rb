@@ -2,7 +2,6 @@
 class CoursesController < ApplicationController
 
   def index
-    #@courses = Course.all.order("catalog_number DESC")
     @title = set_search_title_value(params[:set_search_title_value])
     @term = set_search_term_value(params[:set_search_term_value])
     @courses = search(params[:search])
@@ -16,26 +15,19 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
 
-  def search
-    @course = Course.new
-  end
-
   def create
-    @course = Course.new(my_params)
+    @course = Course.new(my_params_course)
     if @course.save
-
       redirect_to @course
     else
       render :new
     end
   end
 
-  private def my_params
-    params.require(:course).permit(:title, :term, :units, :campus, :subject, :catalog_number)
-  end
-
   private def search(search)
+    #if there was a search query
     if search
+      #take all fields and use them to narrow down matches
       list = Course.where("catalog_number like ?", "%#{search}%")
       list = list.where("term like ?", "%#{@term}%")
       list.where("title like ?", "%#{@title}%")
@@ -44,6 +36,7 @@ class CoursesController < ApplicationController
     end
   end
 
+  #the two methods below check to make sure that term and title are things in the database
   private def set_search_term_value(term)
     nil
     if term and term != ""

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :courses
   root 'courses#index'
 
+  resources :scrapes
   get 'form' => 'courses#form'
 end
