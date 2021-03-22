@@ -1,5 +1,5 @@
-Class AdminsController < ApplicationController
-before_action :set_admin, only [:show, :edit, :update, :destroy]
+class AdminsController < ApplicationController
+before_action :set_admin, only: [ :show, :edit, :update, :destroy]
 
 def index
   @admins = Admin.all
@@ -24,12 +24,12 @@ def create
   if @admin.save
     redirect_to @admin, notice: "Saved new admin entry"
   else
-    render: new
+    render :new
   end
 end
 
 def edit
-  @admin = Admin.find(params[:name])
+  @admin = Admin.find(params[:nameDotNumber])
 end
 
 #PUT the form with the new admin info
@@ -38,7 +38,7 @@ def update
   if @admin.update
     redirect_to @admin, notice: "Successfully updated admin entry"
   else
-    render: edit
+    render :edit
   end
 end
 
@@ -51,6 +51,7 @@ end
 private
 
   def set_admin
-    @admin = Admin.find(params[:name])
+    @admin = Admin.find(params[:nameDotNumber])
   end
 end
+
