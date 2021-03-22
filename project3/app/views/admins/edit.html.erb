@@ -3,8 +3,11 @@
   </head>
   <body>
     <h1>Editing Admin</h1>
-    <%= render "admins/form" %>
-
+      <% if @admin.nil? %>
+        <p> There are currently no Administrators</p>
+      <% else %>
+        <%= render "form" %>
+      <% end %>
     <nav>
       <%= link_to "Back", :back%>
     </nav>

@@ -15,9 +15,10 @@
       <p>This is a temporary screen while the website is being built.</p>
       <div id="course-catalog"><a href="/courses">Course Catalog</a></div>
       <% if user_signed_in? %>
-        <%= link_to "Admin Page", "admins/"+current_user.nameDotNumber %>
+        <% if current_user.user_type == "admin" %>
+          <%= link_to "Admin Page", "admins/"+current_user.nameDotNumber %>
+        <% end %>
       <% end %>
-
 
     </div>
   </body>
