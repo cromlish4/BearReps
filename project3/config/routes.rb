@@ -15,5 +15,30 @@ Rails.application.routes.draw do
   get 'display_course' => 'pages#display_course'
   get 'display_profile' => 'pages#display_profile'
   get 'admins/:name', to: 'admins#edit', as: :edit_admin
+  #New admin page
+  get 'admin_new' => 'admins#new'
+  #Edit admin page
+  #get 'admin_edit' => 'admins#edit'
+  #Show a specific admin
+  # get 'admin_show' => 'admins#show'
+  # Show all admins
+  # get 'admins_index' => 'admins#index'
+
+  get 'instructor_new' => 'instructors#new'
+  #Edit instructor page
+  #get 'instructor_edit' => 'instructors#edit'
+  #Show a specific instructor
+  # get 'instructor_show' => 'instructors#show'
+  # Show all instructors
+  # get 'instructors_index' => 'instrutors#index'
+
+  get 'student_new' => 'students#new'
+  #Edit student page
+  #get 'student_edit' => 'students#edit'
+  #Show a specific student 
+  # get 'student_show' => 'students#show'
+  # Show all students
+  # get 'students_index' => 'students#index'
+
   # get 'courses' => 'pages#courses'
 end
