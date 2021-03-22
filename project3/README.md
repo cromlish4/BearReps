@@ -1,15 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
 Things you may want to cover:
 
-* Ruby version
 
 * System dependencies
-
-* Configuration
 
 * Database creation
 
@@ -18,10 +13,6 @@ Things you may want to cover:
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 Web Scraping and Login
 This project is directly tied to project 4 in the sense that the database, routes, and MVC of our 
@@ -37,8 +28,8 @@ project was also intended for our group to work efficiently such that we would m
 ourselves.
 
 Features
-Our project was implemented using the MVC framework of Ruby on Rails. With the use of gems, we were able to 
-utilize the convenience of Ruby on Rails in the following ways:
+Our project was implemented using the MVC framework of Ruby on Rails, particularly using ruby v 2.7.1 and rails v 6.0.3.5. 
+With the use of gems, we were able to utilize the convenience of Ruby on Rails in the following ways:
 1) rails                      -- for the MVC framework
 2) sqlite3                    -- for database management
 3) puma                       -- for the application server
