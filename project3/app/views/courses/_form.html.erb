@@ -1,13 +1,13 @@
 <%= form_for @course do |f| %>
 
   <div class="form-control">
-    <%= f.label :title %>
-    <%= f.text_field  :title %>
+    <%= f.label :title%>
+    <%= f.text_field  :title, required: true  %>
   </div>
 
   <div class="form-control">
-    <%= f.label :term %>
-    <%= f.text_field  :term %>
+    <%= f.label :term%>
+    <%= f.text_field  :term, required: true   %>
   </div>
 
   <div class="form-control">
@@ -17,17 +17,17 @@
 
   <div class="form-control">
     <%= f.label :campus %>
-    <%= f.text_field  :campus %>
+    <%= f.text_field  :campus, value: 'col' %>
   </div>
 
   <div class="form-control">
     <%= f.label :subject %>
-    <%= f.text_field  :subject %>
+    <%= f.text_field  :subject, value: 'CSE' %>
   </div>
 
   <div class="form-control">
     <%= f.label :catalog_number %>
-    <%= f.text_field  :catalog_number %>
+    <%= f.text_field  :catalog_number,  required: true  %>
   </div>
 
   <div class="form-control">
