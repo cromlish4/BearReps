@@ -3,7 +3,8 @@
 <h1>Courses</h1>
 
 <%= form_tag(courses_path, method: :get) do %>
-  <%= text_field_tag(:set_term, params[:set_term], placeholder: "term : [season] [year]") %>
+  <%= text_field_tag(:set_search_title_value, params[:set_search_title_value], placeholder: "title : software II") %>
+  <%= text_field_tag(:set_search_term_value, params[:set_search_term_value], placeholder: "term : [season] [year]") %>
   <%= text_field_tag(:search, params[:search], placeholder: "course number") %>
   <%= submit_tag("Search") %>
 <% end %>

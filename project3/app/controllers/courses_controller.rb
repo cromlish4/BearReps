@@ -3,7 +3,8 @@ class CoursesController < ApplicationController
 
   def index
     #@courses = Course.all.order("catalog_number DESC")
-    @term = set_term(params[:set_term])
+    @title = set_search_title_value(params[:set_search_title_value])
+    @term = set_search_term_value(params[:set_search_term_value])
     @courses = search(params[:search])
   end
 
@@ -36,13 +37,15 @@ class CoursesController < ApplicationController
   private def search(search)
     if search
       list = Course.where("catalog_number like ?", "%#{search}%")
-      list.where("term like ?", "%#{@term}%")
+      list = list.where("term like ?", "%#{@term}%")
+      list.where("title like ?", "%#{@title}%")
     else
       Course.all
     end
   end
 
-  private def set_term(term)
+  private def set_search_term_value(term)
+    nil
     if term and term != ""
       #check if there is a course with this term
       courses = Course.where("term like ?", "%#{term}%")
@@ -51,8 +54,20 @@ class CoursesController < ApplicationController
       else
         nil
       end
-    else
-      nil
     end
   end
+
+  private def set_search_title_value(title)
+    nil
+    if title and title != ""
+      #check if there is a course with this title
+      courses = Course.where("title like ?", "%#{title}%")
+      if not courses.blank?
+        title
+      else
+        nil
+      end
+    end
+  end
+
 end
