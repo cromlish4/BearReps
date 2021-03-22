@@ -3,14 +3,25 @@ class ScrapesController < ApplicationController
   #require 'app/helpers/scraper'
 
   def index
-    @campus = set_search_campus_value(params[:set_search_campus_value])
-    @term = set_search_term_value(params[:set_search_term_value])
+    @campus = campus_value(params[:campus_value])
+    @term = set_search_term_value(params[:term_value])
     search_results = search(params[:search])
     @scraped_courses = Scrape.extract_courses(search_results)
   end
 
   def new
     @course = Course.new
+  end
+
+  def show
+    if Scrape.get_scraped_courses
+      @course = Scrape.get_scraped_courses[params[:key]]
+      if not @course
+        render 'index'
+      end
+    else
+      render 'index'
+    end
   end
 
   def create
@@ -40,7 +51,7 @@ class ScrapesController < ApplicationController
     end
   end
 
-  private def set_search_campus_value(campus)
+  private def campus_value(campus)
     if campus
       campus.downcase!
       if Scrape.get_campuses.key?(campus)

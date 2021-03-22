@@ -1,0 +1,5 @@
+<h1><%= "CSE #{params[:key]}"%></h1>
+
+<% Scrape.get_scraped_courses[params[:key]].each do |attribute| %>
+  <p class="attributes"><%= "#{attribute[0]} : #{attribute[1]}" %></p>
+<% end %>
