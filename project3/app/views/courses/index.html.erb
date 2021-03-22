@@ -1,9 +1,13 @@
-<% content_for :page_title,  "Search result" %>
+<% content_for :page_title, "Search result" %>
 
-<div class="section">
-  <div class="container">
-    <% @courses.each do |course| %>
-      <p class="title"><%= link_to course.title, course %><%= "\t: #{course.subject} #{course.catalog_number}" %></p>
-    <% end %>
-  </div>
-</div>
+<h1>Courses</h1>
+
+<%= form_tag(courses_path, method: :get) do %>
+  <%= text_field_tag(:set_term, params[:set_term], placeholder: "term : [season] [year]") %>
+  <%= text_field_tag(:search, params[:search], placeholder: "course number") %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% @courses.each do |course| %>
+  <p class="title"><%= link_to course.title, course %><%= "\t: #{course.subject} #{course.catalog_number}" %></p>
+<% end %>
