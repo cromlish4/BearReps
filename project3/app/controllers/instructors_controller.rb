@@ -1,4 +1,4 @@
-class IntructorsController < ApplicationController
+class InstructorsController < ApplicationController
 # use before_action to reduce code duplication
 before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 

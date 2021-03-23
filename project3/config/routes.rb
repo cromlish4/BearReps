@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   get 'form' => 'courses#form'
   get 'new_course' => 'courses#form'
   get 'display_admin' => 'pages#display_admin'
-  get 'admins/:name', to: 'admins#edit', as: :edit_admin
+  #This doesn't work can't have same as: as another route.
+  #get 'admins/:name', to: 'admins#edit', as: :edit_admin
   #New admin page
   get 'admin_new' => 'admins#new'
   #Edit admin page
