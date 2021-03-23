@@ -53,6 +53,8 @@ Screenshots
 3) Home Page -- user signed out
 ![Home page not signed in](https://user-images.githubusercontent.com/77806397/112221980-8092f200-8bfe-11eb-92e5-5bbf893c3f96.PNG)
 
+4) Verify Page -- Admin signed in
+![Verify admin signed in](project3/VPage.png)
 
 Installation
 -------------
