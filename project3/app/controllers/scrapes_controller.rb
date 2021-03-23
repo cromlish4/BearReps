@@ -10,6 +10,9 @@ class ScrapesController < ApplicationController
   end
 
   def new
+    if not Scrape.get_chosen_course
+      Scrape.set_empty_chosen_course
+    end
     @course = Course.new
   end
 

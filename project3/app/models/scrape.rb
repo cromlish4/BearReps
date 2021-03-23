@@ -45,6 +45,16 @@ class Scrape < ApplicationRecord
     @@scraped_courses
   end
 
+  def self.set_empty_chosen_course
+    @@chosen_course = Hash.new
+    @@chosen_course['catalogNumber'] = ''
+
+    @@course_keys.each do |attribute|
+      @@chosen_course[attribute] = ''
+    end
+
+  end
+
   def self.set_chosen_course(key)
     @@chosen_course = @@scraped_courses[key]
     @@chosen_course['catalogNumber'] = key
