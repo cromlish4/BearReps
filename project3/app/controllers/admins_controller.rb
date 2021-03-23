@@ -17,7 +17,6 @@ end
 #end
 
 
-
 #POST admin form filled out by user
 def create
   @admin = User.new
@@ -55,4 +54,3 @@ private
     @admin = User.find_by(nameDotNumber: params[:nameDotNumber])
   end
 end
-

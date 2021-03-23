@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_010131) do
     t.string "nameDotNumber"
     t.string "year"
     t.string "user_type"
-    t.boolean "verified"
+    t.string "verified", default: "false"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

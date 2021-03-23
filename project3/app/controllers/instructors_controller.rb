@@ -4,7 +4,8 @@ before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 
 # wired to app/views/instructors/index.html.erb by default (naming convention)
 def index
-  @instructors = Instructor.all # be careful about singular and plural
+  @instructors = User.where(user_type: "") # be careful about singular and plural
+  @admin = User.where(user_type: "admin")
 end
 
 # wired to app/views/instructors/show.html.erb by default (naming convention)
@@ -17,12 +18,14 @@ end
 # wired to app/views/instructors/new.html.erb by default (naming convention)
 # that view GET a blank form for creating a new instructor, submitting with POST
 def new
-  @instructor = Instructor.new
+  @instructor = User.new
+  # Add proper data to this
 end
 
 # POST a newly filled form to create a new instructor
 def create
-  @instructor = Instructor.new
+  @instructor = User.new
+  # Add proper Data here as well
   if @instructor.save
     redirect_to @instructor, notice: "Successfully Saved!"
   else
@@ -37,7 +40,8 @@ end
 
 # PUT the edited form to update a new instructor
 def update
-  @instructor = Instructor.new
+  @instructor = User.new
+  # Add proper data to this
   if @instructor.update
     redirect_to @instructor, notice: "Successfully Updated!"
   else
@@ -56,7 +60,7 @@ end
 private
   # the snippet below is shared by show, edit, update, destroy
   def set_instructor
-    @instructor = Instructor.find(params[:name])
+    @instructor = User.find(params[:name])
   end
 
 end

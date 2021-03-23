@@ -40,7 +40,7 @@ User.create!(
     password: "password",
     # a user can have only one of these roles
     user_type: %w[student admin teacher].sample,
-    verified: %w[true false].sample
+    #verified: %w[true false].sample
   )
 end
 

@@ -5,6 +5,6 @@ class AddFieldsToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :nameDotNumber, :string
     add_column :users, :year, :string
     add_column :users, :user_type, :string
-    add_column :users, :verified, :boolean
+    add_column :users, :verified, :string, :default => "false"
   end
 end
