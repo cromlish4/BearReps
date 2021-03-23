@@ -29,6 +29,7 @@
             <%else %>
               <p>Please Verify Account.</p>
             <%end %>
+          <% else %>
 
           <% end %>
 
@@ -38,6 +39,7 @@
         </div>
       </div>
 
+      <% if (user_signed_in?) && (current_user.verified == "true") && (current_user.user_type == "admin") %>
       <p><b>All Below Links are for development</b></p>
       <div id=course_links>
         <p>Course Links</p>
@@ -91,6 +93,8 @@
       <% end %>
 
     </div>
+<%end %>
+
   </body>
 
 </html>
