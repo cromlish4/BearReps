@@ -12,17 +12,40 @@
     <h1 id="header">Home</h1>
 
     <div class="options">
-      <p>Welcome to the OSU CSE Course Scraper and Viewer.</p>
+      <p>Welcome to the OSU CSE Course Scraper and Viewer.
+      The following links will take you to the different functions of our website.</p>
+
+      <div id=site_links>
+        <p>Search Courses will allow you to search all of the courses that have been added to the database by an administrator.</p>
+        <%= link_to "Search Courses", "/courses" %>
+        <div id=user_type_links>
+          <% if (user_signed_in?)%>
+            <%if (current_user.verified == "true") && (current_user.user_type == "admin") %>
+              <p>Welcome Administrator!</p>
+              <%= link_to "Display Admin Profile", "admin/profile" %>
+              <%= link_to "Verify Profiles", "admin/verify" %>
+            <%elsif (current_user.user_type == "student")%>
+              <%= link_to "Display Student Profile", "student/profile" %>
+            <%else %>
+              <p>Please Verify Account.</p>
+            <%end %>
+
+          <% end %>
+
+          <!--%= link_to "Display Instructor Profile", "instructor/profile" %-->
 
 
-      <p>ALl Below Links are for development</p>
+        </div>
+      </div>
+
+      <p><b>All Below Links are for development</b></p>
       <div id=course_links>
         <p>Course Links</p>
         <%= link_to "Search Courses", "/courses" %>
       </div>
 
       <div id=scraper_links>
-        <p>Scraper Links</p>
+        <p>Scraper Links Make sure only admin</p>
         <%= link_to "Scrape Courses", "scrapes/index" %>
         <%= link_to "New Courses", "scrapes/new" %>
 
@@ -50,6 +73,14 @@
         <%= link_to "User New", "users/new" %>
         <%= link_to "User Edit", "users/edit" %>
         <%= link_to "User Show", "users/show" %>
+      </div>
+
+      <div id=admins_links>
+        <p>Admin Links</p>
+        <%= link_to "Admin Index", "admins/index" %>
+        <%= link_to "Admin New", "admins/new" %>
+        <%= link_to "Admin Edit", "admins/:nameDotNumber" %>
+        <%= link_to "Admin Show", "admins/all" %>
       </div>
 
       <% if (user_signed_in? && (current_user.verified == "true"))%>

@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   get 'new_profile.css' => 'pages#new_profile.css'
   get 'display_course' => 'pages#display_course'
   get 'display_profile' => 'pages#display_profile'
-  get 'admins/:nameDotNumber', to: 'admins#edit', as: :edit_admin
-  get 'admins_all', to: 'admins#show', :as => :user
-  get 'admins_index', to: 'admins#index'
-  get 'admins_new', to: 'admins#new'
+  #get 'admins/:nameDotNumber', to: 'admins#edit', as: :edit_admin
+  get 'admins/all', to: 'admins#show', :as => :user
+  get 'admins/index', to: 'admins#index'
+  get 'admins/new', to: 'admins#new'
 
   get 'form' => 'courses#form'
   get 'new_course' => 'courses#form'
@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   #get 'admins/:name', to: 'admins#edit', as: :edit_admin
   #New admin page
   get 'admin_new' => 'admins#new'
+
+  get 'admin/verify' => 'pages#verify'
+  get 'admin/verify.css' => 'pages#verify.css'
   #Edit admin page
   #get 'admin_edit' => 'admins#edit'
   #Show a specific admin
