@@ -1,19 +1,6 @@
 # README
 
 
-Things you may want to cover:
-
-
-* System dependencies
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
 Web Scraping and Login
 -----------------------
 This project is directly tied to project 4 in the sense that the database, routes, and MVC of our 
@@ -44,15 +31,16 @@ With the use of gems, we were able to utilize the convenience of Ruby on Rails i
 9) mechanize                  -- for issuing HTTP requests
 10) nokogiri                  -- to navigate the body of the response
 11) devise                    -- to establish an authorication system
-12) byebug                    -- to stop execution and get a debugger console
-13) web-console               -- to access an interactive console on exception pages
-14) listen                    -- to notify changes in the file system
-15) spring                    -- to speed up development by keeping application running in background
-16) spring-watcher-listener   -- to listen to application running in background
-17) capybara                  -- to add support for Capybara system testing
-18) selenium-webdriver        -- to add support for selenium driver
-19) webdrivers                -- for easy installation and use of web drivers to run system tests with browsers
-20) tzinfo-data               -- to include zoneinfo files, since Windows does not
+12) faker                     -- to generate fake data( ie used for deafult admin account)
+13) byebug                    -- to stop execution and get a debugger console
+14) web-console               -- to access an interactive console on exception pages
+15) listen                    -- to notify changes in the file system
+16) spring                    -- to speed up development by keeping application running in background
+17) spring-watcher-listener   -- to listen to application running in background
+18) capybara                  -- to add support for Capybara system testing
+19) selenium-webdriver        -- to add support for selenium driver
+20) webdrivers                -- for easy installation and use of web drivers to run system tests with browsers
+21) tzinfo-data               -- to include zoneinfo files, since Windows does not
 
 Screenshots
 ----------
