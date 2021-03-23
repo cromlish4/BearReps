@@ -54,7 +54,7 @@ Screenshots
 ![Home page not signed in](https://user-images.githubusercontent.com/77806397/112221980-8092f200-8bfe-11eb-92e5-5bbf893c3f96.PNG)
 
 4) Verify Page -- Admin signed in
-![Verify admin signed in](project3/VPage.png)
+![Verify admin signed in](https://user-images.githubusercontent.com/77364977/112228320-8214e800-8c07-11eb-9c6d-04731ead5833.png)
 
 Installation
 -------------
