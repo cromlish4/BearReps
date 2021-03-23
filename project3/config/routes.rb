@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   resources :students
   resources :instructors
   resources :courses
+  resources :scrapes
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # Default Route
   root 'pages#home'
-
   # Other Routes
   # get 'name' => 'viewName#name'
   # get 'login' => 'pages#login'
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'admins_all', to: 'admins#show', :as => :user
   get 'admins_index', to: 'admins#index'
   get 'admins_new', to: 'admins#new'
+
   get 'form' => 'courses#form'
   get 'new_course' => 'courses#form'
   get 'display_admin' => 'pages#display_admin'

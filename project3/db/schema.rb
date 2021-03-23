@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 2021_03_16_010131) do
 
   create_table "courses", force: :cascade do |t|
-    t.string "title"
-    t.string "term"
+    t.string "title", null: false
+    t.string "term", null: false
     t.string "units"
     t.string "campus"
-    t.string "subject"
-    t.string "catalog_number"
+    t.string "subject", default: "CSE"
+    t.string "catalog_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
