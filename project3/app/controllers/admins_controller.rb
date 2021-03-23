@@ -48,6 +48,12 @@ def destroy
   redirect_to action: :index, notice: "Deleted selected admin entry"
 end
 
+def verify_redirect
+  temp_user = User.find_by(nameDotNumber: params[:nameDotNumber])
+  temp_user.verified = "true"
+  temp_user.save
+end
+
 private
 
   def set_admin

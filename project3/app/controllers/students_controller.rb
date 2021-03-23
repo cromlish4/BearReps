@@ -14,16 +14,18 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    @student = User.new
   end
 
   # GET /students/1/edit
   def edit
   end
 
+
+
   # POST /students or /students.json
   def create
-    @student = Student.new(student_params)
+    @student = User.new(student_params)
     @student.user = current_user
 
 
@@ -63,7 +65,7 @@ class StudentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
-      @student = Student.find(params[:id])
+      @student = User.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

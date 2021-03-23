@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   get 'admin/verify' => 'pages#verify'
   get 'admin/verify.css' => 'pages#verify.css'
+  get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
   #Edit admin page
   #get 'admin_edit' => 'admins#edit'
   #Show a specific admin

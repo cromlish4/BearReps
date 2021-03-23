@@ -17,4 +17,7 @@ class PagesController < ApplicationController
   def verify
 
   end
+  def verify_account
+
+  end
 end

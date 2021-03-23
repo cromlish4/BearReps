@@ -4,7 +4,7 @@
     Users to be Verified
   </title>
   <meta charset="utf-8"/>
-  <link type="text/css" rel="stylesheet" href="/verify.css"/>
+  <link type="text/css" rel="stylesheet" href="/admin/verify.css"/>
 </head>
 <body>
 <h1>Admin Verification Page</h1>
@@ -22,10 +22,12 @@
     </thead>
     <tbody>
     <% User.where(verified: "false").each do |t| %>
-      <tr>
+      <td>
         <td><%= t.fname %> <%= t.lname %></td>
         <td><%= t.nameDotNumber %></td>
         <td><%= t.user_type %></td>
+
+        <td><%= button_to "Verify", "user/"+t.nameDotNumber, method: :get %></td>
       </tr>
     <% end %>
     </tbody>
