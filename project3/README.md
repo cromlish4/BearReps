@@ -111,3 +111,8 @@ References
 - README guidelines:
     -  makeareadme.com 
     -  "A Beginners Guide to writing a Kickass READMe" by Akash Nimare
+
+- Course Searching
+    - https://medium.com/@yassimortensen/simple-search-form-in-rails-8483739e4042
+ - Some Scraping
+     - https://stackoverflow.com/questions/12047100/ruby-mechanize-nokogiri-and-nethttp
