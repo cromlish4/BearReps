@@ -62,6 +62,7 @@ You will also want to enter "rails db:seed" on your command line in order to get
 Finally, you may enter "rails s" on your command line to run our server. 
 Now, you may open up your choice of web browser and enter "localhost:3000" in the url field.
 
+Notes: There are two default accounts Admin Email: buckeye.1@osu.edu Password: password and Developer Email: buckeye.2@osu.edu Password: password
 Running Scraper By Itself
 --------------------------
 In the case where you might need to run scraper separately you can find it in app/helpers/scraper.rb
