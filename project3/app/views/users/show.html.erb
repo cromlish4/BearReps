@@ -2,13 +2,9 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <%= current_user.fname %> <%= current_user.lname %>
 </p>
 
-<p>
-  <strong>Movie:</strong>
-  <%= @user.movie %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', "/users/edit" %> |
+<%= link_to 'Back', :back %>

@@ -19,7 +19,7 @@
     <%= User.where(user_type: "student").each do |t| %>
       <tr>
         <td><%= t.fname %> <%= t.lname %></td>
-        <td><%= t.classes %></td>
+        <!--td>%= t.classes %></td-->
       </tr>
     <% end %>
     </tbody>

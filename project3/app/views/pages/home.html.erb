@@ -40,8 +40,14 @@
         <%= link_to "Student New", "students/new" %>
         <%= link_to "Student Edit", "students/edit" %>
         <%= link_to "Student Show", "students/show" %>
+      </div>
 
-
+      <div id=users_links>
+        <p>User Links</p>
+        <%= link_to "User Index", "users/index" %>
+        <%= link_to "User New", "users/new" %>
+        <%= link_to "User Edit", "users/edit" %>
+        <%= link_to "User Show", "users/show" %>
       </div>
 
       <% if (user_signed_in? && (current_user.verified == "true"))%>

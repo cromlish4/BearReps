@@ -78,4 +78,10 @@ Rails.application.routes.draw do
   get 'students/edit' => 'students#edit'
   get 'students/new' => 'students#new'
   get 'students/show' => 'students#show'
+
+  #Users
+  get 'users/index' => 'users#index'
+  get 'users/edit' => 'users#edit'
+  get 'users/new' => 'users#new'
+  get 'users/show' => 'users#show'
 end
