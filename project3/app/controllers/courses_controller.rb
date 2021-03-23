@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   def index
     @title = title_value(params[:title_value])
     @term = set_search_term_value(params[:term_value])
-    @courses = search(params[:search])
+    @courses = search(params[:search]).order(catalog_number: :ASC)
   end
 
   def show
