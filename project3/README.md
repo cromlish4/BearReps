@@ -57,9 +57,13 @@ With the use of gems, we were able to utilize the convenience of Ruby on Rails i
 Screenshots
 ----------
 1) Home Page -- user not signed in
-![Home page not signed in](https://user-images.githubusercontent.com/77806397/112221980-8092f200-8bfe-11eb-92e5-5bbf893c3f96.PNG)
+![Home page new user](https://user-images.githubusercontent.com/77806397/112222900-89d08e80-8bff-11eb-94ae-74abb8ae325e.PNG)
+
 2) Home Page -- user signed in, but not verified
 ![Home page signed in not verified](https://user-images.githubusercontent.com/77806397/112222020-8f79a480-8bfe-11eb-8eaa-8177dba0592c.PNG)
+
+3) Home Page -- user signed out
+![Home page not signed in](https://user-images.githubusercontent.com/77806397/112221980-8092f200-8bfe-11eb-92e5-5bbf893c3f96.PNG)
 
 
 Installation
