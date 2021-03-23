@@ -31,7 +31,7 @@ With the use of gems, we were able to utilize the convenience of Ruby on Rails i
 9) mechanize                  -- for issuing HTTP requests
 10) nokogiri                  -- to navigate the body of the response
 11) devise                    -- to establish an authorication system
-12) faker                     -- to generate fake data( ie used for deafult admin account)
+12) faker                     -- to generate fake data( ie used for 20 accounts to populate db)
 13) byebug                    -- to stop execution and get a debugger console
 14) web-console               -- to access an interactive console on exception pages
 15) listen                    -- to notify changes in the file system
