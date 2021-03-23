@@ -25,6 +25,24 @@
         <%= link_to "New Courses", "scrapes/new" %>
 
       </div>
+      <!-- If statement to pick which type of profile displays-->
+      <div id=profile_links>
+        <p>Profile Links</p>
+        <%= link_to "Display Student Profile", "student/profile" %>
+        <!--%= link_to "Display Instructor Profile", "instructor/profile" %-->
+        <%= link_to "Display Admin Profile", "admin/profile" %>
+
+      </div>
+
+      <div id=students_links>
+        <p>Student Links</p>
+        <%= link_to "Student Index", "students/index" %>
+        <%= link_to "Student New", "students/new" %>
+        <%= link_to "Student Edit", "students/edit" %>
+        <%= link_to "Student Show", "students/show" %>
+
+
+      </div>
 
       <% if (user_signed_in? && (current_user.verified == "true"))%>
         <% if current_user.user_type == "admin" %>

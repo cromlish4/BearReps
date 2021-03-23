@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   #Show a specific instructor
   # get 'instructor_show' => 'instructors#show'
   # Show all instructors
-  # get 'instructors_index' => 'instrutors#index'
+  # get 'instructors_index' => 'instructors#index'
 
   get 'student_new' => 'students#new'
   #Edit student page
@@ -54,8 +54,28 @@ Rails.application.routes.draw do
   get 'courses' => 'pages#courses'
 
   #Scrapes
-  get 'scrapes/index', to: 'scrapes#index'
-  get 'scrapes/new', to: 'scrapes#new'
+  get 'scrapes/index' => 'scrapes#index'
+  get 'scrapes/new' => 'scrapes#new'
 
+  # Profiles
+  get 'student/profile' => 'pages#display_student'
+  #get 'instructor/profile' => 'pages#display_admin'
+  get 'admin/profile' => 'pages#display_admin'
+  # CSS
+  get 'display_student.css' => 'pages#display_student.css'
+  #get 'instructor/profile' => 'pages#display_admin.css'
+  get 'display_admin.css' => 'pages#display_admin.css'
 
+  # Lists
+  get 'all_students' => 'pages#all_students'
+  get 'all_courses' => 'pages#all_courses'
+  # CSS
+  get 'all_students.css' => 'pages#all_students.css'
+  get 'all_courses.css' => 'pages#all_courses.css'
+
+  #Students
+  get 'students/index' => 'students#index'
+  get 'students/edit' => 'students#edit'
+  get 'students/new' => 'students#new'
+  get 'students/show' => 'students#show'
 end
