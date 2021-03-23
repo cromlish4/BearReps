@@ -25,6 +25,21 @@ User.create!(
   user_type: "admin",
   verified: "true"
 )
+User.create!(
+
+  # each user is assigned an id from 1-20
+  id: 22,
+  fname: "Developer",
+  email: "buckeye.2@osu.edu",
+  lname: "Buckeye",
+  nameDotNumber: "buckeye.2",
+  year: %w[Freshman, Sophomore Junior Senior].sample,
+  # issue each user the same password
+  password: "password!",
+  # a user can have only one of these roles
+  user_type: "dev",
+  verified: "true"
+)
 (1..20).each do |id|
 
   User.create!(
