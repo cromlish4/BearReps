@@ -92,3 +92,9 @@ Eric Young implemented the multiple views and their styling in our project, as w
 
 Ryan O'Donovan implemented the login system with the use of the Devise gem, and implemented three different user permissions based on student, instructor
 and admin. 
+
+References
+----------
+- README guidelines:
+    -  makeareadme.com 
+    -  "A Beginners Guide to writing a Kickass READMe" by Akash Nimare
