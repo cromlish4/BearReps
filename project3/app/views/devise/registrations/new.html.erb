@@ -41,7 +41,7 @@
     </div>
 
     <div id="year" class="field">
-      <%= f.label :year %><br />
+      <%= f.label :"Year, only for Students" %><br />
       <%= f.text_field :year,placeholder:"Freshman, Sophomore, etc. " %>
     </div>
 
@@ -52,6 +52,7 @@
 
     <!--Via https://stackoverflow.com/questions/1956191/ruby-on-rails-drop-down-menu-->
     <div id="dropdown">
+      <%= f.label :"Choose User type." %><br />
       <%= f.select :user_type, [['Student','student'],['Teacher','teacher'],['Admin','admin']] %>
     </div>
 

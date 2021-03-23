@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   resources :instructors
   resources :courses
   resources :scrapes
-  devise_for :users
+  # devise_for :users
+  Rails.application.routes.draw do
+    devise_for :users, controllers: {
+      sessions: 'users/sessions'
+    }
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # Default Route
   root 'pages#home'

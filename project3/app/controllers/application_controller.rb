@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:fname, :lname, :nameDotNumber, :year])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:fname, :lname, :nameDotNumber, :year])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:fname, :lname, :nameDotNumber, :year, :user_type])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:fname, :lname, :nameDotNumber, :year, :user_type])
   end
 
   private def my_params_course
