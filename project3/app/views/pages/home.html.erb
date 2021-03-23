@@ -12,11 +12,23 @@
     <h1 id="header">Home</h1>
 
     <div class="options">
-      <p>This is a temporary screen while the website is being built.</p>
+      <p>Welcome to the OSU CSE Course Scraper and Viewer.</p>
       <div id="course-catalog"><a href="/courses">Course Catalog</a></div>
+      <div id=course_links>
+        <p>Course Links</p>
+        <%= link_to "Search Courses", "/courses" %>
+      </div>
+
+      <div id=scraper_links>
+        <p>Scraper Links</p>
+        <%= link_to "Scrape Courses", "scrapes/index" %>
+        <%= link_to "New Courses", "scrapes/new" %>
+
+      </div>
 
       <% if (user_signed_in? && (current_user.verified == "true"))%>
         <% if current_user.user_type == "admin" %>
+          <p>Admin Link</p>
           <%= link_to "Admin Page", "admins/"+current_user.nameDotNumber %>
         <% end %>
       <% end %>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # get 'name' => 'viewName#name'
   # get 'login' => 'pages#login'
   get 'login.css' => 'pages#login.css'
+  get 'home' => 'pages#home'
   # get 'new_profile' => 'pages#new_profile'
   get 'new_profile.css' => 'pages#new_profile.css'
   get 'display_course' => 'pages#display_course'
@@ -50,6 +51,11 @@ Rails.application.routes.draw do
   # Show all students
   # get 'students_index' => 'students#index'
 
-  # get 'courses' => 'pages#courses'
+  get 'courses' => 'pages#courses'
+
+  #Scrapes
+  get 'scrapes/index', to: 'scrapes#index'
+  get 'scrapes/new', to: 'scrapes#new'
+
 
 end
