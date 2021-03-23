@@ -6,6 +6,8 @@ class Scrape < ApplicationRecord
   @@terms = { 'summer' => 1214, 'spring' => 1212, 'autumn' => 1218 }
   @@campuses = { 'columbus' => 'col', 'marion' => 'mrn', 'newark' => 'nwk', 'lima' => 'lma', 'wooster' => 'wst', "mansfield" => 'mns' }
   @@course_keys = %w[title term maxUnits campus] #, catalogNumber]
+  @@scraped_courses = nil
+  @@chosen_course = nil
 
   def self.scrape(query, term, campus)
     # initial setup
@@ -33,10 +35,33 @@ class Scrape < ApplicationRecord
         end
         courses[c['course']['catalogNumber']] = attributes
       end
-      courses
+      @@scraped_courses = courses
     else
       nil
     end
+  end
+
+  def self.get_scraped_courses
+    @@scraped_courses
+  end
+
+  def self.set_empty_chosen_course
+    @@chosen_course = Hash.new
+    @@chosen_course['catalogNumber'] = ''
+
+    @@course_keys.each do |attribute|
+      @@chosen_course[attribute] = ''
+    end
+
+  end
+
+  def self.set_chosen_course(key)
+    @@chosen_course = @@scraped_courses[key]
+    @@chosen_course['catalogNumber'] = key
+  end
+
+  def self.get_chosen_course
+    @@chosen_course
   end
 
   def self.get_terms
@@ -51,7 +76,4 @@ class Scrape < ApplicationRecord
     @@course_keys
   end
 
-  def self.get_section_keys
-    @@section_keys
-  end
 end

@@ -2,8 +2,8 @@
 class CoursesController < ApplicationController
 
   def index
-    @title = set_search_title_value(params[:set_search_title_value])
-    @term = set_search_term_value(params[:set_search_term_value])
+    @title = title_value(params[:title_value])
+    @term = set_search_term_value(params[:term_value])
     @courses = search(params[:search])
   end
 
@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
     if @course.save
       redirect_to @course
     else
-      render :new
+      render :'scrapes/new'
     end
   end
 
@@ -50,7 +50,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  private def set_search_title_value(title)
+  private def title_value(title)
     nil
     if title and title != ""
       #check if there is a course with this title
