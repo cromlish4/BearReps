@@ -1,0 +1,10 @@
+body>h1{
+  text-align: center;
+	margin: 0px 0px 20px;
+}
+
+
+td, tr{
+  font-size: 18px;
+  padding: 2px;
+}

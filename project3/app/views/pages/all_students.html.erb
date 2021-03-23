@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>
+      All Students
+    </title>
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="/all_students.css"/>
+  </head>
+  <body>
+    <h1>All Students</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+    <% User.where(user_type: "student").each do |t| %>
+      <tr>
+        <td><%= t.fname %> <%= t.lname %></td>
+        <!--td>%= t.classes %></td-->
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+  </body>
+</html>
