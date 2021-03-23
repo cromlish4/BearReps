@@ -70,6 +70,7 @@ Installation
 -------------
 After fethcing our project, you first will want to run "bundle install" on your command line.
 Next, you must make sure to enter "rails db:migrate" on your command line in order that your schema.rb will be updated.
+You will also want to enter "rails db:seed" on your command line in order to get a default, verified admin account in order to see all of our views.
 Finally, you may enter "rails s" on your command line to run our server. 
 Now, you may open up your choice of web browser and enter "localhost:3000" in the url field.
 
