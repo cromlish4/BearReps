@@ -56,7 +56,11 @@ With the use of gems, we were able to utilize the convenience of Ruby on Rails i
 
 Screenshots
 ----------
---Fill in Later--
+1) Home Page -- user not signed in
+![Home page not signed in](https://user-images.githubusercontent.com/77806397/112221980-8092f200-8bfe-11eb-92e5-5bbf893c3f96.PNG)
+2) Home Page -- user signed in, but not verified
+![Home page signed in not verified](https://user-images.githubusercontent.com/77806397/112222020-8f79a480-8bfe-11eb-8eaa-8177dba0592c.PNG)
+
 
 Installation
 -------------
@@ -68,7 +72,14 @@ Now, you may open up your choice of web browser and enter "localhost:3000" in th
 Tests
 ------
 
--- Get thoughts from team later --
+1) We made sure that in the CoursesController for both New and Create, that these may only be entered if the user is a verified admin. Otherwise, we redirect to the index page.
+
+
+2) We made sure that in the ScrapesController for both New and Create, that these may only be entered if the user is a verified admin. Otherwise, we redirect to the index page.
+
+3) For the ApplicationController and Home page, we made sure that if the user is not signed in, then they are not able to view the development links, and only the Sign Up, Login, and Search Courses link
+
+4) For grading, we made sure to add a default, verified admin account with the use of rails seeds.
 
 
 Acknowledgement
