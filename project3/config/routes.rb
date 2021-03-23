@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'display_profile' => 'pages#display_profile'
   get 'admins/:nameDotNumber', to: 'admins#edit', as: :edit_admin
   get 'admins_all', to: 'admins#show', :as => :user
-  get 'admins_index', to: 'admin#index'
+  get 'admins_index', to: 'admins#index'
   get 'admins_new', to: 'admins#new'
   get 'form' => 'courses#form'
   get 'new_course' => 'courses#form'

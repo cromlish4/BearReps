@@ -1,11 +1,10 @@
-
-Class IntructorsController < ApplicationController
+class IntructorsController < ApplicationController
 # use before_action to reduce code duplication
-before_action :set_instructor, only [:show, :edit, :update, :destroy]
+before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 
 # wired to app/views/instructors/index.html.erb by default (naming convention)
 def index
-  @instructors = Instructor.all # be carefult about singular and plural
+  @instructors = Instructor.all # be careful about singular and plural
 end
 
 # wired to app/views/instructors/show.html.erb by default (naming convention)
@@ -27,7 +26,7 @@ def create
   if @instructor.save
     redirect_to @instructor, notice: "Successfully Saved!"
   else
-    render: new
+    render :new
   end
 end
 
@@ -42,7 +41,7 @@ def update
   if @instructor.update
     redirect_to @instructor, notice: "Successfully Updated!"
   else
-    render: edit
+    render :edit
   end
 end
 
