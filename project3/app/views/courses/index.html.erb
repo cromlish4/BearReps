@@ -10,5 +10,5 @@
 <% end %>
 
 <% @courses.each do |course| %>
-  <p class="title"><%= link_to course.title, course %><%= "\t: #{course.subject} #{course.catalog_number}" %></p>
+  <p class="title"><%= link_to "#{course.subject} #{course.catalog_number} : #{course.title}", course %></p>
 <% end %>

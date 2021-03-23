@@ -7,6 +7,7 @@ class Scrape < ApplicationRecord
   @@campuses = { 'columbus' => 'col', 'marion' => 'mrn', 'newark' => 'nwk', 'lima' => 'lma', 'wooster' => 'wst', "mansfield" => 'mns' }
   @@course_keys = %w[title term maxUnits campus] #, catalogNumber]
   @@scraped_courses = nil
+  @@chosen_course = nil
 
   def self.scrape(query, term, campus)
     # initial setup
@@ -42,6 +43,15 @@ class Scrape < ApplicationRecord
 
   def self.get_scraped_courses
     @@scraped_courses
+  end
+
+  def self.set_chosen_course(key)
+    @@chosen_course = @@scraped_courses[key]
+    @@chosen_course['catalogNumber'] = key
+  end
+
+  def self.get_chosen_course
+    @@chosen_course
   end
 
   def self.get_terms

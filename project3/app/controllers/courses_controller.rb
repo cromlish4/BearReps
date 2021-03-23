@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
     if @course.save
       redirect_to @course
     else
-      render :new
+      render :'scrapes/new'
     end
   end
 

@@ -25,7 +25,13 @@ class ScrapesController < ApplicationController
   end
 
   def create
-
+    @course = Course.new(my_params_course)
+    if @course.save
+      redirect_to @course
+    else
+      render :new
+    end
+    puts 'placeholder'
   end
 
   private def search(search)

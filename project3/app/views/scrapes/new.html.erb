@@ -1,5 +1,39 @@
 <h1>Enter Course Details</h1>
 
-<%= render 'form' %>
+<%= form_for @course do |f| %>
+  <div class="form-control">
+    <%= f.label :title%>
+    <%= f.text_field  :title, required: true, value: Scrape.get_chosen_course['title']  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :term%>
+    <%= f.text_field  :term, required: true, value: Scrape.get_chosen_course['term']   %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :units %>
+    <%= f.text_field  :units, value: Scrape.get_chosen_course['maxUnits'] %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :campus %>
+    <%= f.text_field  :campus, value: Scrape.get_chosen_course['campus'] %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :subject %>
+    <%= f.text_field  :subject, value: 'CSE' %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :catalog_number %>
+    <%= f.text_field  :catalog_number,  required: true, value: Scrape.get_chosen_course['catalogNumber']  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.submit 'Enter Class'%>
+  </div>
+<% end %>
 <!--% redirect_to root %>-->
 <!--Need to make some sort of show method maybe Im not sure-->
