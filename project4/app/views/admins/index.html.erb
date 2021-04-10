@@ -1,0 +1,27 @@
+<!-- List all admins in the database-->
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Admins</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Email</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% User.where(user_type: "admin", verified: "true") do |admin|%>
+        <tr>
+          <td><%= admin.fname %> <%= admin.lname %></td>
+          <td><%= admin.email %></td>
+          <td><%= link_to "Edit", edit_admin_path(admin) %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+  <br/><%= link_to "New Admin", "/admins/new" %>
+</body>
+</html>

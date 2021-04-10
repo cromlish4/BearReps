@@ -1,0 +1,19 @@
+body>h1{
+	text-align: center;
+	margin: 0px 0px 20px;
+	border: 3px solid red;
+}
+
+/* Style for student information */
+#name
+{
+	padding: 2px;
+}
+
+#OSU-ID{
+	padding: 2px;
+}
+
+#year{
+	padding: 2px;
+}

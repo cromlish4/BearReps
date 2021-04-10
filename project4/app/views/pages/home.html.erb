@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="home.css"/>
+
+  </head>
+
+  <body>
+    <h1 id="header">Home</h1>
+
+    <div class="options">
+      <p>Welcome to the OSU CSE Course Scraper and Viewer.
+      The following links will take you to the different functions of our website.</p>
+
+      <div id=site_links>
+        <p>Search Courses will allow you to search all of the courses that have been added to the database by an administrator.</p>
+        <%= link_to "Search Courses", "/courses" %>
+        <div id=user_type_links>
+          <% if (user_signed_in?)%>
+            <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+              <p>Welcome Administrator!</p>
+              <%= link_to "Admin Menu", "admin/home" %>
+              <div id=scraper_links>
+                <p>Admin Links to Scrape Courses</p>
+                <%= link_to "Scrape Courses", "scrapes/index" %>
+                <%= link_to "New Courses", "scrapes/new" %>
+
+              </div>
+            <%elsif (current_user.user_type == "student")%>
+              <%= link_to "Display Student Profile", "student/profile" %>
+            <%else %>
+              <p>Please Verify Account.</p>
+            <%end %>
+          <% else %>
+
+          <% end %>
+
+          <!--%= link_to "Display Instructor Profile", "instructor/profile" %-->
+
+
+        </div>
+      </div>
+
+      <% if (user_signed_in?) && (current_user.verified == "true") && (current_user.user_type == "dev") %>
+      <p><b>All Below Links are for development</b></p>
+      <div id=course_links>
+        <p>Course Links</p>
+        <%= link_to "Search Courses", "/courses" %>
+      </div>
+
+      <div id=scraper_links>
+        <p>Scraper Links Make sure only admin</p>
+        <%= link_to "Scrape Courses", "scrapes/index" %>
+        <%= link_to "New Courses", "scrapes/new" %>
+
+      </div>
+      <!-- If statement to pick which type of profile displays-->
+      <div id=profile_links>
+        <p>Profile Links</p>
+        <%= link_to "Display Student Profile", "student/profile" %>
+        <!--%= link_to "Display Instructor Profile", "instructor/profile" %-->
+        <%= link_to "Display Admin Profile", "admin/profile" %>
+
+      </div>
+
+      <div id=students_links>
+        <p>Student Links</p>
+        <%= link_to "Student Index", "students/index" %>
+        <%= link_to "Student New", "students/new" %>
+        <%= link_to "Student Edit", "students/edit" %>
+        <%= link_to "Student Show", "students/show" %>
+      </div>
+
+      <div id=users_links>
+        <p>User Links</p>
+        <%= link_to "User Index", "users/index" %>
+        <%= link_to "User New", "users/new" %>
+        <%= link_to "User Edit", "users/edit" %>
+        <%= link_to "User Show", "users/show" %>
+      </div>
+
+      <div id=admins_links>
+        <p>Admin Links</p>
+        <%= link_to "Admin Index", "admins/index" %>
+        <%= link_to "Admin New", "admins/new" %>
+        <%= link_to "Admin Edit", "admins/:nameDotNumber" %>
+        <%= link_to "Admin Show", "admins/all" %>
+      </div>
+
+      <% if (user_signed_in? && (current_user.verified == "true"))%>
+        <% if current_user.user_type == "admin" %>
+          <p>Admin Link</p>
+          <%= link_to "Admin Page", "admins/"+current_user.nameDotNumber %>
+        <% end %>
+      <% end %>
+
+    </div>
+<%end %>
+
+  </body>
+
+</html>
+
