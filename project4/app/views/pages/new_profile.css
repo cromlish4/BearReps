@@ -1,0 +1,62 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  position:relative;
+}
+
+header>h1{
+  text-align: center;
+  border: 3px solid red;
+
+}
+
+.back{
+  position:absolute;
+  margin-top: 700px;
+}
+
+#first-name{
+
+  padding: 10px;
+  padding-top: 30px;
+}
+
+#last-name{
+  padding: 10px;
+}
+
+#name-dot{
+  padding: 10px;
+}
+
+#year{
+  padding:10px;
+}
+
+#email{
+  padding: 10px;
+}
+
+#password{
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+#passwordC{
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.submission{
+  background-color: white;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+  padding: 12px 28px;
+  transform: translateX(10px);
+}

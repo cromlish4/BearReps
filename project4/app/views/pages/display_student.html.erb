@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Profile</title>
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="/display_student.css"/>
+  </head>
+
+  <body>
+
+    <h1 id=header>Student Profile</h1>
+
+    <!-- app/controllers/student.rb is a class, and @student is an instance variable for this class. The class has methods (i.e. action) to access the student object's attributes such as fname, lname, osu_id, year, etc.  -->
+    <div class="information">
+        <div id="name"><p><%= current_user.fname%> <%= current_user.lname%></p></div>
+        <div id="OSU-ID"><p><%= current_user.nameDotNumber%></p></div>
+        <div id="year"><p><%= current_user.year%></p></div>
+        <!--div id = "classes"><p>%= @student.classes%></p></div-->
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,14 @@
+body>h1{
+	text-align: center;
+	margin: 0px 0px 20px;
+	border: 3px solid red;
+}
+
+#sign-in
+{
+	padding: 2px;
+}
+
+#course-catalog{
+	padding: 2px;
+}
