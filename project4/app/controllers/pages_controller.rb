@@ -14,11 +14,5 @@ class PagesController < ApplicationController
   def home
 
   end
-  def verify
 
-  end
-
-  def verify_account
-
-  end
 end

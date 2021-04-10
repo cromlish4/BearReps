@@ -35,9 +35,9 @@ Rails.application.routes.draw do
   #New admin page
   get 'admin_new' => 'admins#new'
 
-  get 'admin/verify' => 'pages#verify'
+  get 'admin/verify' => 'admins#verify'
   get 'admin/home' => 'admins#admin_home'
-  get 'admin/verify.css' => 'pages#verify.css'
+  get 'admin/verify.css' => 'admins#verify.css'
   get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
   #Edit admin page
   #get 'admin_edit' => 'admins#edit'

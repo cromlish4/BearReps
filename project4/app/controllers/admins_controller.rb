@@ -60,7 +60,12 @@ class AdminsController < ApplicationController
   def admin_home
 
   end
+  def verify
+  end
 
+  def verify_account
+
+  end
 
 
   private
