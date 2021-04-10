@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>
+      All Verified Users
+    </title>
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="/users.css"/>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <%= form_tag("users", method: :get) do %>
+    <p> Search for a User (Only Verified Users are listed here.[may change later]) </p>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag ("Search") %>
+  <% end %>
+
+    <table>
+      <thead>
+        <tr>
+          <th><%= sortable "lname", "Name" %></th>
+          <th>User Type</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+    <% @show_users.where(verified: "true").each do |t| %>
+      <tr>
+        <td><%= t.fname %> <%= t.lname %></td>
+        <td><%= t.user_type %></td>
+        <td><%= t.year %></td>
+        <!--td>%= t.classes %></td-->
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+  </body>
+</html>

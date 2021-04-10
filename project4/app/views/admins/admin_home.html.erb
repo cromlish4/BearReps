@@ -16,8 +16,10 @@
   <% if (user_signed_in?)%>
     <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
       <div id=site_links>
-      <%= link_to "Display Admin Profile", "profile" %> <br>
-      <%= link_to "Verify Profiles", "verify" %> <br>
+        <%= link_to "Display Admin Profile", "profile" %> <br>
+        <%= link_to "Verify Profiles", "verify" %> <br>
+        <%= link_to "Show Courses", "/all_courses" %> <br>
+        <%= link_to "Show Users", "users" %> <br>
 
       </div>
     <%else %>

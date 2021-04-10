@@ -60,6 +60,7 @@ class AdminsController < ApplicationController
   def admin_home
 
   end
+
   def verify
     @unverified_users = User.order(sort_column + " " + sort_direction)
   end
@@ -68,6 +69,13 @@ class AdminsController < ApplicationController
 
   end
 
+  def users
+    @show_users = User.order(sort_column + " " + sort_direction)
+
+    if params[:search]
+      search_users
+    end
+  end
 
   private
 
@@ -80,5 +88,11 @@ class AdminsController < ApplicationController
   end
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+  def search_users
+    if @user = User.all.find{|user| user.lname.include?(params[:search]) || user.fname.include?(params[:search])}
+      redirect_to user_path(@user)
+    end
   end
 end
