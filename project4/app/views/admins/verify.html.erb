@@ -15,14 +15,15 @@
   <table>
     <thead>
       <tr>
-        <th>User</th>
-        <th>Name dot number</th>
-        <th>User type</th>
+        <th><%= sortable "lname","User" %></th>
+        <th><%= sortable "nameDotNumber","Name dot number"%></th>
+        <th><%= sortable "user_type","User type"%></th>
         <th>Verify?</th>
       </tr>
     </thead>
     <tbody>
-      <% User.where(verified: "false").each do |t| %>
+      <!--% User.where(verified: "false").each do |t| %-->
+      <% for t in @unverified_users.where(verified: "false") %>
       <tr>
         <td><%= t.fname %> <%= t.lname %></td>
         <td><%= t.nameDotNumber %></td>

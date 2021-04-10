@@ -119,3 +119,5 @@ References
     - https://medium.com/@yassimortensen/simple-search-form-in-rails-8483739e4042
  - Some Scraping
      - https://stackoverflow.com/questions/12047100/ruby-mechanize-nokogiri-and-nethttp
+- HTML Table Sorting
+	- http://railscasts.com/episodes/228-sortable-table-columns?autoplay=true

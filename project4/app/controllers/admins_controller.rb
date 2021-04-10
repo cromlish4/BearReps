@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
 
   before_action :set_admin, only: [ :show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   @admin = User.where(user_type: "admin")
 
   def index
@@ -61,6 +61,7 @@ class AdminsController < ApplicationController
 
   end
   def verify
+    @unverified_users = User.order(sort_column + " " + sort_direction)
   end
 
   def verify_account
@@ -72,5 +73,12 @@ class AdminsController < ApplicationController
 
   def set_admin
     @admin = User.find_by(nameDotNumber: params[:nameDotNumber])
+  end
+
+  def sort_column
+    User.column_names.include?(params[:sort]) ? params[:sort] : "lname"
+  end
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
