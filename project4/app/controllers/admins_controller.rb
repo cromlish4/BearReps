@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :set_admin, only: [ :show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
   @admin = User.where(user_type: "admin")

@@ -51,7 +51,7 @@ User.create!(
     email: Faker::Internet.email,
     lname: Faker::Name.last_name,
     nameDotNumber: Faker::Name.last_name,
-    year: %w[Freshman, Sophomore Junior Senior].sample,
+    year: %w[Freshman Sophomore Junior Senior].sample,
     # issue each user the same password
     password: "password",
     # a user can have only one of these roles
