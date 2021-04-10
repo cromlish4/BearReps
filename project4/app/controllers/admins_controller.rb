@@ -92,7 +92,7 @@ class AdminsController < ApplicationController
 
   def search_users
     if @user = User.all.find{|user| user.lname.include?(params[:search]) || user.fname.include?(params[:search])}
-      redirect_to user_path(@user)
+      redirect_to ("users/"+params[:search])
     end
   end
 end
