@@ -24,7 +24,7 @@ end
 
 # POST a newly filled form to create a new instructor
 def create
-  @instructor = User.new
+  @instructor = User.new(params[:id])
   # Add proper Data here as well
   if @instructor.save
     redirect_to @instructor, notice: "Successfully Saved!"
@@ -34,13 +34,12 @@ def create
 end
 
 # wired to app/views/instructors/update.html.erb by default (naming convention)
-# that view GET a filled form for updating a new instructor, submitting with PUT
+# that view GET a filled form for updating an instructor, submitting with PUT
 def edit
 end
 
-# PUT the edited form to update a new instructor
+# PUT the edited form to update an instructor
 def update
-  @instructor = User.new
   # Add proper data to this
   if @instructor.update
     redirect_to @instructor, notice: "Successfully Updated!"
@@ -60,7 +59,7 @@ end
 private
   # the snippet below is shared by show, edit, update, destroy
   def set_instructor
-    @instructor = User.find(params[:name])
+    @instructor = User.find(params[:id])
   end
 
 end

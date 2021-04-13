@@ -1,0 +1,29 @@
+
+<!-- partial for generating a form (since this snippet is duplicated in new.html.erb and edit.html.erb) -->
+<%= form_for @application do |f| %>
+  
+  <div class = "applicant">
+    <%= f.label :applicant %>
+    <%= f.text_field :applicant %>
+  </div>
+
+  <div class = "email">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  
+  <div class = "course">
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+  </div>
+  
+  <div class = "section">
+    <%= f.label :section %>
+    <%= f.number_field :section %>
+  </div>
+  
+  <!-- text_field will automatically generate id = "label" (e.g., id = "email") for HTML input tag, this can be useful to CSS -->
+    
+  <%= f.submit "Submit" %>
+
+<% end %>

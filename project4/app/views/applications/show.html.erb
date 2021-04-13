@@ -1,0 +1,30 @@
+
+<!-- GET and show one application -->
+<h1>Application Detail</h1>
+
+<table>
+  <tr>
+    <th>Applicant</th> <td><%= @application.applicant %></td>
+  </tr>
+  <tr>
+    <th>Email</th> <td><%= @application.email %></td>
+  </tr>
+  <tr>
+    <th>Course</th> <td><%= @application.course %></td>
+  </tr>
+  <tr>
+    <th>Section Number</th> <td><%= @application.section %></td>
+  </tr>
+  <tr>
+    <th>Applicant's</th> <td><%= link_to "Applicant's Profile", student_path(@application.owner) %></td>
+    <!-- the code of the link should resolve to student_path(:id), where :id is the :id of a student -->
+    <!-- link to /students/:id  -->
+  </tr>
+</table>
+
+<br/>
+<!-- navigation bar, two options: editing the application, the previous page -->
+<nav>
+  <%= link_to "Edit", edit_application_path(@application) %>
+  <%= lin_to "Back", :back %>
+</nav>
