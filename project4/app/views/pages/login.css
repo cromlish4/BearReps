@@ -1,0 +1,44 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  position:relative;
+}
+
+header>h1{
+  text-align: center;
+  margin-top: 10px
+}
+
+#email{
+  text-align: center;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+
+}
+
+#pass{
+  text-align: center;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+
+}
+
+#checkbox{
+  text-align: center;
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+}
+
+#enter{
+  position: absolute;
+  left: 48%;
+  font-size: 20px;
+}

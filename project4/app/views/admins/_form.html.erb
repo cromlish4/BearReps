@@ -1,0 +1,18 @@
+<!-- Partial shared by both edit and new-->
+<!-- Since @admin is not a new instance, the text fields should be populated with the correct info-->
+
+<%= form_for @admin do |t| %>
+
+  <div class = "name">
+    <%= t.label 'Name' %> <br />
+    <%= t.text_field :fname %> <br />
+  </div>
+
+  <div class = "email">
+    <%= t.label 'Email'%> <br />
+    <%= t.text_field :email %> <br />
+  </div>
+
+  <%= t.submit "Submit" %>
+
+<%end%>

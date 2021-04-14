@@ -1,0 +1,14 @@
+<h1><%= "#{@course.subject} #{@course.catalog_number}" %></h1>
+
+<div class="section">
+  <div class="container">
+    <p class="details"><%= "Title : #{@course.title}" %></p>
+    <p class="details"><%= "Term : #{@course.term}" %></p>
+    <p class="details"><%= "Units : #{@course.units}" %></p>
+    <p class="details"><%= "Campus : #{@course.campus}" %></p>
+  </div>
+</div>
+
+<%if (current_user) && (current_user.verified == "true") && (current_user.user_type == "admin") %>
+  <%= submit_tag("test") %>
+<% end %>
