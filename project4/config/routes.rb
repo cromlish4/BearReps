@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'recommendations/new'
   resources :students
   resources :instructors
   resources :courses
   resources :scrapes
   # devise_for :users
   Rails.application.routes.draw do
+  get 'recommendations/new'
     devise_for :users, controllers: {
       sessions: 'users/sessions'
     }
