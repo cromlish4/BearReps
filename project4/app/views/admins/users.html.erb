@@ -10,14 +10,14 @@
     <h1>Users</h1>
     <%= form_tag("users", method: :get) do %>
     <p> Search for a User (Only Verified Users are listed here.[may change later]) </p>
-    <%= text_field_tag(:search, params[:search]) %>
+    <%= text_field_tag(:search, params[:search], placeholder: "First or Last Name Only") %>
     <%= submit_tag ("Search") %>
   <% end %>
 
     <table>
       <thead>
         <tr>
-          <th><%= sortable "lname", "Name" %></th>
+          <th>Name</th> <!--%= sortable "lname", "Name" %>-->
           <th>User Type</th>
           <th>Year</th>
         </tr>

@@ -72,7 +72,8 @@ class AdminsController < ApplicationController
   def users
     @show_users = User.order(sort_column + " " + sort_direction)
 
-    if params[:search]
+    # redirect_to ("users/"+params[:search])
+    if params[:search]!=""
       search_users
     end
   end
@@ -89,10 +90,9 @@ class AdminsController < ApplicationController
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
-
+  # Via https://medium.com/swlh/using-rails-and-html-to-view-sort-and-search-tables-fbf8a0543558
   def search_users
-    if @user = User.all.find{|user| user.lname.include?(params[:search]) || user.fname.include?(params[:search])}
-      redirect_to ("users/"+params[:search])
-    end
+    @show_users = User.where(fname: params[:search]).or(User.where(lname: params[:search]))
+
   end
 end
