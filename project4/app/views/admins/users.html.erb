@@ -10,6 +10,7 @@
     <h1>Users</h1>
     <%= form_tag("users", method: :get) do %>
     <p> Search for a User (Only Verified Users are listed here.[may change later]) </p>
+    <p>Planned Feature: If time permits make each user clickable and bring to a page to edit that user. Admins will be uneditable.</p>
     <%= text_field_tag(:search, params[:search], placeholder: "First or Last Name Only") %>
     <%= submit_tag ("Search") %>
   <% end %>

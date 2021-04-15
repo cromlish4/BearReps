@@ -13,6 +13,7 @@
 
 <div class="options">
   <p>This page contains the pages that Admins have access to.</p>
+  <p>This admin panel lets Admins update and access all information from one easy to find location.</p>
   <% if (user_signed_in?)%>
     <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
       <div id=site_links> <br>
@@ -28,6 +29,8 @@
         <%= link_to "Graders Needed", "" %> <br>
         <p>Link to Recommendations from Instructors. </p>
         <%= link_to "Instructors Rec", "" %> <br>
+        <p>Link to Force the scraper to update the full database. </p>
+        <%= link_to "Scraper Updater", "" %> <br>
       </div>
     <%else %>
       <p>Invalid Credentials</p>
