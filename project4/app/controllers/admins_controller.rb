@@ -21,14 +21,6 @@ class AdminsController < ApplicationController
 
 
   #POST admin form filled out by user
-  def create
-    @admin = User.new
-    if @admin.save
-      redirect_to @admin, notice: "Saved new admin entry"
-    else
-      render :new
-    end
-  end
 
   def edit
     # @admin = User.find_by(nameDotNumber: params[:nameDotNumber])
