@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Classnumber:</strong>
+  <%= @section.classNumber %>
+</p>
+
+<p>
+  <strong>Meetings:</strong>
+  <%= @section.meetings %>
+</p>
+
+<p>
+  <strong>Campus:</strong>
+  <%= @section.campus %>
+</p>
+
+<p>
+  <strong>Waitlisttotal:</strong>
+  <%= @section.waitlistTotal %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @section.term %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @section.endDate %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @section.startDate %>
+</p>
+
+<p>
+  <strong>Enrollmentstatus:</strong>
+  <%= @section.enrollmentStatus %>
+</p>
+
+<p>
+  <strong>Instructionmode:</strong>
+  <%= @section.instructionMode %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @section.component %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @section.section %>
+</p>
+
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>

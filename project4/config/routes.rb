@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :sections
   resources :students
   resources :instructors
   resources :courses
   resources :scrapes
   # devise_for :users
   Rails.application.routes.draw do
+  resources :sections
     devise_for :users, controllers: {
       sessions: 'users/sessions'
     }

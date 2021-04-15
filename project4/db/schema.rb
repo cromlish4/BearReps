@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_034152) do
+ActiveRecord::Schema.define(version: 2021_04_15_223647) do
 
   create_table "courses", force: :cascade do |t|
-    t.string "title"
-    t.string "term"
+    t.string "title", null: false
+    t.string "term", null: false
     t.string "units"
     t.string "campus"
-    t.string "subject"
-    t.string "catalog_number"
+    t.string "subject", default: "CSE"
+    t.string "catalog_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(version: 2021_03_22_034152) do
     t.string "year"
     t.string "username"
     t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer "classNumber"
+    t.string "meetings"
+    t.string "campus"
+    t.integer "waitlistTotal"
+    t.string "term"
+    t.string "endDate"
+    t.string "startDate"
+    t.string "enrollmentStatus"
+    t.string "instructionMode"
+    t.string "component"
+    t.string "section"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,13 +67,12 @@ ActiveRecord::Schema.define(version: 2021_03_22_034152) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false
     t.string "fname"
     t.string "lname"
     t.string "nameDotNumber"
     t.string "year"
     t.string "user_type"
-    t.boolean "verified"
+    t.string "verified", default: "false"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

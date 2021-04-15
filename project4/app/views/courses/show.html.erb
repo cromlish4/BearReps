@@ -10,5 +10,7 @@
 </div>
 
 <%if (current_user) && (current_user.verified == "true") && (current_user.user_type == "admin") %>
-  <%= submit_tag("test") %>
+  <%#= form_tag(course_path, method: :get) do %><%#= text_field_tag(:campus_value, params[:campus_value], placeholder: "campus : columbus, marion, ...") %>
+  <%#= submit_tag("test") %>
+  <%#end %>
 <% end %>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Classnumber</th>
+      <th>Meetings</th>
+      <th>Campus</th>
+      <th>Waitlisttotal</th>
+      <th>Term</th>
+      <th>Enddate</th>
+      <th>Startdate</th>
+      <th>Enrollmentstatus</th>
+      <th>Instructionmode</th>
+      <th>Component</th>
+      <th>Section</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.classNumber %></td>
+        <td><%= section.meetings %></td>
+        <td><%= section.campus %></td>
+        <td><%= section.waitlistTotal %></td>
+        <td><%= section.term %></td>
+        <td><%= section.endDate %></td>
+        <td><%= section.startDate %></td>
+        <td><%= section.enrollmentStatus %></td>
+        <td><%= section.instructionMode %></td>
+        <td><%= section.component %></td>
+        <td><%= section.section %></td>
+        <td><%= link_to 'Show', section %></td>
+        <td><%= link_to 'Edit', edit_section_path(section) %></td>
+        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Section', new_section_path %>

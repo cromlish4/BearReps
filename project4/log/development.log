@@ -18258,3 +18258,201 @@ Processing by CoursesController#show as HTML
 Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 5312)
 
 
+Started GET "/courses/11" for 127.0.0.1 at 2021-04-14 12:52:19 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 17.8ms | Allocations: 10795)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 40.6ms | ActiveRecord: 1.2ms | Allocations: 32828)
+
+
+Started GET "/scrapes?campus_value=2&commit=test" for 127.0.0.1 at 2021-04-14 12:52:48 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"2", "commit"=>"test"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 532)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9704ms (Views: 13.8ms | ActiveRecord: 0.2ms | Allocations: 150500)
+
+
+Started GET "/scrapes?campus_value=2&commit=test" for 127.0.0.1 at 2021-04-14 12:53:14 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"2", "commit"=>"test"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 521)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 3812ms (Views: 19.0ms | ActiveRecord: 0.1ms | Allocations: 150763)
+
+
+Started GET "/courses/11" for 127.0.0.1 at 2021-04-14 12:53:24 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1310)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3116ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 150071)
+
+
+Started GET "/courses/11?campus_value=2&commit=test" for 127.0.0.1 at 2021-04-14 12:53:29 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"campus_value"=>"2", "commit"=>"test", "id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1054)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17001ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 149570)
+
+
+Started GET "/courses/11?campus_value=2&commit=test" for 127.0.0.1 at 2021-04-14 12:54:05 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"campus_value"=>"2", "commit"=>"test", "id"=>"11"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2068ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 150794)
+
+
+Started GET "/courses/11?campus_value=2&commit=test" for 127.0.0.1 at 2021-04-14 12:54:54 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"campus_value"=>"2", "commit"=>"test", "id"=>"11"}
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1147)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3577ms (Views: 16.4ms | ActiveRecord: 0.5ms | Allocations: 150762)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-15 18:32:38 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1837)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.3ms | Allocations: 6285)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-15 18:32:38 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.8ms | Allocations: 64)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 1825)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSections (20210415223647)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "sections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "classNumber" integer, "meetings" varchar, "campus" varchar, "waitlistTotal" integer, "term" varchar, "endDate" varchar, "startDate" varchar, "enrollmentStatus" varchar, "instructionMode" varchar, "component" varchar, "section" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210415223647"]]
+  [1m[35m (22.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2021-04-15 18:38:14 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 18.7ms | Allocations: 11810)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 134ms (Views: 126.9ms | ActiveRecord: 0.8ms | Allocations: 43437)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-15 18:38:14 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.9ms | Allocations: 972)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 4875)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-15 18:38:14 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.3ms | Allocations: 65)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 2315)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2021-04-15 18:38:18 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 7004)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 1.1ms | Allocations: 13250)
+
+
+Started GET "/sections/" for 127.0.0.1 at 2021-04-15 18:38:21 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  ↳ app/views/sections/index.html.erb:24
+  Rendered sections/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 86ms (Views: 12.2ms | ActiveRecord: 0.7ms | Allocations: 7288)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-15 18:39:02 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 163.6ms | Allocations: 222162)
+  Rendered sections/new.html.erb within layouts/application (Duration: 164.5ms | Allocations: 222502)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 188ms (Views: 171.6ms | ActiveRecord: 0.5ms | Allocations: 235683)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-15 18:39:16 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 4871)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-15 18:39:17 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 505)
+
+

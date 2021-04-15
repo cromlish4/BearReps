@@ -1,0 +1,72 @@
+<%= form_with(model: section, local: true) do |form| %>
+  <% if section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+        <% section.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :classNumber %>
+    <%= form.number_field :classNumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meetings %>
+    <%= form.text_field :meetings %>
+  </div>
+
+  <div class="field">
+    <%= form.label :campus %>
+    <%= form.text_field :campus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :waitlistTotal %>
+    <%= form.number_field :waitlistTotal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :term %>
+    <%= form.text_field :term %>
+  </div>
+
+  <div class="field">
+    <%= form.label :endDate %>
+    <%= form.text_field :endDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :startDate %>
+    <%= form.text_field :startDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enrollmentStatus %>
+    <%= form.text_field :enrollmentStatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instructionMode %>
+    <%= form.text_field :instructionMode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :component %>
+    <%= form.text_field :component %>
+  </div>
+
+  <div class="field">
+    <%= form.label :section %>
+    <%= form.text_field :section %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
