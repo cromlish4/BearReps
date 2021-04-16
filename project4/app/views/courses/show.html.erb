@@ -10,6 +10,7 @@
 </div>
 
 <h2 class="break"> ========== </h2>
+<h2><%= link_to "Scrape Sections Online", "#{scrape_url[0, scrape_url.length()-2]}?campus_value=#{@course.campus.downcase()}&term_value=#{@course.term.tr("0-9 ", "").downcase()}&search=#{@course.catalog_number}&courseID=#{course_path[course_path.length-1]}&commit=Scrape" %></h2>
 <h2> Sections for this Course</h2>
 <h2 class="break"> ========== </h2>
 

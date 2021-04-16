@@ -3,22 +3,22 @@
 <%= form_for @section do |f| %>
   <div class="form-control">
     <%= f.label :classNumber %>
-    <%= f.text_field :classNumber, required: true, value: params[:classNumber]  %>
+    <%= f.text_field :classNumber, required: true, value: params[:classNumber], placeholder: "Unique identifier for each section" %>
   </div>
 
   <div class="form-control">
     <%= f.label :courseID %>
-    <%= f.number_field :courseID, required: true, placeholder: "n from courses/n" %>
+    <%= f.number_field :courseID, required: true, value: params[:courseID] , placeholder: "n from courses/n" %>
   </div>
 
   <div class="form-control">
     <%= f.label :meetingDays %>
-    <%= f.text_field :meetingDays, value: params[:meetingDays] %>
+    <%= f.text_field :meetingDays, value: params[:meetingDays], placeholder: "MTWRF" %>
   </div>
 
   <div class="form-control">
     <%= f.label :meetingTimes %>
-    <%= f.text_field :meetingTimes, value: params[:meetingTimes] %>
+    <%= f.text_field :meetingTimes, value: params[:meetingTimes], placeholder: "Ex: 11 am - 11:50 am" %>
   </div>
 
   <div class="form-control">
@@ -38,7 +38,7 @@
 
   <div class="form-control">
     <%= f.label :enrollmentStatus %>
-    <%= f.text_field :enrollmentStatus, value: params[:enrollmentStatus] %>
+    <%= f.text_field :enrollmentStatus, value: params[:enrollmentStatus], placeholder: "open/closed" %>
   </div>
 
   <div class="form-control">
@@ -48,7 +48,7 @@
 
   <div class="form-control">
     <%= f.label :component %>
-    <%= f.text_field :component, value: params[:component] %>
+    <%= f.text_field :component, value: params[:component], placeholder: "Lecture, Recitation, Lab, etc." %>
   </div>
 
   <div class="form-control">
