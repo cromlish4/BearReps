@@ -7,6 +7,7 @@ class Scrape < ApplicationRecord
   @@campuses = { 'columbus' => 'col', 'marion' => 'mrn', 'newark' => 'nwk', 'lima' => 'lma', 'wooster' => 'wst', "mansfield" => 'mns' }
   @@course_keys = %w[title term maxUnits campus] #, catalogNumber]
   @@section_keys = %w[section component instructionMode enrollmentStatus startDate endDate term waitlistTotal meetings] #, classNumber]
+  @@database_section_keys = %w[enrollmentStatus instructionMode component classNumber section meetingDays meetingTimes waitlistTotal courseID]
   @@scraped_courses = nil
   @@chosen_course = nil
   @@scraped_sections = nil
@@ -142,6 +143,10 @@ class Scrape < ApplicationRecord
 
   def self.get_course_keys
     @@course_keys
+  end
+
+  def self.get_database_section_keys
+    @@database_section_keys
   end
 
 end

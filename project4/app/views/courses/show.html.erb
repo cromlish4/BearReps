@@ -9,8 +9,14 @@
   </div>
 </div>
 
-<%if (current_user) && (current_user.verified == "true") && (current_user.user_type == "admin") %>
-  <%#= form_tag(course_path, method: :get) do %><%#= text_field_tag(:campus_value, params[:campus_value], placeholder: "campus : columbus, marion, ...") %>
-  <%#= submit_tag("test") %>
-  <%#end %>
+<h2 class="break"> ========== </h2>
+<h2> Sections for this Course</h2>
+<h2 class="break"> ========== </h2>
+
+<% @sections.each do |section| %>
+  <% Scrape.get_database_section_keys.each do |k| %>
+    <%= "#{k} : #{section[k]}" %>
+    <br>
+<%end %>
+  <h2 class="break"> ========== </h2>
 <% end %>
