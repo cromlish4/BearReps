@@ -18456,3 +18456,2343 @@ Processing by PagesController#home as CSS
 Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 505)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSections (20210415223647)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "sections"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210415223647"]]
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSections (20210415223647)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "sections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "classNumber" integer NOT NULL, "meetingDays" varchar, "meetingTimes" varchar, "waitlistTotal" integer, "endDate" varchar, "startDate" varchar, "enrollmentStatus" varchar, "instructionMode" varchar, "component" varchar, "section" varchar, "courseID" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210415223647"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2021-04-16 15:29:30 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 18.8ms | Allocations: 12004)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 39.7ms | ActiveRecord: 0.7ms | Allocations: 27907)
+
+
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 15:29:33 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  ↳ app/views/sections/index.html.erb:24
+  Rendered sections/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1628)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.6ms | Allocations: 7311)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:29:35 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 121.3ms | Allocations: 218625)
+  Rendered sections/new.html.erb within layouts/application (Duration: 122.9ms | Allocations: 218965)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 151ms (Views: 130.2ms | ActiveRecord: 0.4ms | Allocations: 232334)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:31:10 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 5.7ms | Allocations: 3892)
+  Rendered sections/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4227)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms | Allocations: 10282)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSections (20210415223647)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "sections"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210415223647"]]
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSections (20210415223647)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "sections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "classNumber" integer NOT NULL, "meetingDays" varchar, "meetingTimes" varchar, "waitlistTotal" integer, "endDate" varchar, "startDate" varchar, "enrollmentStatus" boolean, "instructionMode" varchar, "component" varchar, "section" varchar, "courseID" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210415223647"]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:32:36 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 126.5ms | Allocations: 224177)
+  Rendered sections/new.html.erb within layouts/application (Duration: 127.8ms | Allocations: 224734)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 180ms (Views: 157.3ms | ActiveRecord: 1.2ms | Allocations: 256102)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 15:32:38 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1856)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.1ms | Allocations: 6473)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 15:32:38 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.5ms | Allocations: 64)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 1839)
+
+
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 15:32:40 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  ↳ app/views/sections/index.html.erb:24
+  Rendered sections/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1070)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 5998)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:32:41 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 3.7ms | Allocations: 2360)
+  Rendered sections/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2443)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.1ms | Allocations: 7226)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSections (20210415223647)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "sections"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210415223647"]]
+  [1m[35m (34.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSections (20210415223647)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "sections" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "classNumber" integer NOT NULL, "meetingDays" varchar, "meetingTimes" varchar, "waitlistTotal" integer, "endDate" varchar, "startDate" varchar, "enrollmentStatus" varchar, "instructionMode" varchar, "component" varchar, "section" varchar, "courseID" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210415223647"]]
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:34:15 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 120.7ms | Allocations: 223005)
+  Rendered sections/new.html.erb within layouts/application (Duration: 122.2ms | Allocations: 223573)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 173ms (Views: 150.8ms | ActiveRecord: 1.4ms | Allocations: 255309)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:34:50 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 5.0ms | Allocations: 2963)
+  Rendered sections/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.1ms | Allocations: 9360)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 15:35:00 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1855)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms | Allocations: 6422)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 15:35:00 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.3ms | Allocations: 65)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1844)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-16 15:35:03 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 6982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 25ms (Views: 20.9ms | ActiveRecord: 0.9ms | Allocations: 13027)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-16 15:35:04 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1160)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3457ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 149670)
+
+
+Started GET "/courses/6" for 127.0.0.1 at 2021-04-16 15:35:12 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 5322)
+
+
+Started GET "/courses/12" for 127.0.0.1 at 2021-04-16 15:35:13 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.2ms | Allocations: 5315)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 15:35:15 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.3ms | Allocations: 990)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.1ms | Allocations: 4901)
+
+
+Started GET "/scrapes/index" for 127.0.0.1 at 2021-04-16 15:35:24 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.1ms | Allocations: 6649)
+
+
+Started GET "/sections/index" for 127.0.0.1 at 2021-04-16 15:35:27 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:62:in `set_section'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1326)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=index):
+  
+app/controllers/sections_controller.rb:62:in `set_section'
+Started GET "/sections" for 127.0.0.1 at 2021-04-16 15:35:38 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  ↳ app/views/sections/index.html.erb:24
+  Rendered sections/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1059)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 5974)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 15:39:20 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1780)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.1ms | Allocations: 6952)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 15:39:20 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.2ms | Allocations: 63)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1839)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-16 15:39:22 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1534)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.3ms | Allocations: 7000)
+
+
+Started GET "/courses?title_value=&term_value=spring&search=&commit=Search" for 127.0.0.1 at 2021-04-16 15:39:26 -0400
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"spring", "search"=>"", "commit"=>"Search"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (term like '%spring%')[0m
+  ↳ app/controllers/courses_controller.rb:45:in `set_search_term_value'
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%spring%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.5ms | Allocations: 6494)
+
+
+Started GET "/courses?title_value=&term_value=2020&search=&commit=Search" for 127.0.0.1 at 2021-04-16 15:39:30 -0400
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"2020", "search"=>"", "commit"=>"Search"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (term like '%2020%')[0m
+  ↳ app/controllers/courses_controller.rb:45:in `set_search_term_value'
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1327)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.6ms | Allocations: 6821)
+
+
+Started GET "/courses/11" for 127.0.0.1 at 2021-04-16 15:39:32 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1146)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 5716)
+
+
+Started GET "/courses?title_value=&term_value=spring+2020&search=&commit=Search" for 127.0.0.1 at 2021-04-16 15:39:49 -0400
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"spring 2020", "search"=>"", "commit"=>"Search"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (term like '%spring 2020%')[0m
+  ↳ app/controllers/courses_controller.rb:45:in `set_search_term_value'
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 6831)
+
+
+Started GET "/courses/11" for 127.0.0.1 at 2021-04-16 15:39:51 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 5309)
+
+
+Started GET "/courses?title_value=&term_value=&search=&commit=Search" for 127.0.0.1 at 2021-04-16 15:39:58 -0400
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"", "search"=>"", "commit"=>"Search"}
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1325)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 6206)
+
+
+Started GET "/courses?title_value=&term_value=Autumn+2021&search=&commit=Search" for 127.0.0.1 at 2021-04-16 15:40:00 -0400
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"Autumn 2021", "search"=>"", "commit"=>"Search"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (term like '%Autumn 2021%')[0m
+  ↳ app/controllers/courses_controller.rb:45:in `set_search_term_value'
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%Autumn 2021%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1058)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 6619)
+
+
+Started GET "/courses?title_value=&term_value=2021+Autumn&search=&commit=Search" for 127.0.0.1 at 2021-04-16 15:40:05 -0400
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"2021 Autumn", "search"=>"", "commit"=>"Search"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (term like '%2021 Autumn%')[0m
+  ↳ app/controllers/courses_controller.rb:45:in `set_search_term_value'
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1327)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.5ms | Allocations: 6819)
+
+
+Started GET "/courses?title_value=&term_value=&search=&commit=Search" for 127.0.0.1 at 2021-04-16 15:40:07 -0400
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"", "search"=>"", "commit"=>"Search"}
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1325)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.4ms | Allocations: 6208)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 15:43:38 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1780)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.1ms | Allocations: 6918)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 15:43:38 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.3ms | Allocations: 63)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1825)
+
+
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 15:43:42 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1227)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2362)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"sections"}, missing required keys: [:id]):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <%= form_tag(section_path, method: :get) do %>
+    6:   <%= text_field_tag(:title_value, params[:title_value], placeholder: "title : software II") %>
+    7:   <%= text_field_tag(:term_value, params[:term_value], placeholder: "term : [season] [year]") %>
+    8:   <%= text_field_tag(:search, params[:search], placeholder: "course number") %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 15:44:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 950)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2568)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"sections"}, missing required keys: [:id]):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <%= form_tag(section_path, method: :get) do %>
+    6:   <%= text_field_tag(:title_value, params[:title_value], placeholder: "title : software II") %>
+    7:   <%= text_field_tag(:term_value, params[:term_value], placeholder: "term : [season] [year]") %>
+    8:   <%= text_field_tag(:search, params[:search], placeholder: "course number") %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:44:35 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 4.8ms | Allocations: 2903)
+  Rendered sections/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3234)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 49ms (Views: 30.3ms | ActiveRecord: 1.8ms | Allocations: 25720)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 15:44:38 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 977)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.1ms | Allocations: 5086)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 15:44:38 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 501)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-16 15:44:41 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 6753)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 1.1ms | Allocations: 12764)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-16 15:44:43 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1145)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 5830)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:46:10 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Rx2NNQKQ3kiOtvTPAADR0TQ+Ib24LLp8Rrmqw1vcZB7H7h6VHMROA8Eq2L5CzW03Ii2xwOuAX+BluZ8mhVCbFQ==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"5:30 pm - 6:50 pm", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Open", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"1"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[36mSection Create (0.7ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Open"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 19:46:10.272647"], ["updated_at", "2021-04-16 19:46:10.272647"]]
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 4030)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:31:in `block in create'
+app/controllers/sections_controller.rb:30:in `create'
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:46:26 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Rx2NNQKQ3kiOtvTPAADR0TQ+Ib24LLp8Rrmqw1vcZB7H7h6VHMROA8Eq2L5CzW03Ii2xwOuAX+BluZ8mhVCbFQ==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"5:30 pm - 6:50 pm", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Open", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"1"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[36mSection Create (0.7ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Open"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 19:46:26.738826"], ["updated_at", "2021-04-16 19:46:26.738826"]]
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms | Allocations: 3850)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:31:in `block in create'
+app/controllers/sections_controller.rb:30:in `create'
+Started GET "/courses/3" for 127.0.0.1 at 2021-04-16 15:47:18 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 5337)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:47:21 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Rx2NNQKQ3kiOtvTPAADR0TQ+Ib24LLp8Rrmqw1vcZB7H7h6VHMROA8Eq2L5CzW03Ii2xwOuAX+BluZ8mhVCbFQ==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"5:30 pm - 6:50 pm", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Open", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"3"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[36mSection Create (0.6ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Open"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 19:47:21.652255"], ["updated_at", "2021-04-16 19:47:21.652255"]]
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms | Allocations: 3856)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:31:in `block in create'
+app/controllers/sections_controller.rb:30:in `create'
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:47:26 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Rx2NNQKQ3kiOtvTPAADR0TQ+Ib24LLp8Rrmqw1vcZB7H7h6VHMROA8Eq2L5CzW03Ii2xwOuAX+BluZ8mhVCbFQ==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"5:30 pm - 6:50 pm", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Open", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"3"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[36mSection Create (0.8ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Open"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 19:47:26.384841"], ["updated_at", "2021-04-16 19:47:26.384841"]]
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms | Allocations: 3855)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:31:in `block in create'
+app/controllers/sections_controller.rb:30:in `create'
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:49:03 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 3.6ms | Allocations: 2217)
+  Rendered sections/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms | Allocations: 7094)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:49:07 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"0TqFbw54p2joq1XGXyHzTgzBNdcjvcFfCGL5WY9U21NRyRbPECw3I6c3ebcd7E+oGtKlqnARJMMrYsy8UdgkWA==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"5:30 pm - 6:50 pm", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Open", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"3"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[36mSection Create (0.8ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Open"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 19:49:07.872361"], ["updated_at", "2021-04-16 19:49:07.872361"]]
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:31:in `block in create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.9ms | Allocations: 3853)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:31:in `block in create'
+app/controllers/sections_controller.rb:30:in `create'
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:49:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"0TqFbw54p2joq1XGXyHzTgzBNdcjvcFfCGL5WY9U21NRyRbPECw3I6c3ebcd7E+oGtKlqnARJMMrYsy8UdgkWA==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"5:30 pm - 6:50 pm", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Open", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"3"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[36mSection Create (0.8ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Open"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 19:52:28.449317"], ["updated_at", "2021-04-16 19:52:28.449317"]]
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+Completed 500 Internal Server Error in 149207ms (ActiveRecord: 1.8ms | Allocations: 1188765)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:29:in `block in create'
+app/controllers/sections_controller.rb:28:in `create'
+Started GET "/sections" for 127.0.0.1 at 2021-04-16 15:52:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 947)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2554)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"sections"}, missing required keys: [:id]):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <%= form_tag(section_path, method: :get) do %>
+    6:   <%= text_field_tag(:title_value, params[:title_value], placeholder: "title : software II") %>
+    7:   <%= text_field_tag(:term_value, params[:term_value], placeholder: "term : [season] [year]") %>
+    8:   <%= text_field_tag(:search, params[:search], placeholder: "course number") %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:52:43 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 3.7ms | Allocations: 2287)
+  Rendered sections/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2370)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 40ms (Views: 24.3ms | ActiveRecord: 1.5ms | Allocations: 24728)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:53:35 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7P02NMWfTDsI0D8A6BOyJatk3knTQA1RUASckCKYqatsDqWU28vccEdME3Gq3g7DvXdONIDs6M1zBKl1/BRWoA==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"9:10 am - 10:05 am", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"OPEN", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"1"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[36mSection Create (1.2ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "OPEN"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 19:54:30.988294"], ["updated_at", "2021-04-16 19:54:30.988294"]]
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+Completed 500 Internal Server Error in 55814ms (ActiveRecord: 1.4ms | Allocations: 454953)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:29:in `block in create'
+app/controllers/sections_controller.rb:28:in `create'
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:54:39 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 3.5ms | Allocations: 2209)
+  Rendered sections/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.1ms | Allocations: 7085)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:55:50 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 3.2ms | Allocations: 2209)
+  Rendered sections/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 7065)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:55:55 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"miyheRFXOyvJMKjln4it8FCpemzsU1nSo3Ne/DmkrJYa3zLZDwOrYIashJTdRREWRrrqEb//vE6Ac2sZ5yhTnQ==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"9:10 am - 10:05 am", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"OPEN", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"1"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[36mSection Create (0.7ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "OPEN"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 19:56:22.966835"], ["updated_at", "2021-04-16 19:56:22.966835"]]
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+Completed 500 Internal Server Error in 27075ms (ActiveRecord: 0.8ms | Allocations: 156395)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:29:in `block in create'
+app/controllers/sections_controller.rb:28:in `create'
+Started GET "/sections" for 127.0.0.1 at 2021-04-16 15:57:31 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 976)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1438)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"sections"}, missing required keys: [:id]):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <%= form_tag(section_path, method: :get) do %>
+    6:   <%= text_field_tag(:title_value, params[:title_value], placeholder: "title : software II") %>
+    7:   <%= text_field_tag(:term_value, params[:term_value], placeholder: "term : [season] [year]") %>
+    8:   <%= text_field_tag(:search, params[:search], placeholder: "course number") %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:57:34 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 3.5ms | Allocations: 2209)
+  Rendered sections/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms | Allocations: 7068)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:57:38 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"yn7DmVFK9BznCRY6zUGwKEsZROY5RnRx0+rUpyLPk/9KjVA5Tx5kV6iVOkuPjAzOXQrUm2rqke3w6uFC/ENs9A==", "section"=>{"classNumber"=>"1", "meetingDays"=>"", "meetingTimes"=>"", "waitlistTotal"=>"", "startDate"=>"", "endDate"=>"", "enrollmentStatus"=>"", "instructionMode"=>"", "component"=>"", "section"=>"", "courseID"=>"1"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[36mSection Create (0.6ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 1], ["endDate", ""], ["startDate", ""], ["enrollmentStatus", ""], ["instructionMode", ""], ["component", ""], ["section", ""], ["created_at", "2021-04-16 19:57:51.971136"], ["updated_at", "2021-04-16 19:57:51.971136"]]
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+Completed 500 Internal Server Error in 13556ms (ActiveRecord: 0.8ms | Allocations: 155091)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:29:in `block in create'
+app/controllers/sections_controller.rb:28:in `create'
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 15:58:07 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 121.6ms | Allocations: 218425)
+  Rendered sections/new.html.erb within layouts/application (Duration: 123.3ms | Allocations: 218903)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 182ms (Views: 159.1ms | ActiveRecord: 1.5ms | Allocations: 249674)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 15:58:47 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"QjUVTApiPl1O8f8wCVaC1j0FDMwtRMHeK3M0Q1Ej1+jCxobsFDauFgFt00FLmz4wKxacsX7oJEIIcwGmj68o4w==", "section"=>{"classNumber"=>"29012", "meetingDays"=>"MWF", "meetingTimes"=>"9:10 am - 10:05 am", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Open", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020", "courseID"=>"1"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[36mSection Create (0.9ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Open"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["created_at", "2021-04-16 20:00:02.881795"], ["updated_at", "2021-04-16 20:00:02.881795"]]
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+Completed 500 Internal Server Error in 75807ms (ActiveRecord: 1.2ms | Allocations: 202732)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:29:in `block in create'
+app/controllers/sections_controller.rb:28:in `create'
+Started GET "/sections/index" for 127.0.0.1 at 2021-04-16 16:00:43 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:64:in `set_section'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1317)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=index):
+  
+app/controllers/sections_controller.rb:64:in `set_section'
+Started GET "/sections/index" for 127.0.0.1 at 2021-04-16 16:01:38 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.9ms | Allocations: 3143)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=index):
+  
+app/controllers/sections_controller.rb:11:in `show'
+Started GET "/sections/index" for 127.0.0.1 at 2021-04-16 16:01:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.8ms | Allocations: 3166)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=index):
+  
+app/controllers/sections_controller.rb:11:in `show'
+Started GET "/sections/index" for 127.0.0.1 at 2021-04-16 16:05:23 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.9ms | Allocations: 3143)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=index):
+  
+app/controllers/sections_controller.rb:11:in `show'
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 16:05:26 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 5.2ms | Allocations: 2905)
+  Rendered sections/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 3236)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 47ms (Views: 31.5ms | ActiveRecord: 0.7ms | Allocations: 25939)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 16:05:35 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"/KMu+5xvhPXb31G9wRy99RAriyOYYtR2RBAhRf1RAUF8UL1bgjsUvpRDfcyD0QETBjgbXsvOMepnEBSgI93+Sg==", "section"=>{"classNumber"=>"12345", "meetingDays"=>"", "meetingTimes"=>"", "waitlistTotal"=>"", "startDate"=>"", "endDate"=>"", "enrollmentStatus"=>"", "instructionMode"=>"", "component"=>"", "section"=>"", "courseID"=>"1"}, "commit"=>"Add Section"}
+[31mUnpermitted parameters: :meetingDays, :meetingTimes, :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[36mSection Create (0.8ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 12345], ["endDate", ""], ["startDate", ""], ["enrollmentStatus", ""], ["instructionMode", ""], ["component", ""], ["section", ""], ["created_at", "2021-04-16 20:06:19.683310"], ["updated_at", "2021-04-16 20:06:19.683310"]]
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:29:in `block in create'
+Completed 500 Internal Server Error in 44593ms (ActiveRecord: 1.0ms | Allocations: 16147)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:29:in `block in create'
+app/controllers/sections_controller.rb:28:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/scrapes/new" for 127.0.0.1 at 2021-04-16 16:07:28 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScrapesController#new as HTML
+  Rendering scrapes/new.html.erb within layouts/application
+  Rendered scrapes/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1926)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 45ms (Views: 29.4ms | ActiveRecord: 2.0ms | Allocations: 23580)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 16:09:50 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1823)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms | Allocations: 6930)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 16:09:50 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.3ms | Allocations: 64)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1831)
+
+
+Started GET "/scrapes/new" for 127.0.0.1 at 2021-04-16 16:09:52 -0400
+Processing by ScrapesController#new as HTML
+  Rendering scrapes/new.html.erb within layouts/application
+  Rendered scrapes/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1675)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.1ms | Allocations: 7109)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 16:10:05 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.9ms | Allocations: 975)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.1ms | Allocations: 4893)
+
+
+Started GET "/scrapes/index" for 127.0.0.1 at 2021-04-16 16:10:06 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 539)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 5395)
+
+
+Started GET "/scrapes?campus_value=&term_value=&search=&commit=Scrape" for 127.0.0.1 at 2021-04-16 16:10:07 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"", "term_value"=>"", "search"=>"", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 401)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 381ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 33228)
+
+
+Started GET "/scrapes/show?key=4999" for 127.0.0.1 at 2021-04-16 16:10:11 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"4999", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 37.3ms | Allocations: 260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.1ms | Allocations: 5164)
+
+
+Started GET "/scrapes/new" for 127.0.0.1 at 2021-04-16 16:10:12 -0400
+Processing by ScrapesController#new as HTML
+  Rendering scrapes/new.html.erb within layouts/application
+  Rendered scrapes/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 6071)
+
+
+Started POST "/courses" for 127.0.0.1 at 2021-04-16 16:10:15 -0400
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"q79fDMOQ6dIxyRs1cz1WMA4iCQvvEL7K2862vycQv5IrTMys3cR5mX5VN0Qx8OrWGDGZdry8W1b4zoNa+ZxAmQ==", "course"=>{"title"=>"Computer Science and Engineering Research for Thesis", "term"=>"Autumn 2021", "units"=>"10", "campus"=>"Columbus", "subject"=>"CSE", "catalog_number"=>"4999"}, "commit"=>"Enter Class"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("title", "term", "units", "campus", "catalog_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Computer Science and Engineering Research for Thesis"], ["term", "Autumn 2021"], ["units", "10"], ["campus", "Columbus"], ["catalog_number", "4999"], ["created_at", "2021-04-16 20:10:15.302938"], ["updated_at", "2021-04-16 20:10:15.302938"]]
+  ↳ app/controllers/courses_controller.rb:20:in `create'
+  [1m[35m (41.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/courses/13
+Completed 302 Found in 51ms (ActiveRecord: 42.4ms | Allocations: 5084)
+
+
+Started GET "/courses/13" for 127.0.0.1 at 2021-04-16 16:10:15 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1156)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 6382)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 16:10:27 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 975)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 4857)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 16:10:27 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 507)
+
+
+Started GET "/scrapes/new" for 127.0.0.1 at 2021-04-16 16:10:48 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ScrapesController#new as HTML
+  Rendering scrapes/new.html.erb within layouts/application
+  Rendered scrapes/new.html.erb within layouts/application (Duration: 106.1ms | Allocations: 221095)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 153ms (Views: 134.5ms | ActiveRecord: 1.3ms | Allocations: 250060)
+
+
+Started GET "/scrapes/index" for 127.0.0.1 at 2021-04-16 16:10:50 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 539)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.1ms | Allocations: 5400)
+
+
+Started GET "/scrapes?campus_value=&term_value=&search=324&commit=Scrape" for 127.0.0.1 at 2021-04-16 16:10:54 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"", "term_value"=>"", "search"=>"324", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 243ms (Views: 7.9ms | ActiveRecord: 0.8ms | Allocations: 11097)
+
+
+Started GET "/scrapes/show?key=3241" for 127.0.0.1 at 2021-04-16 16:10:55 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3241", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 5171)
+
+
+Started GET "/scrapes/new" for 127.0.0.1 at 2021-04-16 16:10:56 -0400
+Processing by ScrapesController#new as HTML
+  Rendering scrapes/new.html.erb within layouts/application
+  Rendered scrapes/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1320)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms | Allocations: 6106)
+
+
+Started POST "/courses" for 127.0.0.1 at 2021-04-16 16:10:57 -0400
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"Xz8rfc3cgosLbZkLy9MtIk6wTd6oC5+NjAJtiyfsgY7fzLjd04gSwETxtXqJHpHEWKPdo/unehGvAlhu+WB+hQ==", "course"=>{"title"=>"Introduction to Database Systems", "term"=>"Autumn 2021", "units"=>"3", "campus"=>"Columbus", "subject"=>"CSE", "catalog_number"=>"3241"}, "commit"=>"Enter Class"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("title", "term", "units", "campus", "catalog_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Introduction to Database Systems"], ["term", "Autumn 2021"], ["units", "3"], ["campus", "Columbus"], ["catalog_number", "3241"], ["created_at", "2021-04-16 20:11:48.882425"], ["updated_at", "2021-04-16 20:11:48.882425"]]
+  ↳ app/controllers/courses_controller.rb:20:in `create'
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/courses/14
+Completed 302 Found in 50912ms (ActiveRecord: 9.3ms | Allocations: 9834)
+
+
+Started GET "/courses/14" for 127.0.0.1 at 2021-04-16 16:11:48 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1158)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 6380)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 16:14:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 1.4ms | Allocations: 598)
+  Rendered sections/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 936)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 57ms (Views: 38.3ms | ActiveRecord: 1.6ms | Allocations: 25998)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 16:14:21 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 1.1ms | Allocations: 564)
+  Rendered sections/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 898)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 6952)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 16:14:29 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"te2R8ue0CeP6bF/uJFi+I3wt6/g76zsx4MjJiyMxEMo1HgJS+eCZqLXwc59mlQLFaj57hWhH3q3DyPxu/b3vwQ==", "section"=>{"classNumber"=>"29012"}, "commit"=>"Enter Class"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+  [1m[36mSection Create (0.7ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["classNumber", 29012], ["created_at", "2021-04-16 20:15:04.167353"], ["updated_at", "2021-04-16 20:15:04.167353"]]
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+Completed 500 Internal Server Error in 34701ms (ActiveRecord: 0.8ms | Allocations: 18662)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:28:in `create'
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 16:15:44 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 9.6ms | Allocations: 4386)
+  Rendered sections/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 4716)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.1ms | Allocations: 10680)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 16:15:48 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"AUCy3MV1aeQc9c2Wz+hjdAyRcUIEZXuv1Ol0w7XHdSWBsyF82yH5r1Np4eeNJd+SGoLhP1fJnjP36UEma0uKLg==", "section"=>{"classNumber"=>"29012", "courseID"=>"1"}, "commit"=>"Enter Class"}
+[31mUnpermitted parameter: :courseID[0m
+[31mUnpermitted parameter: :courseID[0m
+[31mUnpermitted parameter: :courseID[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+  [1m[36mSection Create (0.8ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["classNumber", 29012], ["created_at", "2021-04-16 20:16:32.024223"], ["updated_at", "2021-04-16 20:16:32.024223"]]
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+Completed 500 Internal Server Error in 43817ms (ActiveRecord: 0.9ms | Allocations: 17865)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: sections.courseID):
+  
+app/controllers/sections_controller.rb:28:in `create'
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 16:18:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 1.9ms | Allocations: 838)
+  Rendered sections/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1168)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 46ms (Views: 28.0ms | ActiveRecord: 1.6ms | Allocations: 25872)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 16:21:27 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 4.3ms | Allocations: 3028)
+  Rendered sections/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 9388)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 16:22:00 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4eVo+MBuqr+xx0us3rEkgtOQEU24FTOeSWVtlpfpzR1hFvtY3jo69P5bZ92cfJhkxYOBMOu51gJqZVhzSWUyFg==", "section"=>{"classNumber"=>"29012", "courseID"=>"1", "meetingDays"=>"MWF", "meetingTimes"=>"9:10 am - 10:05 am", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Open", "instructionMode"=>"ONLINE", "component"=>"Lecture", "section"=>"0020"}, "commit"=>"Enter Class"}
+[31mUnpermitted parameter: :meetingDays[0m
+[31mUnpermitted parameter: :meetingDays[0m
+[31mUnpermitted parameter: :meetingDays[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+  [1m[36mSection Create (0.4ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "meetingTimes", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "courseID", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29012], ["meetingTimes", "9:10 am - 10:05 am"], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Open"], ["instructionMode", "ONLINE"], ["component", "Lecture"], ["section", "0020"], ["courseID", 1], ["created_at", "2021-04-16 20:22:10.536425"], ["updated_at", "2021-04-16 20:22:10.536425"]]
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+  [1m[35m (46.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+Redirected to http://127.0.0.1:3000/sections/1
+Completed 302 Found in 10317ms (ActiveRecord: 46.8ms | Allocations: 17052)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:22:10 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4547)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 5825)
+
+
+  
+ActionView::Template::Error (undefined method `meetings' for #<Section:0x00005584ad960988>
+Did you mean?  meetingDays):
+     7: 
+     8: <p>
+     9:   <strong>Meetings:</strong>
+    10:   <%= @section.meetings %>
+    11: </p>
+    12: 
+    13: <p>
+  
+app/views/sections/show.html.erb:10
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:22:54 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.5ms | Allocations: 6653)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 16:22:58 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1837)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 6347)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 16:22:58 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.3ms | Allocations: 64)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1840)
+
+
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 16:23:00 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1238)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1828)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"sections"}, missing required keys: [:id]):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <%= form_tag(section_path, method: :get) do %>
+    6:   <%= text_field_tag(:title_value, params[:title_value], placeholder: "title : software II") %>
+    7:   <%= text_field_tag(:term_value, params[:term_value], placeholder: "term : [season] [year]") %>
+    8:   <%= text_field_tag(:search, params[:search], placeholder: "course number") %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:23:04 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 5321)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:24:58 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 105)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 6665)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:25:20 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.2ms | Allocations: 6657)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:26:03 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 125)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.2ms | Allocations: 6695)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:29:31 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 196)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 6732)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-16 16:29:32 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1148)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 9.9ms | ActiveRecord: 1.0ms | Allocations: 12037)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-16 16:29:35 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 5322)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:29:45 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.3ms | Allocations: 5354)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-16 16:29:53 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 5311)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2021-04-16 16:29:59 -0400
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 3.8ms | Allocations: 2728)
+  Rendered sections/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3058)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.1ms | Allocations: 7951)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 16:30:06 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1780)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.2ms | Allocations: 6337)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 16:30:07 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.5ms | Allocations: 63)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 1819)
+
+
+Started POST "/sections" for 127.0.0.1 at 2021-04-16 16:30:50 -0400
+Processing by SectionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Cj1pXzkR/qnGaaHYPdSb6ULIeMAbdOP5Cwv9yakCbVOKzvr/J0Vu4on1jal/GScPVNvovUjYBmUoC8gsd46SWA==", "section"=>{"classNumber"=>"29016", "courseID"=>"3", "meetingDays"=>"TR", "meetingTimes"=>"5:30 pm - 6:50 pm", "waitlistTotal"=>"0", "startDate"=>"8/24/21", "endDate"=>"12/8/21", "enrollmentStatus"=>"Closed", "instructionMode"=>"In Person", "component"=>"Lecture", "section"=>"0030"}, "commit"=>"Enter Class"}
+[31mUnpermitted parameter: :meetingDays[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+  [1m[36mSection Create (0.3ms)[0m  [1m[32mINSERT INTO "sections" ("classNumber", "meetingTimes", "waitlistTotal", "endDate", "startDate", "enrollmentStatus", "instructionMode", "component", "section", "courseID", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["classNumber", 29016], ["meetingTimes", "5:30 pm - 6:50 pm"], ["waitlistTotal", 0], ["endDate", "12/8/21"], ["startDate", "8/24/21"], ["enrollmentStatus", "Closed"], ["instructionMode", "In Person"], ["component", "Lecture"], ["section", "0030"], ["courseID", 3], ["created_at", "2021-04-16 20:30:50.376118"], ["updated_at", "2021-04-16 20:30:50.376118"]]
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+  [1m[35m (38.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sections_controller.rb:28:in `create'
+Redirected to http://127.0.0.1:3000/sections/2
+Completed 302 Found in 48ms (ActiveRecord: 38.6ms | Allocations: 5124)
+
+
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:30:50 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 5354)
+
+
+Started GET "/courses/2" for 127.0.0.1 at 2021-04-16 16:30:53 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 911)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 5331)
+
+
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:30:56 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 65)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.3ms | Allocations: 5351)
+
+
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:31:16 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1071)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 2890)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Integer into String):
+    1: <h1><%= "Class Number : #{@section.classNumber}" %></h1>
+    2: <h2> <%= "#{@section.startDate} - #{@section.endDate}" %></h2>
+    3: <h2> <%= link_to "Course", (course_path + 3)%></h2>
+  
+app/views/sections/show.html.erb:3:in `+'
+app/views/sections/show.html.erb:3
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:31:25 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 6756)
+
+
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:32:26 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 6737)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-16 16:32:28 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1717)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 7179)
+
+
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:32:52 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 193)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 6726)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2021-04-16 16:32:53 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1142)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 6225)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:32:58 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 5344)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-16 16:32:59 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 5334)
+
+
+Started GET "/sections/index" for 127.0.0.1 at 2021-04-16 16:33:03 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1137)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=index):
+  
+app/controllers/sections_controller.rb:11:in `show'
+Started GET "/sections/index" for 127.0.0.1 at 2021-04-16 16:33:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.9ms | Allocations: 3135)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=index):
+  
+app/controllers/sections_controller.rb:11:in `show'
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 16:34:41 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1216)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2504)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"sections"}, missing required keys: [:id]):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <%= form_tag(section_path, method: :get) do %>
+    6:   <%= text_field_tag(:title_value, params[:title_value], placeholder: "title : software II") %>
+    7:   <%= text_field_tag(:term_value, params[:term_value], placeholder: "term : [season] [year]") %>
+    8:   <%= text_field_tag(:search, params[:search], placeholder: "course number") %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 16:35:16 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 137)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.7ms | Allocations: 14965)
+
+
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 16:35:29 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1540)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2819)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <% @sections.each do |section| %>
+    6:   <p class="title"><%= link_to "#{section.classNumber} ; #{section.startDate} - #{section.endDate}", section %></p>
+    7: <% end %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/courses" for 127.0.0.1 at 2021-04-16 16:36:29 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 6895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 1.1ms | Allocations: 13315)
+
+
+Started GET "/courses?title_value=&term_value=&search=&commit=Search" for 127.0.0.1 at 2021-04-16 16:36:30 -0400
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"", "search"=>"", "commit"=>"Search"}
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1443)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 6320)
+
+
+Started GET "/courses?title_value=&term_value=&search=&commit=Search" for 127.0.0.1 at 2021-04-16 16:37:51 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CoursesController#index as HTML
+  Parameters: {"title_value"=>"", "term_value"=>"", "search"=>"", "commit"=>"Search"}
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (catalog_number like '%%') AND (term like '%%') AND (title like '%%') ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 6686)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 39ms (Views: 33.1ms | ActiveRecord: 2.0ms | Allocations: 22139)
+
+
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 16:37:53 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1399)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2208)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <% @sections.each do |section| %>
+    6:   <p class="title"><%= link_to "#{section.classNumber} ; #{section.startDate} - #{section.endDate}", section %></p>
+    7: <% end %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 16:38:02 -0400
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  Rendered sections/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1329)
+Completed 500 Internal Server Error in 27756ms (ActiveRecord: 0.5ms | Allocations: 21728)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: <h1>Sections</h1>
+    4: 
+    5: <% @sections.each do |section| %>
+    6:   <p class="title"><%= link_to "#{section.classNumber} ; #{section.startDate} - #{section.endDate}", section %></p>
+    7: <% end %>
+  
+app/views/sections/index.html.erb:5
+Started GET "/sections/" for 127.0.0.1 at 2021-04-16 16:38:38 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  ↳ app/views/sections/index.html.erb:5
+  Rendered sections/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 9747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 4156ms (Views: 37.7ms | ActiveRecord: 1.8ms | Allocations: 29807)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:40:13 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.4ms | Allocations: 6892)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-16 16:40:21 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1150)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 9.4ms | ActiveRecord: 0.9ms | Allocations: 12016)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:40:58 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.1ms | Allocations: 5808)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:41:55 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.4ms | Allocations: 6716)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:46:29 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 361)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 6918)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-16 16:46:34 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1142)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 6227)
+
+
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:46:39 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 95)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 5374)
+
+
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:47:41 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 6896)
+
+
+Started GET "/sections/2" for 127.0.0.1 at 2021-04-16 16:48:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 48ms (Views: 24.7ms | ActiveRecord: 2.6ms | Allocations: 24395)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2021-04-16 16:48:33 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1151)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 17.0ms | ActiveRecord: 1.0ms | Allocations: 12069)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2021-04-16 16:48:36 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:12
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 5347)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:48:45 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 5378)
+
+
+Started GET "/sections/1" for 127.0.0.1 at 2021-04-16 16:49:32 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:11:in `show'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 97)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 5366)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-16 17:22:04 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:22
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1785)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 6279)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-16 17:22:04 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.5ms | Allocations: 63)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1830)
+
+
+Started GET "/scrapes/index" for 127.0.0.1 at 2021-04-16 17:22:06 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.2ms | Allocations: 6270)
+
+
+Started GET "/scrapes?campus_value=&term_value=&search=3901&commit=Scrape" for 127.0.0.1 at 2021-04-16 17:22:09 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"", "term_value"=>"", "search"=>"3901", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 447ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 37904)
+
+
+Started GET "/scrapes/show?key=3901" for 127.0.0.1 at 2021-04-16 17:22:11 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3901", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 258)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.1ms | Allocations: 5141)
+
+
+Started GET "/scrapes/show?key=3901" for 127.0.0.1 at 2021-04-16 17:23:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3901", "id"=>"show"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 527)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 1.0ms | Allocations: 16985)
+
+
+Started GET "/scrapes?campus_value=&term_value=&search=&commit=Scrape" for 127.0.0.1 at 2021-04-16 17:24:00 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"", "term_value"=>"", "search"=>"", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 402)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 398ms (Views: 9.4ms | ActiveRecord: 0.1ms | Allocations: 33107)
+
+
+Started GET "/scrapes/show?key=4193" for 127.0.0.1 at 2021-04-16 17:24:02 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"4193", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 5157)
+
+
+Started GET "/scrapes/show?key=4193" for 127.0.0.1 at 2021-04-16 17:24:19 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"4193", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 265)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 6308)
+
+
+Started GET "/scrapes?campus_value=&term_value=&search=&commit=Scrape" for 127.0.0.1 at 2021-04-16 17:25:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"", "term_value"=>"", "search"=>"", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 731)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 31573ms (Views: 38.5ms | ActiveRecord: 1.0ms | Allocations: 604467)
+
+
+Started GET "/scrapes?campus_value=&term_value=&search=52&commit=Scrape" for 127.0.0.1 at 2021-04-16 17:26:44 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"", "term_value"=>"", "search"=>"52", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1304)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 153402ms (Views: 24.8ms | ActiveRecord: 0.8ms | Allocations: 519795)
+
+
+Started GET "/scrapes/show?key=3521" for 127.0.0.1 at 2021-04-16 17:29:20 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3521", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1698)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3007)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     8: 
+     9: <h2> Scraped Sections </h2>
+    10: 
+    11: <% Scrape.get_scraped_sections[params[:key]].each do |section| %>
+    12:   hello
+    13: <% end %>
+  
+app/views/scrapes/show.html.erb:11
+Started GET "/scrapes/show?key=3521" for 127.0.0.1 at 2021-04-16 17:29:47 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3521", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 6345)
+
+
+Started GET "/scrapes/show?key=3521" for 127.0.0.1 at 2021-04-16 17:29:55 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3521", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 308)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.1ms | Allocations: 6316)
+
+
+Started GET "/scrapes/show?key=3521" for 127.0.0.1 at 2021-04-16 17:30:10 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3521", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 304)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 6304)
+
+
+Started GET "/scrapes/show?key=3521" for 127.0.0.1 at 2021-04-16 17:30:15 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3521", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1696)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3001)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     7: <%= button_to "Add", new_scrape_path, method: :get %>
+     8: 
+     9: <h2> Scraped Sections </h2>
+    10: <%= Scrape.get_scraped_sections[params[:key]] %>
+    11: <%# Scrape.get_scraped_sections[params[:key]].each do |section| %>
+    12: <!--  hello-->
+    13: <%# end %>
+  
+app/views/scrapes/show.html.erb:10
+Started GET "/scrapes/show?key=3521" for 127.0.0.1 at 2021-04-16 17:30:27 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3521", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 19073.4ms | Allocations: 226248)
+Completed 500 Internal Server Error in 19075ms (ActiveRecord: 0.3ms | Allocations: 226725)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     7: <%= button_to "Add", new_scrape_path, method: :get %>
+     8: 
+     9: <h2> Scraped Sections </h2>
+    10: <%= Scrape.get_scraped_sections[params[:key]] %>
+    11: <%# Scrape.get_scraped_sections[params[:key]].each do |section| %>
+    12: <!--  hello-->
+    13: <%# end %>
+  
+app/views/scrapes/show.html.erb:10
+Started GET "/scrapes/show?key=3521" for 127.0.0.1 at 2021-04-16 17:31:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"3521", "id"=>"show"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.9ms | Allocations: 17171)
+
+
+Started GET "/scrapes?campus_value=&term_value=&search=42&commit=Scrape" for 127.0.0.1 at 2021-04-16 17:31:41 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"", "term_value"=>"", "search"=>"42", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1439)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 3286ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 181146)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:31:46 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 306)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 5195)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:32:07 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 368516.4ms | Allocations: 238025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 368526ms (Views: 368525.6ms | ActiveRecord: 0.1ms | Allocations: 244771)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:38:17 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 2472.3ms | Allocations: 22483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 2489ms (Views: 2487.8ms | ActiveRecord: 0.1ms | Allocations: 28391)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:38:38 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 37423.6ms | Allocations: 61399)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 37432ms (Views: 37431.6ms | ActiveRecord: 0.1ms | Allocations: 66060)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:39:22 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1907.4ms | Allocations: 5128)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 1917ms (Views: 1915.4ms | ActiveRecord: 0.1ms | Allocations: 11047)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:39:59 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 3605.8ms | Allocations: 5192)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 3622ms (Views: 3619.7ms | ActiveRecord: 0.2ms | Allocations: 11112)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:40:47 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 637)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.1ms | Allocations: 6652)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:41:05 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.1ms | Allocations: 6655)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:41:14 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 6667)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:41:18 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms | Allocations: 6641)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:41:29 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 639)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 6654)
+
+
+Started GET "/scrapes/show?key=6429" for 127.0.0.1 at 2021-04-16 17:41:42 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"6429", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 639)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 6652)
+
+

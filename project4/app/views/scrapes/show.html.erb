@@ -4,4 +4,15 @@
   <p class="attributes"><%= "#{attribute[0]} : #{attribute[1]}" %></p>
 <% end %>
 <% Scrape.set_chosen_course(params[:key])  %>
-<%= button_to "Add", new_scrape_path, method: :get %>
+<%= button_to "Add Course", new_scrape_path, method: :get %>
+
+<h2> ============ </h2>
+<h1> Scraped Sections </h1>
+
+ <% Scrape.get_scraped_sections[params[:key]].each do |section| %>
+  <p class="attributes"><%= "Class Number : #{section[0]}" %></p>
+  <% section[1].each do |attribute| %>
+    <p class="attributes"><%= "#{attribute[0]} : #{attribute[1]}" %></p>
+  <% end %>
+  <h2> ============ </h2>
+<% end %>

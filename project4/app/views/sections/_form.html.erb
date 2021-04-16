@@ -1,72 +1,62 @@
-<%= form_with(model: section, local: true) do |form| %>
-  <% if section.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+<h1> Enter Section Details </h1>
 
-      <ul>
-        <% section.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :classNumber %>
-    <%= form.number_field :classNumber %>
+<%= form_for @section do |f| %>
+  <div class="form-control">
+    <%= f.label :classNumber %>
+    <%= f.text_field :classNumber, required: true  %>
   </div>
 
-  <div class="field">
-    <%= form.label :meetings %>
-    <%= form.text_field :meetings %>
+  <div class="form-control">
+    <%= f.label :courseID %>
+    <%= f.number_field :courseID, required: true  %>
   </div>
 
-  <div class="field">
-    <%= form.label :campus %>
-    <%= form.text_field :campus %>
+  <div class="form-control">
+    <%= f.label :meetingDays %>
+    <%= f.text_field :meetingDays %>
   </div>
 
-  <div class="field">
-    <%= form.label :waitlistTotal %>
-    <%= form.number_field :waitlistTotal %>
+  <div class="form-control">
+    <%= f.label :meetingTimes %>
+    <%= f.text_field :meetingTimes %>
   </div>
 
-  <div class="field">
-    <%= form.label :term %>
-    <%= form.text_field :term %>
+  <div class="form-control">
+    <%= f.label :waitlistTotal %>
+    <%= f.number_field :waitlistTotal %>
   </div>
 
-  <div class="field">
-    <%= form.label :endDate %>
-    <%= form.text_field :endDate %>
+  <div class="form-control">
+    <%= f.label :startDate %>
+    <%= f.text_field :startDate %>
   </div>
 
-  <div class="field">
-    <%= form.label :startDate %>
-    <%= form.text_field :startDate %>
+  <div class="form-control">
+    <%= f.label :endDate %>
+    <%= f.text_field :endDate %>
   </div>
 
-  <div class="field">
-    <%= form.label :enrollmentStatus %>
-    <%= form.text_field :enrollmentStatus %>
+  <div class="form-control">
+    <%= f.label :enrollmentStatus %>
+    <%= f.text_field :enrollmentStatus %>
   </div>
 
-  <div class="field">
-    <%= form.label :instructionMode %>
-    <%= form.text_field :instructionMode %>
+  <div class="form-control">
+    <%= f.label :instructionMode %>
+    <%= f.text_field :instructionMode %>
   </div>
 
-  <div class="field">
-    <%= form.label :component %>
-    <%= form.text_field :component %>
+  <div class="form-control">
+    <%= f.label :component %>
+    <%= f.text_field :component %>
   </div>
 
-  <div class="field">
-    <%= form.label :section %>
-    <%= form.text_field :section %>
+  <div class="form-control">
+    <%= f.label :section %>
+    <%= f.text_field :section %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-control">
+    <%= f.submit 'Enter Class'%>
   </div>
 <% end %>

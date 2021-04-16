@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_action :set_section, only: %i[ show edit update destroy ]
+  #before_action :set_section, only: %i[ show edit update destroy ]
 
   # GET /sections or /sections.json
   def index
@@ -8,6 +8,7 @@ class SectionsController < ApplicationController
 
   # GET /sections/1 or /sections/1.json
   def show
+    @section = Section.find(params[:id])
   end
 
   # GET /sections/new
@@ -19,18 +20,15 @@ class SectionsController < ApplicationController
   def edit
   end
 
+
   # POST /sections or /sections.json
   def create
     @section = Section.new(section_params)
 
-    respond_to do |format|
-      if @section.save
-        format.html { redirect_to @section, notice: "Section was successfully created." }
-        format.json { render :show, status: :created, location: @section }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @section.errors, status: :unprocessable_entity }
-      end
+    if @section.save
+      redirect_to @section
+    else
+      render :new
     end
   end
 
@@ -64,6 +62,6 @@ class SectionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def section_params
-      params.require(:section).permit(:classNumber, :meetings, :campus, :waitlistTotal, :term, :endDate, :startDate, :enrollmentStatus, :instructionMode, :component, :section)
+      params.require(:section).permit(:classNumber, :meetingDays, :meetingTimes, :waitlistTotal, :courseID, :endDate, :startDate, :enrollmentStatus, :instructionMode, :component, :section)
     end
 end

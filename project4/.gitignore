@@ -1,3 +1,4 @@
 *.idea
-*/project3
+*/project3/
 .gitignore
+*tmp/

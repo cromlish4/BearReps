@@ -67,7 +67,7 @@ class Scrape < ApplicationRecord
         end
         all_sections[c['course']['catalogNumber']] = sections
       end
-      puts 'ph'
+      @@scraped_sections = all_sections
   else
     nil
     end
@@ -99,7 +99,7 @@ class Scrape < ApplicationRecord
 
   def self.set_empty_chosen_section
     @@chosen_section = Hash.new
-    @@chosen_section['catalogNumber'] = ''
+    @@chosen_section['classNumber'] = ''
 
     @@section_keys.each do |attribute|
       @@chosen_section[attribute] = ''
@@ -108,7 +108,7 @@ class Scrape < ApplicationRecord
 
   def self.set_chosen_section(key)
     @@chosen_section = @@scraped_sections[key]
-    @@chosen_section['catalogNumber'] = key
+    @@chosen_section['classNumber'] = key
   end
 
   def self.get_chosen_course
