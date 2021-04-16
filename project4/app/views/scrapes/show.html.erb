@@ -11,8 +11,11 @@
 
  <% Scrape.get_scraped_sections[params[:key]].each do |section| %>
   <p class="attributes"><%= "Class Number : #{section[0]}" %></p>
+  <% jank_keys = "classNumber=#{section[0]}&" %>
   <% section[1].each do |attribute| %>
+    <% jank_keys += "#{attribute[0]}=#{attribute[1]}&"%>
     <p class="attributes"><%= "#{attribute[0]} : #{attribute[1]}" %></p>
   <% end %>
+  <h2><%= link_to "Add Section", "#{new_section_url}?#{jank_keys[0, jank_keys.length()-1]}" %></h2>
   <h2> ============ </h2>
 <% end %>

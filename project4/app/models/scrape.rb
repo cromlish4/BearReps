@@ -6,7 +6,7 @@ class Scrape < ApplicationRecord
   @@terms = { 'summer' => 1214, 'spring' => 1212, 'autumn' => 1218 }
   @@campuses = { 'columbus' => 'col', 'marion' => 'mrn', 'newark' => 'nwk', 'lima' => 'lma', 'wooster' => 'wst', "mansfield" => 'mns' }
   @@course_keys = %w[title term maxUnits campus] #, catalogNumber]
-  @@section_keys = %w[section component instructionMode enrollmentStatus startDate endDate term waitlistTotal campus meetings] #, classNumber]
+  @@section_keys = %w[section component instructionMode enrollmentStatus startDate endDate term waitlistTotal meetings] #, classNumber]
   @@scraped_courses = nil
   @@chosen_course = nil
   @@scraped_sections = nil
@@ -60,7 +60,24 @@ class Scrape < ApplicationRecord
           attributes = Hash.new
           #extract attributes
           @@section_keys.each do |k|
-            attributes[k] = s[k]
+            if k != 'meetings'
+              attributes[k] = s[k]
+            else
+              puts 'ph'
+              days = %w[monday tuesday wednesday thursday friday saturday sunday]
+              meetingsOn = ""
+              days.each do |day|
+                if s[k][0][day] == true
+                  to_add = day[0].capitalize()
+                  if day == 'thursday'
+                    to_add = "R"
+                  end
+                  meetingsOn += to_add
+                end
+              end
+              attributes['meetingDays'] = meetingsOn
+              attributes['meetingTimes'] = "#{s[k][0]['startTime']} - #{s[k][0]['endTime']}"
+            end
           end
           #add these attributes to sections with the classNumber as the key
           sections[s['classNumber']] = attributes
