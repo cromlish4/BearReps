@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <meta charset = "UTF-8"/>
+    <link rel = "stylesheet" href="application.css"/>
+
+    <p class = "navbar-test float-right">
+      <a class = "navbar-link" href = "a-link">A link that won't work</a>
+      <a class = "navbar-link" href = "another-link">A second link that won't work</a>
+      <a class = "navbar-link" href = "athird-link">A search link</a>
+
+    </p>
+  </head>
+
+  <body>
+    <header>
+    <h1 id = "header">Test Page</h1>
+    </header>
+
+
+
+    <div class = "options">
+      <p> Welcome to the test page. This is a holder for a paragraph</p>
+
+    <div id = "input">
+      <div id = "Test-input" class = "field">
+        <label for = "test_input_1">Test input</label><br/>
+        <input placeholder="Test" autofocus= "autofocus" type = "text"/>
+      </div>
+
+      <!--Via https://stackoverflow.com/questions/1956191/ruby-on-rails-drop-down-menu-->
+      <div id="dropdown">
+        <label for="user_Choose User type.">Choose user type</label><br />
+        <select name="user[user_type]" id="user_user_type"><option value="student">Student</option>
+  <option value="teacher">Teacher</option>
+  <option value="admin">Admin</option></select>
+      </div>
+
+      <div id="submission" class="actions">
+    <input type="submit" name="commit" value="Create Account" data-disable-with="Create Account" />
+    <div id = "Bear-Reps">A Bear Reps Product</div>
+  </div>

@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar-link{
+   color: white;
+   padding: 10px;
+   background: #4861b7;
+   font-size: 18px;
+ }
+
+#header{
+  font-size: 45px;
+}
+
+.options{
+  font-size: 20px;
+}
+
+#input{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+
+
+#dropdown{
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+
+#submission{
+  padding-top:20px;
+  padding-bottom:10px;
+}
+
+#Bear-Reps{
+  center:auto;
+  padding:50px;
+  position: absolute;
+  bottom: auto;
+  background-image: url("Bear Reps.jpg");
+  background-position: center;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  color:red;
+}
