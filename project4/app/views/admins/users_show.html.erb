@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+<head>
+<% @Users.where(nameDotNumber: params[:nameDotNumber]).each do |t| %>
+  <h1><%="User: "+t.fname+" "+t.lname %></h1>
+    </head>
+    <body>
+    <p>Year: <%=t.year %></p>
+    <p>Verified: <%=t.verified %></p>
+    <p>User Type: <%=t.user_type %></p>
+
+
+
+<% end %>
+  </body>
+<!--% Scrape.set_chosen_course(params[:key])  %-->
+
+  <%= button_to 'Return', "/admin/users?search=&commit=Search", method: :get, params: {:search => ""}%>
+  <%= button_to "Edit", "/admin/users", method: :get%>
+<% end %>
+  </html>
