@@ -3,10 +3,10 @@
 
 Web Scraping and Login
 -----------------------
-This project is directly tied to project 4 in the sense that the database, routes, and MVC of our 
+This project is directly tied to project 4 in the sense that the database, routes, and MVC of our
 Ruby on Rails will be used for project 4. This project scrapes the course listing off of OSU's website
 and allows users to view the courses with a variety of permissions. This project allows for users of
-students, instructors, and admins, in hope to, eventually, use as a program to assign graders to a 
+students, instructors, and admins, in hope to, eventually, use as a program to assign graders to a
 class.
 
 Motivation
@@ -18,7 +18,7 @@ ourselves.
 
 Features
 -----------
-Our project was implemented using the MVC framework of Ruby on Rails, particularly using ruby v 2.7.1 and rails v 6.0.3.5. 
+Our project was implemented using the MVC framework of Ruby on Rails, particularly using ruby v 2.7.1 and rails v 6.0.3.5.
 With the use of gems, we were able to utilize the convenience of Ruby on Rails in the following ways:
 1) rails                      -- for the MVC framework
 2) sqlite3                    -- for database management
@@ -61,7 +61,7 @@ Installation
 After fethcing our project, you first will want to run "bundle install" on your command line.
 Next, you must make sure to enter "rails db:migrate" on your command line in order that your schema.rb will be updated.
 You will also want to enter "rails db:seed" on your command line in order to get a default, verified admin account in order to see all of our views.
-Finally, you may enter "rails s" on your command line to run our server. 
+Finally, you may enter "rails s" on your command line to run our server.
 Now, you may open up your choice of web browser and enter "localhost:3000" in the url field.
 
 Notes: There are two default accounts Admin Email: buckeye.1@osu.edu Password: password and Developer Email: buckeye.2@osu.edu Password: password
@@ -102,20 +102,22 @@ Andrew Connors implemented the multiple views and their styling in our project, 
 Zhuo Chen worked with the web scraper to ensure we were collecting all necessary data from OSU's course listing.
 
 Samiul islam worked with the web scraper to ensure we were collecting all necessary data from OSU's course listing,
-as well as debugging / troubleshooting any errors we ran into with the scraper. 
+as well as debugging / troubleshooting any errors we ran into with the scraper.
 
 Eric Young implemented the multiple views and their styling in our project, as well as setting up correct routes and controllers for various users.
 
 Ryan O'Donovan implemented the login system with the use of the Devise gem, and implemented three different user permissions based on student, instructor
-and admin. 
+and admin.
 
 References
 ----------
 - README guidelines:
-    -  makeareadme.com 
+    -  makeareadme.com
     -  "A Beginners Guide to writing a Kickass READMe" by Akash Nimare
 
 - Course Searching
     - https://medium.com/@yassimortensen/simple-search-form-in-rails-8483739e4042
  - Some Scraping
      - https://stackoverflow.com/questions/12047100/ruby-mechanize-nokogiri-and-nethttp
+- HTML Table Sorting
+	- http://railscasts.com/episodes/228-sortable-table-columns?autoplay=true

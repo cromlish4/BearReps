@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  
+
   <head>
     <title>Home</title>
     <meta charset="utf-8"/>
@@ -22,8 +22,7 @@
           <% if (user_signed_in?)%>
             <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
               <p>Welcome Administrator!</p>
-              <%= link_to "Display Admin Profile", "admin/profile" %>
-              <%= link_to "Verify Profiles", "admin/verify" %>
+              <%= link_to "Admin Menu", "admin/home" %>
               <div id=scraper_links>
                 <p>Admin Links to Scrape Courses</p>
                 <%= link_to "Scrape Courses", "scrapes/index" %>
@@ -104,4 +103,3 @@
   </body>
 
 </html>
-

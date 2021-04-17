@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+  <meta charset="utf-8"/>
+  <!--link type="text/css" rel="stylesheet" href="home.css"/-->
+
+</head>
+
+<body>
+<h1 id="header">Admin Menu</h1>
+
+<div class="options">
+  <p>This page contains the pages that Admins have access to.</p>
+  <p>This admin panel lets Admins update and access all information from one easy to find location.</p>
+  <% if (user_signed_in?)%>
+    <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+      <div id=site_links> <br>
+        <p>Link to Current Admin Profile</p>
+        <%= link_to "Display Admin Profile", "profile" %> <br>
+        <p>Link to Verify Profiles that are Unverified</p>
+        <%= link_to "Verify Profiles", "verify" %> <br>
+        <p>Link to view all Courses in the database</p>
+        <%= link_to "Show Courses", "/all_courses" %> <br>
+        <p>Link to show current users in that are verified</p>
+        <%= link_to "Show Users", "users?search=&commit=Search" %> <br>
+        <p>Link to Sections that still need a grader. </p>
+        <%= link_to "Graders Needed", "" %> <br>
+        <p>Link to Recommendations from Instructors. </p>
+        <%= link_to "Instructors Rec", "" %> <br>
+        <p>Link to Force the scraper to update the full database. </p>
+        <%= link_to "Scraper Updater", "" %> <br>
+      </div>
+    <%else %>
+      <p>Invalid Credentials</p>
+    <%end %>
+  <%else %>
+    <p>Please Sign in.</p>
+  <%end %>
+
+
+  <% if (user_signed_in?) && (current_user.verified == "true") && (current_user.user_type == "dev") %>
+    <p><b>All Below Links are for development</b></p>
+
+
+    <div id=admins_links>
+      <p>Admin Links</p>
+      <%= link_to "Admin Index", "admins/index" %>
+      <%= link_to "Admin New", "admins/new" %>
+      <%= link_to "Admin Edit", "admins/:nameDotNumber" %>
+      <%= link_to "Admin Show", "admins/all" %>
+    </div>
+
+    <% if (user_signed_in? && (current_user.verified == "true"))%>
+      <% if current_user.user_type == "admin" %>
+        <p>Admin Link</p>
+        <%= link_to "Admin Page", "admins/"+current_user.nameDotNumber %>
+      <% end %>
+    <% end %>
+
+    </div>
+  <%end %>
+
+  </body>
+
+</html>
+

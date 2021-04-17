@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>
+      All Verified Users
+    </title>
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="/users.css"/>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <%= form_tag("users", method: :get) do %>
+    <p> Search for a User (Only Verified Users are listed here.[may change later]) </p>
+    <p>Planned Feature: If time permits make each user clickable and bring to a page to edit that user. Admins will be uneditable.</p>
+    <%= text_field_tag(:search, params[:search], placeholder: "First or Last Name Only") %>
+    <%= submit_tag ("Search") %>
+  <% end %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th> <!--%= sortable "lname", "Name" %>-->
+          <th>User Type</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+    <% @show_users.where(verified: "true").each do |t| %>
+      <tr>
+        <td><%= t.fname %> <%= t.lname %></td>
+        <td><%= t.user_type %></td>
+        <td><%= t.year %></td>
+        <!--td>%= t.classes %></td-->
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+  </body>
+</html>

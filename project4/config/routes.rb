@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'recommendations/new'
   resources :students
   resources :instructors
   resources :courses
   resources :scrapes
   # devise_for :users
   Rails.application.routes.draw do
-  get 'recommendations/new'
     devise_for :users, controllers: {
       sessions: 'users/sessions'
     }
@@ -37,8 +35,10 @@ Rails.application.routes.draw do
   #New admin page
   get 'admin_new' => 'admins#new'
 
-  get 'admin/verify' => 'pages#verify'
-  get 'admin/verify.css' => 'pages#verify.css'
+  get 'admin/verify' => 'admins#verify'
+  get 'admin/home' => 'admins#admin_home'
+  get 'admin/verify.css' => 'admins#verify.css'
+  get 'admin/users' => 'admins#users'
   get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
   #Edit admin page
   #get 'admin_edit' => 'admins#edit'
@@ -58,7 +58,7 @@ Rails.application.routes.draw do
   get 'student_new' => 'students#new'
   #Edit student page
   #get 'student_edit' => 'students#edit'
-  #Show a specific student 
+  #Show a specific student
   # get 'student_show' => 'students#show'
   # Show all students
   # get 'students_index' => 'students#index'
