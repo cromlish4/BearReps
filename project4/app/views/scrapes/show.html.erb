@@ -4,4 +4,18 @@
   <p class="attributes"><%= "#{attribute[0]} : #{attribute[1]}" %></p>
 <% end %>
 <% Scrape.set_chosen_course(params[:key])  %>
-<%= button_to "Add", new_scrape_path, method: :get %>
+<%= button_to "Add Course", new_scrape_path, method: :get %>
+
+<h2> ============ </h2>
+<h1> Scraped Sections </h1>
+
+ <% Scrape.get_scraped_sections[params[:key]].each do |section| %>
+  <p class="attributes"><%= "Class Number : #{section[0]}" %></p>
+  <% jank_keys = "classNumber=#{section[0]}&courseID=#{params[:courseID]}&" %>
+  <% section[1].each do |attribute| %>
+    <% jank_keys += "#{attribute[0]}=#{attribute[1]}&"%>
+    <p class="attributes"><%= "#{attribute[0]} : #{attribute[1]}" %></p>
+  <% end %>
+  <h2><%= link_to "Add Section", "#{new_section_url}?#{jank_keys[0, jank_keys.length()-1]}" %></h2>
+  <h2> ============ </h2>
+<% end %>

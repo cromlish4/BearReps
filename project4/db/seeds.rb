@@ -9,7 +9,10 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 # generate 20 users
 # # Via - https://dev.to/debosthefirst/how-to-seed-your-rails-database-with-faker-1be3
+<<<<<<< HEAD
 GEN_NUM = 20
+=======
+>>>>>>> origin/scraper-branch
 User.destroy_all
 User.create!(
 

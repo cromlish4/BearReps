@@ -1,0 +1,9 @@
+<% content_for :page_title, "Sections" %>
+
+<h1>Sections</h1>
+
+<% @sections.each do |section| %>
+  <p class="title"><%= link_to "#{section.classNumber} ; #{section.startDate} - #{section.endDate}", section %></p>
+<% end %>
+
+<!--TODO add course information next to section info-->

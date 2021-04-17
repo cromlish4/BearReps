@@ -8,3 +8,16 @@
     <p class="details"><%= "Campus : #{@course.campus}" %></p>
   </div>
 </div>
+
+<h2 class="break"> ========== </h2>
+<h2><%= link_to "Scrape Sections Online", "#{scrape_url[0, scrape_url.length()-2]}?campus_value=#{@course.campus.downcase()}&term_value=#{@course.term.tr("0-9 ", "").downcase()}&search=#{@course.catalog_number}&courseID=#{course_path[course_path.length-1]}&commit=Scrape" %></h2>
+<h2> Sections for this Course</h2>
+<h2 class="break"> ========== </h2>
+
+<% @sections.each do |section| %>
+  <% Scrape.get_database_section_keys.each do |k| %>
+    <%= "#{k} : #{section[k]}" %>
+    <br>
+<%end %>
+  <h2 class="break"> ========== </h2>
+<% end %>

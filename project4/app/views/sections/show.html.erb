@@ -1,0 +1,18 @@
+<h1><%= "Class : #{@section.classNumber}" %></h1>
+<h2> <%= link_to "Course", (courses_url + "/#{@section.courseID}")%></h2>
+<!--TODO, display Course number-->
+
+<div class="section">
+  <div class=""container>
+    <p> <%= "Status : #{@section.enrollmentStatus}" %> </p>
+    <p> <%= "Instruction Mode : #{@section.instructionMode}" %> </p>
+    <p> <%= "Component : #{@section.component}" %> </p>
+    <p> <%= "Class Number : #{@section.classNumber}" %> </p>
+    <p> <%= "Section : #{@section.section}" %> </p>
+    <p> <%= "Meeting Days : #{@section.meetingDays}" %> </p>
+    <p> <%= "Meeting Time : #{@section.meetingTimes}" %> </p>
+    <p> <%= "wait list : #{@section.waitlistTotal}" %> </p>
+    <p> <%= "Class Period : #{@section.startDate} - #{@section.endDate}" %></p>
+
+  </div>
+</div>

@@ -9,6 +9,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @sections = get_matching_sections(params[:id].to_i)
   end
 
   def new
@@ -33,6 +34,12 @@ class CoursesController < ApplicationController
       list.where("title like ?", "%#{@title}%")
     else
       Course.all
+    end
+  end
+
+  private def get_matching_sections(course_id)
+    if course_id > 0
+      list = Section.where("courseID = ?", course_id)
     end
   end
 

@@ -11,9 +11,9 @@
 <!--Display scraper results-->
 <% if @scraped_courses %>
   <% @scraped_courses.each do |course| %>
-    <p class="title"><%=link_to "CSE #{course[0]}", "scrapes/show?key=#{course[0]}"%></p>
+    <p class="title"><%=link_to "CSE #{course[0]}", "scrapes/show?key=#{course[0]}&courseID=#{params[:courseID]}"%></p>
     <% course[1].each do |attribute| %>
-      <p>&emsp; <%= "#{attribute[0]} : #{attribute[1]}" %></p>
+      <p><%= "#{attribute[0]} : #{attribute[1]}" %></p>
     <% end %>
   <% end %>
 <% end %>
