@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :instructors
   resources :courses
   resources :scrapes
+  resources :applications
   # devise_for :users
   Rails.application.routes.draw do
   resources :sections
