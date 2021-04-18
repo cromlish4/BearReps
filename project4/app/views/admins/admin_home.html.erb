@@ -4,7 +4,7 @@
 <head>
   <title>Home</title>
   <meta charset="utf-8"/>
-  <!--link type="text/css" rel="stylesheet" href="home.css"/-->
+  <link rel="stylesheet" type="text/css" href="test.css"/>
 
 </head>
 
@@ -16,7 +16,7 @@
   <p>This admin panel lets Admins update and access all information from one easy to find location.</p>
   <% if (user_signed_in?)%>
     <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
-      <div id=site_links> <br>
+      <div id="site_links"> <br>
         <p>Link to Current Admin Profile</p>
         <%= link_to "Display Admin Profile", "profile" %> <br>
         <p>Link to Verify Profiles that are Unverified</p>
@@ -65,4 +65,3 @@
   </body>
 
 </html>
-
