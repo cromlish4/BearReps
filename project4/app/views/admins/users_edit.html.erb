@@ -9,13 +9,12 @@
     <p>Year: <%=t.year %></p>
     <p>Verified: <%=t.verified %></p>
     <p>User Type: <%=t.user_type %></p>
-
+<% end %>
 
   <%= form_for @edit_users do |f| %>
       <div class="form-control">
         <%= f.label "Year"%>
         <%= f.text_field  :year, required: true, value: t.year  %>
-
       </div>
 
       <%= f.label "Verified"%>
@@ -33,14 +32,14 @@
       </div>
 
       <div class="form-control">
-        <%= hidden_field_tag(:year_new, params[:year])%>
+        <%#= hidden_field_tag(:year_new, params[:users][:year])%>
         <%= hidden_field_tag(:nameNum, params[:nameDotNumber]) %>
-        <%= f.submit 'Update Entry'%>
+        <%= f.submit 'Update Entry',:action => 'update'%>
       </div>
   <% end %>
 
   </body>
 
   <%= button_to "Return", "/admin/users/show?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
-<% end %>
+
   </html>

@@ -77,18 +77,25 @@ class AdminsController < ApplicationController
   def users_show
     @Users = User.where(nameDotNumber: params[:nameDotNumber])
   end
+
   # Patch for updating user
   def user_show
-    @admin_edit
-    str_year = params[:year_new]
+    # @admin_edit
+    str_year = params[:users][:year]
 
-    # str_type = params[:new_user_type]
-    redirect_to "/admin/users/show?nameDotNumber="+@admin_edit
+    redirect_to "/admin/users/show?nameDotNumber="+str_year
+    #params[:nameNum]
   end
+
+  # def user_update
+  #   @edit_users.update(admin_params)
+  # end
+
+
 
   def users_edit
     @edit_users = User.find_by(nameDotNumber: params[:nameDotNumber])
-    @admin_edit = params[:year]
+
   end
 
 

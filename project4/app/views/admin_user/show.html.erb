@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+  <head>
+    <% t = User.find_by(:nameDotNumber => params[:nameDotNumber]) %>
+      <h1><%="User: "+t.fname+" "+t.lname %></h1>
+      </head>
+      <body>
+      <p>Year: <%=t.year %></p>
+      <p>Verified: <%=t.verified %></p>
+      <p>User Type: <%=t.user_type %></p>
+      <p>Name dot number: <%=params[:nameDotNumber] %></p>
+
+
+
+    <% #end %>
+    </body>
+    <!--% Scrape.set_chosen_course(params[:key])  %-->
+    <p>
+      <%= button_to "Return", admin_users_path, method: :get%>
+      <% if params[:nameDotNumber]!="" %>
+        <%= button_to "Edit", "/admin/users/edit?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
+      <%end %>
+    </p>
+
+<% end %>
+</html>

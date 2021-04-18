@@ -39,9 +39,9 @@ Rails.application.routes.draw do
   get 'admin/home' => 'admins#admin_home'
   get 'admin/verify.css' => 'admins#verify.css'
   get 'admin/users' => 'admins#users', :as => :admin_users
-  get 'admin/users/show' => 'admins#users_show'
-  get 'admin/users/edit' => 'admins#users_edit'
-  patch 'admins/all' => 'admins#user_show'
+  get 'admin/users/show' => 'admin_user#show'
+  get 'admin/users/edit' => 'admin_user#edit'
+  patch 'admins/all' => 'admin_user#index'
   get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
 
 
