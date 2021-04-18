@@ -12,6 +12,22 @@
 <% end %>
 
 <%= form_for @Users do |f| %>
+
+  <div class="form-control">
+    <%= f.label "First Name"%>
+    <%= f.text_field  :fname, required: true, value: t.fname  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Last Name"%>
+    <%= f.text_field  :lname, required: true, value: t.lname  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Name dot number"%>
+    <%= f.text_field  :nameDotNumber, required: true, disabled: true, value: t.nameDotNumber  %>
+  </div>
+
   <div class="form-control">
     <%= f.label "Year"%>
     <%= f.text_field  :year, required: true, value: t.year  %>
