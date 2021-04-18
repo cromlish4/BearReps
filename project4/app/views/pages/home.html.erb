@@ -12,12 +12,13 @@
     <h1 id="header">Home</h1>
 
     <div class="options">
-      <p>Welcome to the OSU CSE Course Scraper and Viewer.
+      <p class = "welcome">Welcome to the OSU CSE Course Scraper and Viewer.
       The following links will take you to the different functions of our website.</p>
 
       <div id=site_links>
-        <p>Search Courses will allow you to search all of the courses that have been added to the database by an administrator.</p>
+        <p class = "search">Search Courses will allow you to search all of the courses that have been added to the database by an administrator.</p>
         <%= link_to "Search Courses", "/courses" %>
+        <div id = "Bear-Reps">A Bear Reps Product</div>
         <div id=user_type_links>
           <% if (user_signed_in?)%>
             <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
@@ -50,6 +51,8 @@
         <p>Course Links</p>
         <%= link_to "Search Courses", "/courses" %>
       </div>
+
+
 
       <div id=scraper_links>
         <p>Scraper Links Make sure only admin</p>

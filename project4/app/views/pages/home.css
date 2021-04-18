@@ -1,8 +1,12 @@
 body>h1{
 	text-align: center;
 	margin: 0px 0px 20px;
-	border: 3px solid red;
+	border-bottom: 3px solid red;
+	font-size: 40px;
+	padding-bottom: 10px;
 }
+
+
 
 #sign-in
 {
@@ -12,3 +16,32 @@ body>h1{
 #course-catalog{
 	padding: 2px;
 }
+
+.options{
+	font-size: 25px;
+}
+
+.welcome{
+	font-size: 22px;
+}
+
+.search{
+	font-size: 22px;
+}
+
+.navbar-link{
+   color: white;
+   padding: 10px;
+   background: white;
+   font-size: 25px;
+ }
+
+ #Bear-Reps{
+   center: auto;
+   top: 10px;
+	 right: 10px;
+   position: absolute;
+   bottom: auto;
+
+   color:red;
+ }
