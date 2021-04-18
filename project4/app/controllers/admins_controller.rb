@@ -64,16 +64,22 @@ class AdminsController < ApplicationController
   def users
     @show_users = User.order(sort_column + " " + sort_direction)
 
-    # redirect_to ("users/"+params[:search])
+
     if params[:search]!=""
       @show_users = search_users(User)
     else
       @show_users = User
     end
+    #redirect_to admin_users_path
+    #redirect_to admin_users_path
   end
 
   def users_show
     @Users = User.where(nameDotNumber: params[:nameDotNumber])
+  end
+
+  def users_edit
+    @edit_users = User.where(nameDotNumber: params[:nameDotNumber])
   end
 
 

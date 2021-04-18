@@ -2,8 +2,8 @@
 <html>
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <head>
-<% @Users.where(nameDotNumber: params[:nameDotNumber]).each do |t| %>
-  <h1><%="User: "+t.fname+" "+t.lname %></h1>
+<% @edit_users.where(nameDotNumber: params[:nameDotNumber]).each do |t| %>
+  <h1><%="Editing User: "+t.fname+" "+t.lname %></h1>
     </head>
     <body>
     <p>Year: <%=t.year %></p>
@@ -15,10 +15,7 @@
 <% end %>
   </body>
 <!--% Scrape.set_chosen_course(params[:key])  %-->
-  <p>
-  <%= button_to "Return", admin_users_path, method: :get%>
-  <%= button_to "Edit", "/admin/users/edit?nameDotNumber=#{params[:nameDotNumber]}", method: :get%>
-  </p>
 
+  <%= button_to "Return", admin_users_path, method: :get%>
 <% end %>
   </html>
