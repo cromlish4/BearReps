@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
   before_action :set_admin, only: [ :show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
   @admin = User.where(user_type: "admin")
-
+  @admin_edit
   def index
   @admin = User.where(user_type: "admin")
   end
@@ -77,13 +77,18 @@ class AdminsController < ApplicationController
   def users_show
     @Users = User.where(nameDotNumber: params[:nameDotNumber])
   end
-
+  # Patch for updating user
   def user_show
-    redirect_to "/admin/users/show?nameDotNumber="+params[:nameNum]
+    @admin_edit
+    str_year = params[:year_new]
+
+    # str_type = params[:new_user_type]
+    redirect_to "/admin/users/show?nameDotNumber="+@admin_edit
   end
 
   def users_edit
     @edit_users = User.find_by(nameDotNumber: params[:nameDotNumber])
+    @admin_edit = params[:year]
   end
 
 

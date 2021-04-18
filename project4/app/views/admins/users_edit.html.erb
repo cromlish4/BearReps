@@ -14,7 +14,8 @@
   <%= form_for @edit_users do |f| %>
       <div class="form-control">
         <%= f.label "Year"%>
-        <%= f.text_field  "Year", required: true, value: t.year  %>
+        <%= f.text_field  :year, required: true, value: t.year  %>
+
       </div>
 
       <%= f.label "Verified"%>
@@ -32,6 +33,7 @@
       </div>
 
       <div class="form-control">
+        <%= hidden_field_tag(:year_new, params[:year])%>
         <%= hidden_field_tag(:nameNum, params[:nameDotNumber]) %>
         <%= f.submit 'Update Entry'%>
       </div>
