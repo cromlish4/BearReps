@@ -16,7 +16,7 @@
     <th>Section Number</th> <td><%= @application.section %></td>
   </tr>
   <tr>
-    <th>Applicant's</th> <td><%= link_to "Applicant's Profile", student_path(@application.owner) %></td>
+    <th>Applicant's Profile</th> <td><%= link_to "Applicant's Profile", student_path(@application.owner) %></td>
     <!-- the code of the link should resolve to student_path(:id), where :id is the :id of a student -->
     <!-- link to /students/:id  -->
   </tr>
