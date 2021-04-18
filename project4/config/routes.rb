@@ -98,4 +98,15 @@ Rails.application.routes.draw do
   get 'users/edit' => 'users#edit'
   get 'users/new' => 'users#new'
   get 'users/show' => 'users#show'
+  
+  # Applications
+  # Create an application
+  get 'application_new' => 'applications#new'
+  # Edit an application
+  get 'application_edit' => 'applications#edit'
+  # Show a specific application
+  get 'application_show' => 'applications#show'
+  # Show all applications
+  get 'applications_index' => 'applications#index'
+
 end
