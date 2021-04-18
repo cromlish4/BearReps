@@ -2,7 +2,7 @@
 <html>
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <head>
-<% @edit_users.where(nameDotNumber: params[:nameDotNumber]).each do |t| %>
+<% t = @edit_users %>
   <h1><%="Editing User: "+t.fname+" "+t.lname %></h1>
     </head>
     <body>
@@ -11,11 +11,34 @@
     <p>User Type: <%=t.user_type %></p>
 
 
+  <%= form_for @edit_users do |f| %>
+      <div class="form-control">
+        <%= f.label "Year"%>
+        <%= f.text_field  "Year", required: true, value: t.year  %>
+      </div>
 
-<% end %>
+      <%= f.label "Verified"%>
+      <% if (t.verified=="true") %>
+
+        <%= check_box_tag "Verified", 1, {:checked => "checked"}  %>
+      <% else %>
+        <%= check_box_tag "Verified", 0  %>
+      <% end %>
+      <br>
+
+      <div class="form-control">
+        <%= f.label "User Type"%>
+        <%= f.text_field  "User Type", required: true, value: t.user_type  %>
+      </div>
+
+      <div class="form-control">
+        <%= hidden_field_tag(:nameNum, params[:nameDotNumber]) %>
+        <%= f.submit 'Update Entry'%>
+      </div>
+  <% end %>
+
   </body>
-<!--% Scrape.set_chosen_course(params[:key])  %-->
 
-  <%= button_to "Return", admin_users_path, method: :get%>
+  <%= button_to "Return", "/admin/users/show?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
 <% end %>
   </html>

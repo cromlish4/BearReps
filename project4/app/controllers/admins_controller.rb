@@ -78,8 +78,12 @@ class AdminsController < ApplicationController
     @Users = User.where(nameDotNumber: params[:nameDotNumber])
   end
 
+  def user_show
+    redirect_to "/admin/users/show?nameDotNumber="+params[:nameNum]
+  end
+
   def users_edit
-    @edit_users = User.where(nameDotNumber: params[:nameDotNumber])
+    @edit_users = User.find_by(nameDotNumber: params[:nameDotNumber])
   end
 
 
