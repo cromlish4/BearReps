@@ -12,13 +12,9 @@
       <p>Year: <%=t.year %></p>
       <p>Verified: <%=t.verified %></p>
       <p>User Type: <%=t.user_type %></p>
-
-
-
-
+      
     <% #end %>
     </body>
-    <!--% Scrape.set_chosen_course(params[:key])  %-->
     <p>
       <%= button_to "Return", admin_users_path, method: :get%>
       <% if params[:nameDotNumber]!="" %>

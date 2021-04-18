@@ -6,11 +6,11 @@
     <h1><%="Editing User: "+t.fname+" "+t.lname %></h1>
   </head>
   <body>
-  <p>Year: <%=t.year %></p>
   <p>Verified: <%=t.verified %></p>
   <p>User Type: <%=t.user_type %></p>
 <% end %>
 
+<!--Form for Editing User, autofills with current info-->
 <%= form_for @Users do |f| %>
 
   <div class="form-control">
@@ -32,8 +32,12 @@
     <%= f.label "Year"%>
     <%= f.text_field  :year, required: true, value: t.year  %>
   </div>
-
+  <!--Checkbox to unverify users-->
   <%= f.label "Verified"%>
+  <% if ((t.user_type=="dev" || t.user_type=='admin') && current_user.user_type!="dev") %>
+    <p>Value: <%=t.verified %>, cannot be changed user is equal or higher to your auth level.</p>
+  <% else %>
+
   <% if (t.verified=="true") %>
 
     <%= check_box_tag "Verified", 1, {:checked => "checked"}  %>
@@ -41,21 +45,25 @@
     <%= check_box_tag "Verified", 0  %>
   <% end %>
   <br>
-
+  <% end %>
   <div class="form-control">
     <%= f.label "User Type"%>
-    <%= f.text_field  "User Type", required: true, value: t.user_type  %>
+    <% if ((t.user_type=="dev" || t.user_type=='admin') && current_user.user_type!="dev") %>
+      <p>Value: <%=t.user_type %>, cannot be changed user is equal or higher to your auth level.</p>
+    <% else %>
+      <%= f.text_field  "User Type", required: true, value: t.user_type  %>
+    <% end %>
   </div>
 
   <div class="form-control">
-    <%#= hidden_field_tag(:year_new, params[:users][:year])%>
+    <!--Passes Name dot Number to Controller-->
     <%= hidden_field_tag(:nameNum, params[:nameDotNumber]) %>
     <%= f.submit 'Update Entry'%>
   </div>
 <% end %>
 
 </body>
-
+<!--Return to User Select Screen-->
 <%= button_to "Return", "/admin/users/show?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
 
 </html>
