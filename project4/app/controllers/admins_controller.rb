@@ -54,7 +54,7 @@ class AdminsController < ApplicationController
   end
 
   def verify
-    @unverified_users = User.order(sort_column + " " + sort_direction)
+    @unverified_users = User.order(sort_column(User) + " " + sort_direction)
   end
 
   def verify_account
@@ -62,7 +62,7 @@ class AdminsController < ApplicationController
   end
 
   def users
-    @show_users = User.order(sort_column + " " + sort_direction)
+    @show_users = User.order(sort_column(User) + " " + sort_direction)
 
 
     if params[:search]!=""
@@ -96,6 +96,7 @@ class AdminsController < ApplicationController
     # sub_dir is the place that we need to redirect to
     if sub_dir == 'users'
       # Users Edit code to update database
+      # This code is here to cause error to see params in rails browser.
       #Data[1].split("/")
 
       @User_to_update = User.find_by(:nameDotNumber => params[:nameNum])
@@ -115,23 +116,10 @@ class AdminsController < ApplicationController
       redirect_to "/admin/users/show?nameDotNumber="+params[:nameNum]
     elsif sub_dir == 'graders'
       # Graders Edit code to update database
+      # This section never happens since the section update goes to the section controller but I'm unsure how to change that
+      # so I'm leaving this here just in case MSC
       #Data[1].split("/")
 
-      # @User_to_update = User.find_by(:nameDotNumber => params[:nameNum])
-      # @User_to_update.update(:year => params[:user][:year])
-      # @User_to_update.update(:fname => params[:user][:fname])
-      # # @User_to_update.update(:nameDotNumber => params[:user][:nameDotNumber])
-      # @User_to_update.update(:lname => params[:user][:lname])
-      # if params["Verified"]=="1"
-      #   @User_to_update.update(:verified => "true")
-      # else
-      #   @User_to_update.update(:verified => "false")
-      # end
-      # if (params[:keep_user] == "false")
-      #   @User_to_update.update(:user_type => params[:user]["User Type"])
-      # end
-      # @User_to_update.save
-      # redirect_to "/admin/users/show?nameDotNumber="+params[:nameNum]
     end
   end
 

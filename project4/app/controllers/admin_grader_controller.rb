@@ -6,7 +6,7 @@ class AdminGraderController < ApplicationController
     @Sections = Section.find(params[:id])
   end
   def update
-    redirect_to "/admin/graders/show?nameDotNumber="+params[:nameNum]
+    redirect_to "/admin/graders/show?id="+params[:id]
   end
   # def index
   #   # params[:user][:year]
