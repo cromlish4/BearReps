@@ -142,13 +142,14 @@ class AdminsController < ApplicationController
 
   #Graders
     def graders
-      @show_users = User.order(sort_column + " " + sort_direction)
+      #@show_sections = Section.order(sort_column(Section) + " " + sort_direction)
 
+      #Data[1].split("/")
 
       if params[:search]!=""
-        @show_users = search_db(User)
+        @show_sections = Section.where(courseID: search_sections.ids)
       else
-        @show_users = User
+        @show_sections = Section
       end
       #redirect_to admin_users_path
       #redirect_to admin_users_path
@@ -160,8 +161,8 @@ class AdminsController < ApplicationController
     @admin = User.find_by(nameDotNumber: params[:nameDotNumber])
   end
 
-  def sort_column
-    User.column_names.include?(params[:sort]) ? params[:sort] : "lname"
+  def sort_column(db)
+    db.column_names.include?(params[:sort]) ? params[:sort] : "lname"
   end
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
@@ -170,5 +171,8 @@ class AdminsController < ApplicationController
   def search_db(db)
     return db.where(fname: params[:search]).or(db.where(lname: params[:search]))
 
+  end
+  def search_sections
+    return Course.where(catalog_number: params[:search])
   end
 end

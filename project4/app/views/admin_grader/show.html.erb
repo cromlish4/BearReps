@@ -2,23 +2,24 @@
 <html>
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
   <head>
-    <% t = Courses.find_by(:nameDotNumber => params[:nameDotNumber]) %>
-    <h1><%="Course: "+t.fname+" "+t.lname %></h1>
+    <% t = Section.find(params[:id]) %>
+    <% f = Course.find_by(:id => t.courseID) %>
+    <h1><%="Course: "+f.title+"\nSection: "+t.section %></h1>
   </head>
   <body>
-  <p>First Name: <%=t.fname %></p>
-  <p>Last Name: <%=t.lname %></p>
-  <p>Name dot number: <%=params[:nameDotNumber] %></p>
-  <p>Year: <%=t.year %></p>
-  <p>Verified: <%=t.verified %></p>
-  <p>User Type: <%=t.user_type %></p>
+<!--  <p>First Name: <%#=t.fname %></p>-->
+<!--  <p>Last Name: <%#=t.lname %></p>-->
+<!--  <p>Name dot number: <%#=params[:nameDotNumber] %></p>-->
+<!--  <p>Year: <%#=t.year %></p>-->
+<!--  <p>Verified: <%#=t.verified %></p>-->
+<!--  <p>User Type: <%#=t.user_type %></p>-->
 
   <% #end %>
   </body>
   <p>
-    <%= button_to "Return", admin_graders_path, method: :get%>
-    <% if params[:nameDotNumber]!="" %>
-      <%= button_to "Edit", "/admin/graders/edit?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
+    <%= button_to "Return", admin_graders_path,method: :get%>
+    <% if params[:id]!="" %>
+      <%= button_to "Edit", "/admin/graders/edit?id=", method: :get, params: {:id => params[:id]}%>
     <%end %>
   </p>
 
