@@ -96,4 +96,10 @@ Rails.application.routes.draw do
   get 'users/edit' => 'users#edit'
   get 'users/new' => 'users#new'
   get 'users/show' => 'users#show'
+
+  #Section extra
+  get 'sections/all' => 'sections#all'
+  resources :sections do
+    get 'all'
+  end
 end

@@ -10,18 +10,39 @@ class SectionsController < ApplicationController
   # GET /sections/1 or /sections/1.json
   def show
     @section = Section.find(params[:id])
-    @courseID= get_matching_catalog_numbers(@section.courseID, nil)
+    @courseID = get_matching_catalog_numbers(@section.courseID, nil)
+  end
+
+  def all
+    @sections = Scrape.get_scraped_sections()
+    if (@sections)
+      @sections.each do |section|
+        if section[0] == params[:key]
+          section[1].each do |sect|
+            section = Section.new(classNumber: sect[0], meetingDays: sect[1]['meetingDays'], meetingTimes: sect[1]['meetingTimes'], waitlistTotal: sect[1]['waitlistTotal'], endDate: sect[1]['endDate'], startDate: sect[1]['startDate'], enrollmentStatus: sect[1]['enrollmentStatus'], instructionMode: sect[1]['instructionMode'], component: sect[1]['component'], section: sect[1]['section'], courseID: params[:courseID])
+            if !section.save
+              redirect_to home_url
+            end
+
+          end
+        end
+      end
+    end
+
+    redirect_to sections_url
   end
 
   # GET /sections/new
   def new
     @section = Section.new
+    if params[:add_all]
+      @sections = Scrape.get_scraped_sections()
+    end
   end
 
   # GET /sections/1/edit
   def edit
   end
-
 
   # POST /sections or /sections.json
   def create
@@ -57,14 +78,15 @@ class SectionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_section
-      @section = Section.find(params[:id])
-    end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_section
+    @section = Section.find(params[:id])
+  end
 
   private def get_matching_catalog_numbers(courseID, sections)
-    if(courseID > 0 || sections)
-      if(sections)
+    if (courseID > 0 || sections)
+      if (sections)
         catalog_nums = []
         sections.each do |sect|
           item = Course.where("ROWID = ?", sect.courseID)[0]
@@ -81,8 +103,8 @@ class SectionsController < ApplicationController
 
   end
 
-    # Only allow a list of trusted parameters through.
-    def section_params
-      params.require(:section).permit(:classNumber, :meetingDays, :meetingTimes, :waitlistTotal, :courseID, :endDate, :startDate, :enrollmentStatus, :instructionMode, :component, :section)
-    end
+  # Only allow a list of trusted parameters through.
+  def section_params
+    params.require(:section).permit(:classNumber, :meetingDays, :meetingTimes, :waitlistTotal, :courseID, :endDate, :startDate, :enrollmentStatus, :instructionMode, :component, :section)
+  end
 end
