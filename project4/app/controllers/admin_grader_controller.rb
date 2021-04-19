@@ -1,9 +1,9 @@
 class AdminGraderController < ApplicationController
   def edit
-    @Users = User.find_by(nameDotNumber: params[:nameDotNumber])
+    @Sections = Section.find(params[:id])
   end
   def show
-    @Users = User.find_by(nameDotNumber: params[:nameDotNumber])
+    @Sections = Section.find(params[:id])
   end
   def update
     redirect_to "/admin/graders/show?nameDotNumber="+params[:nameNum]

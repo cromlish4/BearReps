@@ -2,84 +2,71 @@
 <html>
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
   <head>
-    <% t = @Users %>
-    <h1><%="Editing Course: "+t.title %></h1>
+    <% t = @Sections %>
+    <h1><%="Editing Section: "+t.section %></h1>
   </head>
   <body>
-  <p>Verified: <%=t.verified %></p>
-  <p>User Type: <%=t.user_type %></p>
+
 <% end %>
 
 <!--Form for Editing User, autofills with current info-->
-<%= form_for @Users do |f| %>
+<%= form_for @Sections do |f| %>
 
   <div class="form-control">
-    <%= f.label "First Name"%>
-    <%= f.text_field  :fname, required: true, value: t.fname  %>
+    <%= f.label "Section Number: "%>
+    <%= f.text_field  :section, required: true, value: t.section  %>
   </div>
 
   <div class="form-control">
-    <%= f.label "Last Name"%>
-    <%= f.text_field  :lname, required: true, value: t.lname  %>
+    <%= f.label "Class Number"%>
+    <%= f.text_field  :classNumber, required: true, value: t.classNumber  %>
   </div>
 
   <div class="form-control">
-    <%= f.label "Name dot number"%>
-    <%= f.text_field  :nameDotNumber, required: true, disabled: true, value: t.nameDotNumber  %>
+    <%= f.label "Meeting Days"%>
+    <%= f.text_field  :meetingDays, required: true, value: t.meetingDays  %>
   </div>
 
   <div class="form-control">
-    <%= f.label "Year"%>
-    <%= f.text_field  :year, required: true, value: t.year  %>
+    <%= f.label "Waitlist Total: "%>
+    <%= f.text_field  :meetingTimes, required: true, value: t.waitlistTotal  %>
   </div>
-  <!--Checkbox to unverify users-->
-  <%= f.label "Verified"%>
-  <% check_box_enable = false %>
-  <% if ((t.user_type=="dev") && current_user.user_type!="dev") %>
-    <p>Value: <%=t.verified %>, cannot be changed user is a Developer.</p>
-    <% check_box_enable = true %>
-  <% end %>
 
-  <% if (t.verified=="true") %>
+  <!--Make open or closed a dropdown menu -->
 
-    <%= check_box_tag "Verified", 1, {:checked => "checked"}, :disabled => check_box_enable  %>
-    <% if (check_box_enable == true) %>
-      <%= hidden_field_tag("Verified", 1) %>
-    <% end %>
-  <% else %>
-    <%= check_box_tag "Verified", 0, :disabled => check_box_enable  %>
-    <% if (check_box_enable == true) %>
-      <%= hidden_field_tag("Verified", 0) %>
-    <% end %>
-  <% end %>
-  <br>
-  <%# User Type needs additional data sent to controller so that user type isn't wiped when it can't be changed. %>
   <div class="form-control">
-    <%= f.label "User Type"%>
-    <% enable_user_type = false %>
-    <% if ((t.user_type=="dev") && current_user.user_type!="dev") %>
-      <p>Value: <%=t.user_type %>, cannot be changed user is a Developer.</p>
-      <% enable_user_type = true %>
-      <
-    <% end %>
-    <%= f.text_field  "User Type", required: true, disabled: enable_user_type, value: t.user_type  %>
+    <%= f.label "Instruction Mode"%>
+    <%= f.text_field  :instructionMode, required: true, value: t.instructionMode  %>
   </div>
 
   <div class="form-control">
-    <!--Passes Name dot Number to Controller-->
-    <%= hidden_field_tag(:nameNum, params[:nameDotNumber]) %>
+    <%= f.label "Component"%>
+    <%= f.text_field  :component, required: true, value: t.component  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Start Date"%>
+    <%= f.text_field  :startDate, required: true, value: t.startDate  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "End Date"%>
+    <%= f.text_field  :endDate, required: true, value: t.endDate  %>
+  </div>
+
+  <!--Grader Also need external info I dont have -->
+
+  <div class="form-control">
+
     <!--Passes what part of website to Controller-->
-    <%= hidden_field_tag(:sub_dir, "users") %>
-    <%= hidden_field_tag(:keep_user, "false") %>
-    <% if (enable_user_type == true) %>
-      <%= hidden_field_tag(:keep_user, "true") %>
-    <% end %>
+    <%= hidden_field_tag(:sub_dir, "graders") %>
+
     <%= f.submit 'Update Entry'%>
   </div>
 <% end %>
 
 </body>
 <!--Return to User Select Screen-->
-<%= button_to "Return", "/admin/graders/show?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
+<%= button_to "Return", "/admin/graders/show?id=", method: :get, params: {:id => params[:id]}%>
 
 </html>
