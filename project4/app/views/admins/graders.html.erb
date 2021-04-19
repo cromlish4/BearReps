@@ -8,9 +8,8 @@
   </head>
   <body>
     <h1>Users</h1>
-    <%= form_tag("users", method: :get) do %>
-    <p> Search for a User (Only Verified Users are listed here.[may change later]) </p>
-    <p>Planned Feature: If time permits make each user clickable and bring to a page to edit that user. Admins will be uneditable.</p>
+    <%= form_tag("graders", method: :get) do %>
+    <p> Search for a Course</p>
     <%= text_field_tag(:search, params[:search], placeholder: "First or Last Name Only") %>
     <%= submit_tag ("Search") %>
   <% end %>
@@ -26,7 +25,7 @@
       <tbody>
     <% @show_users.where(verified: "true").each do |t| %>
       <tr>
-        <td><%=link_to t.fname+" "+t.lname, "/admin/users/show?nameDotNumber=#{t.nameDotNumber}" %></td>
+        <td><%=link_to t.fname+" "+t.lname, "/admin/graders/show?nameDotNumber=#{t.nameDotNumber}" %></td>
         <td><%= t.user_type %></td>
         <td><%= t.year %></td>
         <!--td>%= t.classes %></td-->

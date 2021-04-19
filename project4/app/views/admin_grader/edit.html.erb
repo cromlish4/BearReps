@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+  <head>
+    <% t = @Users %>
+    <h1><%="Editing Course: "+t.title %></h1>
+  </head>
+  <body>
+  <p>Verified: <%=t.verified %></p>
+  <p>User Type: <%=t.user_type %></p>
+<% end %>
+
+<!--Form for Editing User, autofills with current info-->
+<%= form_for @Users do |f| %>
+
+  <div class="form-control">
+    <%= f.label "First Name"%>
+    <%= f.text_field  :fname, required: true, value: t.fname  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Last Name"%>
+    <%= f.text_field  :lname, required: true, value: t.lname  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Name dot number"%>
+    <%= f.text_field  :nameDotNumber, required: true, disabled: true, value: t.nameDotNumber  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Year"%>
+    <%= f.text_field  :year, required: true, value: t.year  %>
+  </div>
+  <!--Checkbox to unverify users-->
+  <%= f.label "Verified"%>
+  <% check_box_enable = false %>
+  <% if ((t.user_type=="dev") && current_user.user_type!="dev") %>
+    <p>Value: <%=t.verified %>, cannot be changed user is a Developer.</p>
+    <% check_box_enable = true %>
+  <% end %>
+
+  <% if (t.verified=="true") %>
+
+    <%= check_box_tag "Verified", 1, {:checked => "checked"}, :disabled => check_box_enable  %>
+    <% if (check_box_enable == true) %>
+      <%= hidden_field_tag("Verified", 1) %>
+    <% end %>
+  <% else %>
+    <%= check_box_tag "Verified", 0, :disabled => check_box_enable  %>
+    <% if (check_box_enable == true) %>
+      <%= hidden_field_tag("Verified", 0) %>
+    <% end %>
+  <% end %>
+  <br>
+  <%# User Type needs additional data sent to controller so that user type isn't wiped when it can't be changed. %>
+  <div class="form-control">
+    <%= f.label "User Type"%>
+    <% enable_user_type = false %>
+    <% if ((t.user_type=="dev") && current_user.user_type!="dev") %>
+      <p>Value: <%=t.user_type %>, cannot be changed user is a Developer.</p>
+      <% enable_user_type = true %>
+      <
+    <% end %>
+    <%= f.text_field  "User Type", required: true, disabled: enable_user_type, value: t.user_type  %>
+  </div>
+
+  <div class="form-control">
+    <!--Passes Name dot Number to Controller-->
+    <%= hidden_field_tag(:nameNum, params[:nameDotNumber]) %>
+    <!--Passes what part of website to Controller-->
+    <%= hidden_field_tag(:sub_dir, "users") %>
+    <%= hidden_field_tag(:keep_user, "false") %>
+    <% if (enable_user_type == true) %>
+      <%= hidden_field_tag(:keep_user, "true") %>
+    <% end %>
+    <%= f.submit 'Update Entry'%>
+  </div>
+<% end %>
+
+</body>
+<!--Return to User Select Screen-->
+<%= button_to "Return", "/admin/graders/show?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
+
+</html>
