@@ -87,9 +87,9 @@ class AdminsController < ApplicationController
     #params[:nameNum]
   end
 
-  # def user_update
-  #   @edit_users.update(admin_params)
-  # end
+  def scrape_show
+
+  end
 
 
 

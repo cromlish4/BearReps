@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'admins/index', to: 'admins#index'
   get 'admins/new', to: 'admins#new'
 
+
   get 'form' => 'courses#form'
   get 'new_course' => 'courses#form'
   get 'display_admin' => 'pages#display_admin'
@@ -43,6 +44,7 @@ Rails.application.routes.draw do
   get 'admin/users/edit' => 'admin_user#edit'
   patch 'admins/all' => 'admin_user#index'
   get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
+  get 'admin/scraper' => 'admins#scrape_show'
 
 
   #Edit admin page

@@ -1,0 +1,2 @@
+class AdminGraderController < ApplicationController
+end
