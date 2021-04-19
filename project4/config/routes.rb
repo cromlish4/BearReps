@@ -37,14 +37,28 @@ Rails.application.routes.draw do
   get 'admin_new' => 'admins#new'
 
   get 'admin/verify' => 'admins#verify'
+  get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
   get 'admin/home' => 'admins#admin_home'
   get 'admin/verify.css' => 'admins#verify.css'
+
+  # Admin Menu Updater
+  patch 'admins/all' => 'admins#admins_all'
+
+  # Admin User Menu
   get 'admin/users' => 'admins#users', :as => :admin_users
   get 'admin/users/show' => 'admin_user#show'
   get 'admin/users/edit' => 'admin_user#edit'
-  patch 'admins/all' => 'admin_user#index'
-  get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
+  get 'admin/users/index' => 'admin_user#index'
+
+
+  # Admin Scraper Menu
   get 'admin/scraper' => 'admins#scrape_show'
+  # Admin Grader Menu
+  get 'admin/graders' => 'admins#graders'
+  get 'admin/graders/show' => 'admin_grader#show'
+  get 'admin/graders/edit' => 'admin_grader#edit'
+  # patch 'admins/all' => 'admin_user#index'
+
 
 
   #Edit admin page
