@@ -2,8 +2,8 @@
 <html>
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
   <head>
-    <% t = User.find_by(:nameDotNumber => params[:nameDotNumber]) %>
-    <h1><%="User: "+t.fname+" "+t.lname %></h1>
+    <% t = Courses.find_by(:nameDotNumber => params[:nameDotNumber]) %>
+    <h1><%="Course: "+t.fname+" "+t.lname %></h1>
   </head>
   <body>
   <p>First Name: <%=t.fname %></p>
@@ -16,9 +16,9 @@
   <% #end %>
   </body>
   <p>
-    <%= button_to "Return", admin_users_path, method: :get%>
+    <%= button_to "Return", admin_graders_path, method: :get%>
     <% if params[:nameDotNumber]!="" %>
-      <%= button_to "Edit", "/admin/users/edit?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
+      <%= button_to "Edit", "/admin/graders/edit?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
     <%end %>
   </p>
 

@@ -3,7 +3,7 @@
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
   <head>
     <% t = @Users %>
-    <h1><%="Editing User: "+t.fname+" "+t.lname %></h1>
+    <h1><%="Editing Course: "+t.title %></h1>
   </head>
   <body>
   <p>Verified: <%=t.verified %></p>
@@ -80,6 +80,6 @@
 
 </body>
 <!--Return to User Select Screen-->
-<%= button_to "Return", "/admin/users/show?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
+<%= button_to "Return", "/admin/graders/show?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
 
 </html>
