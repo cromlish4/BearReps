@@ -4,11 +4,13 @@ class SectionsController < ApplicationController
   # GET /sections or /sections.json
   def index
     @sections = Section.all
+    @courseID_list = get_matching_catalog_numbers(-1, @sections)
   end
 
   # GET /sections/1 or /sections/1.json
   def show
     @section = Section.find(params[:id])
+    @courseID= get_matching_catalog_numbers(@section.courseID, nil)
   end
 
   # GET /sections/new
@@ -59,6 +61,25 @@ class SectionsController < ApplicationController
     def set_section
       @section = Section.find(params[:id])
     end
+
+  private def get_matching_catalog_numbers(courseID, sections)
+    if(courseID > 0 || sections)
+      if(sections)
+        catalog_nums = []
+        sections.each do |sect|
+          item = Course.where("ROWID = ?", sect.courseID)[0]
+          catalog_nums << item.catalog_number
+        end
+        catalog_nums
+      else
+        item = Course.where("ROWID = ?", courseID)[0]
+        number = item.catalog_number
+      end
+    else
+      nil
+    end
+
+  end
 
     # Only allow a list of trusted parameters through.
     def section_params
