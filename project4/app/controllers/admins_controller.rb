@@ -94,8 +94,27 @@ class AdminsController < ApplicationController
   def admins_all
     sub_dir = params[:sub_dir]
     # sub_dir is the place that we need to redirect to
-    if (sub_dir == 'users')
+    if sub_dir == 'users'
       # Users Edit code to update database
+      #Data[1].split("/")
+
+      @User_to_update = User.find_by(:nameDotNumber => params[:nameNum])
+      @User_to_update.update(:year => params[:user][:year])
+      @User_to_update.update(:fname => params[:user][:fname])
+      # @User_to_update.update(:nameDotNumber => params[:user][:nameDotNumber])
+      @User_to_update.update(:lname => params[:user][:lname])
+      if params["Verified"]=="1"
+        @User_to_update.update(:verified => "true")
+      else
+        @User_to_update.update(:verified => "false")
+      end
+      if (params[:keep_user] == "false")
+        @User_to_update.update(:user_type => params[:user]["User Type"])
+      end
+      @User_to_update.save
+      redirect_to "/admin/users/show?nameDotNumber="+params[:nameNum]
+    elsif sub_dir == 'graders'
+      # Graders Edit code to update database
       #Data[1].split("/")
 
       @User_to_update = User.find_by(:nameDotNumber => params[:nameNum])
