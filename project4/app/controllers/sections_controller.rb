@@ -51,10 +51,12 @@ class SectionsController < ApplicationController
     @section_to_update.update(:classNumber => params[:section][:classNumber])
     @section_to_update.update(:meetingDays => params[:section][:meetingDays])
     @section_to_update.update(:waitlistTotal => params[:section][:waitlistTotal])
+    @section_to_update.update(:enrollmentStatus => params[:section][:enrollmentStatus])
     @section_to_update.update(:instructionMode => params[:section][:instructionMode])
     @section_to_update.update(:component => params[:section][:component])
     @section_to_update.update(:startDate => params[:section][:startDate])
     @section_to_update.update(:endDate => params[:section][:endDate])
+    # @section_to_update.update(:grader => params[:section][:grader])
 
     @section_to_update.save
     redirect_to "/admin/graders/show?id="+params[:id]

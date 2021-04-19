@@ -32,7 +32,11 @@
     <%= f.text_field  :waitlistTotal, required: true, value: t.waitlistTotal  %>
   </div>
 
+  <div class="form-control">
   <!--Make open or closed a dropdown menu -->
+  <%= f.label "Enrollment Status: " %>
+  <%= f.select :enrollmentStatus, [['Open'],['Closed']], value: t.enrollmentStatus %>
+  </div>
 
   <div class="form-control">
     <%= f.label "Instruction Mode"%>
@@ -54,7 +58,11 @@
     <%= f.text_field  :endDate, required: true, value: t.endDate  %>
   </div>
 
+  <div class="form-control">
   <!--Grader Also need external info I dont have -->
+  <%= f.label "Grader: " %>
+  <%= f.select :grader, [[''],['']], value: t.grader %>
+  </div>
 
   <div class="form-control">
 
