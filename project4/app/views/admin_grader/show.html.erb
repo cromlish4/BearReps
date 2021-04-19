@@ -2,7 +2,7 @@
 <html>
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
   <head>
-    <% t = @Sections.find(params[:id]) %>
+    <% t = Section.find(params[:id]) %>
     <% f = Course.find_by(:id => t.courseID) %>
     <h1><%="Course: "+f.catalog_number+"\nSection: "+t.section %></h1>
   </head>
