@@ -56,14 +56,14 @@ Screenshots
 1) Home Page -- Admin signed in
 ![Project4AdminHome](https://user-images.githubusercontent.com/77405607/115470665-ab279900-a204-11eb-80cd-082944d3023a.JPG)
 
-2) Home Page -- user signed in, but not verified
-![Home page signed in not verified](https://user-images.githubusercontent.com/77806397/112222020-8f79a480-8bfe-11eb-8eaa-8177dba0592c.PNG)
+2) Admin Page -- Admin Menu
+![Project4AdminMenu](https://user-images.githubusercontent.com/77405607/115471313-c2b35180-a205-11eb-8030-cc6b62476d48.JPG)
 
-3) Home Page -- user signed out
-![Home page not signed in](https://user-images.githubusercontent.com/77806397/112221980-8092f200-8bfe-11eb-92e5-5bbf893c3f96.PNG)
+3) Student Page -- Grader Application
+![Project4Application](https://user-images.githubusercontent.com/77405607/115471377-deb6f300-a205-11eb-8b5e-9bec80e4c968.JPG)
 
-4) Verify Page -- Admin signed in
-![Verify admin signed in](https://user-images.githubusercontent.com/77364977/112228320-8214e800-8c07-11eb-9c6d-04731ead5833.png)
+4) Login Page
+![Project4LoginPage](https://user-images.githubusercontent.com/77405607/115471432-f9896780-a205-11eb-8df2-466cd4fbc10d.JPG)
 
 Installation
 -------------
