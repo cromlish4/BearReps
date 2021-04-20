@@ -28,7 +28,7 @@ class RecommendationsController < ApplicationController
 def create
   if true
   @recommendation = Recommendation.new()
-  @recommendation.nameDotNumber = params[:app][:comments]
+  @recommendation.nameDotNumber = params[:app][:nameDotNumber]
   @recommendation.course = params[:app][:course]
 
   if @recommendation.save
