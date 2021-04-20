@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # resources :applications
   resources :apps
   resources :recommendations
+  # resources :pools
   #resources :users, constraints: { id: /.*/ }
   # devise_for :users
   Rails.application.routes.draw do
