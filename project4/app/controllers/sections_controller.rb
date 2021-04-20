@@ -47,7 +47,6 @@ class SectionsController < ApplicationController
   def edit
     @old_sect = Section.where("ROWID = ?", params[:id])
     @section = Section.new
-    puts 'h'
   end
 
   # POST /sections or /sections.json
@@ -67,85 +66,90 @@ class SectionsController < ApplicationController
       end
     else
       section = Section.find(params[:section][:id])
-      section.destroy
-      @section = Section.new(section_params)
+      section.update(:classNumber => section_params['classNumber'])
+      section.update(:meetingDays => section_params['meetingDays'])
+      section.update(:meetingTimes => section_params['meetingTimes'])
+      section.update(:waitlistTotal => section_params['waitlistTotal'])
+      section.update(:endDate => section_params['endDate'])
+      section.update(:startDate => section_params['startDate'])
+      section.update(:enrollmentStatus => section_params['enrollmentStatus'])
+      section.update(:instructionMode => section_params['instructionMode'])
+      section.update(:component => section_params['component'])
+      section.update(:section => section_params['section'])
+      section.update(:courseID => section_params['courseID'])
+      redirect_to section
+      #@section = Section.new(section_params)
+    end
+  end
 
-      if @section.save
-        redirect_to @section
+  # PATCH/PUT /sections/1 or /sections/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @section.update(section_params)
+  #       format.html { redirect_to @section, notice: "Section was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @section }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @section.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+  # def update
+  #   @section_to_update = Section.find(params[:id])
+  #
+  #   @section_to_update.update(:section => params[:section][:section])
+  #   @section_to_update.update(:classNumber => params[:section][:classNumber])
+  #   @section_to_update.update(:meetingDays => params[:section][:meetingDays])
+  #   @section_to_update.update(:waitlistTotal => params[:section][:waitlistTotal])
+  #   @section_to_update.update(:enrollmentStatus => params[:section][:enrollmentStatus])
+  #   @section_to_update.update(:instructionMode => params[:section][:instructionMode])
+  #   @section_to_update.update(:component => params[:section][:component])
+  #   @section_to_update.update(:startDate => params[:section][:startDate])
+  #   @section_to_update.update(:endDate => params[:section][:endDate])
+  #   # @section_to_update.update(:grader => params[:section][:grader])
+  #
+  #   @section_to_update.save
+  #   redirect_to "/admin/graders/show?id=" + params[:id]
+  # end
+
+  # DELETE /sections/1 or /sections/1.json
+  def destroy
+    @section = Section.find(params[:id])
+    @section.destroy
+    respond_to do |format|
+      format.html { redirect_to sections_url, notice: "Section was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_section
+    @section = Section.find(params[:id])
+  end
+
+  private def get_matching_catalog_numbers(courseID, sections)
+    if (courseID > 0 || sections)
+      if (sections)
+        catalog_nums = []
+        sections.each do |sect|
+          item = Course.where("ROWID = ?", sect.courseID)[0]
+          catalog_nums << item.catalog_number
+        end
+        catalog_nums
       else
-        render :new
+        item = Course.where("ROWID = ?", courseID)[0]
+        number = item.catalog_number
       end
-    end
-  end
-end
-
-# PATCH/PUT /sections/1 or /sections/1.json
-# def update
-#   respond_to do |format|
-#     if @section.update(section_params)
-#       format.html { redirect_to @section, notice: "Section was successfully updated." }
-#       format.json { render :show, status: :ok, location: @section }
-#     else
-#       format.html { render :edit, status: :unprocessable_entity }
-#       format.json { render json: @section.errors, status: :unprocessable_entity }
-#     end
-#   end
-# end
-def update
-  @section_to_update = Section.find(params[:id])
-
-  @section_to_update.update(:section => params[:section][:section])
-  @section_to_update.update(:classNumber => params[:section][:classNumber])
-  @section_to_update.update(:meetingDays => params[:section][:meetingDays])
-  @section_to_update.update(:waitlistTotal => params[:section][:waitlistTotal])
-  @section_to_update.update(:enrollmentStatus => params[:section][:enrollmentStatus])
-  @section_to_update.update(:instructionMode => params[:section][:instructionMode])
-  @section_to_update.update(:component => params[:section][:component])
-  @section_to_update.update(:startDate => params[:section][:startDate])
-  @section_to_update.update(:endDate => params[:section][:endDate])
-  # @section_to_update.update(:grader => params[:section][:grader])
-
-  @section_to_update.save
-  redirect_to "/admin/graders/show?id=" + params[:id]
-end
-
-# DELETE /sections/1 or /sections/1.json
-def destroy
-  @section = Section.find(params[:id])
-  @section.destroy
-  respond_to do |format|
-    format.html { redirect_to sections_url, notice: "Section was successfully destroyed." }
-    format.json { head :no_content }
-  end
-end
-
-private
-
-# Use callbacks to share common setup or constraints between actions.
-def set_section
-  @section = Section.find(params[:id])
-end
-
-private def get_matching_catalog_numbers(courseID, sections)
-  if (courseID > 0 || sections)
-    if (sections)
-      catalog_nums = []
-      sections.each do |sect|
-        item = Course.where("ROWID = ?", sect.courseID)[0]
-        catalog_nums << item.catalog_number
-      end
-      catalog_nums
     else
-      item = Course.where("ROWID = ?", courseID)[0]
-      number = item.catalog_number
+      nil
     end
-  else
-    nil
+
   end
 
-end
-
-# Only allow a list of trusted parameters through.
-def section_params
-  params.require(:section).permit(:classNumber, :meetingDays, :meetingTimes, :waitlistTotal, :courseID, :endDate, :startDate, :enrollmentStatus, :instructionMode, :component, :section)
+  # Only allow a list of trusted parameters through.
+  def section_params
+    params.require(:section).permit(:classNumber, :meetingDays, :meetingTimes, :waitlistTotal, :courseID, :endDate, :startDate, :enrollmentStatus, :instructionMode, :component, :section)
+  end
 end
