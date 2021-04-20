@@ -25,19 +25,25 @@ end
 
 # POST a newly filled form to create a new application
 def create
-  @application = App.new(params[:id])
-  @application.owner = Student.find_or_create_by(name: params[:applicant])
-  # the applicant's name is contained in the parameter hash which is passed to the controller when the applicant submits the form with their name
-  # for example, if the applicant's name is Bob in the application, params[:applicant] = "Bob"
-  # then find_or_create_by(name: "Bob") will search the students table for "Bob" and return the instance if it is found
-  # otherwise a new row with "Bob" as the name attribute will be created in the students table
-  @application.section = Section.find_by!(classNumber: params[:section])
-  # link the application with the section written on it
-  # the find_by! is like find_by except that if no record is found, raises an ActiveRecord::RecordNotFound error
-  if @application.save
-    redirect_to @application, notice: "Successfully Saved!"
+  if Course.where("classNumber = ?", params[:course]).count > 0
+    @application = App.new(params[:id])
+    #@application. = Student.find_or_create_by(nameDotNumber: params[:current_user])
+    # the applicant's name is contained in the parameter hash which is passed to the controller when the applicant submits the form with their name
+    # for example, if the applicant's name is Bob in the application, params[:applicant] = "Bob"
+    # then find_or_create_by(name: "Bob") will search the students table for "Bob" and return the instance if it is found
+    # otherwise a new row with "Bob" as the name attribute will be created in the students table
+    @application.section = Section.find_by!(classNumber: params[:section])
+    # link the application with the section written on it
+    # the find_by! is like find_by except that if no record is found, raises an ActiveRecord::RecordNotFound error
+    if @application.save
+      redirect_to @application, notice: "Successfully Saved!"
+    else
+      render new
+    end
   else
     render new
+    flash.alert
+  end
   end
 end
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # resources :applications
   resources :apps
   resources :recommendations
+  #resources :users, constraints: { id: /.*/ }
   # devise_for :users
   Rails.application.routes.draw do
   resources :sections
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
   get 'display_course' => 'pages#display_course'
   get 'display_profile' => 'pages#display_profile'
   #get 'admins/:nameDotNumber', to: 'admins#edit', as: :edit_admin
-  get 'admins/all', to: 'admins#show', :as => :user
+  get 'admins/all', to: 'admins#show' #, :as => :user
   get 'admins/index', to: 'admins#index'
   get 'admins/new', to: 'admins#new'
 
@@ -42,7 +43,7 @@ Rails.application.routes.draw do
   get 'admin_new' => 'admins#new'
 
   get 'admin/verify' => 'admins#verify'
-  get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
+  get 'admin/user', to: 'admins#verify_redirect'
   get 'admin/home' => 'admins#admin_home'
   get 'admin/verify.css' => 'admins#verify.css'
 
@@ -140,4 +141,5 @@ Rails.application.routes.draw do
   resources :sections do
     get 'all'
   end
+
 end
