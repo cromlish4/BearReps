@@ -62,7 +62,7 @@ class StudentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
-      @student = User.find(params[:id])
+      @student = User.find(params[:format])
     end
 
     # Only allow a list of trusted parameters through.

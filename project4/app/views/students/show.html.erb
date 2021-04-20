@@ -2,22 +2,11 @@
 <!-- This view is not being used by the application -->
 <p>
   <strong>Name:</strong>
-  <%= @student.name %>
-</p>
-
-<p>
-  <strong>Classes:</strong>
-  <%= @student.classes %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @student.user.email %>
+  <%= @student.fname + " " + @student.lname %>
 </p>
 
 
 
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Edit', edit_student_path(@student) %>
 <%= link_to 'Back', students_path %>
-<%= link_to 'New Application', new_application_path %>
+<%#= link_to 'New Application', new_application_path%>

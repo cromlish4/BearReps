@@ -6,7 +6,9 @@ body>h1{
 	padding-bottom: 10px;
 }
 
-
+#Verify{
+	font-size: 18px;
+}
 
 #sign-in
 {
@@ -29,8 +31,15 @@ body>h1{
 	font-size: 22px;
 }
 
+.navbar-logout{
+	color: gray;
+	padding: 10px;
+	background: white;
+	font-size: 25px;
+}
+
 .navbar-link{
-   color: white;
+   color: gray;
    padding: 10px;
    background: white;
    font-size: 25px;
