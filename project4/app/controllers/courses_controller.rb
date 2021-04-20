@@ -16,6 +16,21 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
 
+  def destroy
+    course = Course.find(params[:id])
+    course.destroy
+    sections = Section.where("courseID = ?", params[:id])
+
+    sections.each do |sect|
+      sect.destroy
+    end
+
+    respond_to do |format|
+      format.html { redirect_to courses_url, notice: "Course was successfully destroyed" }
+      format.json { head :no_content }
+    end
+  end
+
   def create
     @course = Course.new(my_params_course)
     if @course.save

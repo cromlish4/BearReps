@@ -1,5 +1,33 @@
 <h1>New Section</h1>
 
-<%= render 'form', section: @section %>
-
+<% empty = true %>
+<% if params[:add_all] %>
+  <% if @sections %>
+    <% @sections.each do |section| %>
+      <% if section[0] == params[:key] %>
+        <% empty = false %>
+        <% section[1].each do |sect| %>
+          <% Scrape.get_database_section_keys.each do |k| %>
+            <% if k == 'classNumber' %>
+              <%= "#{k} : #{sect[0]}" %>
+            <% else %>
+              <%= "#{k} : #{sect[1][k]}" %>
+            <% end %>
+            <br>
+          <% end %>
+          <h3 class="break"> ========== </h3>
+        <% end %>
+      <% end %>
+    <% end %>
+    <h2 class="break"> ========== </h2>
+    <%= form_tag("#{sections_url}/-1/all", method: :get) do %>
+      <%= text_field_tag(:courseID, params[:courseID], placeholder: "n from courses/n", required: true, value: params[:courseID]) %>
+      <%= text_field_tag(:key, params[:key], value: params[:key], required: true, :readonly => true) %>
+      <%= submit_tag("execute") %>
+    <% end %>
+  <% end %>
+<% end %>
+<% if empty %>
+  <%= render 'form', section: @section %>
+<% end %>
 <%= link_to 'Back', sections_path %>
