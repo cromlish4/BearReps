@@ -62,7 +62,12 @@
       <% enable_user_type = true %>
       <
     <% end %>
-    <%= f.text_field  "User Type", required: true, disabled: enable_user_type, value: t.user_type  %>
+    <%#= f.text_field  "User Type", required: true, disabled: enable_user_type, value: t.user_type  %>
+    <% if (current_user.user_type=='dev') %>
+      <%= f.select :user_type, [['Student','student'],['Instructor','instructor'],['Admin','admin'],['Developer','dev']], disabled: enable_user_type, selected: t.user_type %>
+    <% else %>
+      <%= f.select :user_type, [['Student','student'],['Instructor','instructor'],['Admin','admin']], disabled: enable_user_type, selected: t.user_type %>
+    <% end %>
   </div>
 
   <div class="form-control">

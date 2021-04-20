@@ -15,13 +15,6 @@ ActiveRecord::Schema.define(version: 2021_04_19_181420) do
   create_table "applications", force: :cascade do |t|
   end
 
-  create_table "course_sections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "section_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "courses", force: :cascade do |t|
     t.string "title", null: false
     t.string "term", null: false

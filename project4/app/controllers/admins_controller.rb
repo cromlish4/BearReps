@@ -110,7 +110,7 @@ class AdminsController < ApplicationController
         @User_to_update.update(:verified => "false")
       end
       if (params[:keep_user] == "false")
-        @User_to_update.update(:user_type => params[:user]["User Type"])
+        @User_to_update.update(:user_type => params[:user][:user_type])
       end
       @User_to_update.save
       redirect_to "/admin/users/show?nameDotNumber="+params[:nameNum]
