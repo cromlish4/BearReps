@@ -3,7 +3,7 @@ class SectionsController < ApplicationController
 
   # GET /sections or /sections.json
   def index
-    @sections = Section.all
+    @sections = Section.all.order(courseID: :asc)
     @courseID_list = get_matching_catalog_numbers(-1, @sections)
   end
 
@@ -29,6 +29,7 @@ class SectionsController < ApplicationController
       end
     end
 
+    flash.alert = "Success!"
     redirect_to sections_url
   end
 
@@ -46,12 +47,17 @@ class SectionsController < ApplicationController
 
   # POST /sections or /sections.json
   def create
-    @section = Section.new(section_params)
+    if (Section.where("classNumber = ?", params[:section]['classNumber'])).count == 0
+      @section = Section.new(section_params)
 
-    if @section.save
-      redirect_to @section
+      if @section.save
+        redirect_to @section
+      else
+        render :new
+      end
     else
-      render :new
+      flash.alert = "Failed To Add"
+      redirect_to sections_url
     end
   end
 
@@ -70,6 +76,7 @@ class SectionsController < ApplicationController
 
   # DELETE /sections/1 or /sections/1.json
   def destroy
+    @section = Section.find(params[:id])
     @section.destroy
     respond_to do |format|
       format.html { redirect_to sections_url, notice: "Section was successfully destroyed." }
