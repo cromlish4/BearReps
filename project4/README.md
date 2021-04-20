@@ -40,9 +40,29 @@ With the use of gems, we were able to utilize the convenience of Ruby on Rails i
 20) webdrivers                -- for easy installation and use of web drivers to run system tests with browsers
 21) tzinfo-data               -- to include zoneinfo files, since Windows does not
 
-This final project is heavily based on a web scraper to get all the course listings from OSU's CSE catalog. Prominent featues of this Scraper include:
+Scraper, Courses and Sections
+-------
+This final project is heavily based on a web scraper to get all the course listings from OSU's CSE catalog. Prominent featues of this Scraper include: The ability to scrape courses by term (spring, summer, autumn), campus and any other search term a user may want.
+![image](https://user-images.githubusercontent.com/75758107/115470827-f2158e80-a204-11eb-8e31-4e397a6535a5.png)
+![image](https://user-images.githubusercontent.com/75758107/115470914-16716b00-a205-11eb-905e-9ec2c41e0d7a.png)
 
-1)
+You can then add that course to the database or add scraped sections of that course to a course
+![image](https://user-images.githubusercontent.com/75758107/115471009-46b90980-a205-11eb-9994-d3c723fed013.png)
+![image](https://user-images.githubusercontent.com/75758107/115471035-4fa9db00-a205-11eb-9fc4-5d9614d3831f.png)
+![image](https://user-images.githubusercontent.com/75758107/115471356-d3fc5e00-a205-11eb-9bc4-c42cba552626.png)
+
+You can then search courses in the database and add section (as an admin), add many, one or delete them!
+
+![image](https://user-images.githubusercontent.com/75758107/115471420-f3938680-a205-11eb-96b4-1740e6286d45.png)
+![image](https://user-images.githubusercontent.com/75758107/115471438-fc845800-a205-11eb-8345-ca67cba09653.png)
+![image](https://user-images.githubusercontent.com/75758107/115471484-1160eb80-a206-11eb-901f-1d6fed3fe5ab.png)
+![image](https://user-images.githubusercontent.com/75758107/115471501-16259f80-a206-11eb-80fc-1aaf2c6620c4.png)
+![image](https://user-images.githubusercontent.com/75758107/115471528-1f167100-a206-11eb-8b27-2b6178ccd3d4.png)
+![image](https://user-images.githubusercontent.com/75758107/115471543-250c5200-a206-11eb-8d4f-34c5fdfaf6f0.png)
+![image](https://user-images.githubusercontent.com/75758107/115471588-36edf500-a206-11eb-985c-8c9fcba47726.png)
+
+![image](https://user-images.githubusercontent.com/75758107/115471665-59800e00-a206-11eb-8609-6f76f423ddb7.png)
+![image](https://user-images.githubusercontent.com/75758107/115471792-8a604300-a206-11eb-9d59-d9983642af04.png)
 
 
 This project heavily utilized databases for keeping track of users of types student, intstructor, and admin. Additonally, to keep track of applications and reocmmendations for student graders based on a class. Promiment features of our databses include:
