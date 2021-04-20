@@ -18,3 +18,4 @@
 </div>
 
 <%= button_to "Delete Section", @section, :method => :delete, data: {confirm: "===WARNING===\n!!! ATTEMPTING TO DELETE SECTION"} %>
+<%= button_to "Edit Section", "#{sections_url}/#{params[:id]}/edit", :method => :get %>
