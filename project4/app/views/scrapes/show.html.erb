@@ -9,6 +9,7 @@
 
 <h2> ============ </h2>
 <h1> Scraped Sections </h1>
+<%= button_to "Add All Sections To This Course", "#{new_section_url}", method: :get, data: {confirm: "===WARNING===\n!!! ATTEMPTING TO ADD ALL SECTIONS !!!"}, params: {:add_all => true, :courseID => params[:courseID], :key => params[:key]} %>
 
  <% Scrape.get_scraped_sections[params[:key]].each do |section| %>
   <p class="attributes"><%= "Class Number : #{section[0]}" %></p>

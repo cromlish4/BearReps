@@ -9,7 +9,7 @@
 <body>
 <h1>Admin Verification Page</h1>
 <p>These are all user that need to be verified</p>
-<%if (current_user.verified == "true") && (current_user.user_type == "admin") %>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <div id=to_be_verified>
   <!-- Sorting via http://railscasts.com/episodes/228-sortable-table-columns-->
   <table>
@@ -28,7 +28,8 @@
         <td><%= t.fname %> <%= t.lname %></td>
         <td><%= t.nameDotNumber %></td>
         <td><%= t.user_type %></td>
-        <td><%= button_to "Verify", "user/"+t.nameDotNumber, method: :get %></td>
+        <td><%= button_to "Verify", "user?nameDotNumber=", method: :get, params: {:nameDotNumber => t.nameDotNumber}%></td>
+
       </tr>
     <% end %>
     </tbody>

@@ -45,7 +45,7 @@ class AdminsController < ApplicationController
 
   def verify_redirect
     temp_user = User.find_by(nameDotNumber: params[:nameDotNumber])
-    temp_user.verified = "true"
+    temp_user.update(:verified => "true")
     temp_user.save
   end
 
@@ -54,7 +54,7 @@ class AdminsController < ApplicationController
   end
 
   def verify
-    @unverified_users = User.order(sort_column(User) + " " + sort_direction)
+    @unverified_users = User.order(sort_column + " " + sort_direction)
   end
 
   def verify_account
@@ -62,7 +62,7 @@ class AdminsController < ApplicationController
   end
 
   def users
-    @show_users = User.order(sort_column(User) + " " + sort_direction)
+    @show_users = User.order(sort_column + " " + sort_direction)
 
 
     if params[:search]!=""
@@ -110,7 +110,7 @@ class AdminsController < ApplicationController
         @User_to_update.update(:verified => "false")
       end
       if (params[:keep_user] == "false")
-        @User_to_update.update(:user_type => params[:user]["User Type"])
+        @User_to_update.update(:user_type => params[:user][:user_type])
       end
       @User_to_update.save
       redirect_to "/admin/users/show?nameDotNumber="+params[:nameNum]
@@ -143,14 +143,33 @@ class AdminsController < ApplicationController
       #redirect_to admin_users_path
     end
 
+  #Approved Graders
+  def approved_graders
+    #@show_sections = Section.order(sort_column(Section) + " " + sort_direction)
+    @graders = App
+    #Data[1].split("/")
+
+    # if params[:search]!=""
+    #   @graders = App.where(courseID: search_sections.ids)
+    # else
+    #   @graders = App
+    # end
+    #redirect_to admin_users_path
+    #redirect_to admin_users_path
+  end
+
   private
 
   def set_admin
     @admin = User.find_by(nameDotNumber: params[:nameDotNumber])
   end
 
-  def sort_column(db)
-    db.column_names.include?(params[:sort]) ? params[:sort] : "lname"
+  def sort_column
+    User.column_names.include?(params[:sort]) ? params[:sort] : "lname"
+  end
+
+  def sort_column_db(db, sort_by)
+    db.column_names.include?(params[:sort]) ? params[:sort] : sort_by
   end
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"

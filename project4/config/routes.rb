@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :instructors
   resources :courses
   resources :scrapes
-  resources :applications
+  # resources :applications
+  resources :apps
+  resources :recommendations
+  #resources :users, constraints: { id: /.*/ }
   # devise_for :users
   Rails.application.routes.draw do
   resources :sections
@@ -26,7 +29,7 @@ Rails.application.routes.draw do
   get 'display_course' => 'pages#display_course'
   get 'display_profile' => 'pages#display_profile'
   #get 'admins/:nameDotNumber', to: 'admins#edit', as: :edit_admin
-  get 'admins/all', to: 'admins#show', :as => :user
+  get 'admins/all', to: 'admins#show' #, :as => :user
   get 'admins/index', to: 'admins#index'
   get 'admins/new', to: 'admins#new'
 
@@ -40,7 +43,7 @@ Rails.application.routes.draw do
   get 'admin_new' => 'admins#new'
 
   get 'admin/verify' => 'admins#verify'
-  get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
+  get 'admin/user', to: 'admins#verify_redirect'
   get 'admin/home' => 'admins#admin_home'
   get 'admin/verify.css' => 'admins#verify.css'
 
@@ -62,8 +65,10 @@ Rails.application.routes.draw do
   get 'admin/graders/edit' => 'admin_grader#edit'
   # patch 'admins/all' => 'admin_user#index'
 
-
-
+  # Admin Approved Grader Menu
+  get 'admin/app_graders' => 'admins#approved_graders'
+  get 'admin/app_graders/show' => 'admin_approved_grader#show'
+  get 'admin/app_graders/edit' => 'admin_approved_grader#edit'
   #Edit admin page
   #get 'admin_edit' => 'admins#edit'
   #Show a specific admin
@@ -123,12 +128,18 @@ Rails.application.routes.draw do
   
   # Applications
   # Create an application
-  get 'application_new' => 'applications#new'
+  get 'apps/new' => 'apps#new'
   # Edit an application
-  get 'application_edit' => 'applications#edit'
+  get 'apps/edit' => 'apps#edit'
   # Show a specific application
-  get 'application_show' => 'applications#show'
-  # Show all applications
-  get 'applications_index' => 'applications#index'
+  get 'apps/show' => 'apps#show'
+  # Show all apps
+  get 'apps/index' => 'apps#index'
+
+  #Section extra
+  get 'sections/all' => 'sections#all'
+  resources :sections do
+    get 'all'
+  end
 
 end

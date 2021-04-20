@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_181420) do
+ActiveRecord::Schema.define(version: 2021_04_20_180417) do
 
-  create_table "applications", force: :cascade do |t|
-  end
-
-  create_table "course_sections", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "section_id"
+  create_table "apps", force: :cascade do |t|
+    t.string "nameDotNumber"
+    t.string "email"
+    t.string "course"
+    t.string "comments"
+    t.string "approved", default: "false"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "employed_status", default: "non_employed"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -31,6 +32,11 @@ ActiveRecord::Schema.define(version: 2021_04_19_181420) do
     t.string "catalog_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "grader_pools", force: :cascade do |t|
+    t.string "nameDotNumber", null: false
+    t.string "class", null: false
   end
 
   create_table "people", force: :cascade do |t|
@@ -45,6 +51,11 @@ ActiveRecord::Schema.define(version: 2021_04_19_181420) do
   end
 
   create_table "recommendations", force: :cascade do |t|
+    t.string "name"
+    t.string "course"
+    t.integer "section"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sections", force: :cascade do |t|
