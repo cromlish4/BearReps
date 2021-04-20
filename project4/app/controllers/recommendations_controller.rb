@@ -27,9 +27,14 @@ class RecommendationsController < ApplicationController
 # POST a newly filled form to create a new recommendation
 def create
   if true
-  @recommendation = Recommendation.new()
-  @recommendation.nameDotNumber = params[:app][:nameDotNumber]
-  @recommendation.course = params[:app][:course]
+    #@recommendation = Recommendation.new()
+    #@recommendation.nameDotNumber = params[:app][:nameDotNumber]
+    #@recommendation.course = params[:app][:course]
+    @new_rec = App.find_by(:nameDotNumber => params[:recommendation][:nameDotNumber])
+
+    @new_rec.update(:approved => "true")
+
+    @new_rec.save
 
   if @recommendation.save
     redirect_to @recommendation, notice: "Successfully Saved!"
@@ -59,6 +64,7 @@ def create
 
   end
 
+
   # wired to app/views/recommendations/destroy.html.erb by default (naming convention)
   def destroy
     @recommendation.destroy
@@ -71,3 +77,4 @@ def create
     @application = Application.find(params[:id])
   end
 end
+
