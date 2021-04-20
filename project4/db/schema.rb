@@ -13,10 +13,11 @@
 ActiveRecord::Schema.define(version: 2021_04_20_072824) do
 
   create_table "apps", force: :cascade do |t|
-    t.string "applicant"
+    t.string "nameDotNumber"
     t.string "email"
     t.string "course"
-    t.integer "section"
+    t.string "comments"
+    t.string "approved", default: "false"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

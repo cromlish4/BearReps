@@ -1,10 +1,10 @@
 
 <!-- partial for generating a form (since this snippet is duplicated in new.html.erb and edit.html.erb) -->
 <%= form_for @application do |f| %>
-
+<!--Need to store previous grading experience-->
   <div class = "applicant">
-    <%= f.label :applicant %>
-    <%= f.text_field :applicant %>
+    <%= f.label "Name dot Number" %>
+    <%= f.text_field :nameDotNumber %>
   </div>
 
   <div class = "email">
@@ -13,14 +13,20 @@
   </div>
 
   <div class = "course">
-    <%= f.label :course %>
+    <%= f.label "Please Insert the course number for the class you'd like to TA" %>
     <%= f.text_field :course %>
   </div>
 
-  <div class = "section">
-    <%= f.label :section %>
-    <%= f.number_field :section %>
+  <div class = "comments">
+    <%= f.label "List Comments" %>
+    <%= f.text_area :comments %>
   </div>
+
+<!--  This is unnecessary since the instructor will be assigning the section to them -->
+<!--  <div class = "section">-->
+    <%#= f.label :section %>
+    <%#= f.number_field :section %>
+<!--  </div>-->
 
   <!-- text_field will automatically generate id = "label" (e.g., id = "email") for HTML input tag, this can be useful to CSS -->
 

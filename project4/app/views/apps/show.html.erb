@@ -4,7 +4,7 @@
 
 <table>
   <tr>
-    <th>Applicant</th> <td><%= @application.applicant %></td>
+    <th>Applicant</th> <td><%= @application.nameDotNumber %></td>
   </tr>
   <tr>
     <th>Email</th> <td><%= @application.email %></td>
@@ -13,7 +13,7 @@
     <th>Course</th> <td><%= @application.course %></td>
   </tr>
   <tr>
-    <th>Section Number</th> <td><%= @application.section %></td>
+    <th>Applicant Comments</th> <td><%= @application.comments %></td>
   </tr>
   <tr>
     <th>Applicant's Profile</th> <td><%= link_to "Applicant's Profile", student_path(@application.owner) %></td>
