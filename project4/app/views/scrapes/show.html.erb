@@ -1,3 +1,4 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <h1><%= "CSE #{params[:key]}" %></h1>
 
 <% Scrape.get_scraped_courses[params[:key]].each do |attribute| %>
@@ -19,3 +20,6 @@
   <h2><%= link_to "Add Section", "#{new_section_url}?#{jank_keys[0, jank_keys.length()-1]}" %></h2>
   <h2> ============ </h2>
 <% end %>
+<%else %>
+redirect_to home_url
+<%end %>
