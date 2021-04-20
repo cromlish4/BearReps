@@ -41,7 +41,9 @@
 
           <!--%= link_to "Display Instructor Profile", "instructor/profile" %-->
 
-
+          <% if (user_signed_in?) && (current_user.verified == "true") && ( (current_user.type == "dev") || (current_user.type == "admin") || (current_user.type == "admin") ) %>
+              <%= link_to "Recommendation Form", "recommendations/new" %>
+            <%end %>
         </div>
       </div>
 
