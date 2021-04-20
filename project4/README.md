@@ -1,20 +1,18 @@
 # README
 
 
-Web Scraping and Login
+RAILS Final Project
 -----------------------
-This project is directly tied to project 4 in the sense that the database, routes, and MVC of our 
-Ruby on Rails will be used for project 4. This project scrapes the course listing off of OSU's website
-and allows users to view the courses with a variety of permissions. This project allows for users of
-students, instructors, and admins, in hope to, eventually, use as a program to assign graders to a 
-class.
+This is our final project for CSE 3901. This project is intended to build upon our progress in project 3. The goal of this project is to implement
+a system for students to apply to be graders for courses, an instructor to assign recommendations for student graders, and an admin to 
+scrape the course listing of OSU CSE's courses.
 
 Motivation
 -------------
 This project is intended to combine our knowledge of Object Oriented Programming in the Ruby langauge
-with Rails in order to create a MVC framework. With this project being a foundation for project 4, this
-project was also intended for our group to work efficiently such that we would make project 4 easier on
-ourselves.
+with Rails in order to create a MVC framework. With this project expanding on the foundation from project 3, this
+project was also intended for our group to work efficiently such that we would expand project 3 to implement
+a grader application / recommendation system as well as a fully-functional admin system. 
 
 Features
 -----------
@@ -41,6 +39,16 @@ With the use of gems, we were able to utilize the convenience of Ruby on Rails i
 19) selenium-webdriver        -- to add support for selenium driver
 20) webdrivers                -- for easy installation and use of web drivers to run system tests with browsers
 21) tzinfo-data               -- to include zoneinfo files, since Windows does not
+
+This final project is heavily based on a web scraper to get all the course listings from OSU's CSE catalog. Prominent featues of this Scraper include:
+
+1)
+
+
+This project heavily utilized databases for keeping track of users of types student, intstructor, and admin. Additonally, to keep track of applications and reocmmendations for student graders based on a class. Promiment features of our databses include:
+
+1)
+
 
 Screenshots
 ----------
@@ -94,20 +102,21 @@ Tests
 Acknowledgement
 ---------
 
-Thanks to Michael Cromlish for being the project lead this project. Michael did the initial setup for the Ruby on Rails project.
+Thanks to Andrew Connors for being the project lead this project. Andrew did the initial setup for the Ruby on Rails project.
 He also helped in every aspect of the project and scheduled multiple team meetings to make sure the team was staying on good pace.
 
-Andrew Connors implemented the multiple views and their styling in our project, as well as set up / did troubleshooting on our database tables.
+Michael Cromlish implemented the admin MVC, as well as verification in order to implement the admin functionality as a whole for this project. 
 
-Zhuo Chen worked with the web scraper to ensure we were collecting all necessary data from OSU's course listing.
+Zhuo Chen worked with styling of multiple HTML forms for this project.
 
 Samiul islam worked with the web scraper to ensure we were collecting all necessary data from OSU's course listing,
-as well as debugging / troubleshooting any errors we ran into with the scraper. 
+as well as debugging / troubleshooting any errors we ran into with the scraper. Samiul also worked with the databses for courses and sections
+to provide an overall functionality for our course listing.
 
-Eric Young implemented the multiple views and their styling in our project, as well as setting up correct routes and controllers for various users.
+Eric Young implemented the application portion of this project in order for a student to apply for a grading position.
 
-Ryan O'Donovan implemented the login system with the use of the Devise gem, and implemented three different user permissions based on student, instructor
-and admin. 
+Ryan O'Donovan implemented the recommendation portion of this project in order for a teacher to submit a recommendation for a student grader, provided additonal help 
+with the application portion, and created the README for project 4.
 
 References
 ----------
