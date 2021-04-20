@@ -1,3 +1,4 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <h1>Enter Course Details</h1>
 
 <%= form_for @course do |f| %>
@@ -37,3 +38,6 @@
 <% end %>
 <!--% redirect_to root %>-->
 <!--Need to make some sort of show method maybe Im not sure-->
+<%else %>
+redirect_to home_url
+<% end %>

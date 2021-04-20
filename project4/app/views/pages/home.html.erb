@@ -17,7 +17,7 @@
 
       <div id=site_links>
         <p class = "search">Search Courses will allow you to search all of the courses that have been added to the database by an administrator.</p>
-        <%= link_to "Search Courses", "/courses" %>
+        <%= link_to "Search Courses", "/courses" %> <br> <br>
         <div id = "Bear-Reps">A Bear Reps Product</div>
         <div id=user_type_links>
           <% if (user_signed_in?)%>
@@ -31,9 +31,9 @@
 
               </div>
             <%elsif (current_user.user_type == "student")%>
-              <%= link_to "Display Student Profile", "student/profile" %>
+              <%= link_to "Grader Application", "apps/new" %> <br> <br>
             <%else %>
-              <p>Please Verify Account.</p>
+              <p div = "Verify">Please Verify Account.</p>
             <%end %>
           <% else %>
 

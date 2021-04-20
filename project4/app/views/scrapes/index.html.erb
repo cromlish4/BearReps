@@ -1,3 +1,4 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <h1>Search online catalog</h1>
 
 <!--This is the form-->
@@ -17,3 +18,6 @@
     <% end %>
   <% end %>
 <% end %>
+<%else %>
+redirect_to home_url
+<%end %>
