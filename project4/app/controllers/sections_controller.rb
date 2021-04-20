@@ -19,11 +19,13 @@ class SectionsController < ApplicationController
       @sections.each do |section|
         if section[0] == params[:key]
           section[1].each do |sect|
-            section = Section.new(classNumber: sect[0], meetingDays: sect[1]['meetingDays'], meetingTimes: sect[1]['meetingTimes'], waitlistTotal: sect[1]['waitlistTotal'], endDate: sect[1]['endDate'], startDate: sect[1]['startDate'], enrollmentStatus: sect[1]['enrollmentStatus'], instructionMode: sect[1]['instructionMode'], component: sect[1]['component'], section: sect[1]['section'], courseID: params[:courseID])
-            if !section.save
-              redirect_to home_url
+            if (Section.where("classNumber = ?", sect[0])).count == 0
+              section = Section.new(classNumber: sect[0], meetingDays: sect[1]['meetingDays'], meetingTimes: sect[1]['meetingTimes'], waitlistTotal: sect[1]['waitlistTotal'], endDate: sect[1]['endDate'], startDate: sect[1]['startDate'], enrollmentStatus: sect[1]['enrollmentStatus'], instructionMode: sect[1]['instructionMode'], component: sect[1]['component'], section: sect[1]['section'], courseID: params[:courseID])
+              if !section.save
+                flash.alert = "Failed to add all sections"
+                redirect_to home_url
+              end
             end
-
           end
         end
       end
@@ -88,7 +90,7 @@ class SectionsController < ApplicationController
     # @section_to_update.update(:grader => params[:section][:grader])
 
     @section_to_update.save
-    redirect_to "/admin/graders/show?id="+params[:id]
+    redirect_to "/admin/graders/show?id=" + params[:id]
   end
 
   # DELETE /sections/1 or /sections/1.json

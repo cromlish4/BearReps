@@ -10,7 +10,7 @@
 </div>
 
 <h2 class="break"> ========== </h2>
-
+<%= button_to "Delete Course", @course, :method => :delete, data: {confirm: "===WARNING===\n!!! ATTEMPTING TO DELETE COURSE"} %>
 <h2><%= button_to "Scrape Sections Online", "#{scrape_url[0, scrape_url.length() - 2]}", method: :get, params: { :campus_value => @course.campus.downcase(), :term_value => @course.term.tr("0-9 ", "").downcase(), :search => @course.catalog_number, :courseID => scrape_url[scrape_url.rindex('/') + 1, scrape_url.length()] } %></h2>
 <h2> Sections for this Course</h2>
 <h2 class="break"> ========== </h2>

@@ -45,7 +45,7 @@ class AdminsController < ApplicationController
 
   def verify_redirect
     temp_user = User.find_by(nameDotNumber: params[:nameDotNumber])
-    temp_user.verified = "true"
+    temp_user.update(:verified => "true")
     temp_user.save
   end
 
@@ -54,7 +54,7 @@ class AdminsController < ApplicationController
   end
 
   def verify
-    @unverified_users = User.order(sort_column(User) + " " + sort_direction)
+    @unverified_users = User.order(sort_column + " " + sort_direction)
   end
 
   def verify_account
@@ -62,7 +62,7 @@ class AdminsController < ApplicationController
   end
 
   def users
-    @show_users = User.order(sort_column(User) + " " + sort_direction)
+    @show_users = User.order(sort_column + " " + sort_direction)
 
 
     if params[:search]!=""
@@ -164,8 +164,12 @@ class AdminsController < ApplicationController
     @admin = User.find_by(nameDotNumber: params[:nameDotNumber])
   end
 
-  def sort_column(db)
-    db.column_names.include?(params[:sort]) ? params[:sort] : "lname"
+  def sort_column
+    User.column_names.include?(params[:sort]) ? params[:sort] : "lname"
+  end
+
+  def sort_column_db(db, sort_by)
+    db.column_names.include?(params[:sort]) ? params[:sort] : sort_by
   end
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
