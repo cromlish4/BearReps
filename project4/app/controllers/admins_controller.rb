@@ -143,6 +143,21 @@ class AdminsController < ApplicationController
       #redirect_to admin_users_path
     end
 
+  #Approved Graders
+  def approved_graders
+    #@show_sections = Section.order(sort_column(Section) + " " + sort_direction)
+    @graders = App
+    #Data[1].split("/")
+
+    # if params[:search]!=""
+    #   @graders = App.where(courseID: search_sections.ids)
+    # else
+    #   @graders = App
+    # end
+    #redirect_to admin_users_path
+    #redirect_to admin_users_path
+  end
+
   private
 
   def set_admin

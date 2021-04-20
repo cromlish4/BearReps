@@ -48,11 +48,19 @@ end
 
 # PUT the edited form to update an application
 def update
-  if @application.update
-    redirect_to @application, notice: "Successfully Updated!"
-  else
-    render edit
-  end
+  # if @application.update()
+  #   redirect_to @application, notice: "Successfully Updated!"
+  # else
+  #   render edit
+  # end
+  @grader_to_update = App.find_by(:nameDotNumber => params[:nameDotNumber])
+
+  @grader_to_update.update(:employed_status => params[:app][:employed_status])
+
+  # @section_to_update.update(:grader => params[:section][:grader])
+
+  @grader_to_update.save
+  redirect_to "/admin/app_graders/show?nameDotNumber="+params[:nameDotNumber]
 end
 
 

@@ -93,7 +93,7 @@ Tests
 
 Acknowledgement
 ---------
-
+Project 3
 Thanks to Michael Cromlish for being the project lead this project. Michael did the initial setup for the Ruby on Rails project.
 He also helped in every aspect of the project and scheduled multiple team meetings to make sure the team was staying on good pace.
 
@@ -109,6 +109,9 @@ Eric Young implemented the multiple views and their styling in our project, as w
 Ryan O'Donovan implemented the login system with the use of the Devise gem, and implemented three different user permissions based on student, instructor
 and admin.
 
+Project 4:
+
+Michael Cromlish added more features to the Admin menu including, Showing all verified users and being able to edit them, the same thing for all sections that still needed a grader, and page to see the recomendations from instructors.
 References
 ----------
 - README guidelines:

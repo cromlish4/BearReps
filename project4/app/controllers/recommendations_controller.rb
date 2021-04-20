@@ -42,11 +42,13 @@ def create
 
   # PUT the edited form to update a recommendation
   def update
-    if @recommendation.update
+    if @recommendation.update(attributes)
       redirect_to @recommendation, notice: "Successfully Updated!"
     else
       render edit
     end
+
+
   end
 
   # wired to app/views/recommendations/destroy.html.erb by default (naming convention)

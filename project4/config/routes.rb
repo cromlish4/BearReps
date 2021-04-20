@@ -64,8 +64,10 @@ Rails.application.routes.draw do
   get 'admin/graders/edit' => 'admin_grader#edit'
   # patch 'admins/all' => 'admin_user#index'
 
-
-
+  # Admin Approved Grader Menu
+  get 'admin/app_graders' => 'admins#approved_graders'
+  get 'admin/app_graders/show' => 'admin_approved_grader#show'
+  get 'admin/app_graders/edit' => 'admin_approved_grader#edit'
   #Edit admin page
   #get 'admin_edit' => 'admins#edit'
   #Show a specific admin

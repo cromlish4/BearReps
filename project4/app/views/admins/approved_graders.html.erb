@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>
+    Approved Graders.
+  </title>
+  <meta charset="utf-8"/>
+  <!--    <link type="text/css" rel="stylesheet" href="/graders.css"/>-->
+</head>
+<body>
+<h1>Graders that have been approved by the class instructor.</h1>
+<%#= form_tag("app_graders", method: :get) do %>
+<!--  <p> Search for a Section, it's course number</p>-->
+  <%#= text_field_tag(:search, params[:search], placeholder: "Course Catalog Number") %>
+  <%#= submit_tag ("Search") %>
+<%# end %>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+  <table>
+    <thead>
+    <tr>
+      <th>Class</th>
+      <th>Applicant</th> <!--%= sortable "lname", "Name" %>-->
+<!--      <th>Section Number</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <% @graders.where(approved: "true").each do |t| %>
+      <% f = Course.find_by(:catalog_number => t.course) %>
+      <tr>
+        <td><%= f.subject+" "+f.catalog_number %></td>
+        <td><%=link_to t.nameDotNumber, "/admin/app_graders/show?nameDotNumber=#{t.nameDotNumber}" %></td>
+<!--        <td><%#= t.section %></td>-->
+        <!--td>%= t.classes %></td-->
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+</body>
+</html>

@@ -5,7 +5,9 @@ class CreateApps < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :course
       t.string :comments
-      t.string :approved, :default => "false" # Changes with instructor Rec.
+      t.string :approved, :default => "false" # If instructor approves of grader than set to true
+      # So the hiring team can choose to hire the applicant
+      # Subject to change just my idea MSC
       t.timestamps
     end
   end
