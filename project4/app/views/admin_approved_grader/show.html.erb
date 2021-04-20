@@ -5,6 +5,7 @@
     <% t = App.find_by(nameDotNumber: params[:nameDotNumber]) %>
     <% f = Course.find_by(:catalog_number => t.course) %>
     <% j = User.find_by(:nameDotNumber => t.nameDotNumber) %>
+    <% k = User.find_by(:nameDotNumber => t.nameDotNumber) %>
     <h1><%="Course: "+f.catalog_number%></h1>
   </head>
   <body>
