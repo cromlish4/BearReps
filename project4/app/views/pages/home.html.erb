@@ -28,7 +28,9 @@
                 <p>Admin Links to Scrape Courses</p>
                 <%= link_to "Scrape Courses", "scrapes/index" %>
                 <%= link_to "New Courses", "scrapes/new" %>
-
+                <p> Admin Links to Add Sections</p>
+                <%= link_to "Scrape Section", "sections" %>
+                <%= link_to "View Section", "sections/new" %>
               </div>
             <%elsif (current_user.user_type == "student")%>
               <%= link_to "Grader Application", "apps/new" %> <br> <br>
@@ -41,7 +43,9 @@
 
           <!--%= link_to "Display Instructor Profile", "instructor/profile" %-->
 
-          <% if (user_signed_in?) && (current_user.verified == "true") && ( (current_user.type == "dev") || (current_user.type == "admin") || (current_user.type == "instructor") ) %>
+
+          <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev")||(current_user.user_type == "instructor"))%>
+
               <%= link_to "Recommendation Form", "recommendations/new" %>
             <%end %>
         </div>

@@ -1,85 +1,85 @@
 <h1>Editing Section</h1>
 
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
-<%= render 'form', section: @section %>
+  <h1> Enter Section Details </h1>
+
+  <%= form_for @section do |f| %>
+    <div class="form-control">
+      <%= f.label :classNumber %>
+      <%= f.text_field :classNumber, required: true, value: @old_sect[0]['classNumber'], placeholder: "Unique identifier for each section" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :courseID %>
+      <%= f.number_field :courseID, required: true, value: @old_sect[0]['courseID'] , placeholder: "n from courses/n" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :meetingDays %>
+      <%= f.text_field :meetingDays, value: @old_sect[0]["meetingDays"], placeholder: "MTWRF" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :meetingTimes %>
+      <%= f.text_field :meetingTimes, value: @old_sect[0]["meetingTimes"], placeholder: "Ex: 11 am - 11:50 am" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :waitlistTotal %>
+      <%= f.number_field :waitlistTotal, value: @old_sect[0]["waitlistTotal"] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :startDate %>
+      <%= f.text_field :startDate, value: @old_sect[0]["startDate"] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :endDate %>
+      <%= f.text_field :endDate, value: @old_sect[0]["endDate"] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :enrollmentStatus %>
+      <%= f.text_field :enrollmentStatus, value: @old_sect[0]["enrollmentStatus"], placeholder: "open/closed" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :instructionMode %>
+      <%= f.text_field :instructionMode, value: @old_sect[0]["instructionMode"] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :component %>
+      <%= f.text_field :component, value: @old_sect[0]["component"], placeholder: "Lecture, Recitation, Lab, etc." %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :section %>
+      <%= f.text_field :section, value: @old_sect[0]["section"] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :edit %>
+      <%= f.text_field :edit, value: true, readonly: true%>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :id %>
+      <%= f.text_field :id, value: params[:id], readonly: true%>
+    </div>
+
+    <div class="form-control">
+      <%= f.submit 'Enter Class'%>
+    </div>
+  <% end %>
 
 <%= link_to 'Show', @section %> |
 <%= link_to 'Back', sections_path %>
   <%else %>
-  redirect_to home_url
+  <% redirect_to home_url %>
 <%end %>
 
 
-<h1> Enter Section Details </h1>
 
-<%= form_for @section do |f| %>
-  <div class="form-control">
-    <%= f.label :classNumber %>
-    <%= f.text_field :classNumber, required: true, value: @old_sect[0]['classNumber'], placeholder: "Unique identifier for each section" %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :courseID %>
-    <%= f.number_field :courseID, required: true, value: @old_sect[0]['courseID'] , placeholder: "n from courses/n" %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :meetingDays %>
-    <%= f.text_field :meetingDays, value: @old_sect[0]["meetingDays"], placeholder: "MTWRF" %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :meetingTimes %>
-    <%= f.text_field :meetingTimes, value: @old_sect[0]["meetingTimes"], placeholder: "Ex: 11 am - 11:50 am" %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :waitlistTotal %>
-    <%= f.number_field :waitlistTotal, value: @old_sect[0]["waitlistTotal"] %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :startDate %>
-    <%= f.text_field :startDate, value: @old_sect[0]["startDate"] %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :endDate %>
-    <%= f.text_field :endDate, value: @old_sect[0]["endDate"] %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :enrollmentStatus %>
-    <%= f.text_field :enrollmentStatus, value: @old_sect[0]["enrollmentStatus"], placeholder: "open/closed" %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :instructionMode %>
-    <%= f.text_field :instructionMode, value: @old_sect[0]["instructionMode"] %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :component %>
-    <%= f.text_field :component, value: @old_sect[0]["component"], placeholder: "Lecture, Recitation, Lab, etc." %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :section %>
-    <%= f.text_field :section, value: @old_sect[0]["section"] %>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :edit %>
-    <%= f.text_field :edit, value: true, readonly: true%>
-  </div>
-
-  <div class="form-control">
-    <%= f.label :id %>
-    <%= f.text_field :id, value: params[:id], readonly: true%>
-  </div>
-
-  <div class="form-control">
-    <%= f.submit 'Enter Class'%>
-  </div>
-<% end %>
 
