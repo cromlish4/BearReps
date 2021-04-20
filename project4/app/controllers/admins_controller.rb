@@ -45,7 +45,7 @@ class AdminsController < ApplicationController
 
   def verify_redirect
     temp_user = User.find_by(nameDotNumber: params[:nameDotNumber])
-    temp_user.verified = "true"
+    temp_user.update(:verified => "true")
     temp_user.save
   end
 
