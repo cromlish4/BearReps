@@ -43,7 +43,10 @@
 
           <!--%= link_to "Display Instructor Profile", "instructor/profile" %-->
 
-
+          )%>
+          <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev")||(current_user.user_type == "instructor"))%>
+              <%= link_to "Recommendation Form", "recommendations/new" %>
+            <%end %>
         </div>
       </div>
 
