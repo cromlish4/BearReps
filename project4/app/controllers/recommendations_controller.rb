@@ -4,14 +4,14 @@ class RecommendationsController < ApplicationController
 
 
   def index
-    @recommendations = Recommendation.all # be careful about singular and plural
+    @recommendations = App.all # be careful about singular and plural
   end
 
 
   # wired to app/views/recommendations/show.html.erb by default (naming convention)
   # display a recommendation (if the application doesn't exist, redirect to the page for all the apps)
   def show
-    @recommendation = Recommendation.find(params[:id])
+    @recommendation = App.find(params[:id])
     if @recommendation.nil?
       redirect_to action: :index
     end
@@ -20,7 +20,7 @@ class RecommendationsController < ApplicationController
   # wired to app/views/recommendations/new.html.erb by default (naming convention)
   # that view GET a blank form for creating a new recommendation, submitting with POST
   def new
-    @recommendation = Recommendation.new
+    @recommendation = App.new
   end
 
 
