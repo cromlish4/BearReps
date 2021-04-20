@@ -53,8 +53,8 @@ This project features an Admin Menu where admins can access a variety features, 
 
 Screenshots
 ----------
-1) Home Page -- user not signed in
-![Home page new user](https://user-images.githubusercontent.com/77806397/112222900-89d08e80-8bff-11eb-94ae-74abb8ae325e.PNG)
+1) Home Page -- Admin signed in
+![Project4AdminHome](https://user-images.githubusercontent.com/77405607/115470665-ab279900-a204-11eb-80cd-082944d3023a.JPG)
 
 2) Home Page -- user signed in, but not verified
 ![Home page signed in not verified](https://user-images.githubusercontent.com/77806397/112222020-8f79a480-8bfe-11eb-8eaa-8177dba0592c.PNG)
