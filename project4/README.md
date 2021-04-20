@@ -105,11 +105,11 @@ Acknowledgement
 Thanks to Andrew Connors for being the project lead this project. Andrew did the initial setup for the Ruby on Rails project.
 He also helped in every aspect of the project and scheduled multiple team meetings to make sure the team was staying on good pace.
 
-Michael Cromlish implemented the admin MVC, as well as verification in order to implement the admin functionality as a whole for this project. 
+Michael Cromlish implemented the admin MVC, as well as verification in order to implement the admin functionality as a whole for this project. Michael also contributed to improve the application portion of this project.
 
 Zhuo Chen worked with styling of multiple HTML forms for this project.
 
-Samiul islam worked with the web scraper to ensure we were collecting all necessary data from OSU's course listing,
+Samiul Islam worked with the web scraper to ensure we were collecting all necessary data from OSU's course listing,
 as well as debugging / troubleshooting any errors we ran into with the scraper. Samiul also worked with the databses for courses and sections
 to provide an overall functionality for our course listing.
 
