@@ -61,8 +61,17 @@
   <div class="form-control">
   <!--Make loop of hired graders -->
 
-  <%= f.label "Grader: " %>
-  <%= f.select :grader, [[''],['']], value: t.grader %>
+
+    <%# display_str = "[" %>
+    <%# @apps.each do |t| %>
+      <%# display_str=display_str+"['#{t.nameDotNumber}']" %>
+<!--      <p>One</p>-->
+    <%# end %>
+    <%# display_str =display_str+ "]" %>
+
+    <%= f.label "Grader: " %>
+  <%= f.select :grader, display_str, value: t.grader %>
+
   </div>
 
   <div class="form-control">

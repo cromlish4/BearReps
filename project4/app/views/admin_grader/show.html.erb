@@ -4,9 +4,10 @@
   <head>
     <% t = Section.find(params[:id]) %>
     <% f = Course.find_by(:id => t.courseID) %>
+
     <h1><%="Course: "+f.catalog_number+"\nSection: "+t.section %></h1>
   </head>
-  <body>
+
   <p>Section Number: <%=t.section %></p>
   <p>Class Name: <%=f.title %></p>
   <p>Class Number: <%=t.classNumber %></p>
