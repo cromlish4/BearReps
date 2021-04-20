@@ -1,4 +1,14 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <h1>New Section</h1>
+
+
+<%= render 'form', section: @section %>
+
+<%= link_to 'Back', sections_path %>
+
+<% else %>
+redirect_to home_url
+<%end %>
 
 <% empty = true %>
 <% if params[:add_all] %>
@@ -31,3 +41,4 @@
   <%= render 'form', section: @section %>
 <% end %>
 <%= link_to 'Back', sections_path %>
+
