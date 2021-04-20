@@ -1,11 +1,11 @@
 class AdminGraderController < ApplicationController
   def edit
     @Sections = Section.find(params[:id])
-    @pool = Pool
+    @apps = App.where(:assigned => "false").where(:employed_status => "employed")
   end
   def show
     @Sections = Section.find(params[:id])
-    @pool = Pool
+    @apps = App.where(:assigned => "false").where(:employed_status => "employed")
   end
   def update
     redirect_to "/admin/graders/show?id="+params[:id]

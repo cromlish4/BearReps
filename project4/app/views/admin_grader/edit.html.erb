@@ -60,12 +60,15 @@
 
   <div class="form-control">
   <!--Make loop of hired graders -->
-    <% display_str = "[" %>
+    <% pool_count = App.count %>
 
-    <% @pool.each do |t| %>
-      <%display_str=display_str+"['#{t.nameDotNumber}']" %>
-    <% end %>
-    <% display_str =display_str+ "]" %>
+    <%# display_str = "[" %>
+    <%# @apps.each do |t| %>
+      <%# display_str=display_str+"['#{t.nameDotNumber}']" %>
+<!--      <p>One</p>-->
+    <%# end %>
+    <%# display_str =display_str+ "]" %>
+
     <%= f.label "Grader: " %>
   <%= f.select :grader, display_str, value: t.grader %>
 

@@ -1,2 +1,3 @@
 class Pool < ApplicationRecord
+
 end

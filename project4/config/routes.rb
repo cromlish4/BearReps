@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   get 'display_course' => 'pages#display_course'
   get 'display_profile' => 'pages#display_profile'
   #get 'admins/:nameDotNumber', to: 'admins#edit', as: :edit_admin
-  get 'admins/all', to: 'admins#show' #, :as => :user
+  get 'admins/all', to: 'admins#show' , :as => :user
   get 'admins/index', to: 'admins#index'
   get 'admins/new', to: 'admins#new'
 

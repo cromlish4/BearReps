@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_184730) do
+ActiveRecord::Schema.define(version: 2021_04_20_092810) do
 
   create_table "apps", force: :cascade do |t|
     t.string "nameDotNumber"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_04_20_184730) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "employed_status", default: "non_employed"
+    t.string "assigned", default: "unassigned"
+    t.string "assigned_class", default: "unassigned"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -34,11 +36,6 @@ ActiveRecord::Schema.define(version: 2021_04_20_184730) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "grader_pools", force: :cascade do |t|
-    t.string "nameDotNumber", null: false
-    t.string "class", null: false
-  end
-
   create_table "people", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
@@ -48,11 +45,6 @@ ActiveRecord::Schema.define(version: 2021_04_20_184730) do
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "pools", force: :cascade do |t|
-    t.string "nameDotNumber", null: false
-    t.string "class", null: false
   end
 
   create_table "recommendations", force: :cascade do |t|
