@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # resources :applications
   resources :apps
   resources :recommendations
-  resources :users, constraints: { id: /.*/ }
+  #resources :users, constraints: { id: /.*/ }
   # devise_for :users
   Rails.application.routes.draw do
   resources :sections
@@ -135,5 +135,12 @@ Rails.application.routes.draw do
   get 'apps/show' => 'apps#show'
   # Show all apps
   get 'apps/index' => 'apps#index'
+
+
+  #Section extra
+  get 'sections/all' => 'sections#all'
+  resources :sections do
+    get 'all'
+  end
 
 end
