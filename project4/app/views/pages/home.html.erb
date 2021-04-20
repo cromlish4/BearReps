@@ -28,7 +28,9 @@
                 <p>Admin Links to Scrape Courses</p>
                 <%= link_to "Scrape Courses", "scrapes/index" %>
                 <%= link_to "New Courses", "scrapes/new" %>
-
+                <p> Admin Links to Add Sections</p>
+                <%= link_to "Scrape Section", "sections" %>
+                <%= link_to "View Section", "sections/new" %>
               </div>
             <%elsif (current_user.user_type == "student")%>
               <%= link_to "Grader Application", "apps/new" %> <br> <br>
