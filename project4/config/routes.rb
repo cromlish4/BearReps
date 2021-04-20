@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   get 'admin_new' => 'admins#new'
 
   get 'admin/verify' => 'admins#verify'
-  get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect', :constraints  => { :id => /[0-z\.]+/ }
+  get 'admin/user', to: 'admins#verify_redirect'
   get 'admin/home' => 'admins#admin_home'
   get 'admin/verify.css' => 'admins#verify.css'
 

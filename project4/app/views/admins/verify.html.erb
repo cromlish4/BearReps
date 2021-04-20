@@ -28,7 +28,8 @@
         <td><%= t.fname %> <%= t.lname %></td>
         <td><%= t.nameDotNumber %></td>
         <td><%= t.user_type %></td>
-        <td><%= button_to "Verify", "user/#{t.nameDotNumber}", method: :get %></td>
+        <td><%= button_to "Verify", "user?nameDotNumber=", method: :get, params: {:nameDotNumber => t.nameDotNumber}%></td>
+
       </tr>
     <% end %>
     </tbody>
