@@ -4,17 +4,17 @@
 <!--Need to store previous grading experience-->
   <div class = "applicant">
     <%= f.label "Name dot Number" %>
-    <%= f.text_field :nameDotNumber, :value current_user.nameDotNumber, :readonly => true%>
+    <%= f.text_field :nameDotNumber, :value => current_user.nameDotNumber, :readonly => true %>
   </div>
 
   <div class = "email">
     <%= f.label :email %>
-    <%= f.text_field :email, :value current_user.email, :readonly => true%>
+    <%= f.text_field :email, :value => current_user.email, :readonly => true %>
   </div>
 
   <div class = "course">
     <%= f.label "Please Insert the course number for the class you'd like to TA" %>
-    <%= f.text_field :course, required: true%>
+    <%= f.text_field :course, required: true %>
   </div>
 
   <div class = "comments">
