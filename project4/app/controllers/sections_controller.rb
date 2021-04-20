@@ -45,6 +45,8 @@ class SectionsController < ApplicationController
 
   # GET /sections/1/edit
   def edit
+    @section
+    puts 'h'
   end
 
   # POST /sections or /sections.json

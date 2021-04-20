@@ -6631,3 +6631,1057 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 6710)
 
 
+Started GET "/courses" for 127.0.0.1 at 2021-04-20 13:47:51 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1499)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 6650)
+
+
+Started GET "/courses/12" for 127.0.0.1 at 2021-04-20 13:47:56 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 12)[0m
+  ↳ app/views/courses/show.html.erb:18
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.7ms | Allocations: 6883)
+
+
+Started GET "/scrapes/?campus_value=columbus&courseID=12&search=5242&term_value=autumn" for 127.0.0.1 at 2021-04-20 13:47:58 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"columbus", "courseID"=>"12", "search"=>"5242", "term_value"=>"autumn"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 216ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 7338)
+
+
+Started GET "/courses/10" for 127.0.0.1 at 2021-04-20 13:48:01 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 10)[0m
+  ↳ app/views/courses/show.html.erb:18
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.5ms | Allocations: 6883)
+
+
+Started GET "/scrapes/?campus_value=columbus&courseID=10&search=5045&term_value=summer" for 127.0.0.1 at 2021-04-20 13:48:02 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"columbus", "courseID"=>"10", "search"=>"5045", "term_value"=>"summer"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 208)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 217ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 6694)
+
+
+Started GET "/scrapes?campus_value=columbus&term_value=summer&search=5045&commit=Scrape" for 127.0.0.1 at 2021-04-20 13:48:03 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"columbus", "term_value"=>"summer", "search"=>"5045", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 208)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 214ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 6705)
+
+
+Started DELETE "/courses/10" for 127.0.0.1 at 2021-04-20 13:48:09 -0400
+Processing by CoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rUMkaiXRYPqWJu3iNxkdnWOgJZtQRPdNM3r2OhUktBYCmilA9LMWarj8zVAUF5DC/x0Nk7PktVMZ2anYDlvL4w==", "id"=>"10"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:21:in `destroy'
+  [1m[36mCourse Destroy (0.3ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/courses_controller.rb:21:in `destroy'
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:21:in `destroy'
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = '10')[0m
+  ↳ app/controllers/courses_controller.rb:24:in `destroy'
+Redirected to http://127.0.0.1:3000/courses
+Completed 302 Found in 22ms (ActiveRecord: 10.2ms | Allocations: 5652)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-20 13:48:09 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1445)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.5ms | Allocations: 6613)
+
+
+Started GET "/courses/12" for 127.0.0.1 at 2021-04-20 13:48:13 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 12)[0m
+  ↳ app/views/courses/show.html.erb:18
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.5ms | Allocations: 6875)
+
+
+Started GET "/scrapes/?campus_value=columbus&courseID=12&search=5242&term_value=autumn" for 127.0.0.1 at 2021-04-20 13:48:22 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"columbus", "courseID"=>"12", "search"=>"5242", "term_value"=>"autumn"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 263)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 218ms (Views: 10.6ms | ActiveRecord: 0.1ms | Allocations: 7242)
+
+
+Started GET "/scrapes/show?key=5242&courseID=12" for 127.0.0.1 at 2021-04-20 13:48:25 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"5242", "courseID"=>"12", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 5471)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-20 13:50:36 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:23
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 962)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 5315)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-20 13:50:36 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 501)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-20 13:56:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.6ms | Allocations: 6649)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-20 13:56:29 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:23
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 959)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms | Allocations: 5166)
+
+
+Started GET "/scrapes/index" for 127.0.0.1 at 2021-04-20 13:56:33 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 199)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 5274)
+
+
+Started GET "/scrapes?campus_value=&term_value=&search=4&commit=Scrape" for 127.0.0.1 at 2021-04-20 13:56:37 -0400
+Processing by ScrapesController#index as HTML
+  Parameters: {"campus_value"=>"", "term_value"=>"", "search"=>"4", "commit"=>"Scrape"}
+  Rendering scrapes/index.html.erb within layouts/application
+  Rendered scrapes/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2030)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 388ms (Views: 9.4ms | ActiveRecord: 0.1ms | Allocations: 41902)
+
+
+Started GET "/scrapes/show?key=4999&courseID=" for 127.0.0.1 at 2021-04-20 13:56:40 -0400
+Processing by ScrapesController#show as HTML
+  Parameters: {"key"=>"4999", "courseID"=>"", "id"=>"show"}
+  Rendering scrapes/show.html.erb within layouts/application
+  Rendered scrapes/show.html.erb within layouts/application (Duration: 13.3ms | Allocations: 2570)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.1ms | Allocations: 7689)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-20 13:56:56 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:23
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 959)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 5184)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-20 13:56:56 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 505)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-20 13:56:57 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1445)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 6596)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-20 14:01:49 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:23
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 959)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 5176)
+
+
+Started GET "/home" for 127.0.0.1 at 2021-04-20 14:12:23 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:23
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 5224)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-20 14:12:23 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 515)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-20 14:12:26 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1468)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.5ms | Allocations: 6613)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-20 14:12:29 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 1)[0m
+  ↳ app/views/courses/show.html.erb:18
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29012)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29016)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29111)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29623)[0m
+  ↳ app/views/courses/show.html.erb:23
+  Rendered courses/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4250)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 1.1ms | Allocations: 9949)
+
+
+Started GET "/courses/2" for 127.0.0.1 at 2021-04-20 14:12:40 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.7ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 2)[0m
+  ↳ app/views/courses/show.html.erb:18
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29403)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 34939)[0m
+  ↳ app/views/courses/show.html.erb:23
+  Rendered courses/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 1.5ms | Allocations: 8398)
+
+
+Started DELETE "/courses/2" for 127.0.0.1 at 2021-04-20 14:12:45 -0400
+Processing by CoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DUWV0IaDJarr6/OovzYFK/yfGzJ3vx8g74GYiRW9LwLlY5Xu0BXhKcZCq4MS0vpK7xRuuxs2jqM0QRp8WjzWEw==", "id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:21:in `destroy'
+  [1m[36mCourse Destroy (0.2ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/courses_controller.rb:21:in `destroy'
+  [1m[35m (41.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:21:in `destroy'
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = '2')[0m
+  ↳ app/controllers/courses_controller.rb:24:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:25:in `block in destroy'
+  [1m[36mSection Destroy (0.2ms)[0m  [1m[31mDELETE FROM "sections" WHERE "sections"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/courses_controller.rb:25:in `block in destroy'
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:25:in `block in destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:25:in `block in destroy'
+  [1m[36mSection Destroy (0.2ms)[0m  [1m[31mDELETE FROM "sections" WHERE "sections"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/courses_controller.rb:25:in `block in destroy'
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:25:in `block in destroy'
+Redirected to http://127.0.0.1:3000/courses
+Completed 302 Found in 79ms (ActiveRecord: 61.8ms | Allocations: 13842)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-20 14:12:45 -0400
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1391)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 6547)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2021-04-20 14:12:50 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 3)[0m
+  ↳ app/views/courses/show.html.erb:18
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.5ms | Allocations: 6889)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2021-04-20 14:12:53 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 1)[0m
+  ↳ app/views/courses/show.html.erb:18
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29012)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29016)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29111)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29623)[0m
+  ↳ app/views/courses/show.html.erb:23
+  Rendered courses/show.html.erb within layouts/application (Duration: 23.1ms | Allocations: 4250)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 1.3ms | Allocations: 9917)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2021-04-20 14:12:54 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 3)[0m
+  ↳ app/views/courses/show.html.erb:18
+  Rendered courses/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.5ms | Allocations: 6878)
+
+
+Started GET "/courses/4" for 127.0.0.1 at 2021-04-20 14:12:54 -0400
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 4)[0m
+  ↳ app/views/courses/show.html.erb:18
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 29042)[0m
+  ↳ app/views/courses/show.html.erb:23
+  Rendered courses/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1981)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.7ms | Allocations: 7637)
+
+
+Started GET "/courses" for 127.0.0.1 at 2021-04-20 14:21:40 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."catalog_number" ASC[0m
+  ↳ app/views/courses/index.html.erb:12
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1417)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.5ms | Allocations: 6615)
+
+
+Started GET "/courses/16" for 127.0.0.1 at 2021-04-20 14:23:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11:in `show'
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE (courseID = 16)[0m
+  ↳ app/views/courses/show.html.erb:18
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 28549)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 28550)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 36370)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 28551)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 28552)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 28553)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 28554)[0m
+  ↳ app/views/courses/show.html.erb:23
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT ROWID FROM "sections" WHERE ( classNumber = 36371)[0m
+  ↳ app/views/courses/show.html.erb:23
+  Rendered courses/show.html.erb within layouts/application (Duration: 28.9ms | Allocations: 16900)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 68ms (Views: 49.1ms | ActiveRecord: 4.7ms | Allocations: 38508)
+
+
+Started GET "/sections/138" for 127.0.0.1 at 2021-04-20 14:23:26 -0400
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/sections_controller.rb:12:in `show'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (ROWID = 16)[0m
+  ↳ app/controllers/sections_controller.rb:124:in `get_matching_catalog_numbers'
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.6ms | Allocations: 6903)
+
+
+Started GET "/sections/138/edit" for 127.0.0.1 at 2021-04-20 14:28:09 -0400
+Processing by SectionsController#edit as HTML
+  Parameters: {"id"=>"138"}
+  Rendering sections/edit.html.erb within layouts/application
+  Rendered sections/_form.html.erb (Duration: 1.7ms | Allocations: 1521)
+  Rendered sections/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1863)
+Completed 500 Internal Server Error in 4048ms (ActiveRecord: 0.0ms | Allocations: 6272)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1> Enter Section Details </h1>
+    2: 
+    3: <%= form_for @section do |f| %>
+    4:   <div class="form-control">
+    5:     <%= f.label :classNumber %>
+    6:     <%= f.text_field :classNumber, required: true, value: params[:classNumber], placeholder: "Unique identifier for each section" %>
+  
+app/views/sections/_form.html.erb:3
+app/views/sections/edit.html.erb:3
+Started GET "/home" for 127.0.0.1 at 2021-04-20 14:33:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:23
+  Rendered pages/home.html.erb within layouts/application (Duration: 15.6ms | Allocations: 9952)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.7ms | Allocations: 15150)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-20 14:33:17 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 495)
+
+
+Started GET "/admin/home" for 127.0.0.1 at 2021-04-20 14:33:18 -0400
+Processing by AdminsController#admin_home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admins/admin_home.html.erb within layouts/application
+  Rendered admins/admin_home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 137)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 5966)
+
+
+Started GET "/admin/test.css" for 127.0.0.1 at 2021-04-20 14:33:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/test.css"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/users?search=&commit=Search" for 127.0.0.1 at 2021-04-20 14:33:22 -0400
+Processing by AdminsController#users as HTML
+  Parameters: {"search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admins/users.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."verified" = ?[0m  [["verified", "true"]]
+  ↳ app/views/admins/users.html.erb:27
+  Rendered admins/users.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1185)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 7019)
+
+
+Started GET "/users.css" for 127.0.0.1 at 2021-04-20 14:33:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users.css"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-04-20 14:33:28 -0400
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SghsiAQjDnThz4+FgpW76nW1O23AUwzpCK8BLUVAodKNBzWXKugFC7KcZxaNZbKPxohGEA1fuf0lvUaC8m3DJQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2021-04-20 18:33:28.806877"], ["id", 21]]
+  [1m[35m (22.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 35ms (ActiveRecord: 23.3ms | Allocations: 8849)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-20 14:33:28 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 137)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4348)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-20 14:33:28 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 479)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-04-20 14:33:29 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 544)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 8188)
+
+
+Started GET "/login.css" for 127.0.0.1 at 2021-04-20 14:33:29 -0400
+Processing by PagesController#login.css as CSS
+  Rendering pages/login.css
+  Rendered pages/login.css (Duration: 0.6ms | Allocations: 64)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 650)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-04-20 14:33:31 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 203)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3563)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 8664)
+
+
+Started GET "/new_profile.css" for 127.0.0.1 at 2021-04-20 14:33:31 -0400
+Processing by PagesController#new_profile.css as CSS
+  Rendering pages/new_profile.css
+  Rendered pages/new_profile.css (Duration: 0.5ms | Allocations: 65)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 649)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-04-20 14:34:00 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"7WzvvY+XAqUhMg7DkM7v7zZ4Xnrgo6q3DXISFgtwK4HfoAVG7uuhUtz6fylwOolYbNYIlslQs0VJa9cA+dREBQ==", "user"=>{"fname"=>"Test", "lname"=>"Tessss", "nameDotNumber"=>"tes.1", "year"=>"", "email"=>"tess.1@osu.edu", "user_type"=>"student", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tess.1@osu.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "fname", "lname", "nameDotNumber", "year", "user_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "tess.1@osu.edu"], ["encrypted_password", "$2a$12$1bgt6PT4xOvjfgTjyfjTteD1FFT77I.R1tro5RVGPvqa9OyK2aF26"], ["created_at", "2021-04-20 18:34:01.002537"], ["updated_at", "2021-04-20 18:34:01.002537"], ["fname", "Test"], ["lname", "Tessss"], ["nameDotNumber", "tes.1"], ["year", ""], ["user_type", "student"]]
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 267ms (ActiveRecord: 17.4ms | Allocations: 10703)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-20 14:34:01 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:23
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 931)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 5146)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-20 14:34:01 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 822)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-04-20 14:34:05 -0400
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"J511Z2SY3XKJkiPsfBQC8v1i5WP9xdbRaR1IbOKoQU74aovSPuWlN8Cix2jqqZleZaOobUt/LgdHQM2DZzLo3Q=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 2142)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-20 14:34:05 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 131)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4311)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-20 14:34:05 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 473)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-04-20 14:34:06 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 5510)
+
+
+Started GET "/login.css" for 127.0.0.1 at 2021-04-20 14:34:06 -0400
+Processing by PagesController#login.css as CSS
+  Rendering pages/login.css
+  Rendered pages/login.css (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 476)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-04-20 14:34:09 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"O50ZTDPDLLsWC65XkDwqduhO4KOdfZgx8nC7j4hfhCPonQ2fxTTaLdr0EP1DEaKr71j3Hk5Npxu4X0Nt9sDloA==", "user"=>{"email"=>"buckeye.1@osu.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "buckeye.1@osu.edu"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 240ms (ActiveRecord: 0.3ms | Allocations: 3441)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-20 14:34:09 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:23
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 5176)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2021-04-20 14:34:09 -0400
+Processing by PagesController#home as CSS
+  Rendering pages/home.css
+  Rendered pages/home.css (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 484)
+
+
+Started GET "/admin/home" for 127.0.0.1 at 2021-04-20 14:34:10 -0400
+Processing by AdminsController#admin_home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admins/admin_home.html.erb within layouts/application
+  Rendered admins/admin_home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 137)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.1ms | Allocations: 5759)
+
+
+Started GET "/admin/test.css" for 127.0.0.1 at 2021-04-20 14:34:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/test.css"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/users?search=&commit=Search" for 127.0.0.1 at 2021-04-20 14:34:14 -0400
+Processing by AdminsController#users as HTML
+  Parameters: {"search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admins/users.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."verified" = ?[0m  [["verified", "true"]]
+  ↳ app/views/admins/users.html.erb:27
+  Rendered admins/users.html.erb within layouts/application (Duration: 1.9ms | Allocations: 837)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 6548)
+
+
+Started GET "/users.css" for 127.0.0.1 at 2021-04-20 14:34:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users.css"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/users/show?nameDotNumber=buckeye.1" for 127.0.0.1 at 2021-04-20 14:34:15 -0400
+Processing by AdminUserController#show as HTML
+  Parameters: {"nameDotNumber"=>"buckeye.1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."nameDotNumber" = ? LIMIT ?[0m  [["nameDotNumber", "buckeye.1"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_user_controller.rb:7:in `show'
+  Rendering admin_user/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."nameDotNumber" = ? LIMIT ?[0m  [["nameDotNumber", "buckeye.1"], ["LIMIT", 1]]
+  ↳ app/views/admin_user/show.html.erb:5
+  Rendered admin_user/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1047)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 0.6ms | Allocations: 8044)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2021-04-20 14:34:17 -0400
+Processing by AdminsController#users as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admins/users.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."fname" IS NULL OR "users"."lname" IS NULL) AND "users"."verified" = ?[0m  [["verified", "true"]]
+  ↳ app/views/admins/users.html.erb:27
+  Rendered admins/users.html.erb within layouts/application (Duration: 1.5ms | Allocations: 815)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 6639)
+
+
+Started GET "/users.css" for 127.0.0.1 at 2021-04-20 14:34:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users.css"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users.css" for 127.0.0.1 at 2021-04-20 14:34:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users.css"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/test.css" for 127.0.0.1 at 2021-04-20 14:34:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/test.css"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/verify" for 127.0.0.1 at 2021-04-20 14:34:24 -0400
+Processing by AdminsController#verify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admins/verify.html.erb within layouts/application
+  Rendered admins/verify.html.erb within layouts/application (Duration: 0.6ms | Allocations: 932)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2824)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+    15:   <table>
+    16:     <thead>
+    17:       <tr>
+    18:         <th><%= sortable "lname","User" %></th>
+    19:         <th><%= sortable "nameDotNumber","Name dot number"%></th>
+    20:         <th><%= sortable "user_type","User type"%></th>
+    21:         <th>Verify?</th>
+  
+app/controllers/admins_controller.rb:167:in `sort_column'
+app/helpers/application_helper.rb:6:in `sortable'
+app/views/admins/verify.html.erb:18
+Started GET "/admin/home" for 127.0.0.1 at 2021-04-20 14:34:33 -0400
+Processing by AdminsController#admin_home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admins/admin_home.html.erb within layouts/application
+  Rendered admins/admin_home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 134)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 5770)
+
+
+Started GET "/admin/test.css" for 127.0.0.1 at 2021-04-20 14:34:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/test.css"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
