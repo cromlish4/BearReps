@@ -49,6 +49,7 @@ This project heavily utilized databases for keeping track of users of types stud
 
 1)
 
+This project features an Admin Menu where admins can access a variety features, including Diaplay admin features, verify profiles, show courses, show users. show the sections that need graders, the applicants to the grading program, and Scraper Updater. 
 
 Screenshots
 ----------
