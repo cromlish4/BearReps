@@ -1,9 +1,8 @@
-
 Class ApplicationsController < ApplicationController
 # note here Applications (plural)!
 
 # use before_action to reduce code duplication
-before_action :set_application, only [:show, :edit, :update, :destroy]
+before_action :set_application, only: [:show, :edit, :update, :destroy]
 
 # wired to app/views/applications/index.html.erb by default (naming convention)
 def index
@@ -38,7 +37,7 @@ def create
   if @application.save
     redirect_to @application, notice: "Successfully Saved!"
   else
-    render: new
+    render new
   end
 end
 
@@ -52,7 +51,7 @@ def update
   if @application.update
     redirect_to @application, notice: "Successfully Updated!"
   else
-    render: edit
+    render edit
   end
 end
 
@@ -70,4 +69,3 @@ private
     @application = Application.find(params[:id])
   end
 
-end
