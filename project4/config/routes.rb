@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  resources :sections
   resources :students
   resources :instructors
   resources :courses
   resources :scrapes
+  # resources :applications
+  resources :apps
+  resources :recommendations
+  # resources :pools
+  #resources :users, constraints: { id: /.*/ }
   # devise_for :users
   Rails.application.routes.draw do
+  resources :sections
     devise_for :users, controllers: {
       sessions: 'users/sessions'
     }
@@ -23,9 +30,10 @@ Rails.application.routes.draw do
   get 'display_course' => 'pages#display_course'
   get 'display_profile' => 'pages#display_profile'
   #get 'admins/:nameDotNumber', to: 'admins#edit', as: :edit_admin
-  get 'admins/all', to: 'admins#show', :as => :user
+  get 'admins/all', to: 'admins#show' , :as => :user
   get 'admins/index', to: 'admins#index'
   get 'admins/new', to: 'admins#new'
+
 
   get 'form' => 'courses#form'
   get 'new_course' => 'courses#form'
@@ -35,9 +43,33 @@ Rails.application.routes.draw do
   #New admin page
   get 'admin_new' => 'admins#new'
 
-  get 'admin/verify' => 'pages#verify'
-  get 'admin/verify.css' => 'pages#verify.css'
-  get 'admin/user/:nameDotNumber', to: 'admins#verify_redirect'
+  get 'admin/verify' => 'admins#verify'
+  get 'admin/user', to: 'admins#verify_redirect'
+  get 'admin/home' => 'admins#admin_home'
+  get 'admin/verify.css' => 'admins#verify.css'
+
+  # Admin Menu Updater
+  patch 'admins/all' => 'admins#admins_all'
+
+  # Admin User Menu
+  get 'admin/users' => 'admins#users', :as => :admin_users
+  get 'admin/users/show' => 'admin_user#show'
+  get 'admin/users/edit' => 'admin_user#edit'
+  get 'admin/users/index' => 'admin_user#index'
+
+
+  # Admin Scraper Menu
+  get 'admin/scraper' => 'admins#scrape_show'
+  # Admin Grader Menu
+  get 'admin/graders' => 'admins#graders'
+  get 'admin/graders/show' => 'admin_grader#show'
+  get 'admin/graders/edit' => 'admin_grader#edit'
+  # patch 'admins/all' => 'admin_user#index'
+
+  # Admin Approved Grader Menu
+  get 'admin/app_graders' => 'admins#approved_graders'
+  get 'admin/app_graders/show' => 'admin_approved_grader#show'
+  get 'admin/app_graders/edit' => 'admin_approved_grader#edit'
   #Edit admin page
   #get 'admin_edit' => 'admins#edit'
   #Show a specific admin
@@ -56,7 +88,7 @@ Rails.application.routes.draw do
   get 'student_new' => 'students#new'
   #Edit student page
   #get 'student_edit' => 'students#edit'
-  #Show a specific student 
+  #Show a specific student
   # get 'student_show' => 'students#show'
   # Show all students
   # get 'students_index' => 'students#index'
@@ -94,4 +126,21 @@ Rails.application.routes.draw do
   get 'users/edit' => 'users#edit'
   get 'users/new' => 'users#new'
   get 'users/show' => 'users#show'
+  
+  # Applications
+  # Create an application
+  get 'apps/new' => 'apps#new'
+  # Edit an application
+  get 'apps/edit' => 'apps#edit'
+  # Show a specific application
+  get 'apps/show' => 'apps#show'
+  # Show all apps
+  get 'apps/index' => 'apps#index'
+
+  #Section extra
+  get 'sections/all' => 'sections#all'
+  resources :sections do
+    get 'all'
+  end
+
 end

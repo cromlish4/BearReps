@@ -8,8 +8,12 @@
 
   <!-- app/controllers/student.rb is a class, and @student is an instance variable for this class. The class has methods (i.e. action) to access the student object's attributes such as fname, lname, osu_id, year, etc.  -->
     <div class="information">
-        <div id="name"><p><%= current_user.fname%> <%= current_user.lname%></p></div>
-        <div id="OSU-ID"><p><%= current_user.nameDotNumber%></p></div>
+        <div id="name">
+          <p>Name: <%= current_user.fname%> <%= current_user.lname%></p>
+        </div>
+        <div id="OSU-ID">
+          <p>Name dot number: <%= current_user.nameDotNumber%></p>
+        </div>
   </div>
 
 </body>

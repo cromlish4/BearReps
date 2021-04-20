@@ -15,24 +15,6 @@ def show
   end
 end
 
-# wired to app/views/instructors/new.html.erb by default (naming convention)
-# that view GET a blank form for creating a new instructor, submitting with POST
-def new
-  @instructor = User.new
-  # Add proper data to this
-end
-
-# POST a newly filled form to create a new instructor
-def create
-  @instructor = User.new
-  # Add proper Data here as well
-  if @instructor.save
-    redirect_to @instructor, notice: "Successfully Saved!"
-  else
-    render :new
-  end
-end
-
 # wired to app/views/instructors/update.html.erb by default (naming convention)
 # that view GET a filled form for updating a new instructor, submitting with PUT
 def edit

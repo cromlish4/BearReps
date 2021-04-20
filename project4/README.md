@@ -4,7 +4,7 @@
 RAILS Final Project
 -----------------------
 This is our final project for CSE 3901. This project is intended to build upon our progress in project 3. The goal of this project is to implement
-a system for students to apply to be graders for courses, an instructor to assign recommendations for student graders, and an admin to 
+a system for students to apply to be graders for courses, an instructor to assign recommendations for student graders, and an admin to
 scrape the course listing of OSU CSE's courses.
 
 Motivation
@@ -12,11 +12,11 @@ Motivation
 This project is intended to combine our knowledge of Object Oriented Programming in the Ruby langauge
 with Rails in order to create a MVC framework. With this project expanding on the foundation from project 3, this
 project was also intended for our group to work efficiently such that we would expand project 3 to implement
-a grader application / recommendation system as well as a fully-functional admin system. 
+a grader application / recommendation system as well as a fully-functional admin system.
 
 Features
 -----------
-Our project was implemented using the MVC framework of Ruby on Rails, particularly using ruby v 2.7.1 and rails v 6.0.3.5. 
+Our project was implemented using the MVC framework of Ruby on Rails, particularly using ruby v 2.7.1 and rails v 6.0.3.5.
 With the use of gems, we were able to utilize the convenience of Ruby on Rails in the following ways:
 1) rails                      -- for the MVC framework
 2) sqlite3                    -- for database management
@@ -69,7 +69,7 @@ This project heavily utilized databases for keeping track of users of types stud
 
 1)
 
-This project features an Admin Menu where admins can access a variety features, including Diaplay admin features, verify profiles, show courses, show users. show the sections that need graders, the applicants to the grading program, and Scraper Updater. 
+This project features an Admin Menu where admins can access a variety features, including Diaplay admin features, verify profiles, show courses, show users. show the sections that need graders, the applicants to the grading program, and Scraper Updater.
 
 Screenshots
 ----------
@@ -87,10 +87,10 @@ Screenshots
 
 Installation
 -------------
-After fethcing our project, you first will want to run "bundle install" on your command line.
+After fetching our project, you first will want to run "bundle install" on your command line.
 Next, you must make sure to enter "rails db:migrate" on your command line in order that your schema.rb will be updated.
 You will also want to enter "rails db:seed" on your command line in order to get a default, verified admin account in order to see all of our views.
-Finally, you may enter "rails s" on your command line to run our server. 
+Finally, you may enter "rails s" on your command line to run our server.
 Now, you may open up your choice of web browser and enter "localhost:3000" in the url field.
 
 Notes: There are two default accounts Admin Email: buckeye.1@osu.edu Password: password and Developer Email: buckeye.2@osu.edu Password: password
@@ -136,16 +136,19 @@ to provide an overall functionality for our course listing.
 
 Eric Young implemented the application portion of this project in order for a student to apply for a grading position.
 
-Ryan O'Donovan implemented the recommendation portion of this project in order for a teacher to submit a recommendation for a student grader, provided additonal help 
+Ryan O'Donovan implemented the recommendation portion of this project in order for a teacher to submit a recommendation for a student grader, provided additonal help
 with the application portion, and created the README for project 4.
 
+Michael Cromlish added more features to the Admin menu including, Showing all verified users and being able to edit them, the same thing for all sections that still needed a grader, and page to see the recomendations from instructors.
 References
 ----------
 - README guidelines:
-    -  makeareadme.com 
+    -  makeareadme.com
     -  "A Beginners Guide to writing a Kickass READMe" by Akash Nimare
 
 - Course Searching
     - https://medium.com/@yassimortensen/simple-search-form-in-rails-8483739e4042
  - Some Scraping
      - https://stackoverflow.com/questions/12047100/ruby-mechanize-nokogiri-and-nethttp
+- HTML Table Sorting
+	- http://railscasts.com/episodes/228-sortable-table-columns?autoplay=true

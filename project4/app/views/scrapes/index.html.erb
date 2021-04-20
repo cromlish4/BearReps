@@ -1,3 +1,4 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <h1>Search online catalog</h1>
 
 <!--This is the form-->
@@ -11,9 +12,12 @@
 <!--Display scraper results-->
 <% if @scraped_courses %>
   <% @scraped_courses.each do |course| %>
-    <p class="title"><%=link_to "CSE #{course[0]}", "scrapes/show?key=#{course[0]}"%></p>
+    <p class="title"><%=link_to "CSE #{course[0]}", "#{scrapes_url}/show?key=#{course[0]}&courseID=#{params[:courseID]}"%></p>
     <% course[1].each do |attribute| %>
-      <p>&emsp; <%= "#{attribute[0]} : #{attribute[1]}" %></p>
+      <p><%= "#{attribute[0]} : #{attribute[1]}" %></p>
     <% end %>
   <% end %>
 <% end %>
+<%else %>
+redirect_to home_url
+<%end %>

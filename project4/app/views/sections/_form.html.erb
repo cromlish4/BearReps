@@ -1,0 +1,74 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+
+  <h1> Enter Section Details </h1>
+
+
+  <%= form_for @section do |f| %>
+    <div class="form-control">
+      <%= f.label :classNumber %>
+      <%= f.text_field :classNumber, required: true, value: params[:classNumber], placeholder: "Unique identifier for each section" %>
+    </div>
+
+
+    <div class="form-control">
+      <%= f.label :courseID %>
+      <%= f.number_field :courseID, required: true, value: params[:courseID] , placeholder: "n from courses/n" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :meetingDays %>
+      <%= f.text_field :meetingDays, value: params[:meetingDays], placeholder: "MTWRF" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :meetingTimes %>
+      <%= f.text_field :meetingTimes, value: params[:meetingTimes], placeholder: "Ex: 11 am - 11:50 am" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :waitlistTotal %>
+      <%= f.number_field :waitlistTotal, value: params[:waitlistTotal] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :startDate %>
+      <%= f.text_field :startDate, value: params[:startDate] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :endDate %>
+      <%= f.text_field :endDate, value: params[:endDate] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :enrollmentStatus %>
+      <%= f.text_field :enrollmentStatus, value: params[:enrollmentStatus], placeholder: "open/closed" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :instructionMode %>
+      <%= f.text_field :instructionMode, value: params[:instructionMode] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :component %>
+      <%= f.text_field :component, value: params[:component], placeholder: "Lecture, Recitation, Lab, etc." %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :section %>
+      <%= f.text_field :section, value: params[:section] %>
+    </div>
+
+    <div class="form-control">
+      <%= f.submit 'Enter Class'%>
+    </div>
+<%end %>
+
+<%#= params[:key] %>
+
+
+  <%else %>
+    redirect_to home_url
+  <%end %>
+

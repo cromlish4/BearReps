@@ -1,0 +1,11 @@
+#site_links{
+  font-size: 15px;
+}
+
+#header{
+  text-align: center;
+	margin: 0px 0px 20px;
+	border-bottom: 3px solid red;
+	font-size: 20px;
+	padding-bottom: 14px;
+}

@@ -1,0 +1,30 @@
+
+<!-- GET and show one application -->
+<head>
+  <meta charset="utf-8"/>
+  <link type="text/css" rel="stylesheet" href="show.css"/>
+</head>
+<h1>Application Detail</h1>
+
+<table id = "table">
+  <tr>
+    <th>Applicant</th> <td><%= @application.nameDotNumber %></td>
+  </tr>
+  <tr>
+    <th>Email</th> <td><%= @application.email %></td>
+  </tr>
+  <tr>
+    <th>Course</th> <td><%= @application.course %></td>
+  </tr>
+  <tr>
+    <th>Applicant Comments</th> <td><%= @application.comments %></td>
+  </tr>
+  
+</table>
+
+<br/>
+<!-- navigation bar, two options: editing the application, the previous page -->
+<nav id = navbar>
+  <%= link_to "Edit", edit_app_path(@application) %>
+  <%= link_to "Back", :back %>
+</nav>

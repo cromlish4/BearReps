@@ -7,6 +7,7 @@ class ScrapesController < ApplicationController
     @term = set_search_term_value(params[:term_value])
     search_results = search(params[:search])
     @scraped_courses = Scrape.extract_courses(search_results)
+    @scraped_sections = Scrape.extract_sections(search_results)
   end
 
   def new
@@ -34,7 +35,6 @@ class ScrapesController < ApplicationController
     else
       render :new
     end
-    puts 'placeholder'
   end
 
   private def search(search)

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+  <head>
+    <% t = @Sections %>
+    <h1><%="Editing Section: "+t.section %></h1>
+  </head>
+  <body>
+
+<% end %>
+
+<!--Form for Editing User, autofills with current info-->
+<%= form_for @Sections do |f| %>
+
+  <div class="form-control">
+    <%= f.label "Section Number: "%>
+    <%= f.text_field  :section, required: true, value: t.section  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Class Number"%>
+    <%= f.text_field  :classNumber, required: true, value: t.classNumber  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Meeting Days"%>
+    <%= f.text_field  :meetingDays, required: true, value: t.meetingDays  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Waitlist Total: "%>
+    <%= f.text_field  :waitlistTotal, required: true, value: t.waitlistTotal  %>
+  </div>
+
+  <div class="form-control">
+  <!--Make open or closed a dropdown menu -->
+  <%= f.label "Enrollment Status: " %>
+  <%= f.select :enrollmentStatus, [['Open'],['Closed']], value: t.enrollmentStatus %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Instruction Mode"%>
+    <%= f.text_field  :instructionMode, required: true, value: t.instructionMode  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Component"%>
+    <%= f.text_field  :component, required: true, value: t.component  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "Start Date"%>
+    <%= f.text_field  :startDate, required: true, value: t.startDate  %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label "End Date"%>
+    <%= f.text_field  :endDate, required: true, value: t.endDate  %>
+  </div>
+
+  <div class="form-control">
+  <!--Make loop of hired graders -->
+
+
+    <%# display_str = "[" %>
+    <%# @apps.each do |t| %>
+      <%# display_str=display_str+"['#{t.nameDotNumber}']" %>
+<!--      <p>One</p>-->
+    <%# end %>
+    <%# display_str =display_str+ "]" %>
+
+    <%= f.label "Grader: " %>
+  <%= f.select :grader, display_str, value: t.grader %>
+
+  </div>
+
+  <div class="form-control">
+
+    <!--Passes what part of website to Controller-->
+    <%= hidden_field_tag(:sub_dir, "graders") %>
+
+    <%= f.submit 'Update Entry'%>
+  </div>
+<% end %>
+
+</body>
+<!--Return to User Select Screen-->
+<%= button_to "Return", "/admin/graders/show?id=", method: :get, params: {:id => params[:id]}%>
+
+</html>

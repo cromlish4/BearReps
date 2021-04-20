@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+  <head>
+    <% t = App.find_by(nameDotNumber: params[:nameDotNumber]) %>
+    <% f = Course.find_by(:catalog_number => t.course) %>
+    <% j = User.find_by(:nameDotNumber => t.nameDotNumber) %>
+    <% k = User.find_by(:nameDotNumber => t.nameDotNumber) %>
+    <h1><%="Course: "+f.catalog_number%></h1>
+  </head>
+  <body>
+  <p> This is where recommendation comments from instructor can be pulled in or whatever ends up happening.</p>
+  <p>Comments From Applicant: <%=t.comments %></p>
+  <p>Applicant Name: <%=j.fname+" "+j.lname %></p>
+  <p>Comments from Instructor:</p>
+
+
+  <% #end %>
+  </body>
+  <p>
+    <%= button_to "Return", admin_app_graders_path,method: :get%>
+    <% if params[:id]!="" %>
+      <%= button_to "Hire", "/admin/app_graders/edit?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
+    <%end %>
+  </p>
+
+<% end %>
+</html>

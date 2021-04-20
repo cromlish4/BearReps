@@ -9,10 +9,30 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @sections = get_matching_sections(params[:id].to_i)
   end
 
   def new
     @course = Course.new
+  end
+
+  def edit
+
+  end
+
+  def destroy
+    course = Course.find(params[:id])
+    course.destroy
+    sections = Section.where("courseID = ?", params[:id])
+
+    sections.each do |sect|
+      sect.destroy
+    end
+
+    respond_to do |format|
+      format.html { redirect_to courses_url, notice: "Course was successfully destroyed" }
+      format.json { head :no_content }
+    end
   end
 
   def create
@@ -33,6 +53,12 @@ class CoursesController < ApplicationController
       list.where("title like ?", "%#{@title}%")
     else
       Course.all
+    end
+  end
+
+  private def get_matching_sections(course_id)
+    if course_id > 0
+      list = Section.where("courseID = ?", course_id)
     end
   end
 

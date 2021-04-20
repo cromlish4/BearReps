@@ -9,11 +9,13 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 # generate 20 users
 # # Via - https://dev.to/debosthefirst/how-to-seed-your-rails-database-with-faker-1be3
+GEN_NUM = 20
+
 User.destroy_all
 User.create!(
 
   # each user is assigned an id from 1-20
-  id: 21,
+  id: GEN_NUM + 1,
   fname: "Brutus",
   email: "buckeye.1@osu.edu",
   lname: "Buckeye",
@@ -28,19 +30,19 @@ User.create!(
 User.create!(
 
   # each user is assigned an id from 1-20
-  id: 22,
+  id: GEN_NUM + 2,
   fname: "Developer",
   email: "buckeye.2@osu.edu",
   lname: "Buckeye",
   nameDotNumber: "buckeye.2",
-  year: %w[Freshman, Sophomore Junior Senior].sample,
+  year: %w[Freshman Sophomore Junior Senior].sample,
   # issue each user the same password
   password: "password!",
   # a user can have only one of these roles
   user_type: "dev",
   verified: "true"
 )
-(1..20).each do |id|
+(1..GEN_NUM).each do |id|
 
   User.create!(
 
@@ -50,12 +52,12 @@ User.create!(
     email: Faker::Internet.email,
     lname: Faker::Name.last_name,
     nameDotNumber: Faker::Name.last_name,
-    year: %w[Freshman, Sophomore Junior Senior].sample,
+    year: %w[Freshman Sophomore Junior Senior].sample,
     # issue each user the same password
     password: "password",
     # a user can have only one of these roles
     user_type: %w[student admin teacher].sample,
-    #verified: %w[true false].sample
+    verified: %w[true false].sample
   )
 end
 
