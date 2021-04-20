@@ -1,6 +1,6 @@
 class RecommendationsController < ApplicationController
   # use before_action to reduce code duplication
-  before_action :set_application, only [:show, :edit, :update, :destroy]
+  before_action :set_application, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -9,7 +9,7 @@ class RecommendationsController < ApplicationController
 
 
   # wired to app/views/recommendations/show.html.erb by default (naming convention)
-  # display a recommendation (if the application doesn't exist, redirect to the page for all the applications)
+  # display a recommendation (if the application doesn't exist, redirect to the page for all the apps)
   def show
     if @recommendation.nil?
       redirect_to action: :index
@@ -32,7 +32,7 @@ def create
   if @recommendation.save
     redirect_to @recommendation, notice: "Successfully Saved!"
   else
-    render: new
+    render new
   end
 
   # wired to app/views/recommendations/update.html.erb by default (naming convention)
@@ -45,7 +45,7 @@ def create
     if @recommendation.update
       redirect_to @recommendation, notice: "Successfully Updated!"
     else
-      render: edit
+      render edit
     end
   end
 

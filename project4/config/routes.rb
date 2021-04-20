@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :instructors
   resources :courses
   resources :scrapes
-  resources :applications
+  # resources :applications
+  resources :apps
+  resources :recommendations
   # devise_for :users
   Rails.application.routes.draw do
   resources :sections
@@ -123,12 +125,12 @@ Rails.application.routes.draw do
   
   # Applications
   # Create an application
-  get 'application_new' => 'applications#new'
+  get 'apps/new' => 'apps#new'
   # Edit an application
-  get 'application_edit' => 'applications#edit'
+  get 'apps/edit' => 'apps#edit'
   # Show a specific application
-  get 'application_show' => 'applications#show'
-  # Show all applications
-  get 'applications_index' => 'applications#index'
+  get 'apps/show' => 'apps#show'
+  # Show all apps
+  get 'apps/index' => 'apps#index'
 
 end

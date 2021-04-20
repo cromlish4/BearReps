@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_184406) do
+ActiveRecord::Schema.define(version: 2021_04_20_072824) do
 
-  create_table "applications", force: :cascade do |t|
+  create_table "apps", force: :cascade do |t|
     t.string "applicant"
     t.string "email"
     t.string "course"
