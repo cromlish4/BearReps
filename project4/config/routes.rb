@@ -135,4 +135,9 @@ Rails.application.routes.draw do
   # Show all apps
   get 'apps/index' => 'apps#index'
 
+  #Section extra
+  get 'sections/all' => 'sections#all'
+  resources :sections do
+    get 'all'
+  end
 end
