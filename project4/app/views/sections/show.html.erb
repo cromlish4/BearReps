@@ -16,6 +16,7 @@
 
   </div>
 </div>
-
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
 <%= button_to "Delete Section", @section, :method => :delete, data: {confirm: "===WARNING===\n!!! ATTEMPTING TO DELETE SECTION"} %>
 <%= button_to "Edit Section", "#{sections_url}/#{params[:id]}/edit", :method => :get %>
+<%end %>
