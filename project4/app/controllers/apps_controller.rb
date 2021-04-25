@@ -93,6 +93,12 @@ def destroy
   redirect_to action: :index, notice: "Successfully deleted!"  # use redirect instead of render to avoid double submission (double deletion)
 end
 
+def approve
+  temp_app = App.find(params[:id])
+  temp_app.update(:approved => "true")
+  temp_app.save
+  redirect_to :controller => 'apps', :action => 'index'
+end
 
 private
   # the snippet below is shared by show, edit, update, destroy
