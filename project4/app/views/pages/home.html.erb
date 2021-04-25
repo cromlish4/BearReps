@@ -46,7 +46,7 @@
           <% if (user_signed_in?)%>
           <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev")||(current_user.user_type == "teacher"))%>
               </br></br>
-              <%= link_to "Recommendation Form", "apps" %>
+              <%= link_to "Unapproved Applications", "apps" %>
             <%end %>
             <% end %>
         </div>
