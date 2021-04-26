@@ -31,7 +31,11 @@ ActiveRecord::Schema.define(version: 2021_04_20_072824) do
   create_table "courses", force: :cascade do |t|
     t.text "title", null: false
     t.text "term", null: false
+<<<<<<< HEAD
     t.text "units", null: false
+=======
+    t.text "units"
+>>>>>>> f6b95d2449b7e878a7e44a712b8492e9257eca76
     t.text "campus"
     t.text "subject", default: "CSE"
     t.text "catalog_number", null: false
