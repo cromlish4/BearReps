@@ -1,8 +1,8 @@
 class CreateRecommendation < ActiveRecord::Migration[6.0]
   def change
     create_table :recommendations do |t|
-      t.string :name
-      t.string :course
+      t.text :name
+      t.text :course
       t.integer :section
 
       t.timestamps
