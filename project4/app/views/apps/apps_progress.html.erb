@@ -1,0 +1,35 @@
+
+<!-- Show the application status -->
+<head>
+  <meta charset="utf-8"/>
+</head>
+
+<h1>Application Status</h1>
+
+<!-- TODO: not sure how to get the instance of the current application, i.e. @application -->
+
+<body>
+  
+  <% if @application.destroy %>
+    <!-- Check if an application has been deleted. -->
+    <p>This application has been deleted.</p>
+  
+  <% else %>
+    <!-- If the application is not deleted, check if it is approved. -->
+    
+    <% if @application.approved %>
+      <p>This application has been approved.</p>
+    <% else %>
+      <p>This application has NOT been approved yet.</p>
+    <% end %>
+  
+  <% end %>
+
+</body>
+
+<br/>
+<!-- navigation bar, two options: showing one application, the previous page -->
+<nav id = navbar>
+  <%= link_to "Show", app_path(@application.id) %>
+  <%= link_to "Back", :back %>
+</nav>
