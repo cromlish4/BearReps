@@ -15,7 +15,7 @@ User.destroy_all
 User.create!(
 
   # each user is assigned an id from 1-20
-  id: GEN_NUM + 1,
+  # id: GEN_NUM + 1,
   fname: "Brutus",
   email: "buckeye.1@osu.edu",
   lname: "Buckeye",
@@ -30,7 +30,7 @@ User.create!(
 User.create!(
 
   # each user is assigned an id from 1-20
-  id: GEN_NUM + 2,
+  # id: GEN_NUM + 2,
   fname: "Developer",
   email: "buckeye.2@osu.edu",
   lname: "Buckeye",
@@ -47,7 +47,7 @@ User.create!(
   User.create!(
 
     # each user is assigned an id from 1-20
-    id: id,
+    # id: id,
     fname: Faker::Name.first_name,
     email: Faker::Internet.email,
     lname: Faker::Name.last_name,

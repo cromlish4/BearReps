@@ -10,49 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_092810) do
+ActiveRecord::Schema.define(version: 2021_04_20_072824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "apps", force: :cascade do |t|
-    t.string "nameDotNumber"
-    t.string "email"
-    t.string "course"
-    t.string "comments"
-    t.string "approved", default: "false"
+    t.text "nameDotNumber"
+    t.text "email"
+    t.text "course"
+    t.text "comments"
+    t.text "approved", default: "false"
+    t.text "employed_status", default: "non_employed"
+    t.text "assigned", default: "unassigned"
+    t.text "assigned_class", default: "unassigned"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "employed_status", default: "non_employed"
-    t.string "assigned", default: "unassigned"
-    t.string "assigned_class", default: "unassigned"
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "term", null: false
-    t.string "units"
-    t.string "campus"
-    t.string "subject", default: "CSE"
-    t.string "catalog_number", null: false
+    t.text "title", null: false
+    t.text "term", null: false
+    t.text "units"
+    t.text "campus"
+    t.text "subject", default: "CSE"
+    t.text "catalog_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "people", force: :cascade do |t|
-    t.string "fname"
-    t.string "lname"
-    t.string "dot"
-    t.string "year"
-    t.string "username"
-    t.string "password"
+    t.text "fname"
+    t.text "lname"
+    t.text "dot"
+    t.text "year"
+    t.text "username"
+    t.text "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "recommendations", force: :cascade do |t|
-    t.string "name"
-    t.string "course"
+    t.text "name"
+    t.text "course"
     t.integer "section"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -60,25 +60,25 @@ ActiveRecord::Schema.define(version: 2021_04_20_092810) do
 
   create_table "sections", force: :cascade do |t|
     t.integer "classNumber", null: false
-    t.string "meetingDays"
-    t.string "meetingTimes"
+    t.text "meetingDays"
+    t.text "meetingTimes"
     t.integer "waitlistTotal"
-    t.string "endDate"
-    t.string "startDate"
-    t.string "enrollmentStatus"
-    t.string "instructionMode"
-    t.string "component"
-    t.string "section"
+    t.text "endDate"
+    t.text "startDate"
+    t.text "enrollmentStatus"
+    t.text "instructionMode"
+    t.text "component"
+    t.text "section"
     t.integer "courseID", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "grader"
+    t.text "grader"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.text "classes"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_students_on_user_id"
@@ -92,12 +92,12 @@ ActiveRecord::Schema.define(version: 2021_04_20_092810) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "fname"
-    t.string "lname"
-    t.string "nameDotNumber"
-    t.string "year"
-    t.string "user_type"
-    t.string "verified", default: "false"
+    t.text "fname"
+    t.text "lname"
+    t.text "nameDotNumber"
+    t.text "year"
+    t.text "user_type"
+    t.text "verified", default: "false"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
