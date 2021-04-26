@@ -8,8 +8,9 @@ class CoursesController < ApplicationController
   end
 
   def show
+    #TODO check again after sections is done
     @course = Course.find(params[:id])
-    @sections = get_matching_sections(params[:id].to_i)
+    @sections = get_matching_sections(@course.id)
   end
 
   def new
@@ -17,16 +18,20 @@ class CoursesController < ApplicationController
   end
 
   def edit
-
+    #TODO
+    @old_course = Course.where("ROWID = ?", params[:id])
+    @course = Course.new
   end
 
   def destroy
     course = Course.find(params[:id])
     course.destroy
-    sections = Section.where("courseID = ?", params[:id])
+    sections = Section.find_by_courseID(params[:id])
 
-    sections.each do |sect|
-      sect.destroy
+    if sections
+      sections.each do |sect|
+        sect.destroy
+      end
     end
 
     respond_to do |format|
@@ -35,12 +40,26 @@ class CoursesController < ApplicationController
     end
   end
 
-  def create
-    @course = Course.new(my_params_course)
-    if @course.save
-      redirect_to @course
+  def check_course_duplicate(params)
+    possible_dupe = Course.find_by(:catalog_number => params[:catalog_number], :campus => params[:campus], :term => params[:term])
+    if possible_dupe
+      found = true
     else
-      render :'scrapes/new'
+      found = false
+    end
+  end
+
+  def create
+    #check for duplicates
+    if !check_course_duplicate(my_params_course)
+      @course = Course.new(my_params_course)
+      if @course.save
+        redirect_to @course
+      else
+        redirect_to :home, notice: "ERROR SAVING!"
+      end
+    else
+      redirect_to :courses, notice: "DUPLICATE COURSE"
     end
   end
 
@@ -49,16 +68,16 @@ class CoursesController < ApplicationController
     if search
       #take all fields and use them to narrow down matches
       list = Course.where("catalog_number like ?", "%#{search}%")
-      list = list.where("term like ?", "%#{@term}%")
-      list.where("title like ?", "%#{@title}%")
+      list = list.where("UPPER(term) like UPPER(?)", "%#{@term}%")
+      list.where("UPPER(title) like UPPER(?)", "%#{@title}%")
     else
       Course.all
     end
   end
 
   private def get_matching_sections(course_id)
-    if course_id > 0
-      list = Section.where("courseID = ?", course_id)
+    if course_id
+      list = Section.find_by_courseID(course_id)
     end
   end
 
@@ -67,10 +86,11 @@ class CoursesController < ApplicationController
     nil
     if term and term != ""
       #check if there is a course with this term
-      courses = Course.where("term like ?", "%#{term}%")
+      courses = Course.where("UPPER(term) like UPPER(?)", "%#{term}%")
       if not courses.blank?
         term
       else
+        flash[:notice] = "No such term in database"
         nil
       end
     end
@@ -80,10 +100,11 @@ class CoursesController < ApplicationController
     nil
     if title and title != ""
       #check if there is a course with this title
-      courses = Course.where("title like ?", "%#{title}%")
+      courses = Course.where("UPPER(title) like UPPER(?)", "%#{title}%")
       if not courses.blank?
         title
       else
+        flash[:notice] = "No such title in database"
         nil
       end
     end

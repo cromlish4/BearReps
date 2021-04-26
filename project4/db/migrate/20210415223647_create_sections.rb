@@ -11,6 +11,7 @@ class CreateSections < ActiveRecord::Migration[6.0]
       t.text :instructionMode
       t.text :component
       t.text :section
+      t.text :instructor
       t.integer :courseID, null: false
 
       t.timestamps

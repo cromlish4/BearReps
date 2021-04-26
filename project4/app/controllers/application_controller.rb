@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   private def my_params_course
-    params.require(:course).permit(:title, :term, :units, :campus, :subject, :catalog_number)
+    params.require(:course).permit(:title, :term, :units, :campus, :subject, :catalog_number, :specID)
   end
 end

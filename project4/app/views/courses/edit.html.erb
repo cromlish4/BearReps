@@ -1,5 +1,5 @@
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
-  <h1>Enter Course Details</h1>
+  <h1>Edit Course Details</h1>
 
   <%= form_for @course do |f| %>
     <div class="form-control">
