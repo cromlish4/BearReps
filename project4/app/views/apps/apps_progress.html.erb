@@ -15,9 +15,9 @@
     <p>This application has been deleted.</p>
   
   <% else %>
-    <!-- If the application is not deleted, check if it is approved. -->
+    <!-- If the application exists, check if it is approved. -->
     
-    <% if @application.approved %>
+    <% if @application.approved == "true" %>
       <p>This application has been approved.</p>
     <% else %>
       <p>This application has NOT been approved yet.</p>
