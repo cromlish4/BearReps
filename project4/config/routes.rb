@@ -137,6 +137,10 @@ Rails.application.routes.draw do
   # Show all apps
   get 'apps/index' => 'apps#index'
   post 'apps/approve' => 'apps#approve'
+
+  get 'status' => 'pages#status'
+
+
   #Section extra
   get 'sections/all' => 'sections#all'
   resources :sections do

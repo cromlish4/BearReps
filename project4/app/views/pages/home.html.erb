@@ -34,7 +34,7 @@
               </div>
             <%elsif (current_user.verified == "true") && (current_user.user_type == "student")%>
               <%= link_to "Grader Application", "apps/new" %> <br> <br>
-              <%= link_to "Status", "apps/status", %>
+              <%= link_to "Application Status", "status" %>
 
             <%else %>
               <p div = "Verify">Please Verify Account.</p>

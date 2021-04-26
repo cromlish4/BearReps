@@ -15,4 +15,10 @@ class PagesController < ApplicationController
 
   end
 
+  def status
+    @userApp = App.find_by(nameDotNumber: current_user.nameDotNumber)
+
+  end
+
+
 end

@@ -1,0 +1,52 @@
+
+<!-- Show the application status -->
+<head>
+  <meta charset="utf-8"/>
+</head>
+
+<h1>Application Status</h1>
+
+<!-- TODO: not sure how to get the instance of the current application, i.e. @application -->
+<!-- TODO: @application may work if the user is directed here from show.html.erb (again, still not sure) -->
+
+<body>
+
+<table>
+  <thead>
+  <tr>
+
+    <th>Class</th>
+    <th>Approved?</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!--% User.where(verified: "false").each do |t| %-->
+  <% App.where(nameDotNumber: current_user.nameDotNumber).each do |t| %>
+    <tr>
+
+      <td><%= t.course%></td>
+      <td><%= t.approved %></td>
+
+
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+    
+    <%# if @application.approved == "true" %>
+<!--      <p>This application has been approved.</p>-->
+    <%# else %>
+<!--      <p>This application has NOT been approved yet.</p>-->
+    <%# end %>
+
+
+
+</body>
+
+<br/>
+<!-- navigation bar, two options: showing one application, the previous page -->
+<!--<nav id = navbar>-->
+  <%#= link_to "Show", app_path(@application.id) %>
+  <%#= link_to "Back", :back %>
+<!--</nav>-->
