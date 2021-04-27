@@ -91,6 +91,7 @@ class SectionsController < ApplicationController
     @section_to_update.update(:component => params[:section][:component])
     @section_to_update.update(:startDate => params[:section][:startDate])
     @section_to_update.update(:endDate => params[:section][:endDate])
+    @section_to_update.update(:instructor => params[:section][:instructor])
     @section_to_update.update(:grader => params[:section][:grader])
 
     @section_to_update.save
