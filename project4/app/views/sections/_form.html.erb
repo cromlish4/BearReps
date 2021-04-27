@@ -61,6 +61,11 @@
     </div>
 
     <div class="form-control">
+      <%= f.label :instructor %>
+      <%= f.text_field :instructor, value: params[:instructor] %>
+    </div>
+
+    <div class="form-control">
       <%= f.submit 'Enter Class'%>
     </div>
 <%end %>
