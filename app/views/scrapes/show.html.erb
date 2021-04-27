@@ -1,0 +1,26 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+<h1><%= "CSE #{params[:key]}" %></h1>
+
+<% Scrape.get_scraped_courses[params[:key]].each do |attribute| %>
+  <p class="attributes"><%= "#{attribute[0]} : #{attribute[1]}" %></p>
+<% end %>
+<% Scrape.set_chosen_course(params[:key])  %>
+<%= button_to "Add Course", new_scrape_path, method: :get %>
+
+<h2> ============ </h2>
+<h1> Scraped Sections </h1>
+<%= button_to "Add All Sections To This Course", "#{new_section_url}", method: :get, data: {confirm: "===WARNING===\n!!! ATTEMPTING TO ADD ALL SECTIONS !!!"}, params: {:add_all => true, :courseID => params[:courseID], :key => params[:key]} %>
+
+ <% Scrape.get_scraped_sections[params[:key]].each do |section| %>
+  <p class="attributes"><%= "Class Number : #{section[0]}" %></p>
+  <% jank_keys = "classNumber=#{section[0]}&courseID=#{params[:courseID]}&" %>
+  <% section[1].each do |attribute| %>
+    <% jank_keys += "#{attribute[0]}=#{attribute[1]}&"%>
+    <p class="attributes"><%= "#{attribute[0]} : #{attribute[1]}" %></p>
+  <% end %>
+  <h2><%= link_to "Add Section", "#{new_section_url}?#{jank_keys[0, jank_keys.length()-1]}" %></h2>
+  <h2> ============ </h2>
+<% end %>
+<%else %>
+redirect_to home_url
+<%end %>

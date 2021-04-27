@@ -1,0 +1,56 @@
+body>h1{
+	text-align: center;
+	margin: 0px 0px 20px;
+	border-bottom: 3px solid red;
+	font-size: 40px;
+	padding-bottom: 10px;
+}
+
+#Verify{
+	font-size: 18px;
+}
+
+#sign-in
+{
+	padding: 2px;
+}
+
+#course-catalog{
+	padding: 2px;
+}
+
+.options{
+	font-size: 25px;
+}
+
+.welcome{
+	font-size: 22px;
+}
+
+.search{
+	font-size: 22px;
+}
+
+.navbar-logout{
+	color: gray;
+	padding: 10px;
+	background: white;
+	font-size: 25px;
+}
+
+.navbar-link{
+   color: gray;
+   padding: 10px;
+   background: white;
+   font-size: 25px;
+ }
+
+ #Bear-Reps{
+   center: auto;
+   top: 10px;
+	 right: 10px;
+   position: absolute;
+   bottom: auto;
+
+   color:red;
+ }

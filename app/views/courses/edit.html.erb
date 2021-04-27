@@ -1,0 +1,43 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+  <h1>Edit Course Details</h1>
+
+  <%= form_for @course do |f| %>
+    <div class="form-control">
+      <%= f.label :title%>
+      <%= f.text_field  :title, required: true, value: @course.title  %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :term%>
+      <%= f.text_field  :term, required: true, value: @course.term %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :units %>
+      <%= f.text_field  :units, value: @course.units %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :campus %>
+      <%= f.text_field  :campus, value: @course.campus %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :subject %>
+      <%= f.text_field  :subject, value: 'CSE' %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :catalog_number %>
+      <%= f.text_field  :catalog_number,  required: true, value: @course.catalog_number  %>
+    </div>
+
+    <div class="form-control">
+      <%= f.submit 'Edit Class'%>
+    </div>
+  <% end %>
+  <!--% redirect_to root %>-->
+  <!--Need to make some sort of show method maybe Im not sure-->
+<%else %>
+  redirect_to home_url
+<% end %>

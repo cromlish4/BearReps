@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+  <head>
+    <% t = @graders %>
+    <% j = User.find_by(:nameDotNumber => t.nameDotNumber) %>
+    <h1><%="Hiring : "+j.fname+" "+j.lname %></h1>
+  </head>
+  <body>
+
+<% end %>
+
+<!--Form for Editing User, autofills with current info-->
+<%= form_for @graders do |f| %>
+
+  <div class="form-control">
+  <!--Make open or closed a dropdown menu -->
+  <%= f.label "Employed Status: " %>
+  <%= f.select :employed_status, [['Hired','hired'],['Not Employed','non_employed']], value: t.employed_status %>
+  </div>
+
+
+  <div class="form-control">
+
+    <!--Passes what part of website to Controller-->
+    <%= hidden_field_tag(:nameDotNumber, t.nameDotNumber) %>
+
+    <%= f.submit 'Update Entry'%>
+  </div>
+<% end %>
+
+</body>
+<!--Return to User Select Screen-->
+<%= button_to "Return", "/admin/app_graders/show?nameDotNumber=", method: :get, params: {:nameDotNumber => params[:nameDotNumber]}%>
+
+</html>

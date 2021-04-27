@@ -1,0 +1,23 @@
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+<h1>Search online catalog</h1>
+
+<!--This is the form-->
+<%= form_tag(scrapes_path, method: :get) do %>
+  <%= text_field_tag(:campus_value, params[:campus_value], placeholder: "campus : columbus, marion, ...") %>
+  <%= text_field_tag(:term_value, params[:term_value], placeholder: "term : spring/summer/autumn") %>
+  <%= text_field_tag(:search, params[:search], placeholder: "example : cse 3901") %>
+  <%= submit_tag("Scrape") %>
+<% end %>
+
+<!--Display scraper results-->
+<% if @scraped_courses %>
+  <% @scraped_courses.each do |course| %>
+    <p class="title"><%=link_to "CSE #{course[0]}", "#{scrapes_url}/show?key=#{course[0]}&courseID=#{params[:courseID]}"%></p>
+    <% course[1].each do |attribute| %>
+      <p><%= "#{attribute[0]} : #{attribute[1]}" %></p>
+    <% end %>
+  <% end %>
+<% end %>
+<%else %>
+redirect_to home_url
+<%end %>

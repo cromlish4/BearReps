@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>
+      All Sections without a grader.
+    </title>
+    <meta charset="utf-8"/>
+<!--    <link type="text/css" rel="stylesheet" href="/graders.css"/>-->
+  </head>
+  <body>
+    <h1>Sections that need a grader.</h1>
+    <%= form_tag("graders", method: :get) do %>
+    <p> Search for a Section, it's course number</p>
+    <%= text_field_tag(:search, params[:search], placeholder: "Course Catalog Number") %>
+    <%= submit_tag ("Search") %>
+  <% end %>
+  <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+    <table>
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Class</th> <!--%= sortable "lname", "Name" %>-->
+          <th>Section Number</th>
+        </tr>
+      </thead>
+      <tbody>
+    <% @show_sections.where(grader: NIL).each do |t| %>
+        <% f = Course.find_by(:id => t.courseID) %>
+      <tr>
+        <td><%= f.subject+" "+f.catalog_number %></td>
+        <td><%=link_to f.title, "/admin/graders/show?id=#{t.id}" %></td>
+        <td><%= t.section %></td>
+        <!--td>%= t.classes %></td-->
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+    <% end %>
+  </body>
+</html>

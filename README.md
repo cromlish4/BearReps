@@ -1,92 +1,178 @@
-Set in JavaScript
---------
+# README
 
-"Set" is a card game in which players attempt to find a group of cards that satisfy a particular criterion. 
-It is a speed game: 12 cards are dealt face-up, and the players try to be the first to make a set from the visible cards. 
-For a complete description of the game see the Wikipedia entry: https://en.wikipedia.org/wiki/Set_(card_game). 
-This project creates a functional game of set using JavaScript, CSS, HTML. Node.js is used to run the game locally. 
+
+RAILS Final Project
+-----------------------
+This is our final project for CSE 3901. This project is intended to build upon our progress in project 3. The goal of this project is to implement
+a system for students to apply to be graders for courses, an instructor to assign recommendations for student graders, and an admin to
+scrape the course listing of OSU CSE's courses.
 
 Motivation
-----------
-
-This project was intended to combine what we have learned about JavaScript, CSS, and HTML by taking the our previous Ruby Set and making it in JavaScript using CSS and HTML.
-
-Since we had already created the game before in Ruby the focus was on the JavaScript, CSS, and HTML instead of the logic of the game.
+-------------
+This project is intended to combine our knowledge of Object Oriented Programming in the Ruby langauge
+with Rails in order to create a MVC framework. With this project expanding on the foundation from project 3, this
+project was also intended for our group to work efficiently such that we would expand project 3 to implement
+a grader application / recommendation system as well as a fully-functional admin system.
 
 Features
---------
+-----------
+Our project was implemented using the MVC framework of Ruby on Rails, particularly using ruby v 2.7.1 and rails v 6.0.3.5.
+With the use of gems, we were able to utilize the convenience of Ruby on Rails in the following ways:
+1) rails                      -- for the MVC framework
+2) sqlite3                    -- for database management
+3) puma                       -- for the application server
+4) sass-rails                 -- for SCSS stylesheets
+5) webpacker                  -- to transpile app-like Javascript
+6) turbolinks                 -- to make navigating web application faster
+7) jbuilder                   -- to build JSON APIs with ease
+8) bootsnap                   -- to reduce boot times through caching
+9) mechanize                  -- for issuing HTTP requests
+10) nokogiri                  -- to navigate the body of the response
+11) devise                    -- to establish an authorication system
+12) faker                     -- to generate fake data( ie used for 20 accounts to populate db)
+13) byebug                    -- to stop execution and get a debugger console
+14) web-console               -- to access an interactive console on exception pages
+15) listen                    -- to notify changes in the file system
+16) spring                    -- to speed up development by keeping application running in background
+17) spring-watcher-listener   -- to listen to application running in background
+18) capybara                  -- to add support for Capybara system testing
+19) selenium-webdriver        -- to add support for selenium driver
+20) webdrivers                -- for easy installation and use of web drivers to run system tests with browsers
+21) tzinfo-data               -- to include zoneinfo files, since Windows does not
 
-This project was implemented using multiple classes for the major functions for the game. 
-The Classes were the Cards, the Deck maker, the Set parser, and Board maker. 
-This version has a GUI that allows the user to visually select cards to make a set. The new GUI
-also has the score and the rules displayed at all times, allowing a user to refer back during game play. 
+Scraper, Courses and Sections
+-------
+This final project is heavily based on a web scraper to get all the course listings from OSU's CSE catalog. Prominent featues of this Scraper include: The ability to scrape courses by term (spring, summer, autumn), campus and any other search term a user may want.
+![image](https://user-images.githubusercontent.com/75758107/115470827-f2158e80-a204-11eb-8e31-4e397a6535a5.png)
 
-A Node.js server is set up to allow for local play.
-The GUI will react to a card being selected and unselects when clicked again.
-A Debug Mode where Sets can be highlighted.
+
+![image](https://user-images.githubusercontent.com/75758107/115470914-16716b00-a205-11eb-905e-9ec2c41e0d7a.png)
+
+
+You can then add that course to the database or add scraped sections of that course to a course
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471009-46b90980-a205-11eb-9994-d3c723fed013.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471035-4fa9db00-a205-11eb-9fc4-5d9614d3831f.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471356-d3fc5e00-a205-11eb-9bc4-c42cba552626.png)
+
+
+You can then search courses in the database and add section (as an admin), add many, one or delete them!
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471420-f3938680-a205-11eb-96b4-1740e6286d45.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471438-fc845800-a205-11eb-8345-ca67cba09653.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471484-1160eb80-a206-11eb-901f-1d6fed3fe5ab.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471501-16259f80-a206-11eb-80fc-1aaf2c6620c4.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471528-1f167100-a206-11eb-8b27-2b6178ccd3d4.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471543-250c5200-a206-11eb-8d4f-34c5fdfaf6f0.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471588-36edf500-a206-11eb-985c-8c9fcba47726.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471665-59800e00-a206-11eb-8609-6f76f423ddb7.png)
+
+
+![image](https://user-images.githubusercontent.com/75758107/115471792-8a604300-a206-11eb-9d59-d9983642af04.png)
+
+
+This project heavily utilized databases for keeping track of users of types student, intstructor, and admin. Additonally, to keep track of applications and reocmmendations for student graders based on a class. 
+
+This project features an Admin Menu where admins can access a variety features, including Diaplay admin features, verify profiles, show courses, show users. show the sections that need graders, the applicants to the grading program, and Scraper Updater.
 
 Screenshots
------------
-![StartScreen](project2/public/assets/SampleGame.png) 
-Start Screen
+----------
+1) Home Page -- Admin signed in
+![Project4AdminHome](https://user-images.githubusercontent.com/77405607/115470665-ab279900-a204-11eb-80cd-082944d3023a.JPG)
 
-![EndScreen](project2/public/assets/EndScreen.png) 
-End Screen
+2) Admin Page -- Admin Menu
+![Project4AdminMenu](https://user-images.githubusercontent.com/77405607/115471313-c2b35180-a205-11eb-8030-cc6b62476d48.JPG)
+
+3) Student Page -- Grader Application
+![Project4Application](https://user-images.githubusercontent.com/77405607/115471377-deb6f300-a205-11eb-8b5e-9bec80e4c968.JPG)
+
+4) Login Page
+![Project4LoginPage](https://user-images.githubusercontent.com/77405607/115471432-f9896780-a205-11eb-8df2-466cd4fbc10d.JPG)
 
 Installation
-------------
+-------------
+After fetching our project, you first will want to run "bundle install" on your command line.
+Next, you must make sure to enter "rails db:migrate" on your command line in order that your schema.rb will be updated.
+You will also want to enter "rails db:seed" on your command line in order to get a default, verified admin account in order to see all of our views.
+Finally, you may enter "rails s" on your command line to run our server.
+Now, you may open up your choice of web browser and enter "localhost:3000" in the url field.
 
-Steps to install and run JavaScript Set:
-1) Clone the BearReps repo and navigate to the "project2" directory.
-2) Open a terminal in that folder and enter "node server.js" this hosts the game locally, If this outputs "Server is listening on port 8000" then it was successful.
-3) Load a web browser and enter "http://localhost:8000" to the url box to play the game.
-4) Once done pressing Control+C on the terminal running the game will shut down the Node.js server.
+Notes: There are two default accounts Admin Email: buckeye.1@osu.edu Password: password and Developer Email: buckeye.2@osu.edu Password: password
+Running Scraper By Itself
+--------------------------
+In the case where you might need to run scraper separately you can find it in app/helpers/scraper.rb
+
+To run this from the command line just "cd app/helpers/" then run "ruby scraper.rb"
+
+Enter your search query. Then when it asks for a term decide if you want summer, spring or autumn and select the corresponding number (example, if you want summer type in 1214).
+Then follow the same procedure for when it asks you to enter a campus (example, columbus is col).
+
+The program will now scrape through the osu courses and return to you the catalog number, title, term, units and campus.
+
+![Home page new user](https://i.imgur.com/suSf2YL.png)
 
 Tests
------
-
-The GUI version of this game requires less testing since the user can't input their own information.
-
-1) Max 3 Cards Selected:
-
-	Only 3 cards can be selected at a time though the GUI.
-	
-2) Quit Button
-	
-	The Quit button can be pressed anytime during gameplay to stop playing.
-	
-3) No Selection during give SET
-	
-	While being given a set, the player cannot pick a card to prevent errors.
-	
-	
-
-
-Acknowledgment
----------------
-Thanks to Ryan O'Donovan for being project lead for this project. He helped to coordinate the project by creating the meetings and the plans for who would work on which aspect of the project. He also created the Node.js server for running the game locally, converted the Board Class from ruby to javascript, and worked on bug fixing. 
-Also for helping out in many parts of the project that people needed help with.
-
-Andrew Conners converted the deckmaker class and helped to work on the HTML and refining the CSS.
-He also generated separate images for each card by cropping a larger sheet with every card on it as well as adding event listeners to the main class.
-
-Zhuo Chen converted the card class that is the framework of the game since the card is the basis of the game.
-
-Eric Young worked on the main class which handles pulling everything together and is the core of the project. 
-
-Michael Cromlish converted the card parsing class that handles checking the cards and seeing if they are a set or not and did some light CSS formatting and worked on bug fixing.
-
-Samiul Islam helped out in many parts of the project with a focus on the HTML and the helping out on the main and card classes. Also for writing many of the event listeners and working on bug fixing. 
-
-Credit
 ------
 
-README guidelines:
-makeareadme.com and "A Beginners Guide to writing a Kickass READMe" by Akash Nimare
+1) We made sure that in the CoursesController for both New and Create, that these may only be entered if the user is a verified admin. Otherwise, we redirect to the index page.
 
-Ryan O'Donovan, for creating the original readme which this one is based on.
 
-The original image sheet that the individual card images were cropped from. https://geekandsundry.com/the-card-game-that-puzzled-mathematicians-for-decades/
+2) We made sure that in the ScrapesController for both New and Create, that these may only be entered if the user is a verified admin. Otherwise, we redirect to the index page.
 
-The node.js server: https://www.pabbly.com/tutorials/node-js-http-module-serving-static-files-html-css-images/
+3) For the ApplicationController and Home page, we made sure that if the user is not signed in, then they are not able to view the development links, and only the Sign Up, Login, and Search Courses link
 
+4) For grading, we made sure to add a default, verified admin account with the use of rails seeds.
+
+
+Acknowledgement
+---------
+
+Thanks to Andrew Connors for being the project lead this project. Andrew did the initial setup for the Ruby on Rails project.
+He also helped in every aspect of the project and scheduled multiple team meetings to make sure the team was staying on good pace.
+
+Michael Cromlish implemented the admin MVC, as well as verification in order to implement the admin functionality as a whole for this project. Michael also contributed to improve the application portion of this project.
+
+Zhuo Chen worked with styling of multiple HTML forms for this project.
+
+Samiul Islam worked with the web scraper to ensure we were collecting all necessary data from OSU's course listing,
+as well as debugging / troubleshooting any errors we ran into with the scraper. Samiul also worked with the databses for courses and sections
+to provide an overall functionality for our course listing.
+
+Eric Young implemented the application portion of this project in order for a student to apply for a grading position.
+
+Ryan O'Donovan implemented the recommendation portion of this project in order for a teacher to submit a recommendation for a student grader, provided additonal help
+with the application portion, and created the README for project 4.
+
+Michael Cromlish added more features to the Admin menu including, Showing all verified users and being able to edit them, the same thing for all sections that still needed a grader, and page to see the recomendations from instructors.
+References
+----------
+- README guidelines:
+    -  makeareadme.com
+    -  "A Beginners Guide to writing a Kickass READMe" by Akash Nimare
+
+- Course Searching
+    - https://medium.com/@yassimortensen/simple-search-form-in-rails-8483739e4042
+ - Some Scraping
+     - https://stackoverflow.com/questions/12047100/ruby-mechanize-nokogiri-and-nethttp
+- HTML Table Sorting
+	- http://railscasts.com/episodes/228-sortable-table-columns?autoplay=true

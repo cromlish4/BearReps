@@ -1,0 +1,13 @@
+
+<!-- GET a filled form for editing an instructor -->
+<h1>Editing Instructor </h1>
+
+<!-- app/views/instructors/_form.html.erb will be rendered, which generates the form -->
+<%= render "instructors/form" %>
+
+<br/>
+<!-- navigation bar, two options: the page that shows all instructor, the previous page -->
+<nav>
+  <%= link_to "Show", instructors_path %>
+  <%= link_to "Back", :back %>
+</nav>

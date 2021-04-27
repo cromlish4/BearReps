@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>
+    Users to be Verified
+  </title>
+  <meta charset="utf-8"/>
+  <link type="text/css" rel="stylesheet" href="/admin/verify.css"/>
+</head>
+<body>
+<h1>Admin Verification Page</h1>
+<p>These are all user that need to be verified</p>
+<%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+<div id=to_be_verified>
+  <!-- Sorting via http://railscasts.com/episodes/228-sortable-table-columns-->
+  <table>
+    <thead>
+      <tr>
+        <th><%= sortable "lname","User" %></th>
+        <th><%= sortable "nameDotNumber","Name dot number"%></th>
+        <th><%= sortable "user_type","User type"%></th>
+        <th>Verify?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--% User.where(verified: "false").each do |t| %-->
+      <% for t in @unverified_users.where(verified: "false") %>
+      <tr>
+        <td><%= t.fname %> <%= t.lname %></td>
+        <td><%= t.nameDotNumber %></td>
+        <td><%= t.user_type %></td>
+        <td><%= button_to "Verify", "user?nameDotNumber=", method: :get, params: {:nameDotNumber => t.nameDotNumber}%></td>
+
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<%end %>
+</body>
+</html>

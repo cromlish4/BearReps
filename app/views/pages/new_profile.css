@@ -1,0 +1,114 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  position:relative;
+}
+
+header>h1{
+  text-align: center;
+	margin: 0px 0px 20px;
+	border-bottom: 3px solid red;
+	font-size: 40px;
+	padding-bottom: 14px;
+}
+
+.navbar-link{
+   color: white;
+   padding: 10px;
+   background: white;
+   font-size: 25px;
+ }
+
+.back{
+  position:absolute;
+  margin-top: 700px;
+}
+
+#first-name{
+  font-size: 22px;
+  padding: 10px;
+  padding-top: 30px;
+}
+
+#last-name{
+  font-size: 22px;
+
+  padding: 10px;
+}
+
+#name-dot{
+  font-size: 22px;
+
+  padding: 10px;
+}
+
+#year{
+  font-size: 22px;
+
+  padding:10px;
+}
+
+#email{
+  font-size: 22px;
+
+  padding: 10px;
+}
+
+#password{
+  font-size: 22px;
+
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+#passwordC{
+  font-size: 22px;
+
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.footer-nav{
+  color: white;
+  padding: 10px;
+  background: white;
+  font-size: 25px;
+}
+
+#submission{
+  padding: 10px;
+
+}
+
+#Bear-Reps{
+  center: auto;
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  bottom: auto;
+  font-size: 25px;
+  color:red;
+}
+
+#dropdown{
+  font-size: 22px;
+
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.submission{
+  font-size: 22px;
+
+  background-color: white;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+  padding: 12px 28px;
+  transform: translateX(10px);
+}

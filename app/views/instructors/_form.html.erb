@@ -1,0 +1,18 @@
+
+<!-- partial for generating a form (since this snippet is duplicated in new.html.erb and edit.html.erb) -->
+<%= form_for @instructor do |f| %>
+
+  <div class = "name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class = "email">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <!-- text_field will automatically generate id = "instructor_attr" for HTML input tag, this can be useful to CSS -->
+
+  <%= f.submit "Submit" %>
+
+<% end %>

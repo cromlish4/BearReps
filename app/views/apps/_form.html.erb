@@ -1,0 +1,54 @@
+
+<!-- partial for generating a form (since this snippet is duplicated in new.html.erb and edit.html.erb) -->
+<%= form_for @application do |f| %>
+<!--Need to store previous grading experience-->
+  <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev")||(current_user.user_type == "teacher"))%>
+    <% t = App.find(params[:id]) %>
+    <div class = "applicant">
+      <%= f.label "Name dot Number" %>
+      <%= f.text_field :nameDotNumber, :value => t.nameDotNumber, :readonly => true %>
+    </div>
+
+    <div class = "email">
+      <%= f.label :email %>
+      <%= f.text_field :email, :value => t.email, :readonly => true %>
+    </div>
+
+    <div class = "instr_comments">
+      <%= f.label "Comments from Instructor" %>
+      <%= f.text_area :instr_comments%>
+    </div>
+  <% else %>
+  <div class = "applicant_dot">
+    <%= f.label "Name dot Number" %>
+    <%= f.text_field :nameDotNumber, :value => current_user.nameDotNumber, :readonly => true %>
+  </div>
+
+  <div class = "email">
+    <%= f.label :email %>
+    <%= f.text_field :email, :value => current_user.email, :readonly => true %>
+  </div>
+  <% end %>
+  <div class = "course">
+    <%= f.label "Please Insert the course number for the class you'd like to TA for." %>
+    <%= f.text_field :course, required: true %>
+  </div>
+
+  <div class = "comments">
+    <%= f.label "List Comments" %>
+    <%= f.text_area :comments%>
+  </div>
+
+
+
+<!--  This is unnecessary since the instructor will be assigning the section to them -->
+<!--  <div class = "section">-->
+    <%#= f.label :section %>
+    <%#= f.number_field :section %>
+<!--  </div>-->
+
+  <!-- text_field will automatically generate id = "label" (e.g., id = "email") for HTML input tag, this can be useful to CSS -->
+
+  <%= f.submit "Submit" %>
+
+<% end %>

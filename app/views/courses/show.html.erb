@@ -1,0 +1,28 @@
+<h1><%= "#{@course.subject} #{@course.catalog_number}" %></h1>
+
+<div class="section">
+  <div class="container">
+    <p class="details"><%= "Title : #{@course.title}" %></p>
+    <p class="details"><%= "Term : #{@course.term}" %></p>
+    <p class="details"><%= "Units : #{@course.units}" %></p>
+    <p class="details"><%= "Campus : #{@course.campus}" %></p>
+  </div>
+</div>
+
+<h2 class="break"> ========== </h2>
+<% if (current_user.verified == "true") && ((current_user.user_type == "admin") || (current_user.user_type == "dev")) %>
+  <%= button_to "Delete Course", @course, :method => :delete, data: { confirm: "===WARNING===\n!!! ATTEMPTING TO DELETE COURSE" } %>
+  <%= button_to "Edit", "#{courses_path}/#{params[:id]}/edit", method: :get, params: {:id => params[:id]}%>
+  <h2><%= button_to "Scrape Sections Online", "#{scrape_url[0, scrape_url.length() - 2]}", method: :get, params: { :campus_value => @course.campus.downcase(), :term_value => @course.term.tr("0-9 ", "").downcase(), :search => @course.catalog_number, :courseID => scrape_url[scrape_url.rindex('/') + 1, scrape_url.length()] } %></h2>
+<% end %>
+<h2> Sections for this Course</h2>
+<h2 class="break"> ========== </h2>
+
+<% if @sections %>
+    <% Scrape.get_database_section_keys.each do |k| %>
+      <%= "#{k} : #{@sections.attributes[k]}" %>
+    <br>
+    <% end %>
+  <%= link_to "See Section Page", @sections %>
+  <h2 class="break"> ========== </h2>
+<% end %>

@@ -1,0 +1,9 @@
+<% content_for :page_title, "Sections" %>
+
+<h1>Sections</h1>
+
+<% i = 0 %>
+<% @sections.each do |section| %>
+  <p class="title"><%= link_to "CSE : #{@courseID_list[i]} -- Class : #{section.classNumber} ; #{section.startDate} - #{section.endDate}", section %></p>
+  <% i += 1 %>
+<% end %>
