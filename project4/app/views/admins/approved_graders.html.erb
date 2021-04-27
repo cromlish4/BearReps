@@ -15,8 +15,8 @@
   <%#= submit_tag ("Search") %>
 <%# end %>
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
-  <% count = @graders.where(approved: "true").count %>
-  <% if count > 1 %>
+  <%# count = @graders.where(approved: "true").count %>
+  <%# if count > 1 %>
   <table>
     <thead>
     <tr>
@@ -39,6 +39,6 @@
     </tbody>
   </table>
   <% end %>
-<% end %>
+<%# end %>
 </body>
 </html>
