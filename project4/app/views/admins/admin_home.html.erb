@@ -42,7 +42,7 @@
 
   <% if (user_signed_in?) && (current_user.verified == "true") && (current_user.user_type == "dev") %>
     <p><b>All Below Links are for development</b></p>
-    
+
 
     <% if (user_signed_in? && (current_user.verified == "true"))%>
       <% if current_user.user_type == "admin" %>
