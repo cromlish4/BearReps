@@ -8,7 +8,6 @@ class CoursesController < ApplicationController
   end
 
   def show
-    #TODO check again after sections is done
     @course = Course.find(params[:id])
     @sections = get_matching_sections(@course.id)
   end
@@ -17,10 +16,26 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
 
+  def update
+    course = Course.find(params[:id])
+
+    course.update(:title => params[:course][:title])
+    course.update(:term => params[:course][:term])
+    course.update(:units => params[:course][:units])
+    course.update(:campus => params[:course][:campus])
+    course.update(:catalog_number => params[:course][:catalog_number])
+
+
+    course.save
+    if params[:section]
+      redirect_to course
+    else
+      redirect_to home_url
+    end
+  end
+
   def edit
-    #TODO
-    @old_course = Course.where("ROWID = ?", params[:id])
-    @course = Course.new
+
   end
 
   def destroy
