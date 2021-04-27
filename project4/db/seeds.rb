@@ -42,24 +42,6 @@ User.create!(
   user_type: "dev",
   verified: "true"
 )
-(1..GEN_NUM).each do |id|
-
-  User.create!(
-
-    # each user is assigned an id from 1-20
-    # id: id,
-    fname: Faker::Name.first_name,
-    email: Faker::Internet.email,
-    lname: Faker::Name.last_name,
-    nameDotNumber: Faker::Name.last_name,
-    year: %w[Freshman Sophomore Junior Senior].sample,
-    # issue each user the same password
-    password: "password",
-    # a user can have only one of these roles
-    user_type: %w[student admin teacher].sample,
-    verified: %w[true false].sample
-  )
-end
 
 
 # courses = Scraper.scrape('cse 3901', Scraper.get_terms, Scraper.get_campuses)
