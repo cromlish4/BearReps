@@ -63,6 +63,7 @@ def update
   @application_to_update = App.find(params[:id])
   @application_to_update.update(:nameDotNumber => params[:app][:nameDotNumber])
   @application_to_update.update(:comments => params[:app][:comments])
+  @application_to_update.update(:instr_comments => params[:app][:instr_comments])
   @application_to_update.update(:email => params[:app][:email])
   @application_to_update.update(:course => params[:app][:course])
   @application_to_update.save

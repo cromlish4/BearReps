@@ -13,6 +13,11 @@
       <%= f.label :email %>
       <%= f.text_field :email, :value => t.email, :readonly => true %>
     </div>
+
+    <div class = "instr_comments">
+      <%= f.label "Comments from Instructor" %>
+      <%= f.text_area :instr_comments%>
+    </div>
   <% else %>>
   <div class = "applicant">
     <%= f.label "Name dot Number" %>
@@ -33,6 +38,8 @@
     <%= f.label "List Comments" %>
     <%= f.text_area :comments%>
   </div>
+
+
 
 <!--  This is unnecessary since the instructor will be assigning the section to them -->
 <!--  <div class = "section">-->

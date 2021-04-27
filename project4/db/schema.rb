@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_072824) do
+ActiveRecord::Schema.define(version: 2021_04_27_172313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,16 +26,13 @@ ActiveRecord::Schema.define(version: 2021_04_20_072824) do
     t.text "assigned_class", default: "unassigned"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "instr_comments"
   end
 
   create_table "courses", force: :cascade do |t|
     t.text "title", null: false
     t.text "term", null: false
-<<<<<<< HEAD
-    t.text "units", null: false
-=======
     t.text "units"
->>>>>>> f6b95d2449b7e878a7e44a712b8492e9257eca76
     t.text "campus"
     t.text "subject", default: "CSE"
     t.text "catalog_number", null: false
