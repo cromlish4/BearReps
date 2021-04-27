@@ -17,20 +17,19 @@
   <% if (user_signed_in?)%>
     <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
       <div id="site_links"> <br>
-        <p>Link to Current Admin Profile</p>
+        <p>Link to Admin Profile.</p>
         <%= link_to "Display Admin Profile", "profile" %> <br>
-        <p>Link to Verify Profiles that are Unverified</p>
+        <p>Link to view all profiles that are unverified.</p>
         <%= link_to "Verify Profiles", "verify" %> <br>
         <p>Link to view all Courses in the database</p>
         <%= link_to "Show Courses", "/all_courses" %> <br>
         <p>Link to show current users in that are verified</p>
         <%= link_to "Show Users", "users?search=&commit=Search" %> <br>
-        <p>Link to Sections that still need a grader. </p>
-        <%= link_to "Graders Needed", "graders?search=&commit=Search" %> <br>
-        <p>Link to Recommendations from Instructors. </p>
-        <%= link_to "Possible Graders", "app_graders?search=&commit=Search" %> <br>
-        <p>Link to Force the scraper to update the full database. </p>
-        <p>Right now Links to scraper from main home page.</p>
+        <p>Link to Sections that are still in need a grader. </p>
+        <%= link_to "Sections in need of Grader", "graders?search=&commit=Search" %> <br>
+        <p>Link to Recommendations that have been Approved by an Instructor. </p>
+        <%= link_to "Graders", "app_graders?search=&commit=Search" %> <br>
+        <p>Link to the scraper to update the database. </p>
         <%= link_to "Scraper Updater", "/admin/scraper" %> <br>
       </div>
     <%else %>
@@ -43,15 +42,7 @@
 
   <% if (user_signed_in?) && (current_user.verified == "true") && (current_user.user_type == "dev") %>
     <p><b>All Below Links are for development</b></p>
-
-
-    <div id=admins_links>
-      <p>Admin Links</p>
-      <%= link_to "Admin Index", "admins/index" %>
-      <%= link_to "Admin New", "admins/new" %>
-      <%= link_to "Admin Edit", "admins/:nameDotNumber" %>
-      <%= link_to "Admin Show", "admins/all" %>
-    </div>
+    
 
     <% if (user_signed_in? && (current_user.verified == "true"))%>
       <% if current_user.user_type == "admin" %>
