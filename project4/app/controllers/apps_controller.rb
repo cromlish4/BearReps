@@ -30,7 +30,13 @@ end
 
 # POST a newly filled form to create a new application
 def create
-  if true
+  possible_dupe = Course.find_by(:catalog_number => params[:app][:course])
+  if possible_dupe
+    found = true
+  else
+    found = false
+  end
+  if found
     @application = App.new()
     @application.nameDotNumber = params[:app][:nameDotNumber]
     @application.comments = params[:app][:comments]
