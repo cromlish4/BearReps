@@ -15,6 +15,8 @@
   <%#= submit_tag ("Search") %>
 <%# end %>
 <%if (current_user.verified == "true") && ((current_user.user_type == "admin")||(current_user.user_type == "dev"))%>
+  <% count = @graders.where(approved: "true").count %>
+  <% if count > 1 %>
   <table>
     <thead>
     <tr>
@@ -24,6 +26,7 @@
     </tr>
     </thead>
     <tbody>
+
     <% @graders.where(approved: "true").each do |t| %>
       <% f = Course.find_by(:catalog_number => t.course) %>
       <tr>
@@ -35,6 +38,7 @@
     <% end %>
     </tbody>
   </table>
+  <% end %>
 <% end %>
 </body>
 </html>

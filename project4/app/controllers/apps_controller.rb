@@ -2,6 +2,7 @@ class AppsController < ApplicationController
 # note here Applications (plural)!
 
 # use before_action to reduce code duplication
+skip_before_action :verify_authenticity_token
 before_action :set_application, only: [:show, :edit, :update, :destroy]
 
 # wired to app/views/apps/index.html.erb by default (naming convention)

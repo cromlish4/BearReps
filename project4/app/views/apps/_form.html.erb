@@ -18,7 +18,7 @@
       <%= f.label "Comments from Instructor" %>
       <%= f.text_area :instr_comments%>
     </div>
-  <% else %>>
+  <% else %>
   <div class = "applicant_dot">
     <%= f.label "Name dot Number" %>
     <%= f.text_field :nameDotNumber, :value => current_user.nameDotNumber, :readonly => true %>
@@ -30,7 +30,7 @@
   </div>
   <% end %>
   <div class = "course">
-    <%= f.label "Please Insert the course number for the class you'd like to TA" %>
+    <%= f.label "Please Insert the course number for the class you'd like to TA for." %>
     <%= f.text_field :course, required: true %>
   </div>
 
