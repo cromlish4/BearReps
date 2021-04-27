@@ -25,9 +25,7 @@ class CoursesController < ApplicationController
     course.update(:campus => params[:course][:campus])
     course.update(:catalog_number => params[:course][:catalog_number])
 
-
-    course.save
-    if params[:section]
+    if course.save
       redirect_to course
     else
       redirect_to home_url
@@ -35,7 +33,7 @@ class CoursesController < ApplicationController
   end
 
   def edit
-
+    @course = Course.find(params[:id])
   end
 
   def destroy

@@ -4,22 +4,22 @@
   <%= form_for @course do |f| %>
     <div class="form-control">
       <%= f.label :title%>
-      <%= f.text_field  :title, required: true, value: Scrape.get_chosen_course['title']  %>
+      <%= f.text_field  :title, required: true, value: @course.title  %>
     </div>
 
     <div class="form-control">
       <%= f.label :term%>
-      <%= f.text_field  :term, required: true, value: Scrape.get_chosen_course['term']   %>
+      <%= f.text_field  :term, required: true, value: @course.term %>
     </div>
 
     <div class="form-control">
       <%= f.label :units %>
-      <%= f.text_field  :units, value: Scrape.get_chosen_course['maxUnits'] %>
+      <%= f.text_field  :units, value: @course.units %>
     </div>
 
     <div class="form-control">
       <%= f.label :campus %>
-      <%= f.text_field  :campus, value: Scrape.get_chosen_course['campus'] %>
+      <%= f.text_field  :campus, value: @course.campus %>
     </div>
 
     <div class="form-control">
@@ -29,11 +29,11 @@
 
     <div class="form-control">
       <%= f.label :catalog_number %>
-      <%= f.text_field  :catalog_number,  required: true, value: Scrape.get_chosen_course['catalogNumber']  %>
+      <%= f.text_field  :catalog_number,  required: true, value: @course.catalog_number  %>
     </div>
 
     <div class="form-control">
-      <%= f.submit 'Enter Class'%>
+      <%= f.submit 'Edit Class'%>
     </div>
   <% end %>
   <!--% redirect_to root %>-->
