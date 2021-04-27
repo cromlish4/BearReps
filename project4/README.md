@@ -91,9 +91,7 @@ You can then search courses in the database and add section (as an admin), add m
 ![image](https://user-images.githubusercontent.com/75758107/115471792-8a604300-a206-11eb-9d59-d9983642af04.png)
 
 
-This project heavily utilized databases for keeping track of users of types student, intstructor, and admin. Additonally, to keep track of applications and reocmmendations for student graders based on a class. Promiment features of our databses include:
-
-1)
+This project heavily utilized databases for keeping track of users of types student, intstructor, and admin. Additonally, to keep track of applications and reocmmendations for student graders based on a class. 
 
 This project features an Admin Menu where admins can access a variety features, including Diaplay admin features, verify profiles, show courses, show users. show the sections that need graders, the applicants to the grading program, and Scraper Updater.
 
