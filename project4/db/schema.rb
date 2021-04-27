@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_04_27_172313) do
   create_table "courses", force: :cascade do |t|
     t.text "title", null: false
     t.text "term", null: false
-    t.text "units"
+    t.text "units", null: false
     t.text "campus"
     t.text "subject", default: "CSE"
     t.text "catalog_number", null: false
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_04_27_172313) do
     t.text "instructionMode"
     t.text "component"
     t.text "section"
+    t.text "instructor"
     t.integer "courseID", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
