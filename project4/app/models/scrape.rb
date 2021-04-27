@@ -7,7 +7,7 @@ class Scrape < ApplicationRecord
   @@campuses = { 'columbus' => 'col', 'marion' => 'mrn', 'newark' => 'nwk', 'lima' => 'lma', 'wooster' => 'wst', "mansfield" => 'mns' }
   @@course_keys = %w[title term maxUnits campus] #, catalogNumber]
   @@section_keys = %w[section component instructionMode enrollmentStatus startDate endDate term waitlistTotal meetings] #, classNumber]
-  @@database_section_keys = %w[enrollmentStatus instructionMode component classNumber section meetingDays meetingTimes waitlistTotal courseID grader]
+  @@database_section_keys = %w[enrollmentStatus instructionMode component classNumber section meetingDays meetingTimes waitlistTotal courseID grader instructor]
   @@scraped_courses = nil
   @@chosen_course = nil
   @@scraped_sections = nil
